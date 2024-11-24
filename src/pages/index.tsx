@@ -1,5 +1,6 @@
 import TamuhackFooter from '@/components/TamuHackFooter';
 import Header from '@/components/Header';
+import Timer from '@/components/Timer';
 
 export default function Home() {
     return (
@@ -14,10 +15,12 @@ export default function Home() {
                     <span className="rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                         24 Hours
                     </span>
-                    <span className="rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#e3b8dd] ml-4">
+                    <span className="ml-4 rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#e3b8dd]">
                         Hardware & Software
                     </span>
                 </div>
+                
+                <Timer />
             </main>
             <TamuhackFooter />
         </div>
