@@ -67,7 +67,6 @@ const Timer = () => {
             (shouldAnnounce && announcement !== ariaLiveText) ||
             ariaLiveText === null
         ) {
-            console.log('Here');
             setAriaLiveText(announcement);
         }
 
@@ -88,10 +87,7 @@ const Timer = () => {
             aria-label="Countdown timer until event starts"
         >
             <span className="text-6xl italic">
-                <span>{days}:</span>
-                <span>{hours}:</span>
-                <span>{minutes}:</span>
-                <span>{seconds}</span>
+                {days}:{hours}:{minutes}:{seconds}
             </span>
             <p className="text-2xl">until hacking begins.</p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
