@@ -84,7 +84,7 @@ const Timer = () => {
         <div
             role="timer"
             className="flex max-w-fit flex-col items-end font-serif"
-            aria-label="Countdown timer until event starts"
+            aria-label="Countdown until TAMUhack 2025 starts"
         >
             <span className="text-6xl italic">
                 {days}:{hours}:{minutes}:{seconds}
