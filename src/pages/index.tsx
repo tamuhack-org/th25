@@ -16,7 +16,7 @@ export default function Home() {
                         24 Hours
                     </span>
                     <span className="ml-4 rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#e3b8dd]">
-                        Hardware & Software
+                        Hardware &amp; Software
                     </span>
                 </div>
                 
