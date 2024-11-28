@@ -68,7 +68,7 @@ const TamuhackFooter = () => {
         },
         {
             name: 'HackRice',
-            link: 'https://hack.rice.edu/',
+            link: 'https://www.hackrice.com/',
         },
     ];
 
