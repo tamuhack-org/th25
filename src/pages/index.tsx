@@ -1,6 +1,7 @@
 import TamuhackFooter from '@/components/TamuHackFooter';
 import Header from '@/components/Header';
 import Timer from '@/components/Timer';
+import FAQ from '@/components/faq/Faq';
 
 export default function Home() {
     return (
@@ -19,7 +20,9 @@ export default function Home() {
                         Hardware &amp; Software
                     </span>
                 </div>
+                
                 <Timer />
+                <FAQ />
             </main>
             <TamuhackFooter />
         </div>
