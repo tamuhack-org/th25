@@ -2,17 +2,20 @@ import React from 'react';
 import SectionItem from './Section'; // Assuming Section is also converted to a React component
 import content from './content.json' assert { type: 'json'};
 
+// Redefine Question shape as the same as in Question.tsx
 interface Question {
     question: string;
     answers: string[];
 }
 
+// Redefine Section shape as the same as in Section.tsx
 interface Section {
     title: string;
     questions: Question[];
 }
 
 const FAQ: React.FC = () => {
+    // Specifically type assert the content as a Section shape so I don't get errors w/ map function later
     const sections = content as Section[];
 
     return (
@@ -31,10 +34,12 @@ const FAQ: React.FC = () => {
             <div className="mt-10">
                 {sections.map((section, index) => (
                     <div key={index} className="mb-12 lg:mb-16">
+                        {/* Create each section*/}
                         <SectionItem title={section.title} questions={section.questions} />
                     </div>
                 ))}
             </div>
+            {/*Style the FAQ title to have cool outline*/}
             <style jsx>{`
                 #faq-title {
                 -webkit-text-stroke-width: 2px;
