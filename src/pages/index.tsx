@@ -22,7 +22,9 @@ export default function Home() {
                 </div>
                 
                 <Timer />
-                <FAQ />
+                <div className="mt-72">
+                    <FAQ />
+                </div>
             </main>
             <TamuhackFooter />
         </div>
