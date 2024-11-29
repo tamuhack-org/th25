@@ -145,7 +145,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
 
     return (
         <>
-            <details ref={detailsRef} className="text-[#192F6D] relative border-opacity-30 border-[#192F6D] faq-question">
+            <details ref={detailsRef} className="text-[#000000] relative font-serif faq-question">
                 <summary
                     className="cursor-pointer text-lg md:text-xl flex justify-between items-center font-medium"
                     onClick={() => setOpen(!open)}
@@ -160,11 +160,12 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 <p className="content text-base md:text-lg pt-4 pb-2">
                     {/*Add each answer*/}
                     {item.answers.map((answer, index) => (
-                        <p key={index} className="">{answer}</p>
+                        <span key={index} className="">{answer}</span>
                     ))}
                 </p>
             </details>
-            <div className="w-full h-[2px] bg-dark opacity-25 mt-2 md:mt-4 mb-6 rounded-full faq-question-bottom" />
+            <div className="w-full h-[2px] bg-[#000000] opacity-25 mt-2 md:mt-4 mb-6 rounded-full faq-question-bottom" />
+            {/*Animate up/down arrows*/}
             <style jsx>{`
                 .arrow-open {
                 animation: flip-icon 0.25s ease-in-out;
