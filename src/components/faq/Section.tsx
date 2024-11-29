@@ -10,7 +10,7 @@ const SectionItem: React.FC<SectionProps> = ({ title, questions = [] }) => {
     return (
         <div className="flex flex-col lg:flex-row">
             <div className="w-full mb-10 lg:mb-0 lg:w-1/4">
-                <h2 id="new-section-title" className="sticky top-8 font-semibold text-4xl text-pink">
+                <h2 id="new-section-title" className="sticky top-8 font-serif text-[#000000] text-4xl">
                     {title}
                 </h2>
             </div>
