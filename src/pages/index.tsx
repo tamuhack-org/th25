@@ -19,7 +19,6 @@ export default function Home() {
                         Hardware &amp; Software
                     </span>
                 </div>
-                
                 <Timer />
             </main>
             <TamuhackFooter />
