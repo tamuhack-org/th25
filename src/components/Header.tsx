@@ -16,13 +16,13 @@ const Header = () => {
             <div className="flex items-start">
                 <Link
                     href="#"
-                    className="inline-block rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
+                    className="hidden lg:inline-block rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
                 >
                     Apply
                 </Link>
                 <Link
                     href="#"
-                    className="ml-4 mr-8 inline-block rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
+                    className="hidden lg:inline-block ml-4 mr-8 rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
                 >
                     Mentor
                 </Link>

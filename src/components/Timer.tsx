@@ -83,13 +83,13 @@ const Timer = () => {
     return (
         <div
             role="timer"
-            className="flex max-w-fit flex-col items-end font-serif"
+            className="hidden max-w-fit flex-col items-end font-serif lg:flex"
             aria-label="Countdown until TAMUhack 2025 starts"
         >
-            <span className="text-6xl italic">
+            <span className="text-2xl italic lg:text-6xl">
                 {days}:{hours}:{minutes}:{seconds}
             </span>
-            <p className="text-2xl">until hacking begins.</p>
+            <p className="text-lg lg:text-2xl">until hacking begins.</p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
                 {ariaLiveText}
             </p>

@@ -146,7 +146,7 @@ const TamuhackFooter = () => {
                             type="text"
                             name="EMAIL"
                             placeholder="Enter your email address"
-                            className="w-64 rounded-lg border border-[#FFBF00] bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96 dark:placeholder:text-[rgba(255,191,0,0.6)]"
+                            className="w-64 rounded-lg border border-[#e3b8dd] bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96 dark:placeholder:text-[rgba(255,191,0,0.6)]"
                             id="mce-EMAIL"
                         />
                         <button className="clear">
@@ -155,7 +155,7 @@ const TamuhackFooter = () => {
                                 value="Subscribe"
                                 name="subscribe"
                                 id="mc-embedded-subscribe"
-                                className="h-full cursor-pointer rounded-lg border border-[#FFBF00] px-4 py-2 text-base font-bold transition-colors duration-200 hover:bg-[#FFBF00] hover:text-[#1b0000]"
+                                className="h-full cursor-pointer rounded-lg border border-[#e3b8dd] px-4 py-2 text-base font-bold transition-colors duration-200 hover:bg-[#e3b8dd] hover:text-[#1b0000]"
                             />
                         </button>
                     </div>
