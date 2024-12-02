@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Timer from '@/components/Timer';
 import Image from 'next/image';
 import Link from 'next/link';
-import localFont from 'next/font/local'
+import localFont from 'next/font/local';
 import HomeImage from '@/../public/home_image.png';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.ttf' });
@@ -14,10 +14,10 @@ export default function Home() {
             <Header />
             <main className="mt-12 min-h-screen lg:mt-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div className='flex flex-col justify-between'>
+                    <div className="flex flex-col justify-between">
                         <div>
                             <h1
-                                className={`text-center lg:text-left  + ${belgiano.className}`}
+                                className={`+ text-center lg:text-left ${belgiano.className}`}
                                 style={{
                                     fontSize:
                                         'clamp(3rem, 5.543vw + 1.566rem, 7rem)',
@@ -26,10 +26,12 @@ export default function Home() {
                             >
                                 TAMUHACK
                             </h1>
-                            <h2 className={`text-center text-xl lg:text-left lg:text-3xl ${belgiano.className}`}>
+                            <h2
+                                className={`text-center text-xl lg:text-left lg:text-3xl ${belgiano.className}`}
+                            >
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
-                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 lg:hidden font-poppins">
+                            <div className="font-poppins mx-auto mt-6 flex items-start justify-center gap-4 lg:hidden">
                                 <Link
                                     href="https://register.tamuhack.com/"
                                     className="rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
@@ -37,13 +39,14 @@ export default function Home() {
                                     Apply
                                 </Link>
                                 <Link
-                                    href="#"
-                                    className="rounded-xl border border-black px-6 py-2 text-black transition `hover:bg-black` `hover:text-white` cursor-not-allowed opacity-25"
+                                    href="https://tamuhack.org/mentor"
+                                    target='_blank'
+                                    className="`hover:bg-black` `hover:text-white` rounded-xl border border-black px-6 py-2 text-black transition"
                                 >
                                     Mentor
                                 </Link>
                             </div>
-                            <div className="mt-6 hidden text-sm lg:block font-poppins">
+                            <div className="font-poppins mt-6 hidden text-sm lg:block">
                                 <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                     24 Hours
                                 </span>
@@ -52,7 +55,7 @@ export default function Home() {
                                 </span>
                             </div>
                         </div>
-                        <Timer className='self-end' />
+                        <Timer className="self-end" />
                     </div>
                     <Image
                         src={HomeImage}
@@ -60,7 +63,7 @@ export default function Home() {
                         width={800}
                         height={600}
                         placeholder="empty"
-                        className='mx-auto lg:mx-0'
+                        className="mx-auto lg:mx-0"
                     />
                 </div>
             </main>
