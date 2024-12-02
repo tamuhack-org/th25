@@ -7,7 +7,7 @@ import HomeImage from '@/../public/home_image.png';
 
 export default function Home() {
     return (
-        <div className="mx-auto max-w-[2000px] px-8">
+        <div className="mx-auto max-w-[2000px] px-16">
             <Header />
             <main className="mt-12 min-h-screen lg:mt-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -26,7 +26,7 @@ export default function Home() {
                             <h2 className="text-center font-serif text-xl lg:text-left lg:text-3xl">
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
-                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 lg:hidden">
+                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 lg:hidden font-poppins">
                                 <Link
                                     href="#"
                                     className="rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
@@ -40,7 +40,7 @@ export default function Home() {
                                     Mentor
                                 </Link>
                             </div>
-                            <div className="mt-6 hidden text-sm lg:block">
+                            <div className="mt-6 hidden text-sm lg:block font-poppins">
                                 <span className="rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                     24 Hours
                                 </span>
@@ -49,7 +49,7 @@ export default function Home() {
                                 </span>
                             </div>
                         </div>
-                        <Timer className='self-end'/>
+                        <Timer className='self-end' />
                     </div>
                     <Image
                         src={HomeImage}

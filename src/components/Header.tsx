@@ -13,7 +13,7 @@ const Header = () => {
                     height={32}
                 />
             </Link>
-            <div className="flex items-start">
+            <div className="flex items-start font-poppins">
                 <Link
                     href="#"
                     className="hidden lg:inline-block rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
