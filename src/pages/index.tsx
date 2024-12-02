@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import localFont from 'next/font/local';
 import HomeImage from '@/../public/home_image.png';
-import Puddle from '@/components/puddle/Puddle'
 
 const belgiano = localFont({ src: '/fonts/Belgiano.ttf' });
 
@@ -32,7 +31,7 @@ export default function Home() {
                             >
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
-                            <div className="font-poppins mx-auto mt-6 flex items-start justify-center gap-4 lg:hidden">
+                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-poppins lg:hidden">
                                 <Link
                                     href="https://register.tamuhack.com/"
                                     className="rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
@@ -41,13 +40,13 @@ export default function Home() {
                                 </Link>
                                 <Link
                                     href="https://tamuhack.org/mentor"
-                                    target='_blank'
+                                    target="_blank"
                                     className="`hover:bg-black` `hover:text-white` rounded-xl border border-black px-6 py-2 text-black transition"
                                 >
                                     Mentor
                                 </Link>
                             </div>
-                            <div className="font-poppins mt-6 hidden text-sm lg:block">
+                            <div className="mt-6 hidden font-poppins text-sm lg:block">
                                 <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                     24 Hours
                                 </span>
@@ -66,7 +65,6 @@ export default function Home() {
                         placeholder="empty"
                         className="mx-auto lg:mx-0"
                     />
-                   {/* <Puddle /> */}
                 </div>
             </main>
             <TamuhackFooter />
