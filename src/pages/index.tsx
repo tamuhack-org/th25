@@ -3,7 +3,10 @@ import Header from '@/components/Header';
 import Timer from '@/components/Timer';
 import Image from 'next/image';
 import Link from 'next/link';
+import localFont from 'next/font/local'
 import HomeImage from '@/../public/home_image.png';
+
+const belgiano = localFont({src: '/fonts/Belgiano.ttf'});
 
 export default function Home() {
     return (
@@ -14,7 +17,7 @@ export default function Home() {
                     <div className='flex flex-col justify-between'>
                         <div>
                             <h1
-                                className="text-center font-serif lg:text-left"
+                                className={`text-center lg:text-left  + ${belgiano.className}`}
                                 style={{
                                     fontSize:
                                         'clamp(3rem, 5.543vw + 1.566rem, 6rem)',
@@ -23,12 +26,12 @@ export default function Home() {
                             >
                                 TAMUHACK
                             </h1>
-                            <h2 className="text-center font-serif text-xl lg:text-left lg:text-3xl">
+                            <h2 className={`text-center text-xl lg:text-left lg:text-3xl ${belgiano.className}`}>
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
                             <div className="mx-auto mt-6 flex items-start justify-center gap-4 lg:hidden font-poppins">
                                 <Link
-                                    href="#"
+                                    href="https://register.tamuhack.com/"
                                     className="rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
                                 >
                                     Apply
