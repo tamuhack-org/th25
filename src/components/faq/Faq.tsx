@@ -26,7 +26,7 @@ const FAQ: React.FC = () => {
                     <div id="faq-description" className="mt-10 text-[#000000] text-xl md:text-2xl font-serif">
                         <p>Everything you need to know about participating in TAMUhack.</p>
                         <p className="mt-4 md:mt-0">
-                            Can't find what you're looking for? <a className="underline" href="mailto:hello@tamuhack.com">Contact Our Team.</a>
+                            Can&apos;t find what you&apos;re looking for? <a className="underline" href="mailto:hello@tamuhack.com">Contact Our Team.</a>
                         </p>
                     </div>
                 </div>
