@@ -176,7 +176,7 @@ const TamuhackFooter = () => {
 
             <div className="text-dark my-8 justify-between opacity-90 lg:my-16 lg:flex">
                 <div className="lg:w-1/5">
-                    <p className={`mb-8 text-3xl font-semibold ${belgiano.className}`}>
+                    <p className={`mb-8 text-3xl font-bold ${belgiano.className}`}>
                         TAMUhack 2025
                     </p>
                     <p className="font-poppins font-base mb-8 text-xl">
