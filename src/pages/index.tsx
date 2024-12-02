@@ -20,7 +20,7 @@ export default function Home() {
                                 className={`text-center lg:text-left  + ${belgiano.className}`}
                                 style={{
                                     fontSize:
-                                        'clamp(3rem, 5.543vw + 1.566rem, 6rem)',
+                                        'clamp(3rem, 5.543vw + 1.566rem, 7rem)',
                                     lineHeight: '0.9',
                                 }}
                             >
