@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { DateTime } from 'luxon';
 import { formatTimeAnnouncement, shouldAnnounceTime } from './timerUtils';
+import { twMerge } from 'tailwind-merge';
 
-const Timer = () => {
+const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
     const [ariaLiveText, setAriaLiveText] = useState<string | null>(null);
@@ -83,7 +84,10 @@ const Timer = () => {
     return (
         <div
             role="timer"
-            className="hidden max-w-fit flex-col items-end font-serif lg:flex"
+            className={twMerge(
+                'hidden max-w-fit flex-col items-end font-serif lg:flex',
+                className,
+            )}
             aria-label="Countdown until TAMUhack 2025 starts"
         >
             <span className="text-2xl italic lg:text-6xl">
