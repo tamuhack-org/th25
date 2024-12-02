@@ -6,11 +6,11 @@ import Link from 'next/link';
 import localFont from 'next/font/local'
 import HomeImage from '@/../public/home_image.png';
 
-const belgiano = localFont({src: '/fonts/Belgiano.ttf'});
+const belgiano = localFont({ src: '/fonts/Belgiano.ttf' });
 
 export default function Home() {
     return (
-        <div className="mx-auto max-w-[2000px] px-16">
+        <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
             <Header />
             <main className="mt-12 min-h-screen lg:mt-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -38,16 +38,16 @@ export default function Home() {
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
+                                    className="rounded-xl border border-black px-6 py-2 text-black transition `hover:bg-black` `hover:text-white` cursor-not-allowed opacity-25"
                                 >
                                     Mentor
                                 </Link>
                             </div>
                             <div className="mt-6 hidden text-sm lg:block font-poppins">
-                                <span className="rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
+                                <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                     24 Hours
                                 </span>
-                                <span className="ml-4 rounded-full border-2 border-black bg-white px-3 py-1 transition-colors hover:bg-[#e3b8dd]">
+                                <span className="ml-4 rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#e3b8dd]">
                                     Hardware &amp; Software
                                 </span>
                             </div>

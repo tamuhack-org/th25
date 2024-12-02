@@ -23,7 +23,7 @@ const Header = () => {
                 </Link>
                 <Link
                     href="#"
-                    className="ml-4 mr-8 hidden rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white lg:inline-block"
+                    className="ml-4 mr-8 hidden rounded-xl border border-black px-6 py-2 text-black transition `hover:bg-black` `hover:text-white` lg:inline-block cursor-not-allowed opacity-25"
                 >
                     Mentor
                 </Link>
