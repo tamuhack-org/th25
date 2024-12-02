@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import localFont from 'next/font/local';
 import HomeImage from '@/../public/home_image.png';
+import Puddle from '@/components/puddle/Puddle'
 
 const belgiano = localFont({ src: '/fonts/Belgiano.ttf' });
 
@@ -12,7 +13,7 @@ export default function Home() {
     return (
         <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
             <Header />
-            <main className="mt-12 min-h-screen lg:mt-24">
+            <main className="mt-12 min-h-screen lg:mt-16">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="flex flex-col justify-between">
                         <div>
@@ -65,6 +66,7 @@ export default function Home() {
                         placeholder="empty"
                         className="mx-auto lg:mx-0"
                     />
+                   {/* <Puddle /> */}
                 </div>
             </main>
             <TamuhackFooter />
