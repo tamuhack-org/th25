@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { DateTime } from 'luxon';
 import { formatTimeAnnouncement, shouldAnnounceTime } from './timerUtils';
+import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
+
+const swily = localFont({src: '../pages/fonts/SwilyBright.otf'});
 
 const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
@@ -90,7 +93,7 @@ const Timer = ({ className }: { className?: string }) => {
             )}
             aria-label="Countdown until TAMUhack 2025 starts"
         >
-            <span className="text-2xl italic lg:text-6xl">
+            <span className={`text-2xl lg:text-6xl pr-4 ${swily.className}`}>
                 {days}:{hours}:{minutes}:{seconds}
             </span>
             <p className="text-lg lg:text-2xl">until hacking begins.</p>

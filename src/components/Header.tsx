@@ -15,14 +15,15 @@ const Header = () => {
             </Link>
             <div className="flex items-start">
                 <Link
-                    href="#"
-                    className="hidden lg:inline-block rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
+                    href="https://register.tamuhack.com/"
+                    target="_blank"
+                    className="hidden rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white lg:inline-block"
                 >
                     Apply
                 </Link>
                 <Link
                     href="#"
-                    className="hidden lg:inline-block ml-4 mr-8 rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
+                    className="ml-4 mr-8 hidden rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white lg:inline-block"
                 >
                     Mentor
                 </Link>
