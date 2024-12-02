@@ -9,9 +9,7 @@ const TrustBadge = () => {
                 display: 'block',
                 maxWidth: '100px',
                 minWidth: '60px',
-                right: '50px',
                 top: '0',
-                width: '10%',
                 zIndex: 10000,
             }}
         >
