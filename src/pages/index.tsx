@@ -6,7 +6,7 @@ import Link from 'next/link';
 import localFont from 'next/font/local'
 import HomeImage from '@/../public/home_image.png';
 
-const belgiano = localFont({ src: '/fonts/Belgiano.ttf' });
+const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
 export default function Home() {
     return (

@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-const belgiano = localFont({ src: '../pages/fonts/Belgiano.ttf' });
+const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
 
 const TamuhackFooter = () => {
     const resources = [

@@ -5,7 +5,7 @@ import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
 
 const swily = localFont({ src: '../pages/fonts/SwilyBright.otf' });
-const belgiano = localFont({ src: '../pages/fonts/Belgiano.ttf' });
+const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
 
 const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
