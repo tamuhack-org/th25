@@ -9,8 +9,8 @@ const Header = () => {
                 <Image
                     src={'/th_logo.png'}
                     alt="TAMUhack Logo"
-                    width={128}
-                    height={128}
+                    width={64}
+                    height={64}
                 />
             </Link>
             <div className="font-poppins flex items-start">
