@@ -24,7 +24,7 @@ const Header = () => {
                 <Link
                     href="https://tamuhack.org/mentor"
                     target='_blank'
-                    className="`hover:bg-black` `hover:text-white` ml-4 mr-8 hidden rounded-xl border border-black px-6 py-2 text-black transition lg:inline-block"
+                    className="hover:bg-black hover:text-white ml-4 mr-8 hidden rounded-xl border border-black px-6 py-2 text-black transition lg:inline-block"
                 >
                     Mentor
                 </Link>
