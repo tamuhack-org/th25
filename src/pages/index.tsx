@@ -12,7 +12,6 @@ export default function Home() {
     return (
         <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
             <Header />
-            <main className="mt-12 min-h-screen lg:mt-16">
             <main className="mt-12 min-h-screen">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="flex flex-col justify-between">
@@ -35,14 +34,14 @@ export default function Home() {
                             <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-poppins lg:hidden">
                                 <Link
                                     href="https://register.tamuhack.com/"
-                                    className="rounded-xl border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
+                                    className="rounded-lg border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
                                 >
                                     Apply
                                 </Link>
                                 <Link
                                     href="https://tamuhack.org/mentor"
                                     target="_blank"
-                                    className="`hover:bg-black` `hover:text-white` rounded-xl border border-black px-6 py-2 text-black transition"
+                                    className="`hover:bg-black` `hover:text-white` rounded-lg border border-black px-6 py-2 text-black transition"
                                 >
                                     Mentor
                                 </Link>
