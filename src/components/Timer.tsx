@@ -97,7 +97,7 @@ const Timer = ({ className }: { className?: string }) => {
             <span className={`pr-4 text-2xl lg:text-6xl ${swily.className}`}>
                 {days}:{hours}:{minutes}:{seconds}
             </span>
-            <p className={`-mt-4 text-lg lg:text-2xl ${kis.className}`}>
+            <p className={`-mt-3 text-lg lg:text-2xl ${kis.className}`}>
                 until hacking begins.
             </p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
