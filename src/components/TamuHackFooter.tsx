@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
 
 const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
 
@@ -99,7 +99,7 @@ const TamuhackFooter = () => {
         title: string;
         items: { name: string; link: string }[];
     }) => (
-        <div role="region" aria-label={title} className="font-poppins">
+        <div role="region" aria-label={title} className="font-open-sans">
             <h2 className="mb-2 text-base font-light">{title}</h2>
             <nav aria-label={`${title} navigation`}>
                 <ul className="list-none p-0">
@@ -123,12 +123,12 @@ const TamuhackFooter = () => {
 
     return (
         <>
-            <footer className="items-center lg:flex lg:justify-between font-poppins">
+            <footer className="items-center font-open-sans lg:flex lg:justify-between">
                 <div className="text-center opacity-90 lg:text-start">
-                    <p className="font-poppins mb-0 text-2xl font-semibold">
+                    <p className="mb-0 font-open-sans text-2xl font-semibold">
                         Sign up to our newsletter
                     </p>
-                    <p className="font-poppins font-light">
+                    <p className="font-open-sans font-light">
                         Stay connected! Sign up for our mailing list for events,
                         updates, and more.
                     </p>
@@ -150,7 +150,7 @@ const TamuhackFooter = () => {
                             type="text"
                             name="EMAIL"
                             placeholder="Enter your email address"
-                            className="w-64 rounded-lg border bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96 border-black"
+                            className="w-64 rounded-lg border border-black bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96"
                             id="mce-EMAIL"
                         />
                         <button className="clear">
@@ -176,11 +176,14 @@ const TamuhackFooter = () => {
 
             <div className="text-dark my-8 justify-between opacity-90 lg:my-16 lg:flex">
                 <div className="lg:w-1/5">
-                    <p className={`mb-8 text-3xl font-bold ${belgiano.className}`}>
+                    <p
+                        className={`mb-8 text-3xl font-bold ${belgiano.className}`}
+                    >
                         TAMUhack 2025
                     </p>
-                    <p className="font-poppins font-base mb-8 text-xl">
-                        This site is under construction. Please check back later!
+                    <p className="font-base mb-8 font-open-sans text-xl">
+                        This site is under construction. Please check back
+                        later!
                     </p>
                 </div>
                 <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">
@@ -194,7 +197,7 @@ const TamuhackFooter = () => {
                 </div>
             </div>
 
-            <footer className="bottom-0 font-poppins">
+            <footer className="bottom-0 font-open-sans">
                 <div className="bg-dark mx-8 h-[3px] rounded-xl bg-opacity-5" />
                 <p className="text-dark mx-8 py-3 text-sm font-light">
                     Interested in sponsoring? Reach out to us at{' '}

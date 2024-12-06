@@ -4,8 +4,7 @@ import { formatTimeAnnouncement, shouldAnnounceTime } from './timerUtils';
 import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
 
-const swily = localFont({ src: '../pages/fonts/SwilyBright.otf' });
-const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
+const kis = localFont({ src: '../pages/fonts/adobe-kis-vf-default-roman.ttf' });
 
 const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
@@ -94,10 +93,12 @@ const Timer = ({ className }: { className?: string }) => {
             )}
             aria-label="Countdown until TAMUhack 2025 starts"
         >
-            <span className={`text-2xl lg:text-6xl pr-4 ${swily.className}`}>
+            <span className={`pr-4 text-2xl lg:text-6xl ${kis.className}`}>
                 {days}:{hours}:{minutes}:{seconds}
             </span>
-            <p className={`text-lg lg:text-2xl ${belgiano.className}`}>until hacking begins.</p>
+            <p className={`text-lg lg:text-2xl ${kis.className}`}>
+                until hacking begins.
+            </p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
                 {ariaLiveText}
             </p>

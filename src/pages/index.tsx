@@ -7,6 +7,7 @@ import localFont from 'next/font/local';
 import HomeImage from '@/../public/home_image.png';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
+const kis = localFont({ src: '/fonts/adobe-kis-vf-default-roman.ttf' });
 
 export default function Home() {
     return (
@@ -17,7 +18,7 @@ export default function Home() {
                     <div className="flex flex-col justify-between">
                         <div>
                             <h1
-                                className={`+ text-center lg:text-left ${belgiano.className}`}
+                                className={`text-center lg:text-left ${belgiano.className}`}
                                 style={{
                                     fontSize:
                                         'clamp(3rem, 5.543vw + 1.566rem, 7rem)',
@@ -27,11 +28,11 @@ export default function Home() {
                                 TAMUHACK
                             </h1>
                             <h2
-                                className={`text-center text-xl lg:text-left lg:text-3xl ${belgiano.className}`}
+                                className={`text-center text-xl lg:text-left lg:text-3xl ${kis.className}`}
                             >
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
-                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-poppins lg:hidden">
+                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-open-sans lg:hidden">
                                 <Link
                                     href="https://register.tamuhack.com/"
                                     className="rounded-lg border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
@@ -46,7 +47,7 @@ export default function Home() {
                                     Mentor
                                 </Link>
                             </div>
-                            <div className="mt-6 hidden font-poppins text-sm lg:block">
+                            <div className="mt-6 hidden font-open-sans text-sm lg:block">
                                 <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                     24 Hours
                                 </span>
