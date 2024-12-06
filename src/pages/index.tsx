@@ -1,10 +1,9 @@
 import TamuhackFooter from '@/components/TamuHackFooter';
 import Header from '@/components/Header';
 import Timer from '@/components/Timer';
-import Image from 'next/image';
 import Link from 'next/link';
 import localFont from 'next/font/local';
-import HomeImage from '@/../public/home_image.png';
+import HomeGraphic from '@/components/HomeGraphic';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 const kis = localFont({ src: '/fonts/adobe-kis-vf-default-roman.ttf' });
@@ -58,14 +57,7 @@ export default function Home() {
                         </div>
                         <Timer className="self-end" />
                     </div>
-                    <Image
-                        src={HomeImage}
-                        alt="Reflection of College Station in a puddle"
-                        width={800}
-                        height={600}
-                        placeholder="empty"
-                        className="mx-auto lg:mx-0"
-                    />
+                    <HomeGraphic />
                 </div>
             </main>
             <TamuhackFooter />
