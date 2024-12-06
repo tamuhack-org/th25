@@ -19,7 +19,7 @@ export default function HomeGraphic() {
                 width={64}
                 height={64}
                 placeholder="empty"
-                className="absolute bottom-0 right-[25%] max-w-12 lg:max-w-16"
+                className="absolute bottom-0 right-[25%] max-w-9 md:max-w-12 lg:max-w-16"
             />
         </div>
     );
