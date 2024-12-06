@@ -99,7 +99,7 @@ const TamuhackFooter = () => {
         title: string;
         items: { name: string; link: string }[];
     }) => (
-        <div role="region" aria-label={title} className="font-open-sans">
+        <div role="region" aria-label={title} className="font-poppins">
             <h2 className="mb-2 text-base font-light">{title}</h2>
             <nav aria-label={`${title} navigation`}>
                 <ul className="list-none p-0">
@@ -123,12 +123,12 @@ const TamuhackFooter = () => {
 
     return (
         <>
-            <footer className="items-center font-open-sans lg:flex lg:justify-between">
+            <footer className="items-center font-poppins lg:flex lg:justify-between">
                 <div className="text-center opacity-90 lg:text-start">
-                    <p className="mb-0 font-open-sans text-2xl font-semibold">
+                    <p className="mb-0 font-poppins text-2xl font-semibold">
                         Sign up to our newsletter
                     </p>
-                    <p className="font-open-sans font-light">
+                    <p className="font-poppins font-light">
                         Stay connected! Sign up for our mailing list for events,
                         updates, and more.
                     </p>
@@ -181,7 +181,7 @@ const TamuhackFooter = () => {
                     >
                         TAMUhack 2025
                     </p>
-                    <p className="font-base mb-8 font-open-sans text-xl">
+                    <p className="font-base mb-8 font-poppins text-xl">
                         This site is under construction. Please check back
                         later!
                     </p>
@@ -197,7 +197,7 @@ const TamuhackFooter = () => {
                 </div>
             </div>
 
-            <footer className="bottom-0 font-open-sans">
+            <footer className="bottom-0 font-poppins">
                 <div className="bg-dark mx-8 h-[3px] rounded-xl bg-opacity-5" />
                 <p className="text-dark mx-8 py-3 text-sm font-light">
                     Interested in sponsoring? Reach out to us at{' '}

@@ -31,7 +31,7 @@ export default function Home() {
                             >
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
-                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-open-sans lg:hidden">
+                            <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-poppins lg:hidden">
                                 <Link
                                     href="https://register.tamuhack.com/"
                                     className="rounded-lg border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
@@ -46,7 +46,7 @@ export default function Home() {
                                     Mentor
                                 </Link>
                             </div>
-                            <div className="mt-6 hidden font-open-sans text-sm lg:block">
+                            <div className="mt-6 hidden font-poppins text-sm lg:block">
                                 <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                     24 Hours
                                 </span>

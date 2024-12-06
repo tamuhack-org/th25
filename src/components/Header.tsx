@@ -13,7 +13,7 @@ const Header = () => {
                     height={64}
                 />
             </Link>
-            <div className="flex items-start font-open-sans">
+            <div className="flex items-start font-poppins">
                 <Link
                     href="https://register.tamuhack.com/"
                     target="_blank"
