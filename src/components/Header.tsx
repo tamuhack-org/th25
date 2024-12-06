@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Header = () => {
     return (
         <header className="flex justify-between pt-6">
-            <Link href="https://tamuhack.org/">
+            <Link href="https://tamuhack.org/" className='max-w-12 lg:max-w-16'>
                 <Image
                     src={'/th_logo.png'}
                     alt="TAMUhack Logo"
@@ -28,7 +28,7 @@ const Header = () => {
                 >
                     Mentor
                 </Link>
-                <div className="-mt-6">
+                <div className="-mt-6 max-w-16 lg:max-w-28">
                     <TrustBadge />
                 </div>
             </div>
