@@ -44,7 +44,7 @@ export default function Home() {
                                 TAMUHACK
                             </h1>
                             <h2
-                                className={`text-center text-xl lg:text-left lg:text-3xl ${kis.className}`}
+                                className={`text-center text-xl lg:text-left lg:text-3xl ${kis.className} text-balance`}
                             >
                                 January 25-26, 2025 @ MSC 2300
                             </h2>
