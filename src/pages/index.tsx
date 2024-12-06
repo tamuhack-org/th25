@@ -13,6 +13,7 @@ export default function Home() {
         <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
             <Header />
             <main className="mt-12 min-h-screen lg:mt-16">
+            <main className="mt-12 min-h-screen">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="flex flex-col justify-between">
                         <div>
