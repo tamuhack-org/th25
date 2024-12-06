@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
 
 const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
 
@@ -123,9 +123,9 @@ const TamuhackFooter = () => {
 
     return (
         <>
-            <footer className="items-center lg:flex lg:justify-between font-poppins">
+            <footer className="items-center font-poppins lg:flex lg:justify-between">
                 <div className="text-center opacity-90 lg:text-start">
-                    <p className="font-poppins mb-0 text-2xl font-semibold">
+                    <p className="mb-0 font-poppins text-2xl font-semibold">
                         Sign up to our newsletter
                     </p>
                     <p className="font-poppins font-light">
@@ -150,7 +150,7 @@ const TamuhackFooter = () => {
                             type="text"
                             name="EMAIL"
                             placeholder="Enter your email address"
-                            className="w-64 rounded-lg border bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96 border-black"
+                            className="w-64 rounded-lg border border-black bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96"
                             id="mce-EMAIL"
                         />
                         <button className="clear">
@@ -176,11 +176,14 @@ const TamuhackFooter = () => {
 
             <div className="text-dark my-8 justify-between opacity-90 lg:my-16 lg:flex">
                 <div className="lg:w-1/5">
-                    <p className={`mb-8 text-3xl font-bold ${belgiano.className}`}>
+                    <p
+                        className={`mb-8 text-3xl font-bold ${belgiano.className}`}
+                    >
                         TAMUhack 2025
                     </p>
-                    <p className="font-poppins font-base mb-8 text-xl">
-                        This site is under construction. Please check back later!
+                    <p className="font-base mb-8 font-poppins text-xl">
+                        This site is under construction. Please check back
+                        later!
                     </p>
                 </div>
                 <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">
