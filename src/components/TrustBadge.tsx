@@ -14,7 +14,7 @@ const TrustBadge = () => {
                 zIndex: 10000,
             }}
         >
-            <img
+            <Image
                 src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
                 alt="Major League Hacking 2025 Hackathon Season"
                 style={{ width: '100%' }}
