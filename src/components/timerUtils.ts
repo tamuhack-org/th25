@@ -56,7 +56,6 @@ export const shouldAnnounceTime = (diff: {
     )
         return false;
     diff.seconds = Math.floor(diff.seconds);
-    
 
     // More than 7 days: announce once per day at midnight
     if (

@@ -11,8 +11,11 @@ interface SectionProps {
 const SectionItem: React.FC<SectionProps> = ({ title, questions = [] }) => {
     return (
         <div className="flex flex-col lg:flex-row">
-            <div className="w-full mb-10 lg:mb-0 lg:w-1/4">
-                <h2 id="new-section-title" className="sticky top-8 font-serif text-[#000000] text-4xl">
+            <div className="mb-10 w-full lg:mb-0 lg:w-1/4">
+                <h2
+                    id="new-section-title"
+                    className="sticky top-8 font-serif text-4xl text-[#000000]"
+                >
                     {/*Add the title to the left 1/4 of screen and make it sticky*/}
                     {title}
                 </h2>

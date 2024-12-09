@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import HomeImage from '@/../public/home_image.png';
 import Guy from '@/../public/guy.png';
-import BigBubble from '@/../public/big_bubble.png'
+import BigBubble from '@/../public/big_bubble.png';
 
 export default function HomeGraphic() {
     return (
@@ -28,7 +28,7 @@ export default function HomeGraphic() {
                 width={64}
                 height={64}
                 placeholder="empty"
-                className="hidden lg:block absolute top-7 right-[15%] max-w-12 "
+                className="absolute right-[15%] top-7 hidden max-w-12 lg:block"
             />
         </div>
     );

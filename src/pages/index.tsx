@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 import HomeGraphic from '@/components/HomeGraphic';
 import Image from 'next/image';
 import SmallBubble from '../../public/small_bubble.png';
-import MediumBubble from '../../public/med_bubble.png'
+import MediumBubble from '../../public/med_bubble.png';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 const kis = localFont({ src: '/fonts/adobe-kis-vf-default-roman.ttf' });
@@ -18,20 +18,20 @@ export default function Home() {
             <main className="mx-auto mt-12 min-h-screen max-w-screen-xl px-8">
                 <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-0">
                     <div className="flex flex-col justify-between">
-                        <div className='relative'>
+                        <div className="relative">
                             <Image
                                 src={SmallBubble}
                                 alt=""
                                 width={32}
                                 height={32}
-                                className='absolute hidden lg:block -left-16 -top-12'
+                                className="absolute -left-16 -top-12 hidden lg:block"
                             />
                             <Image
                                 src={MediumBubble}
                                 alt=""
                                 width={48}
                                 height={48}
-                                className='absolute hidden lg:block -top-20'
+                                className="absolute -top-20 hidden lg:block"
                             />
                             <h1
                                 className={`text-center lg:text-left ${belgiano.className}`}
