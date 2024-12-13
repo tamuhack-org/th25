@@ -10,34 +10,35 @@ export default function HomeGraphic() {
         if (typeof window !== "undefined") {
             const $ = require("jquery");
             window.$ = window.jQuery = $;
-            require("jquery.ripples"); // Load the Ripples plugin
+            require("jquery.ripples"); 
 
             if ($.fn.ripples) {
-                console.log("jQuery Ripples is active!");
-
-                // Apply ripples to the element with the background image
                 $("#home-image-container").ripples({
-                    resolution: 256,
-                    perturbance: 0.08,
+                    resolution: 512,
+                    perturbance: .02,
+                    dropRadius: 50,
                 });
-                $("#home-image-container").ripples("update");
-            } else {
-                console.log("jQuery Ripples is not active.");
+                $("#home-image-container").ripples("updateSize");
             }
         }
     }, []);
 
     return (
         <div id="relative" className="relative">
+            <div>
+                <script 
+                    src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js" 
+                    defer
+                ></script>
+            </div>
             <div
                 id="home-image-container"
                 style={{
-                    width: '800px',
-                    height: '600px',
+                    width: '600px',
+                    height: '500px',
                     overflow: 'hidden',
-                    position: 'relative',
                     background: 'url("/home_image.png") no-repeat center center',
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                 }}
             ></div>
             <Image
