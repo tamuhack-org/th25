@@ -2,18 +2,44 @@ import Image from 'next/image';
 import HomeImage from '@/../public/home_image.png';
 import Guy from '@/../public/guy.png';
 import BigBubble from '@/../public/big_bubble.png';
+import { useEffect } from 'react';
 
 export default function HomeGraphic() {
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const $ = require("jquery");
+            window.$ = window.jQuery = $;
+            require("jquery.ripples"); // Load the Ripples plugin
+
+            if ($.fn.ripples) {
+                console.log("jQuery Ripples is active!");
+
+                // Apply ripples to the element with the background image
+                $("#home-image-container").ripples({
+                    resolution: 256,
+                    perturbance: 0.08,
+                });
+                $("#home-image-container").ripples("update");
+            } else {
+                console.log("jQuery Ripples is not active.");
+            }
+        }
+    }, []);
+
     return (
-        <div className="relative">
-            <Image
-                src={HomeImage}
-                alt="Reflection of College Station in a puddle"
-                width={800}
-                height={600}
-                placeholder="empty"
-                className="mx-auto lg:mx-0"
-            />
+        <div id="relative" className="relative">
+            <div
+                id="home-image-container"
+                style={{
+                    width: '800px',
+                    height: '600px',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    background: 'url("/home_image.png") no-repeat center center',
+                    backgroundSize: 'cover',
+                }}
+            ></div>
             <Image
                 src={Guy}
                 alt="Lineart of a man walking"

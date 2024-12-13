@@ -18,3 +18,11 @@ body {
         text-wrap: balance;
     }
 }
+
+.home-image-container {
+    position: relative;
+    overflow: hidden; 
+    width: 800px; 
+    height: 600px;
+    margin: 0 auto;
+}
