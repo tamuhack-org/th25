@@ -14,6 +14,7 @@ export default function HomeGraphic() {
 
             if ($.fn.ripples) {
                 $("#home-image-container").ripples({
+                    // Change resolution, perturbance, and dropRadius to change the ripple effect
                     resolution: 512,
                     perturbance: .02,
                     dropRadius: 50,
