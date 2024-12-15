@@ -87,10 +87,10 @@ export default function Home() {
                     return date.getDay() === 6;
                 }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
                     <div key={item.id} className="flex flex-col w-full p-4 bg-white border border-black rounded-lg shadow-lg">
-                        <h3 className="text-xl font-bold">{item.eventName}</h3>
-                        <p>{item.description}</p>
-                        <p>{item.location}</p>
-                        <p>{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                        <h3 className="text-xl font-serif">{item.eventName}</h3>
+                        <p className="font-serif">{item.description}</p>
+                        <p className="font-serif">{item.location}</p>
+                        <p className="font-serif">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                     </div>
                 
                 ))}
@@ -105,10 +105,10 @@ export default function Home() {
                         return date.getDay() === 0;
                     }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
                         <div key={item.id} className="flex flex-col w-full p-4 bg-white border border-black rounded-lg shadow-lg">
-                            <h3 className="text-xl font-bold">{item.eventName}</h3>
-                            <p>{item.description}</p>
-                            <p>{item.location}</p>
-                            <p>{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                            <h3 className="text-xl font-serif">{item.eventName}</h3>
+                            <p className="font-serif">{item.description}</p>
+                            <p className="font-serif">{item.location}</p>
+                            <p className="font-serif">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                         </div>
                     ))}
                     </div>
