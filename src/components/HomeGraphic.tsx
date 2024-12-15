@@ -35,12 +35,13 @@ export default function HomeGraphic() {
             <div
                 id="home-image-container"
                 style={{
-                    width: '600px',
-                    height: '500px',
-                    overflow: 'hidden',
-                    background: 'url("/home_image.png") no-repeat center center',
-                    backgroundSize: 'contain',
-                }}
+                    maxWidth: '800px',     
+                width: '100%',
+                // Maintain a 4:3 aspect ratio: (600/800)*100% = 75%
+                paddingBottom: '75%',  
+                background: 'url("/home_image.png") no-repeat center center',
+                backgroundSize: 'contain'
+                }}             
             ></div>
             <Image
                 src={Guy}
