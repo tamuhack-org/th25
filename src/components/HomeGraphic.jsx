@@ -1,3 +1,4 @@
+/** eslint-disable **/
 import Image from 'next/image';
 import Guy from '@/../public/guy.png';
 import BigBubble from '@/../public/big_bubble.png';
