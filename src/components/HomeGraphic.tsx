@@ -1,25 +1,23 @@
 import Image from 'next/image';
-import HomeImage from '@/../public/home_image.png';
 import Guy from '@/../public/guy.png';
 import BigBubble from '@/../public/big_bubble.png';
 import { useEffect } from 'react';
 
 export default function HomeGraphic() {
-
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            const $ = require("jquery");
+        if (typeof window !== 'undefined') {
+            const $ = require('jquery');
             window.$ = window.jQuery = $;
-            require("jquery.ripples"); 
+            require('jquery.ripples');
 
             if ($.fn.ripples) {
-                $("#home-image-container").ripples({
+                $('#home-image-container').ripples({
                     // Change resolution, perturbance, and dropRadius to change the ripple effect
                     resolution: 512,
-                    perturbance: .02,
+                    perturbance: 0.02,
                     dropRadius: 50,
                 });
-                $("#home-image-container").ripples("updateSize");
+                $('#home-image-container').ripples('updateSize');
             }
         }
     }, []);
@@ -27,21 +25,22 @@ export default function HomeGraphic() {
     return (
         <div id="relative" className="relative">
             <div>
-                <script 
-                    src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js" 
+                <script
+                    src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js"
                     defer
                 ></script>
             </div>
             <div
                 id="home-image-container"
                 style={{
-                    maxWidth: '800px',     
-                width: '100%',
-                // Maintain a 4:3 aspect ratio: (600/800)*100% = 75%
-                paddingBottom: '75%',  
-                background: 'url("/home_image.png") no-repeat center center',
-                backgroundSize: 'contain'
-                }}             
+                    maxWidth: '800px',
+                    width: '100%',
+                    // Maintain a 4:3 aspect ratio: (600/800)*100% = 75%
+                    paddingBottom: '75%',
+                    background:
+                        'url("/home_image.png") no-repeat center center',
+                    backgroundSize: 'contain',
+                }}
             ></div>
             <Image
                 src={Guy}
