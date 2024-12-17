@@ -83,7 +83,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Gradient section */}
-                <div className="bg-gradient-to-b from-[#ffff] to-[#8CCBF8]">
+                <div className="bg-gradient-to-b from-[#ffff] to-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Info />
                     </div>
@@ -91,7 +91,9 @@ export default function Home() {
                 {/* Blue section */}
                 <div className="bg-[#8CCBF8]">{/* <FAQ /> */}</div>
             </main>
-            <TamuhackFooter />
+            <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
+                <TamuhackFooter />
+            </div>
         </>
     );
 }
