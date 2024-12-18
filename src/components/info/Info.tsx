@@ -11,13 +11,13 @@ gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
-const kis = localFont({
-    src: '../../pages/fonts/adobe-kis-vf-default-roman.ttf',
-});
+// const kis = localFont({
+//     src: '../../pages/fonts/adobe-kis-vf-default-roman.ttf',
+// });
 
 const Info = () => {
     useGSAP(() => {
-        const startPos = 0.05
+        const startPos = 0.05;
         // gsap.set('.car', {
         //     motionPath: {
         //         path: '#car-path',
@@ -29,7 +29,7 @@ const Info = () => {
         //     },
         // });
 
-        let tl = gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#car-container',
                 start: '30% 90%',
@@ -49,7 +49,7 @@ const Info = () => {
             },
             opacity: 0,
             immediateRender: true,
-            ease: 'none'
+            ease: 'none',
         });
     });
     return (
@@ -100,7 +100,7 @@ const Info = () => {
                 </div>
             </div>
             <div className="col-start-2 row-start-2 self-end">
-                <p className='max-w-prose'>
+                <p className="max-w-prose">
                     Note: Acceptances will be sent out on a rolling basis. If
                     you are accepted, you must check in before 11 AM or your
                     acceptance will be forfeited. We will have a waitlist line
