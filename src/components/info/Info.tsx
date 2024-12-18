@@ -17,7 +17,6 @@ const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
 
 const Info = () => {
     useGSAP(() => {
-
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#car-container',
@@ -33,7 +32,7 @@ const Info = () => {
                 path: '#car-path',
                 align: '#car-path',
                 alignOrigin: [0.5, 0.5],
-                start: .1,
+                start: 0.1,
                 end: 0.7,
                 autoRotate: true,
             },
@@ -43,13 +42,13 @@ const Info = () => {
         });
     });
     return (
-        <div className="relative flex flex-col items-center lg:grid place-items-center gap-8 py-10 lg:grid-cols-2 lg:grid-rows-2">
+        <div className="relative flex flex-col place-items-center items-center gap-8 py-10 lg:grid lg:grid-cols-2 lg:grid-rows-2">
             {/* -z-10 on the svg makes it disappear for some reason, so we add z-10 to all divs so that they are on top */}
             <div className="z-10 col-span-1 col-start-2 row-span-1 row-start-1 mt-10">
-                <h2 className={`text-7xl ${belgiano.className}`}>
+                <h2 className={`text-5xl lg:text-7xl ${belgiano.className}`}>
                     General Info
                 </h2>
-                <div className="mt-4 max-w-lg rounded-xl bg-white bg-opacity-60 p-6">
+                <div className="mt-4 max-w-lg rounded-xl bg-opacity-55 lg:bg-white lg:p-6">
                     <p>
                         TAMUhack is a 24-hour event where teams create
                         innovative software and hardware solutions to real-world
@@ -65,9 +64,12 @@ const Info = () => {
                     </div>
                 </div>
             </div>
-            <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
-                <h2 className={`text-7xl ${belgiano.className}`}>Hardware</h2>
-                <div className="mt-4 max-w-lg rounded-xl bg-white bg-opacity-60 p-6">
+            {/* Add padding here so that the box is larger for less image overlap */}
+            <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2 pt-12">
+                <h2 className={`text-5xl lg:text-7xl ${belgiano.className}`}>
+                    Hardware
+                </h2>
+                <div className="mt-4 max-w-lg rounded-xl bg-opacity-55 lg:bg-white lg:p-6">
                     <p>
                         At TAMUhack 2025,{' '}
                         <span className="underline">hardware</span> will be a{' '}
@@ -89,7 +91,7 @@ const Info = () => {
                     </p>
                 </div>
             </div>
-            <div className="col-start-2 row-start-2 self-end">
+            <div className="z-20 col-start-2 row-start-2 max-w-md rounded-xl bg-white bg-opacity-55 bg-contain bg-center bg-no-repeat p-6 lg:max-w-fit lg:self-end lg:bg-transparent lg:bg-[url('/acceptance_info.svg')]">
                 <p className="max-w-prose">
                     Note: Acceptances will be sent out on a rolling basis. If
                     you are accepted, you must check in before 11 AM or your
