@@ -17,17 +17,6 @@ const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
 
 const Info = () => {
     useGSAP(() => {
-        const startPos = 0.05;
-        // gsap.set('.car', {
-        //     motionPath: {
-        //         path: '#car-path',
-        //         align: '#car-path',
-        //         alignOrigin: [0.5, 0.5],
-        //         start: startPos,
-        //         end: 0.1,
-        //         autoRotate: true,
-        //     },
-        // });
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -44,7 +33,7 @@ const Info = () => {
                 path: '#car-path',
                 align: '#car-path',
                 alignOrigin: [0.5, 0.5],
-                start: startPos,
+                start: .1,
                 end: 0.7,
                 autoRotate: true,
             },
@@ -54,7 +43,7 @@ const Info = () => {
         });
     });
     return (
-        <div className="relative grid-cols-2 grid-rows-2 place-items-center gap-8 py-10 lg:grid">
+        <div className="relative flex flex-col items-center lg:grid place-items-center gap-8 py-10 lg:grid-cols-2 lg:grid-rows-2">
             {/* -z-10 on the svg makes it disappear for some reason, so we add z-10 to all divs so that they are on top */}
             <div className="z-10 col-span-1 col-start-2 row-span-1 row-start-1 mt-10">
                 <h2 className={`text-7xl ${belgiano.className}`}>
@@ -112,7 +101,7 @@ const Info = () => {
             </div>
             {/* Need to add extra margin to break out of box */}
             <div
-                className="absolute right-0 top-0 -mx-8 grid h-5/6 w-full grid-cols-1 grid-rows-1 justify-items-end lg:-mx-16"
+                className="absolute right-0 top-0 -mx-8 hidden h-5/6 w-full grid-cols-1 grid-rows-1 justify-items-end lg:-mx-16 lg:grid"
                 id="car-container"
             >
                 <svg
@@ -137,7 +126,7 @@ const Info = () => {
                     height={64}
                     placeholder="empty"
                     className="car z-10 col-start-1 row-start-1 hidden w-fit lg:block"
-                    loading='eager'
+                    loading="eager"
                 />
             </div>
         </div>
