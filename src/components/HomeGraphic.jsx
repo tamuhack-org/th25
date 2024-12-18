@@ -41,6 +41,7 @@ export default function HomeGraphic() {
                     background:
                         'url("/home_image.png") no-repeat center center',
                     backgroundSize: 'contain',
+                    marginInline: 'auto'
                 }}
             ></div>
             <Image
