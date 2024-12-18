@@ -38,6 +38,7 @@ const Info = () => {
                 markers: true,
             },
         });
+
         tl.to('.car', {
             motionPath: {
                 path: '#car-path',
@@ -136,6 +137,7 @@ const Info = () => {
                     height={64}
                     placeholder="empty"
                     className="car z-10 col-start-1 row-start-1 hidden w-fit lg:block"
+                    loading='eager'
                 />
             </div>
         </div>
