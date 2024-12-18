@@ -83,7 +83,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Gradient section */}
-                <div className="bg-gradient-to-b from-[#ffff] to-[#BFE4FF]">
+                <div className="bg-gradient-to-b from-[#ffff] to-[#BFE4FF] mt-40">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Info />
                     </div>
