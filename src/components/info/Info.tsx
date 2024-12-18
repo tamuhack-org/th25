@@ -78,7 +78,7 @@ const Info = () => {
                     </p>
                     <p className="mt-6">
                         TAMUhack will be providing{' '}
-                        <span className="underline">hardware supplies </span>to{' '}
+                        <span className="underline">hardware supplies</span> to{' '}
                         <span className="font-bold">accepted participants</span>{' '}
                         on campus on a{' '}
                         <span className="font-bold">
