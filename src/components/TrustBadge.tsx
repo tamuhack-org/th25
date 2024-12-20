@@ -18,6 +18,8 @@ const TrustBadge = () => {
                 src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
                 alt="Major League Hacking 2025 Hackathon Season"
                 style={{ width: '100%' }}
+                width={100}
+                height={100}
             />
         </a>
     );
