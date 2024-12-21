@@ -11,13 +11,9 @@ gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
-// const kis = localFont({
-//     src: '../../pages/fonts/adobe-kis-vf-default-roman.ttf',
-// });
 
 const Info = () => {
     useGSAP(() => {
-
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#car-container',
@@ -33,7 +29,7 @@ const Info = () => {
                 path: '#car-path',
                 align: '#car-path',
                 alignOrigin: [0.5, 0.5],
-                start: .1,
+                start: 0.1,
                 end: 0.7,
                 autoRotate: true,
             },
@@ -43,89 +39,112 @@ const Info = () => {
         });
     });
     return (
-        <div className="relative flex flex-col items-center lg:grid place-items-center gap-8 py-10 lg:grid-cols-2 lg:grid-rows-2">
+        <div className="relative font-poppins">
             {/* -z-10 on the svg makes it disappear for some reason, so we add z-10 to all divs so that they are on top */}
-            <div className="z-10 col-span-1 col-start-2 row-span-1 row-start-1 mt-10">
-                <h2 className={`text-7xl ${belgiano.className}`}>
-                    General Info
-                </h2>
-                <div className="mt-4 max-w-lg rounded-xl bg-white bg-opacity-60 p-6">
-                    <p>
-                        TAMUhack is a 24-hour event where teams create
-                        innovative software and hardware solutions to real-world
-                        problems in a community of mentorship.
-                    </p>
-                    <h3 className="mt-8 text-lg">Location</h3>
-                    <p>Bethancourt Ballroom (MSC 2300)</p>
-                    <p>730 Olsen Blvd, College Station, TX 77845</p>
-                    <div className="mt-6">
-                        <a href="#" className="underline">
-                            Building Map & Parking
-                        </a>
+            <p className="z-10 mx-auto max-w-screen-lg text-center text-base lg:text-3xl">
+                TAMUhack is a <span className="font-bold">24-hour event</span>{' '}
+                where teams create innovative{' '}
+                <span className="font-bold">software and hardware</span>{' '}
+                solutions to real-world problems, all while being supported by a{' '}
+                <span className="font-bold">community of mentorship.</span>
+            </p>
+            <div className="flex flex-col place-items-center items-center gap-8 py-10 lg:grid lg:grid-cols-2 lg:grid-rows-2">
+                <div className="z-10 col-span-1 col-start-2 row-span-1 row-start-1 mt-10">
+                    <h2 className={`text-4xl lg:text-7xl ${belgiano.className}`}>
+                        Location
+                    </h2>
+                    <div className="mt-4 max-w-lg rounded-xl bg-transparent lg:bg-white bg-opacity-60 lg:p-6">
+                        <p>Bethancourt Ballroom (MSC 2300)</p>
+                        <p>730 Olsen Blvd, College Station, TX 77845</p>
+                        <div className="mt-6">
+                            <a href="#" className="underline">
+                                Building Map & Parking
+                            </a>
+                        </div>
+                        <p className="mt-6">
+                            Information on parking will be updated at a later
+                            date!
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
-                <h2 className={`text-7xl ${belgiano.className}`}>Hardware</h2>
-                <div className="mt-4 max-w-lg rounded-xl bg-white bg-opacity-60 p-6">
-                    <p>
-                        At TAMUhack 2025,{' '}
-                        <span className="underline">hardware</span> will be a{' '}
-                        <span className="font-bold">week-long</span> hackathon
-                        Teams may begin working on January 19th and have until
-                        January 26th, when teams will showcase their project at
-                        the venue in specific challenges or the general track.
-                    </p>
-                    <p className="mt-6">
-                        TAMUhack will be providing{' '}
-                        <span className="underline">hardware supplies</span> to{' '}
-                        <span className="font-bold">accepted participants</span>{' '}
-                        on campus on a{' '}
-                        <span className="font-bold">
-                            first come, first served{' '}
-                        </span>
-                        basis. Using personal/outside hardware is allowed, but
-                        it is your responsibility to obtain it!
+                <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
+                    <h2 className={`text-5xl ${belgiano.className} hidden lg:block`}>
+                        Interested in hardware?
+                    </h2>
+                    <h2 className={`text-4xl ${belgiano.className} block lg:hidden`}>
+                        Hardware
+                    </h2>
+                    <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base lg:text-lg">
+                        <p className="uppercase text-white">
+                            Hardware will begin Jan 19th
+                        </p>
+                    </div>
+                    <div className="mt-4 max-w-lg rounded-xl bg-transparent lg:bg-white bg-opacity-60 lg:p-6">
+                        <p>
+                            At TAMUhack 2025,{' '}
+                            <span className="underline">hardware</span> will be
+                            a <span className="font-bold">week-long</span>{' '}
+                            hackathon Teams may begin working on January 19th
+                            and have until January 26th, when teams will
+                            showcase their project at the venue in specific
+                            challenges or the general track.
+                        </p>
+                        <p className="mt-6">
+                            TAMUhack will be providing{' '}
+                            <span className="underline">hardware supplies</span>{' '}
+                            to{' '}
+                            <span className="font-bold">
+                                accepted participants
+                            </span>{' '}
+                            on campus on a{' '}
+                            <span className="font-bold">
+                                first come, first served{' '}
+                            </span>
+                            basis. Using personal/outside hardware is allowed,
+                            but it is your responsibility to obtain it!
+                        </p>
+                    </div>
+                </div>
+                <div className="col-start-2 row-start-2 self-end">
+                    <p className="max-w-prose">
+                        Note: Acceptances will be sent out on a rolling basis.
+                        If you are accepted, you must check in before 11 AM or
+                        your acceptance will be forfeited. We will have a
+                        waitlist line for students who are not accepted. After
+                        11AM, we will admit people from the waitlist line until
+                        the MSC capacity has been reached.
                     </p>
                 </div>
-            </div>
-            <div className="col-start-2 row-start-2 self-end">
-                <p className="max-w-prose">
-                    Note: Acceptances will be sent out on a rolling basis. If
-                    you are accepted, you must check in before 11 AM or your
-                    acceptance will be forfeited. We will have a waitlist line
-                    for students who are not accepted. After 11AM, we will admit
-                    people from the waitlist line until the MSC capacity has
-                    been reached.
-                </p>
             </div>
             {/* Need to add extra margin to break out of box */}
             <div
-                className="absolute right-0 top-0 -mx-8 hidden h-5/6 w-full grid-cols-1 grid-rows-1 justify-items-end lg:-mx-16 lg:grid"
+                className="absolute right-0 top-0 -mx-8 hidden h-3/4 w-full grid-cols-1 grid-rows-1 justify-items-end lg:-mx-16 lg:grid"
                 id="car-container"
             >
                 <svg
-                    viewBox="0 0 1331 916"
+                    className="z-0 col-start-1 row-start-1 h-full w-full object-cover"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 1338 900"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="z-0 col-start-1 row-start-1 h-full object-cover"
                 >
                     <path
-                        d="M304 10.5L263.745 61.1358C237.71 93.8835 207.213 122.82 173.144 147.099L149.071 164.254C112.78 190.117 82.4613 223.467 60.1633 262.051L40.4206 296.214C8.60715 351.264 1.77152 417.266 21.628 477.668V477.668C40.9504 536.445 83.795 584.569 139.942 610.562L156.811 618.371C225.85 650.332 302.587 661.895 377.979 651.697L404.487 648.111C447.422 642.304 488.776 628.026 526.149 606.107L570.928 579.844C582.239 573.21 592.273 564.607 600.556 554.442L620.175 530.364C645.473 499.316 642.556 454.016 613.486 426.469V426.469C590.335 404.532 556.007 399.251 527.333 413.217L491.302 430.767C470.139 441.075 452.055 456.761 438.86 476.255L429.845 489.574C399.968 533.715 396.144 590.515 419.834 638.262V638.262C436.637 672.129 465.768 698.279 501.246 711.343L508.887 714.156C551.186 729.731 597.964 727.7 638.754 708.517L676 691L701.248 675.58C733.099 656.127 770.698 648.288 807.669 653.393L826.78 656.031C868.567 661.8 894.102 704.966 879.036 744.367V744.367C877.35 748.776 875.193 752.99 872.602 756.936L854.968 783.788C833.186 816.955 850.549 861.703 889 871.5V871.5V871.5C1011.55 916.974 1146.38 916.801 1268.82 871.014L1321 851.5"
+                        d="M184 9.99988L98.3707 130.642C80.5127 155.802 65.5178 182.876 53.6644 211.362L29.3108 269.888C6.80316 323.978 4.48623 384.356 22.7825 440.012V440.012C43.9202 504.311 90.7899 556.956 152.212 585.391L160.811 589.372C229.851 621.333 306.587 632.896 381.98 622.698L408.487 619.112C451.422 613.305 492.776 599.027 530.149 577.108L574.928 550.845C586.239 544.211 596.273 535.608 604.556 525.443L624.176 501.364C649.473 470.317 646.557 425.017 617.486 397.47V397.47C594.336 375.532 560.007 370.252 531.334 384.218L495.302 401.768C474.139 412.075 456.055 427.762 442.861 447.256L433.846 460.575C403.968 504.716 400.144 561.515 423.834 609.263V609.263C440.638 643.13 469.769 669.28 505.246 682.344L512.887 685.157C555.187 700.732 601.964 698.701 642.754 679.518L680 662.001L705.248 646.581C737.099 627.128 774.698 619.289 811.67 624.394L830.781 627.032C872.567 632.801 898.103 675.967 883.037 715.368V715.368C881.351 719.777 879.193 723.991 876.602 727.937L858.968 754.789C837.186 787.956 854.549 832.704 893 842.501V842.501V842.501C1017.49 888.693 1151.91 901.445 1282.87 879.484L1327.5 872"
                         stroke="white"
-                        strokeOpacity="0.55"
-                        strokeWidth="20"
-                        strokeLinecap="round"
+                        stroke-opacity="0.55"
+                        stroke-width="20"
+                        stroke-linecap="round"
                         id="car-path"
                     />
                 </svg>
+
                 <Image
                     src={Car}
                     alt=""
                     width={64}
                     height={64}
                     placeholder="empty"
-                    className="car z-10 col-start-1 row-start-1 hidden w-fit lg:block"
+                    className="car col-start-1 row-start-1 hidden w-fit lg:block"
                     loading="eager"
                 />
             </div>
