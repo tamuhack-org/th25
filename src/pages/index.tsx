@@ -11,7 +11,6 @@ import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
-const kis = localFont({ src: '/fonts/adobe-kis-vf-default-roman.ttf' });
 
 export default function Home() {
     return (
@@ -49,7 +48,7 @@ export default function Home() {
                                     TAMUHACK
                                 </h1>
                                 <h2
-                                    className={`text-center text-xl lg:text-left lg:text-3xl ${kis.className} text-balance`}
+                                    className={`text-center text-xl lg:text-left lg:text-3xl font-poppins text-balance`}
                                 >
                                     January 25-26, 2025 @ MSC 2300
                                 </h2>
