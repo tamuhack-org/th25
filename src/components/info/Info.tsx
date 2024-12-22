@@ -17,7 +17,7 @@ const Info = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#car-container',
-                start: '30% 90%',
+                start: 'center 90%',
                 end: 'bottom center',
                 scrub: true,
                 markers: true,
@@ -29,7 +29,7 @@ const Info = () => {
                 path: '#car-path',
                 align: '#car-path',
                 alignOrigin: [0.5, 0.5],
-                start: 0.1,
+                start: 0.15,
                 end: 0.7,
                 autoRotate: true,
             },
