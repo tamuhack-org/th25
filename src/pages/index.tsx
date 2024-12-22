@@ -28,14 +28,14 @@ export default function Home() {
                                     alt=""
                                     width={32}
                                     height={32}
-                                    className="absolute -left-16 -top-12 hidden lg:block"
+                                    className="absolute -left-8 -top-12 hidden lg:block"
                                 />
                                 <Image
                                     src={MediumBubble}
                                     alt=""
                                     width={48}
                                     height={48}
-                                    className="absolute -top-20 hidden lg:block"
+                                    className="absolute left-8 -top-20 hidden lg:block"
                                 />
                                 <h1
                                     className={`text-center lg:text-left ${belgiano.className}`}
