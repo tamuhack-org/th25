@@ -92,7 +92,7 @@ const Info = () => {
                             At TAMUhack 2025,{' '}
                             <span className="underline">hardware</span> will be
                             a <span className="font-bold">week-long</span>{' '}
-                            hackathon Teams may begin working on January 19th
+                            hackathon. Teams may begin working on January 19th
                             and have until January 26th, when teams will
                             showcase their project at the venue in specific
                             challenges or the general track.
