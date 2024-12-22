@@ -106,8 +106,8 @@ const Info = () => {
                     </div>
                 </div>
                 <div className="col-start-2 row-start-2 self-end">
-                    <p className="max-w-prose">
-                        Note: Acceptances will be sent out on a rolling basis.
+                    <p className="max-w-prose text-sm bg-contain bg-no-repeat bg-center bg-[url('/acceptance_info.svg')]">
+                        <span className="font-bold">Note:</span> Acceptances will be sent out on a rolling basis.
                         If you are accepted, you must check in before 11 AM or
                         your acceptance will be forfeited. We will have a
                         waitlist line for students who are not accepted. After
