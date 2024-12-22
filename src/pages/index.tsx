@@ -48,11 +48,11 @@ export default function Home() {
                                     TAMUHACK
                                 </h1>
                                 <h2
-                                    className={`text-center text-xl lg:text-left lg:text-3xl font-poppins text-balance`}
+                                    className={`mt-4 text-center text-xl lg:text-left lg:text-3xl font-poppins text-balance`}
                                 >
                                     January 25-26, 2025 @ MSC 2300
                                 </h2>
-                                <div className="mx-auto mt-6 flex items-start justify-center gap-4 font-poppins lg:hidden">
+                                <div className="mx-auto mt-4 flex items-start justify-center gap-4 font-poppins lg:hidden">
                                     <Link
                                         href="https://register.tamuhack.com/"
                                         className="rounded-lg border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
