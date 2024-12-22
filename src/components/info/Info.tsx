@@ -41,19 +41,23 @@ const Info = () => {
     return (
         <div className="relative font-poppins">
             {/* -z-10 on the svg makes it disappear for some reason, so we add z-10 to all divs so that they are on top */}
-            <p className="z-30 mx-auto max-w-screen-lg text-center text-base lg:text-2xl">
-                TAMUhack is a <span className="font-bold">24-hour event</span>{' '}
-                where teams create innovative{' '}
-                <span className="font-bold">software and hardware</span>{' '}
-                solutions to real-world problems, all while being supported by a{' '}
-                <span className="font-bold">community of mentorship.</span>
-            </p>
+            <div className="z-10 relative">
+                <p className="mx-auto max-w-screen-lg text-center text-base !leading-relaxed lg:text-2xl">
+                    TAMUhack is a <span className="font-bold">24-hour event</span>{' '}
+                    where teams create innovative{' '}
+                    <span className="font-bold">software and hardware</span>{' '}
+                    solutions to real-world problems, all while being supported by a{' '}
+                    <span className="font-bold">community of mentorship.</span>
+                </p>
+            </div>
             <div className="flex flex-col place-items-center items-center gap-8 py-10 lg:grid lg:grid-cols-2 lg:grid-rows-2">
                 <div className="z-10 col-span-1 col-start-2 row-span-1 row-start-1 mt-10">
-                    <h2 className={`text-4xl lg:text-7xl ${belgiano.className}`}>
+                    <h2
+                        className={`text-4xl lg:text-7xl ${belgiano.className}`}
+                    >
                         Location
                     </h2>
-                    <div className="mt-4 max-w-lg rounded-xl bg-transparent lg:bg-white bg-opacity-60 lg:p-6">
+                    <div className="mt-4 max-w-lg rounded-xl bg-transparent bg-opacity-60 lg:bg-white lg:p-6">
                         <p>Bethancourt Ballroom (MSC 2300)</p>
                         <p>730 Olsen Blvd, College Station, TX 77845</p>
                         <div className="mt-6">
@@ -68,10 +72,14 @@ const Info = () => {
                     </div>
                 </div>
                 <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
-                    <h2 className={`text-5xl ${belgiano.className} hidden lg:block`}>
+                    <h2
+                        className={`text-5xl ${belgiano.className} hidden lg:block`}
+                    >
                         Interested in hardware?
                     </h2>
-                    <h2 className={`text-4xl ${belgiano.className} block lg:hidden`}>
+                    <h2
+                        className={`text-4xl ${belgiano.className} block lg:hidden`}
+                    >
                         Hardware
                     </h2>
                     <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base lg:text-lg">
@@ -79,7 +87,7 @@ const Info = () => {
                             Hardware will begin Jan 19th
                         </p>
                     </div>
-                    <div className="mt-4 max-w-lg rounded-xl bg-transparent lg:bg-white bg-opacity-60 lg:p-6">
+                    <div className="mt-4 max-w-lg rounded-xl bg-transparent bg-opacity-60 lg:bg-white lg:p-6">
                         <p>
                             At TAMUhack 2025,{' '}
                             <span className="underline">hardware</span> will be
@@ -106,13 +114,14 @@ const Info = () => {
                     </div>
                 </div>
                 <div className="col-start-2 row-start-2 self-end">
-                    <p className="max-w-prose text-sm bg-contain bg-no-repeat bg-center bg-[url('/acceptance_info.svg')]">
-                        <span className="font-bold">Note:</span> Acceptances will be sent out on a rolling basis.
-                        If you are accepted, you must check in before 11 AM or
-                        your acceptance will be forfeited. We will have a
-                        waitlist line for students who are not accepted. After
-                        11AM, we will admit people from the waitlist line until
-                        the MSC capacity has been reached.
+                    <p className="max-w-prose bg-[url('/acceptance_info.svg')] bg-contain bg-center bg-no-repeat text-sm">
+                        <span className="font-bold">Note:</span> Acceptances
+                        will be sent out on a rolling basis. If you are
+                        accepted, you must check in before 11 AM or your
+                        acceptance will be forfeited. We will have a waitlist
+                        line for students who are not accepted. After 11AM, we
+                        will admit people from the waitlist line until the MSC
+                        capacity has been reached.
                     </p>
                 </div>
             </div>
