@@ -9,8 +9,14 @@
 	
 	function hasWebGLSupport() {
 		var canvas = document.createElement('canvas');
+		console.log('Checking WebGL support...');
 		var context = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 		var result = context && context.getExtension('OES_texture_float') && context.getExtension('OES_texture_float_linear');
+		console.log('WebGL Support:', {
+			hasContext: !!context,
+			hasFloat: !!context?.getExtension('OES_texture_float'),
+			hasLinear: !!context?.getExtension('OES_texture_float_linear')
+		});
 		canvas.remove();
 		return result;
 	}
@@ -62,16 +68,21 @@
 	// =========================
 
 	var Ripples = function (el, options) {
-
 		var that = this;
 		
 		this.$el = $(el);
 		this.$el.addClass('ripples');
 		
 		// If this element doesn't have a background image, don't apply this effect to it
-		this.$img = this.$el.find('img[data-nimg="fill"]');
+		this.$img = this.$el
 		if (this.$img.length === 0) return;
-		var backgroundUrl = this.$img.attr('src');
+		var backgroundUrl = this.$img.prop('src');
+		console.log('Ripples constructor called with:', {
+			element: el,
+			hasImage: !!this.$img.length,
+			imageComplete: this.$img[0]?.complete,
+			backgroundUrl: backgroundUrl
+		});
 		
 		this.resolution = options.resolution || 256;
 		this.textureDelta = new Float32Array([1 / this.resolution, 1 / this.resolution]);
@@ -87,6 +98,7 @@
 				return;
 			}
 			gl = that.context;
+			
 			
 			function isPowerOfTwo(x) {
 				return (x & (x - 1)) == 0;
@@ -166,8 +178,8 @@
 			$(window).on('resize', function() {
 				if (that.$img && that.$img.length) {
 					if (that.$img.outerWidth() != canvas.width || that.$img.outerHeight() != canvas.height) {
-						canvas.width = that.$img.outerWidth();
-						canvas.height = that.$img.outerHeight();
+						canvas.width = that.$img[0].naturalWidth;
+						canvas.height = that.$img[0].naturalHeight;						
 					}
 				}
 			});		
@@ -187,8 +199,8 @@
 				console.log('Image complete status:', that.$img[0].complete);
 				console.log('Image natural dimensions:', that.$img[0].naturalWidth, that.$img[0].naturalHeight);
 				console.log('Image loaded, initializing canvas');
-				canvas.width = that.$img.outerWidth();
-				canvas.height = that.$img.outerHeight();
+				canvas.width = that.$img[0].naturalWidth;
+				canvas.height = that.$img[0].naturalHeight;				
 				canvas.style.position = 'absolute';
 				canvas.style.top = '0';
 				canvas.style.left = '0';
@@ -200,6 +212,13 @@
 
 				that.$el.append(canvas);
 				that.context = gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+				console.log('WebGL Context Creation:', {
+					success: !!that.context,
+					canvas: {
+						width: canvas.width,
+						height: canvas.height
+					}
+				});
 				if (!that.context) {
 					console.error('Failed to get WebGL context');
 					return;
@@ -221,6 +240,11 @@
 				var image = new Image;
 				image.crossOrigin = 'anonymous';		
 				image.onload = function() {
+					console.log('Background image loaded:', {
+						width: image.width,
+						height: image.height,
+						hasContext: !!that.context
+					});
 					initializeWebGLResources(that, image, canvas);
 				};
 				image.onerror = function() {
@@ -234,8 +258,8 @@
 			console.log('Background URL:', backgroundUrl);
 			console.log('Image complete status:', this.$img[0].complete);
 			console.log('Image natural dimensions:', this.$img[0].naturalWidth, this.$img[0].naturalHeight);
-			canvas.width = that.$img.outerWidth();
-			canvas.height = that.$img.outerHeight();
+			canvas.width = that.$img[0].naturalWidth;
+			canvas.height = that.$img[0].naturalHeight;			
 			canvas.style.position = 'absolute';
 			canvas.style.top = '0';
 			canvas.style.left = '0';
@@ -266,6 +290,11 @@
 			var image = new Image;
 			image.crossOrigin = 'anonymous';		
 			image.onload = function() {
+				console.log('Background image loaded:', {
+					width: image.width,
+					height: image.height,
+					hasContext: !!that.context
+				});
 				initializeWebGLResources(that, image, canvas);
 			};
 			image.onerror = function() {
@@ -342,8 +371,22 @@
 			var containerHeight = this.$el.outerHeight();
 			
 			// Calculate scale based on object-fit: contain (which we set in the Image component)
-			var scale = Math.min(containerWidth / this.backgroundWidth, containerHeight / this.backgroundHeight);
+			var scale = Math.min(
+				containerWidth / this.$img[0].naturalWidth,
+				containerHeight / this.$img[0].naturalHeight
+			);			
+			if (this.lastScale && Math.abs(this.lastScale - scale) < 0.001) return;
+			this.lastScale = scale;
+
 			
+			console.log('Texture Boundaries:', {
+				imageWidth,
+				imageHeight,
+				containerWidth,
+				containerHeight,
+				scale
+			});			
+
 			var backgroundWidth = this.backgroundWidth * scale;
 			var backgroundHeight = this.backgroundHeight * scale;
 			

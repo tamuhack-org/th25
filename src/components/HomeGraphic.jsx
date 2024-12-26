@@ -18,12 +18,18 @@ export default function HomeGraphic() {
                     onLoad={() => {
                         console.log('jQuery loaded');
                     }}
+                    onError={() => {
+                        console.error('Failed to load jQuery');
+                    }}
                 />
                 <Script 
                     src="/js/jquery.ripples.js" 
                     strategy="afterInteractive"
                     onLoad={() => {
                         console.log('Ripples plugin loaded');
+                    }}
+                    onError={() => {
+                        console.error('Failed to load ripples plugin');
                     }}
                 />
             </div>
@@ -40,6 +46,10 @@ export default function HomeGraphic() {
                     onLoad={(e) => {
                         console.log('Image loaded:', e.target);
                         console.log('Image ref:', imageRef.current);
+                        console.log('Natural dimensions:', {
+                            width: imageRef.current.naturalWidth,
+                            height: imageRef.current.naturalHeight
+                        });
                         // Wait a brief moment to ensure image is fully rendered
                         if (!imageRef.current) {
                             console.error('Image ref not available');
@@ -73,7 +83,7 @@ export default function HomeGraphic() {
                                     imageRef: !!imageRef.current
                                 });
                             }
-                        }, 250);
+                        }, 500);
                         }}
                     src={HomeImage}
                     alt="Home image"
