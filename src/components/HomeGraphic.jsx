@@ -8,6 +8,28 @@ import Script from 'next/script'
 
 export default function HomeGraphic() {
     const imageRef = useRef(null);
+    const initRipples = () => {
+        try {
+            if (window.jQuery && window.jQuery.fn.ripples && imageRef.current) {
+                window.jQuery(imageRef.current).ripples({
+                    resolution: 512,
+                    perturbance: 0.02,
+                    dropRadius: 50,
+                });
+                console.log('Ripples initialized successfully');
+            }
+        } catch (error) {
+            console.error('Error initializing ripples:', error);
+            console.error('Error details:', {
+                hasContext: !!window.WebGLRenderingContext,
+                imageLoaded: imageRef.current?.complete,
+                imageDimensions: {
+                    width: imageRef.current?.naturalWidth,
+                    height: imageRef.current?.naturalHeight
+                }
+            });
+        }
+    };
 
     return (
         <div id="relative" className="relative">
@@ -45,46 +67,17 @@ export default function HomeGraphic() {
                     ref={imageRef}
                     onLoad={(e) => {
                         console.log('Image loaded:', e.target);
-                        console.log('Image ref:', imageRef.current);
                         console.log('Natural dimensions:', {
-                            width: imageRef.current.naturalWidth,
-                            height: imageRef.current.naturalHeight
+                            width: imageRef.current?.naturalWidth,
+                            height: imageRef.current?.naturalHeight
                         });
                         // Wait a brief moment to ensure image is fully rendered
                         if (!imageRef.current) {
                             console.error('Image ref not available');
                             return;
                         }
-                        setTimeout(() => {
-                            if (window.jQuery && window.jQuery.fn.ripples && imageRef.current) {
-                                try {
-                                    window.jQuery(imageRef.current).ripples({
-                                        resolution: 512,
-                                        perturbance: 0.02,
-                                        dropRadius: 50,
-                                    });
-                                    console.log('Ripples initialized successfully');
-                                } catch (error) {
-                                    console.error('Error initializing ripples:', error);
-                                    // Log the actual error for debugging
-                                    console.error('Error details:', {
-                                        hasContext: !!window.WebGLRenderingContext,
-                                        imageLoaded: imageRef.current.complete,
-                                        imageDimensions: {
-                                            width: imageRef.current.width,
-                                            height: imageRef.current.height
-                                        }
-                                    });
-                                }
-                            } else {
-                                console.error('Dependencies not loaded:', {
-                                    jquery: !!window.jQuery,
-                                    ripples: !!(window.jQuery && window.jQuery.fn.ripples),
-                                    imageRef: !!imageRef.current
-                                });
-                            }
-                        }, 500);
-                        }}
+                        setTimeout(initRipples, 500);
+                    }}
                     src={HomeImage}
                     alt="Home image"
                     fill
