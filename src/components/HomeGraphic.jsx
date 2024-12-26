@@ -2,47 +2,87 @@
 import Image from 'next/image';
 import Guy from '@/../public/guy.png';
 import BigBubble from '@/../public/big_bubble.png';
-import { useEffect } from 'react';
+import HomeImage from '@/../public/home_image.png';
+import { useEffect, useRef } from 'react';
+import Script from 'next/script'
 
 export default function HomeGraphic() {
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const $ = require('jquery');
-            window.$ = window.jQuery = $;
-            require('jquery.ripples');
-
-            if ($.fn.ripples) {
-                $('#home-image-container').ripples({
-                    // Change resolution, perturbance, and dropRadius to change the ripple effect
-                    resolution: 512,
-                    perturbance: 0.02,
-                    dropRadius: 50,
-                });
-                $('#home-image-container').ripples('updateSize');
-            }
-        }
-    }, []);
+    const imageRef = useRef(null);
 
     return (
         <div id="relative" className="relative">
             <div>
-                <script
-                    src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js"
-                    defer
-                ></script>
+                <Script 
+                    src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    strategy="beforeInteractive"
+                    onLoad={() => {
+                        console.log('jQuery loaded');
+                    }}
+                />
+                <Script 
+                    src="/js/jquery.ripples.js" 
+                    strategy="afterInteractive"
+                    onLoad={() => {
+                        console.log('Ripples plugin loaded');
+                    }}
+                />
             </div>
-            <div
-                id="home-image-container"
-                style={{
-                    maxWidth: '800px',
-                    width: '100%',
-                    // Maintain a 4:3 aspect ratio: (600/800)*100% = 75%
-                    paddingBottom: '75%',
-                    background:
-                        'url("/home_image.png") no-repeat center center',
-                    backgroundSize: 'contain',
-                }}
-            ></div>
+
+            <div style={{
+                maxWidth: '800px',
+                width: '100%',
+                position: 'relative',
+                paddingBottom: '75%',
+                overflow: 'hidden'
+            }}>
+                <Image
+                    ref={imageRef}
+                    onLoad={(e) => {
+                        console.log('Image loaded:', e.target);
+                        console.log('Image ref:', imageRef.current);
+                        // Wait a brief moment to ensure image is fully rendered
+                        if (!imageRef.current) {
+                            console.error('Image ref not available');
+                            return;
+                        }
+                        setTimeout(() => {
+                            if (window.jQuery && window.jQuery.fn.ripples && imageRef.current) {
+                                try {
+                                    window.jQuery(imageRef.current).ripples({
+                                        resolution: 512,
+                                        perturbance: 0.02,
+                                        dropRadius: 50,
+                                    });
+                                    console.log('Ripples initialized successfully');
+                                } catch (error) {
+                                    console.error('Error initializing ripples:', error);
+                                    // Log the actual error for debugging
+                                    console.error('Error details:', {
+                                        hasContext: !!window.WebGLRenderingContext,
+                                        imageLoaded: imageRef.current.complete,
+                                        imageDimensions: {
+                                            width: imageRef.current.width,
+                                            height: imageRef.current.height
+                                        }
+                                    });
+                                }
+                            } else {
+                                console.error('Dependencies not loaded:', {
+                                    jquery: !!window.jQuery,
+                                    ripples: !!(window.jQuery && window.jQuery.fn.ripples),
+                                    imageRef: !!imageRef.current
+                                });
+                            }
+                        }, 250);
+                        }}
+                    src={HomeImage}
+                    alt="Home image"
+                    fill
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    style={{ objectFit: 'contain' }}
+                    priority
+                />
+            </div>
             <Image
                 src={Guy}
                 alt="Lineart of a man walking"
