@@ -113,7 +113,7 @@ const Sponsors: React.FC = () => {
                         <Image
                             className="w-4/5"
                             src={`/sponsors/${image.src}`}
-                            alt={image.name}
+                            alt={`${image.name} homepage`}
                             width={500}
                             height={300}
                         />
@@ -134,7 +134,7 @@ const Sponsors: React.FC = () => {
                                     : 'w-2/3'
                             }
                             src={`/sponsors/${image.src}`}
-                            alt={image.name}
+                            alt={`${image.name} homepage`}
                             width={500}
                             height={300}
                         />
@@ -155,7 +155,7 @@ const Sponsors: React.FC = () => {
                                     : 'w-4/5 sm:w-3/4'
                             }
                             src={`/sponsors/${image.src}`}
-                            alt={image.name}
+                            alt={`${image.name} homepage`}
                             width={500}
                             height={300}
                         />
@@ -182,7 +182,7 @@ const Sponsors: React.FC = () => {
                         <Image
                             className="w-1/2 md:w-1/3"
                             src={`/sponsors/${image.src}`}
-                            alt={image.name}
+                            alt={`${image.name} homepage`}
                             width={500}
                             height={300}
                         />
