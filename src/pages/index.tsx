@@ -9,6 +9,7 @@ import SmallBubble from '../../public/small_bubble.png';
 import MediumBubble from '../../public/med_bubble.png';
 import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
+import Sponsors from '@/components/Sponsors';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
@@ -91,6 +92,10 @@ export default function Home() {
                 <div className="bg-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <FAQ />
+                    </div>
+                    
+                    <div className="pb-6">
+                        <Sponsors />
                     </div>
                 </div>
             </main>
