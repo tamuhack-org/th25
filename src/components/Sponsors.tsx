@@ -96,7 +96,7 @@ const Sponsors: React.FC = () => {
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
                     id="thank-you"
-                    className="text-dark text-3xl font-serif leading-relaxed sm:text-4xl lg:text-6xl"
+                    className="text-dark font-serif text-3xl leading-relaxed sm:text-4xl lg:text-6xl"
                 >
                     Thank you to our sponsors...
                 </h1>
@@ -165,7 +165,7 @@ const Sponsors: React.FC = () => {
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
                     id="thank-you"
-                    className="text-dark text-3xl font-serif leading-relaxed sm:text-4xl lg:text-6xl"
+                    className="text-dark font-serif text-3xl leading-relaxed sm:text-4xl lg:text-6xl"
                 >
                     and partners...
                 </h1>

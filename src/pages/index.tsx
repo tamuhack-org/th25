@@ -36,7 +36,7 @@ export default function Home() {
                                     alt=""
                                     width={48}
                                     height={48}
-                                    className="absolute left-8 -top-20 hidden lg:block"
+                                    className="absolute -top-20 left-8 hidden lg:block"
                                 />
                                 <h1
                                     className={`text-center lg:text-left ${belgiano.className}`}
@@ -49,7 +49,7 @@ export default function Home() {
                                     TAMUHACK
                                 </h1>
                                 <h2
-                                    className={`mt-4 text-center text-xl lg:text-left lg:text-3xl font-poppins text-balance`}
+                                    className={`mt-4 text-balance text-center font-poppins text-xl lg:text-left lg:text-3xl`}
                                 >
                                     January 25-26, 2025 @ MSC 2300
                                 </h2>
@@ -93,7 +93,7 @@ export default function Home() {
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <FAQ />
                     </div>
-                    
+
                     <div className="pb-6">
                         <Sponsors />
                     </div>

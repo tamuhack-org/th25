@@ -41,12 +41,14 @@ const Info = () => {
     return (
         <div className="relative font-poppins">
             {/* -z-10 on the svg makes it disappear for some reason, so we add z-10 to all divs so that they are on top */}
-            <div className="z-10 relative">
+            <div className="relative z-10">
                 <p className="mx-auto max-w-screen-lg text-center text-base !leading-relaxed lg:text-2xl">
-                    TAMUhack is a <span className="font-bold">24-hour event</span>{' '}
-                    where teams create innovative{' '}
+                    TAMUhack is a{' '}
+                    <span className="font-bold">24-hour event</span> where teams
+                    create innovative{' '}
                     <span className="font-bold">software and hardware</span>{' '}
-                    solutions to real-world problems, all while being supported by a{' '}
+                    solutions to real-world problems, all while being supported
+                    by a{' '}
                     <span className="font-bold">community of mentorship.</span>
                 </p>
             </div>
