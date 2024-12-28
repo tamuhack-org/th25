@@ -1,6 +1,7 @@
 // components/Sponsors.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 interface SponsorImage {
     src: string;
@@ -91,6 +92,48 @@ const partners: SponsorImage[] = [
 ];
 
 const Sponsors: React.FC = () => {
+    const [isMediumScreen, setIsMediumScreen] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        setIsMediumScreen(mediaQuery.matches);
+
+        const handleScreenChange = (e: MediaQueryListEvent) => {
+            setIsMediumScreen(e.matches)
+        };
+
+        mediaQuery.addEventListener('change', handleScreenChange);
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleScreenChange);
+        };
+    }, []);
+
+    const getSpanSize = (index: number) => {
+        const classes = []
+        if (isMediumScreen){
+            if (imagesSm.length % 4 === 3 && (index >= imagesSm.length - 3 && index <= imagesSm.length - 1 ) )
+                classes.push('col-span-4');
+            else if (imagesSm.length % 4 === 1 && index === imagesSm.length - 1){
+                classes.push('col-span-4');
+                classes.push('col-start-5');
+            }
+            else if(imagesSm.length % 4 === 2 && index === imagesSm.length - 2){
+                classes.push('col-span-3')
+                classes.push('col-start-4')
+            }
+            else
+                classes.push('col-span-3');
+        }
+            
+        else {
+            classes.push('col-span-1');
+        }
+
+            return classes.join(' ');
+    }
+
+
     return (
         <>
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
@@ -101,15 +144,19 @@ const Sponsors: React.FC = () => {
                     Thank you to our sponsors...
                 </h1>
             </div>
-            <div className="grid w-full grid-cols-2 gap-16 md:grid-cols-4">
-                {imagesLg.map((image) => (
+            <div className="grid w-full grid-cols-2 gap-16 md:grid-cols-4 pb-16">
+                {imagesLg.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
-                    >
+                        className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
+                            imagesLg.length % 2 !== 0 && index === imagesLg.length - 1
+                                ? 'col-start-2'
+                                : ''
+                        }`}
+                    >   
                         <Image
                             className="w-4/5"
                             src={`/sponsors/${image.src}`}
@@ -119,13 +166,17 @@ const Sponsors: React.FC = () => {
                         />
                     </Link>
                 ))}
-                {imagesMd.map((image) => (
+                {imagesMd.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                        className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
+                            imagesMd.length % 2 !== 0 && index === imagesMd.length -1
+                                ? 'col-start-2'
+                                : ''
+                        }`}
                     >
                         <Image
                             className={
@@ -140,27 +191,29 @@ const Sponsors: React.FC = () => {
                         />
                     </Link>
                 ))}
-                {imagesSm.map((image) => (
-                    <Link
-                        key={image.name}
-                        href={image.href}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="col-span-1 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
-                    >
-                        <Image
-                            className={
-                                image.name === 'USAA'
-                                    ? 'w-1/2 sm:w-1/3'
-                                    : 'w-4/5 sm:w-3/4'
-                            }
-                            src={`/sponsors/${image.src}`}
-                            alt={`${image.name} homepage`}
-                            width={500}
-                            height={300}
-                        />
-                    </Link>
-                ))}
+            </div>
+            <div className="grid w-full grid-cols-2 gap-16 md:grid-cols-12">
+                {imagesSm.map((image, index) => (
+                        <Link
+                            key={image.name}
+                            href={image.href}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className={`${getSpanSize(index)} flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0`}
+                        > 
+                            <Image
+                                className={
+                                    image.name === 'USAA'
+                                        ? 'w-1/2 sm:w-1/3'
+                                        : 'w-4/5 sm:w-3/4'
+                                }
+                                src={`/sponsors/${image.src}`}
+                                alt={`${image.name} homepage`}
+                                width={500}
+                                height={300}
+                            />
+                        </Link>
+                    ))}
             </div>
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
