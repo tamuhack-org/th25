@@ -90,11 +90,8 @@ export default function Home() {
                 </div>
                 {/* Blue section */}
                 <div className="bg-[#BFE4FF]">
-                    <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
+                    <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
                         <FAQ />
-                    </div>
-
-                    <div className="pb-6">
                         <Sponsors />
                     </div>
                 </div>
