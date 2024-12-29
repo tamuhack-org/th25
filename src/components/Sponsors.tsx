@@ -24,47 +24,22 @@ const imagesLg: SponsorImage[] = [
 
 const imagesMd: SponsorImage[] = [
     {
-        src: 'phillips-66.png',
-        name: 'Phillips 66',
-        href: 'https://www.phillips66.com/',
-    },
-    {
         src: 'ieee.png',
         name: 'IEEE TAMU',
         href: 'https://ieee-tamu.org/',
+    },
+    {
+        src: 'phillips-66.png',
+        name: 'Phillips 66',
+        href: 'https://www.phillips66.com/',
     },
 ];
 
 const imagesSm: SponsorImage[] = [
     {
-        src: 'l3harris.png',
-        name: 'L3Harris',
-        href: 'https://www.l3harris.com/',
-    },
-    {
-        src: 'gm.png',
-        name: 'General Motors',
-        href: 'https://www.gm.com/',
-    },
-    {
-        src: 'pimco.png',
-        name: 'PIMCO',
-        href: 'https://www.pimco.com/',
-    },
-    {
-        src: 'usaa.png',
-        name: 'USAA',
-        href: 'https://www.usaa.com/',
-    },
-    {
         src: 'baker-hughes.png',
         name: 'Baker Hughes',
         href: 'https://www.bakerhughes.com/',
-    },
-    {
-        src: 'jpmorgan.png',
-        name: 'JPMorgan Chase & Co.',
-        href: 'https://www.jpmorganchase.com/',
     },
     {
         src: 'frogslayer.png',
@@ -72,9 +47,34 @@ const imagesSm: SponsorImage[] = [
         href: 'https://frogslayer.com/',
     },
     {
+        src: 'gm.png',
+        name: 'General Motors',
+        href: 'https://www.gm.com/',
+    },
+    {
+        src: 'jpmorgan.png',
+        name: 'JPMorgan Chase & Co.',
+        href: 'https://www.jpmorganchase.com/',
+    },
+    {
+        src: 'l3harris.png',
+        name: 'L3Harris',
+        href: 'https://www.l3harris.com/',
+    },
+    {
+        src: 'pimco.png',
+        name: 'PIMCO',
+        href: 'https://www.pimco.com/',
+    },
+    {
         src: 'texas-instruments.png',
         name: 'Texas Instruments',
         href: 'https://www.ti.com/',
+    },
+    {
+        src: 'usaa.png',
+        name: 'USAA',
+        href: 'https://www.usaa.com/',
     },
 ];
 
