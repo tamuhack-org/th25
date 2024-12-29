@@ -99,7 +99,7 @@ const Sponsors: React.FC = () => {
         setIsMediumScreen(mediaQuery.matches);
 
         const handleScreenChange = (e: MediaQueryListEvent) => {
-            setIsMediumScreen(e.matches)
+            setIsMediumScreen(e.matches);
         };
 
         mediaQuery.addEventListener('change', handleScreenChange);
@@ -110,29 +110,34 @@ const Sponsors: React.FC = () => {
     }, []);
 
     const getSpanSize = (index: number) => {
-        const classes = []
-        if (isMediumScreen){
-            if (imagesSm.length % 4 === 3 && (index >= imagesSm.length - 3 && index <= imagesSm.length - 1 ) )
-                classes.push('col-span-4');
-            else if (imagesSm.length % 4 === 1 && index === imagesSm.length - 1){
-                classes.push('col-span-4');
+        const classes = [];
+        if (isMediumScreen) {
+            classes.push('col-span-4');
+            if (imagesSm.length % 4 === 3 && index === imagesSm.length - 3)
+                classes.push('col-start-3');
+            else if (
+                imagesSm.length % 4 === 1 &&
+                index === imagesSm.length - 1
+            ) {
+                classes.push('col-start-7');
+            } else if (
+                imagesSm.length % 4 === 2 &&
+                index === imagesSm.length - 2
+            ) {
                 classes.push('col-start-5');
             }
-            else if(imagesSm.length % 4 === 2 && index === imagesSm.length - 2){
-                classes.push('col-span-3')
-                classes.push('col-start-4')
-            }
-            else
-                classes.push('col-span-3');
+        } else {
+            classes.push('col-span-2');
+            if (imagesSm.length % 2 !== 0 && index === imagesSm.length - 1)
+                classes.push('col-start-2');
         }
-            
-        else {
-            classes.push('col-span-1');
-        }
+        return classes.join(' ');
+    };
 
-            return classes.join(' ');
-    }
-
+    const getWidth = (name: string) => {
+        if (name === 'USAA') return 'w-1/2 sm:w-1/3';
+        else return 'w-4/5 sm:w-3/4';
+    };
 
     return (
         <>
@@ -144,7 +149,7 @@ const Sponsors: React.FC = () => {
                     Thank you to our sponsors...
                 </h1>
             </div>
-            <div className="grid w-full grid-cols-2 gap-16 md:grid-cols-4 pb-16">
+            <div className="grid w-full grid-cols-2 gap-16 pb-16 md:grid-cols-4">
                 {imagesLg.map((image, index) => (
                     <Link
                         key={image.name}
@@ -152,11 +157,12 @@ const Sponsors: React.FC = () => {
                         target="_blank"
                         rel="noreferrer noopener"
                         className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
-                            imagesLg.length % 2 !== 0 && index === imagesLg.length - 1
+                            imagesLg.length % 2 !== 0 &&
+                            index === imagesLg.length - 1
                                 ? 'col-start-2'
                                 : ''
                         }`}
-                    >   
+                    >
                         <Image
                             className="w-4/5"
                             src={`/sponsors/${image.src}`}
@@ -173,7 +179,8 @@ const Sponsors: React.FC = () => {
                         target="_blank"
                         rel="noreferrer noopener"
                         className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
-                            imagesMd.length % 2 !== 0 && index === imagesMd.length -1
+                            imagesMd.length % 2 !== 0 &&
+                            index === imagesMd.length - 1
                                 ? 'col-start-2'
                                 : ''
                         }`}
@@ -192,28 +199,24 @@ const Sponsors: React.FC = () => {
                     </Link>
                 ))}
             </div>
-            <div className="grid w-full grid-cols-2 gap-16 md:grid-cols-12">
+            <div className="grid w-full grid-cols-4 gap-16 md:grid-cols-16">
                 {imagesSm.map((image, index) => (
-                        <Link
-                            key={image.name}
-                            href={image.href}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className={`${getSpanSize(index)} flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0`}
-                        > 
-                            <Image
-                                className={
-                                    image.name === 'USAA'
-                                        ? 'w-1/2 sm:w-1/3'
-                                        : 'w-4/5 sm:w-3/4'
-                                }
-                                src={`/sponsors/${image.src}`}
-                                alt={`${image.name} homepage`}
-                                width={500}
-                                height={300}
-                            />
-                        </Link>
-                    ))}
+                    <Link
+                        key={image.name}
+                        href={image.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className={`${getSpanSize(index)} flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0`}
+                    >
+                        <Image
+                            className={getWidth(image.name)}
+                            src={`/sponsors/${image.src}`}
+                            alt={`${image.name} homepage`}
+                            width={500}
+                            height={300}
+                        />
+                    </Link>
+                ))}
             </div>
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
