@@ -89,14 +89,14 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Blue section */}
-                <div className="bg-[#BFE4FF]">
+                <div className="bg-[#BFE4FF] hidden">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
                         <FAQ />
                         <Sponsors />
                     </div>
                 </div>
             </main>
-            <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
+            <div className="bg-[#BFE4FF] mx-auto max-w-[2000px] px-8 lg:px-16 pt-16">
                 <TamuhackFooter />
             </div>
         </>
