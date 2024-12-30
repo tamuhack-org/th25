@@ -127,7 +127,7 @@ const Info = () => {
                     >
                         Hardware
                     </h2>
-                    <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base lg:text-lg">
+                    <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base font-semibold">
                         <p className="uppercase text-white">
                             Hardware will begin Jan 19th
                         </p>
