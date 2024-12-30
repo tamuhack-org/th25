@@ -49,7 +49,7 @@ export default function Home() {
                                     TAMUHACK
                                 </h1>
                                 <h2
-                                    className={`mt-4 text-balance text-center font-poppins text-xl lg:text-left lg:text-3xl`}
+                                    className={`text-balance text-center font-poppins text-xl lg:text-left lg:text-3xl`}
                                 >
                                     January 25-26, 2025 @ MSC 2300
                                 </h2>
@@ -68,7 +68,7 @@ export default function Home() {
                                         Mentor
                                     </Link>
                                 </div>
-                                <div className="mt-6 hidden font-poppins text-sm lg:block">
+                                <div className="mt-3 hidden font-poppins text-sm lg:block">
                                     <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
                                         24 Hours
                                     </span>
