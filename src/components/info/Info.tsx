@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useRef, useEffect } from 'react';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(MotionPathPlugin);
@@ -13,7 +14,14 @@ gsap.registerPlugin(ScrollTrigger);
 const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
 
 const Info = () => {
-    useGSAP(() => {
+    const tlRef = useRef<gsap.core.Timeline | null>(null);
+
+    const createTimeline = (initialProgress = 0) => {
+        if (tlRef.current) {
+            tlRef.current.kill();
+            tlRef.current = null;
+        }
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#car-container',
@@ -28,7 +36,7 @@ const Info = () => {
             motionPath: {
                 path: '#car-path',
                 align: '#car-path',
-                alignOrigin: [0.5, 0.5],
+                alignOrigin: [0.5, 1],
                 start: 0.15,
                 end: 0.7,
                 autoRotate: true,
@@ -37,7 +45,32 @@ const Info = () => {
             immediateRender: true,
             ease: 'none',
         });
-    });
+
+        tl.progress(initialProgress);
+
+        tlRef.current = tl;
+    };
+
+    //! Can't use layoutEffect here cuz pages renders this on the server? doesn't rly impact it though it seems like
+    useEffect(() => {
+        createTimeline();
+
+        const handleResize = () => {
+            if (!tlRef.current) return;
+
+            const oldProgress = tlRef.current.progress();
+
+            createTimeline(oldProgress);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            if (tlRef.current) {
+                tlRef.current.kill();
+            }
+        };
+    }, []);
     return (
         <div className="relative font-poppins">
             {/* -z-10 on the svg makes it disappear for some reason, so we add z-10 to all divs so that they are on top */}
