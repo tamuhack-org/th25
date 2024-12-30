@@ -41,8 +41,18 @@
 			return null;
 		}
 
+		// Add context state validation
+		if (gl.isContextLost()) {
+			console.error('WebGL context is lost');
+			return null;
+		}
+
 		function compileSource(type, source) {
 			var shader = gl.createShader(type);
+			if (!shader) {
+				console.error('Failed to create shader');
+				return null;
+			}
 			gl.shaderSource(shader, source);
 			gl.compileShader(shader);
 			if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
@@ -253,6 +263,8 @@
 				canvas.style.position = 'absolute';
 				canvas.style.top = '0';
 				canvas.style.left = '0';
+				canvas.style.width = '100%';
+				canvas.style.height = '100%';
 				canvas.style.zIndex = '100';
 				canvas.style.pointerEvents = 'none';
 				canvas.style.mixBlendMode = 'multiply';
