@@ -93,7 +93,7 @@ const Timer = ({ className }: { className?: string }) => {
             )}
             aria-label="Countdown until TAMUhack 2025 starts"
         >
-            <span className={`pr-4 text-2xl lg:text-6xl ${swily.className}`}>
+            <span className={`pr-4 text-2xl lg:text-7xl ${swily.className}`}>
                 {days}:{hours}:{minutes}:{seconds}
             </span>
             <p className={`-mt-3 font-poppins text-lg lg:text-2xl`}>
