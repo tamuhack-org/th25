@@ -56,14 +56,6 @@ const Info = () => {
             immediateRender: true,
         });
 
-        gsap.to('#circle', {
-            fill: 'green',
-            duration: 1.5,
-            yoyo: true,
-            repeat: -1,
-            ease: 'power1.inOut',
-        });
-
         tl.progress(initialProgress);
 
         tlRef.current = tl;
