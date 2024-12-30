@@ -1,6 +1,7 @@
 // components/Sponsors.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 interface SponsorImage {
     src: string;
@@ -23,47 +24,22 @@ const imagesLg: SponsorImage[] = [
 
 const imagesMd: SponsorImage[] = [
     {
-        src: 'phillips-66.png',
-        name: 'Phillips 66',
-        href: 'https://www.phillips66.com/',
-    },
-    {
         src: 'ieee.png',
         name: 'IEEE TAMU',
         href: 'https://ieee-tamu.org/',
+    },
+    {
+        src: 'phillips-66.png',
+        name: 'Phillips 66',
+        href: 'https://www.phillips66.com/',
     },
 ];
 
 const imagesSm: SponsorImage[] = [
     {
-        src: 'l3harris.png',
-        name: 'L3Harris',
-        href: 'https://www.l3harris.com/',
-    },
-    {
-        src: 'gm.png',
-        name: 'General Motors',
-        href: 'https://www.gm.com/',
-    },
-    {
-        src: 'pimco.png',
-        name: 'PIMCO',
-        href: 'https://www.pimco.com/',
-    },
-    {
-        src: 'usaa.png',
-        name: 'USAA',
-        href: 'https://www.usaa.com/',
-    },
-    {
         src: 'baker-hughes.png',
         name: 'Baker Hughes',
         href: 'https://www.bakerhughes.com/',
-    },
-    {
-        src: 'jpmorgan.png',
-        name: 'JPMorgan Chase & Co.',
-        href: 'https://www.jpmorganchase.com/',
     },
     {
         src: 'frogslayer.png',
@@ -71,9 +47,34 @@ const imagesSm: SponsorImage[] = [
         href: 'https://frogslayer.com/',
     },
     {
+        src: 'gm.png',
+        name: 'General Motors',
+        href: 'https://www.gm.com/',
+    },
+    {
+        src: 'jpmorgan.png',
+        name: 'JPMorgan Chase & Co.',
+        href: 'https://www.jpmorganchase.com/',
+    },
+    {
+        src: 'l3harris.png',
+        name: 'L3Harris',
+        href: 'https://www.l3harris.com/',
+    },
+    {
+        src: 'pimco.png',
+        name: 'PIMCO',
+        href: 'https://www.pimco.com/',
+    },
+    {
         src: 'texas-instruments.png',
         name: 'Texas Instruments',
         href: 'https://www.ti.com/',
+    },
+    {
+        src: 'usaa.png',
+        name: 'USAA',
+        href: 'https://www.usaa.com/',
     },
 ];
 
@@ -91,6 +92,53 @@ const partners: SponsorImage[] = [
 ];
 
 const Sponsors: React.FC = () => {
+    const [isMediumScreen, setIsMediumScreen] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        setIsMediumScreen(mediaQuery.matches);
+
+        const handleScreenChange = (e: MediaQueryListEvent) => {
+            setIsMediumScreen(e.matches);
+        };
+
+        mediaQuery.addEventListener('change', handleScreenChange);
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleScreenChange);
+        };
+    }, []);
+
+    const getSpanSize = (index: number) => {
+        const classes = [];
+        if (isMediumScreen) {
+            classes.push('col-span-4');
+            if (imagesSm.length % 4 === 3 && index === imagesSm.length - 3)
+                classes.push('col-start-3');
+            else if (
+                imagesSm.length % 4 === 1 &&
+                index === imagesSm.length - 1
+            ) {
+                classes.push('col-start-7');
+            } else if (
+                imagesSm.length % 4 === 2 &&
+                index === imagesSm.length - 2
+            ) {
+                classes.push('col-start-5');
+            }
+        } else {
+            classes.push('col-span-2');
+            if (imagesSm.length % 2 !== 0 && index === imagesSm.length - 1)
+                classes.push('col-start-2');
+        }
+        return classes.join(' ');
+    };
+
+    const getWidth = (name: string) => {
+        if (name === 'USAA') return 'w-1/2 sm:w-1/3';
+        else return 'w-4/5 sm:w-3/4';
+    };
+
     return (
         <>
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
@@ -101,14 +149,19 @@ const Sponsors: React.FC = () => {
                     Thank you to our sponsors...
                 </h1>
             </div>
-            <div className="grid w-full grid-cols-2 gap-16 md:grid-cols-4">
-                {imagesLg.map((image) => (
+            <div className="grid w-full grid-cols-2 gap-16 pb-16 md:grid-cols-4">
+                {imagesLg.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                        className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
+                            imagesLg.length % 2 !== 0 &&
+                            index === imagesLg.length - 1
+                                ? 'col-start-2'
+                                : ''
+                        }`}
                     >
                         <Image
                             className="w-4/5"
@@ -119,13 +172,18 @@ const Sponsors: React.FC = () => {
                         />
                     </Link>
                 ))}
-                {imagesMd.map((image) => (
+                {imagesMd.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                        className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
+                            imagesMd.length % 2 !== 0 &&
+                            index === imagesMd.length - 1
+                                ? 'col-start-2'
+                                : ''
+                        }`}
                     >
                         <Image
                             className={
@@ -140,20 +198,18 @@ const Sponsors: React.FC = () => {
                         />
                     </Link>
                 ))}
-                {imagesSm.map((image) => (
+            </div>
+            <div className="grid w-full grid-cols-4 gap-16 md:grid-cols-16">
+                {imagesSm.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="col-span-1 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                        className={`${getSpanSize(index)} flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0`}
                     >
                         <Image
-                            className={
-                                image.name === 'USAA'
-                                    ? 'w-1/2 sm:w-1/3'
-                                    : 'w-4/5 sm:w-3/4'
-                            }
+                            className={getWidth(image.name)}
                             src={`/sponsors/${image.src}`}
                             alt={`${image.name} homepage`}
                             width={500}
