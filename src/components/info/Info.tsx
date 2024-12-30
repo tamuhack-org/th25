@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { MotionPathPlugin } from 'gsap/dist/MotionPathPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(MotionPathPlugin);
@@ -106,9 +107,9 @@ const Info = () => {
                         <p>Bethancourt Ballroom (MSC 2300)</p>
                         <p>730 Olsen Blvd, College Station, TX 77845</p>
                         <div className="mt-6">
-                            <a href="#" className="underline">
+                            <Link href="/buildingMap.png" target='_blank' rel='noreferrer noopener' className="underline">
                                 View Building Map
-                            </a>
+                            </Link>
                         </div>
                         <p className="mt-6">
                             Information on parking will be updated here at a
