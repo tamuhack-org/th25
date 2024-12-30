@@ -57,11 +57,11 @@ const Info = () => {
         });
 
         gsap.to('#circle', {
-            fill: 'green', // Target color
-            duration: 2, // Duration of one pulse
-            yoyo: true, // Makes the animation reverse back to the original state
-            repeat: -1, // Loops the animation infinitely
-            ease: 'power1.inOut', // Smooth pulsing effect
+            fill: 'green',
+            duration: 1.5,
+            yoyo: true,
+            repeat: -1,
+            ease: 'power1.inOut',
         });
 
         tl.progress(initialProgress);
