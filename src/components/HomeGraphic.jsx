@@ -4,7 +4,7 @@ import Guy from '@/../public/guy.png';
 import BigBubble from '@/../public/big_bubble.png';
 import HomeImage from '@/../public/home_image.png';
 import { useEffect, useRef } from 'react';
-import Script from 'next/script'
+import Script from 'next/script';
 
 export default function HomeGraphic() {
     const imageRef = useRef(null);
@@ -25,8 +25,8 @@ export default function HomeGraphic() {
                 imageLoaded: imageRef.current?.complete,
                 imageDimensions: {
                     width: imageRef.current?.naturalWidth,
-                    height: imageRef.current?.naturalHeight
-                }
+                    height: imageRef.current?.naturalHeight,
+                },
             });
         }
     };
@@ -34,7 +34,7 @@ export default function HomeGraphic() {
     return (
         <div id="relative" className="relative">
             <div>
-                <Script 
+                <Script
                     src="https://code.jquery.com/jquery-3.6.0.min.js"
                     strategy="beforeInteractive"
                     onLoad={() => {
@@ -44,8 +44,8 @@ export default function HomeGraphic() {
                         console.error('Failed to load jQuery');
                     }}
                 />
-                <Script 
-                    src="/js/jquery.ripples.js" 
+                <Script
+                    src="/js/jquery.ripples.js"
                     strategy="afterInteractive"
                     onLoad={() => {
                         console.log('Ripples plugin loaded');
@@ -56,19 +56,21 @@ export default function HomeGraphic() {
                 />
             </div>
 
-            <div style={{
-                maxWidth: '800px',
-                width: '100%',
-                position: 'relative',
-                overflow: 'hidden'
-            }}>
+            <div
+                style={{
+                    maxWidth: '800px',
+                    width: '100%',
+                    position: 'relative',
+                    overflow: 'hidden',
+                }}
+            >
                 <Image
                     ref={imageRef}
                     onLoad={(e) => {
                         console.log('Image loaded:', e.target);
                         console.log('Natural dimensions:', {
                             width: imageRef.current?.naturalWidth,
-                            height: imageRef.current?.naturalHeight
+                            height: imageRef.current?.naturalHeight,
                         });
                         // Wait a brief moment to ensure image is fully rendered
                         if (!imageRef.current) {

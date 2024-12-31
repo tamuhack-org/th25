@@ -43,18 +43,18 @@
             return null;
         }
 
-		// Add context state validation
-		if (gl.isContextLost()) {
-			console.error('WebGL context is lost');
-			return null;
-		}
+        // Add context state validation
+        if (gl.isContextLost()) {
+            console.error('WebGL context is lost');
+            return null;
+        }
 
         function compileSource(type, source) {
             var shader = gl.createShader(type);
-			if (!shader) {
-				console.error('Failed to create shader');
-				return null;
-			}
+            if (!shader) {
+                console.error('Failed to create shader');
+                return null;
+            }
             gl.shaderSource(shader, source);
             gl.compileShader(shader);
             if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
@@ -322,30 +322,30 @@
             });
         }
 
-		function setupCanvas(that, width, height) {
-			if (!width || !height) {
-				console.error('Invalid canvas dimensions:', width, height);
-				return null;
-			}
-			try {
-				var canvas = document.createElement('canvas');
-				canvas.width = width;
-				canvas.height = height;
-				canvas.style.position = 'absolute';
-				canvas.style.top = '0';
-				canvas.style.left = '0';
-				canvas.style.zIndex = '100';
-				canvas.style.pointerEvents = 'none';
-				canvas.style.mixBlendMode = 'multiply';
-				that.canvas = canvas;
-				that.$el.css('position', 'relative');  // Ensure proper positioning context
-				that.$el.append(canvas);
-				return canvas;
-			} catch (e) {
-				console.error('Failed to create canvas:', e);
-				return null;
-			}
-		}	
+        function setupCanvas(that, width, height) {
+            if (!width || !height) {
+                console.error('Invalid canvas dimensions:', width, height);
+                return null;
+            }
+            try {
+                var canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                canvas.style.position = 'absolute';
+                canvas.style.top = '0';
+                canvas.style.left = '0';
+                canvas.style.zIndex = '100';
+                canvas.style.pointerEvents = 'none';
+                canvas.style.mixBlendMode = 'multiply';
+                that.canvas = canvas;
+                that.$el.css('position', 'relative'); // Ensure proper positioning context
+                that.$el.append(canvas);
+                return canvas;
+            } catch (e) {
+                console.error('Failed to create canvas:', e);
+                return null;
+            }
+        }
 
         function initWebGLContext(canvas) {
             if (!canvas) {
