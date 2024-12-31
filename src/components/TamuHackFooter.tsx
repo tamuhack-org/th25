@@ -45,7 +45,7 @@ const TamuhackFooter = () => {
         },
         {
             name: 'Discord',
-            link: 'https://discord.gg/VZyKP4JcC3',
+            link: 'https://tamuhack.org/discord',
         },
     ];
 
