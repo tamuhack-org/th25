@@ -328,18 +328,62 @@
                 return null;
             }
             try {
+                // Remove any existing canvas
+                that.$el.find('canvas').remove();
+
                 var canvas = document.createElement('canvas');
+
+                // Set both DOM and WebGL dimensions
                 canvas.width = width;
                 canvas.height = height;
-                canvas.style.position = 'absolute';
-                canvas.style.top = '0';
-                canvas.style.left = '0';
-                canvas.style.zIndex = '100';
-                canvas.style.pointerEvents = 'none';
-                canvas.style.mixBlendMode = 'multiply';
+
+                // Set explicit styles with px units
+                Object.assign(canvas.style, {
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: width + 'px',
+                    height: height + 'px',
+                    zIndex: '2',
+                    pointerEvents: 'auto',
+                    backgroundColor: 'transparent',
+                    display: 'block',
+                });
+
+                console.log('Creating canvas with dimensions:', {
+                    width,
+                    height,
+                    styleWidth: canvas.style.width,
+                    styleHeight: canvas.style.height,
+                });
+
                 that.canvas = canvas;
-                that.$el.css('position', 'relative'); // Ensure proper positioning context
+
+                // Ensure proper positioning context
+                that.$el.css({
+                    position: 'relative',
+                    overflow: 'visible',
+                    width: width + 'px',
+                    height: height + 'px',
+                });
+
+                // Append canvas as the last child
                 that.$el.append(canvas);
+
+                // Verify canvas was appended with correct dimensions
+                var appendedCanvas = that.$el.find('canvas');
+                console.log('Canvas appended:', {
+                    found: appendedCanvas.length > 0,
+                    dimensions: {
+                        width: appendedCanvas.width(),
+                        height: appendedCanvas.height(),
+                        domWidth: canvas.offsetWidth,
+                        domHeight: canvas.offsetHeight,
+                        styleWidth: canvas.style.width,
+                        styleHeight: canvas.style.height,
+                    },
+                });
+
                 return canvas;
             } catch (e) {
                 console.error('Failed to create canvas:', e);
