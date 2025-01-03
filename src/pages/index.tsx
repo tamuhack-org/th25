@@ -1,6 +1,7 @@
 import TamuhackFooter from '@/components/TamuHackFooter';
 import Header from '@/components/Header';
 import Timer from '@/components/Timer';
+import Schedule from '@/components/Schedule';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from "react";
@@ -19,14 +20,6 @@ interface ScheduleItem {
 
 export default function Home() {
     const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
-
-    useEffect(() => {
-        const fetchSchedule = async () => {
-          const fetchResult = await fetch('https://team.tamuhack.org/api/hh24-new').then((res) => res.json());
-          setScheduleItems(fetchResult);
-        }
-        fetchSchedule();
-      }, []);
 
       
     return (
@@ -75,47 +68,11 @@ export default function Home() {
                 </div>
             </main>
 
-            {/*schedule*/}
-            <div id="schedule" className="flex z-10 w-full max-w-[1200px] h-full">
-            <h2 className="font-serif text-3xl lg:text-8xl">Schedule</h2>
 
-            <div className="flex flex-row gap-2 sm:gap-3 lg:gap-6 w-full">
-            <h3 className="w-full font-serif text-center max-[425px]:text-[12px] text-lg sm:text-2xl lg:text-4xl">Saturday</h3>
-            <div className="flex flex-col gap-1">
-                {scheduleItems?.filter((item) => {
-                    const date = new Date(item.date);
-                    return date.getDay() === 6;
-                }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
-                    <div key={item.id} className="flex flex-col w-full p-4 bg-white border border-black rounded-lg shadow-lg">
-                        <h3 className="text-xl font-serif">{item.eventName}</h3>
-                        <p className="font-serif">{item.description}</p>
-                        <p className="font-serif">{item.location}</p>
-                        <p className="font-serif">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-                    </div>
-                
-                ))}
-            </div>
-                
-                </div>
-                <div className="flex flex-row gap-2 sm:gap-3 lg:gap-6 w-full">
-                    <h3 className="w-full font-serif text-center max-[425px]:text-[12px] text-lg sm:text-2xl lg:text-4xl">Sunday</h3>
-                    <div className="flex flex-col gap-1">
-                    {scheduleItems?.filter((item) => {
-                        const date = new Date(item.date);
-                        return date.getDay() === 0;
-                    }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((item) => (
-                        <div key={item.id} className="flex flex-col w-full p-4 bg-white border border-black rounded-lg shadow-lg">
-                            <h3 className="text-xl font-serif">{item.eventName}</h3>
-                            <p className="font-serif">{item.description}</p>
-                            <p className="font-serif">{item.location}</p>
-                            <p className="font-serif">{new Date(item.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
-                        </div>
-                    ))}
-                    </div>
-                </div>
-            </div>
 
-            <TamuhackFooter />
+           <Schedule/>
+            <TamuhackFooter /> 
         </div>
+        
     );
-}
+};
