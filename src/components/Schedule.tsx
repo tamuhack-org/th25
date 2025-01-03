@@ -57,10 +57,10 @@ const Schedule: React.FC = () => {
     }
 
     return (
-        <div id="schedule" className="z-10 flex w-full flex-col">
+        <div id="schedule" className="z-10 flex w-full flex-col font-poppins">
             <div className="mb-8">
                 <div className="mb-2 flex items-end">
-                    <h2 className="font-serif text-3xl lg:text-8xl">
+                    <h2 className="font-poppins text-3xl lg:text-8xl">
                         Schedule
                     </h2>
                     <span className="rotate-270 mb-2 ml-2 text-8xl">↘</span>
