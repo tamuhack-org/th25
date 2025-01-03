@@ -10,6 +10,7 @@ import MediumBubble from '../../public/med_bubble.png';
 import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 import Sponsors from '@/components/Sponsors';
+import Prizes from '@/components/Prizes';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
@@ -86,6 +87,7 @@ export default function Home() {
                 <div className="mt-40 bg-gradient-to-b from-[#ffff] to-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Info />
+                        <Prizes />
                     </div>
                 </div>
                 {/* Blue section */}
