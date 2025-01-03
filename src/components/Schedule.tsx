@@ -58,17 +58,18 @@ const Schedule: React.FC = () => {
 
     return (
         <div id="schedule" className="z-10 flex w-full flex-col font-poppins">
-            <div className="mb-8">
+            <div className="mb-8 flex flex-col w-fit">
                 <div className="mb-2 flex items-end">
                     <h2 className="font-poppins text-3xl lg:text-8xl">
                         Schedule
                     </h2>
                     <span className="rotate-270 mb-2 ml-2 text-8xl">↘</span>
                 </div>
-                <button className="rounded-full bg-black px-6 py-3 text-sm text-white">
-                    FIND THE HARDWARE SCHEDULE{' '}
-                    <span className="font-bold">HERE</span>
-                </button>
+                <div className="mt-3 w-full grid p-2 place-items-center rounded-full bg-black text-base font-semibold">
+                    <p className="uppercase text-white">
+                        Find the hardware schedule <a href='#' className='underline'>Here</a>
+                    </p>
+                </div>
             </div>
 
             <div className="mb-6 rounded-lg border border-black p-4 lg:hidden lg:border-0 lg:p-0">
