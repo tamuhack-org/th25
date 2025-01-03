@@ -47,7 +47,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 // Open element if the object is closing or is already closed
                 if (this.isClosing || !this.el.open) {
                     this.open();
-                // Close element if the object is opening or is already open
+                    // Close element if the object is opening or is already open
                 } else if (this.isExpanding || this.el.open) {
                     this.shrink();
                 }
@@ -66,16 +66,16 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 if (this.animation) {
                     this.animation.cancel();
                 }
-                
+
                 // Animate shrinking from start height -> end height
                 this.animation = this.el.animate(
                     {
-                        height: [startHeight, endHeight]
+                        height: [startHeight, endHeight],
                     },
                     {
                         duration: 200,
-                        easing: 'ease-out'
-                    }
+                        easing: 'ease-out',
+                    },
                 );
 
                 // Call onAnimationFinish() when animation completes
@@ -87,7 +87,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
             open() {
                 // Apply a fixed height to element
                 this.el.style.height = `${this.el.offsetHeight}px`;
-                // Set open state to true 
+                // Set open state to true
                 this.el.open = true;
                 // Wait for next frame to call expand function -- keeps animation smooth
                 window.requestAnimationFrame(() => this.expand());
@@ -96,7 +96,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
             expand() {
                 // The element is expanding
                 this.isExpanding = true;
-                
+
                 // Store the current height
                 const startHeight = `${this.el.offsetHeight}px`;
                 // Find and store final/expanded height
@@ -106,16 +106,16 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 if (this.animation) {
                     this.animation.cancel();
                 }
-                
+
                 // Animate expanding from start height -> end height
                 this.animation = this.el.animate(
                     {
-                        height: [startHeight, endHeight]
+                        height: [startHeight, endHeight],
                     },
                     {
                         duration: 200,
-                        easing: 'ease-out'
-                    }
+                        easing: 'ease-out',
+                    },
                 );
 
                 // Call onAnimationFinish() when animation completes
@@ -145,50 +145,65 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
 
     return (
         <>
-            <details ref={detailsRef} className="text-[#000000] relative font-serif faq-question">
+            <details
+                ref={detailsRef}
+                className="faq-question relative font-serif text-[#000000]"
+            >
                 <summary
-                    className="cursor-pointer text-lg md:text-xl flex justify-between items-center font-medium"
+                    className="flex cursor-pointer items-center justify-between text-lg font-medium md:text-xl"
                     onClick={() => setOpen(!open)}
                 >
                     {/*Add question*/}
                     {item.question}
                     {/*Add arrow*/}
-                    <span className={`flip ${open ? 'arrow-open' : 'arrow-close'}`}>
-                        <IconChevronDown className="w-5 h-5" />
+                    <span
+                        className={`flip ${open ? 'arrow-open' : 'arrow-close'}`}
+                    >
+                        <IconChevronDown className="h-5 w-5" />
                     </span>
                 </summary>
-                <p className="content text-base md:text-lg pt-4 pb-2">
+                <p className="content pb-2 pt-4 text-base md:text-lg">
                     {/*Add each answer*/}
                     {item.answers.map((answer, index) => (
-                        <span key={index} className="">{answer}</span>
+                        <span key={index} className="">
+                            {answer}
+                        </span>
                     ))}
                 </p>
             </details>
-            <div className="w-full h-[2px] bg-[#000000] opacity-25 mt-2 md:mt-4 mb-6 rounded-full faq-question-bottom" />
+            <div className="faq-question-bottom mb-6 mt-2 h-[2px] w-full rounded-full bg-[#000000] opacity-25 md:mt-4" />
             {/*Animate up/down arrows*/}
             <style jsx>{`
                 .arrow-open {
-                animation: flip-icon 0.25s ease-in-out;
-                transform: rotateX(180deg);
+                    animation: flip-icon 0.25s ease-in-out;
+                    transform: rotateX(180deg);
                 }
 
                 .arrow-close {
-                animation: flip-icon-close 0.25s ease-in-out;
-                transform: rotateX(0deg);
+                    animation: flip-icon-close 0.25s ease-in-out;
+                    transform: rotateX(0deg);
                 }
 
                 @keyframes flip-icon {
-                0% { transform: rotateX(0deg); }
-                100% { transform: rotateX(180deg); }
+                    0% {
+                        transform: rotateX(0deg);
+                    }
+                    100% {
+                        transform: rotateX(180deg);
+                    }
                 }
 
                 @keyframes flip-icon-close {
-                0% { transform: rotateX(180deg); }
-                100% { transform: rotateX(0deg); }
+                    0% {
+                        transform: rotateX(180deg);
+                    }
+                    100% {
+                        transform: rotateX(0deg);
+                    }
                 }
             `}</style>
-    </>
-  );
+        </>
+    );
 };
 
 export default QuestionItem;

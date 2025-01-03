@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const TrustBadge = () => {
     return (
         <a
@@ -9,16 +10,16 @@ const TrustBadge = () => {
                 display: 'block',
                 maxWidth: '100px',
                 minWidth: '60px',
-                right: '50px',
                 top: '0',
-                width: '10%',
                 zIndex: 10000,
             }}
         >
-            <img
+            <Image
                 src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
                 alt="Major League Hacking 2025 Hackathon Season"
                 style={{ width: '100%' }}
+                width={100}
+                height={100}
             />
         </a>
     );

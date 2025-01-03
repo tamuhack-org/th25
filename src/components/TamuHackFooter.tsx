@@ -1,3 +1,7 @@
+import localFont from 'next/font/local';
+
+const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
+
 const TamuhackFooter = () => {
     const resources = [
         {
@@ -41,7 +45,7 @@ const TamuhackFooter = () => {
         },
         {
             name: 'Discord',
-            link: 'https://discord.gg/VZyKP4JcC3',
+            link: 'https://discord.gg/RyyVcm4gFJ',
         },
     ];
 
@@ -95,7 +99,7 @@ const TamuhackFooter = () => {
         title: string;
         items: { name: string; link: string }[];
     }) => (
-        <div role="region" aria-label={title}>
+        <div role="region" aria-label={title} className="font-poppins">
             <h2 className="mb-2 text-base font-light">{title}</h2>
             <nav aria-label={`${title} navigation`}>
                 <ul className="list-none p-0">
@@ -119,9 +123,9 @@ const TamuhackFooter = () => {
 
     return (
         <>
-            <footer className="text-dark items-center lg:flex lg:justify-between">
+            <footer className="items-center font-poppins lg:flex lg:justify-between">
                 <div className="text-center opacity-90 lg:text-start">
-                    <p className="font-poppins mb-0 text-2xl font-semibold">
+                    <p className="mb-0 font-poppins text-2xl font-semibold">
                         Sign up to our newsletter
                     </p>
                     <p className="font-poppins font-light">
@@ -146,7 +150,7 @@ const TamuhackFooter = () => {
                             type="text"
                             name="EMAIL"
                             placeholder="Enter your email address"
-                            className="w-64 rounded-lg border border-[#e3b8dd] bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96 dark:placeholder:text-[rgba(255,191,0,0.6)]"
+                            className="w-64 rounded-lg border border-black bg-[rgba(217,217,217,0.09)] px-4 py-2 2xl:w-96"
                             id="mce-EMAIL"
                         />
                         <button className="clear">
@@ -155,7 +159,7 @@ const TamuhackFooter = () => {
                                 value="Subscribe"
                                 name="subscribe"
                                 id="mc-embedded-subscribe"
-                                className="h-full cursor-pointer rounded-lg border border-[#e3b8dd] px-4 py-2 text-base font-bold transition-colors duration-200 hover:bg-[#e3b8dd] hover:text-[#1b0000]"
+                                className="h-full cursor-pointer rounded-lg border border-black px-4 py-2 text-base font-bold transition-colors duration-200 hover:bg-[#e3b8dd] hover:text-[#1b0000]"
                             />
                         </button>
                     </div>
@@ -172,11 +176,14 @@ const TamuhackFooter = () => {
 
             <div className="text-dark my-8 justify-between opacity-90 lg:my-16 lg:flex">
                 <div className="lg:w-1/5">
-                    <p className="font-poppins mb-8 text-3xl font-semibold">
+                    <p
+                        className={`mb-8 text-3xl font-bold ${belgiano.className}`}
+                    >
                         TAMUhack 2025
                     </p>
-                    <p className="font-poppins font-base mb-8 text-xl">
-                        I stole this footer form Adam/Abhishek!
+                    <p className="font-base mb-8 font-poppins text-xl">
+                        This site is under construction. Please check back
+                        later!
                     </p>
                 </div>
                 <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">
@@ -190,7 +197,7 @@ const TamuhackFooter = () => {
                 </div>
             </div>
 
-            <footer className="bottom-0">
+            <footer className="bottom-0 font-poppins">
                 <div className="bg-dark mx-8 h-[3px] rounded-xl bg-opacity-5" />
                 <p className="text-dark mx-8 py-3 text-sm font-light">
                     Interested in sponsoring? Reach out to us at{' '}

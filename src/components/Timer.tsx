@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { DateTime } from 'luxon';
 import { formatTimeAnnouncement, shouldAnnounceTime } from './timerUtils';
+import localFont from 'next/font/local';
+import { twMerge } from 'tailwind-merge';
 
-const Timer = () => {
+const swily = localFont({ src: '../pages/fonts/SwilyBright.otf' });
+
+const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
     const [ariaLiveText, setAriaLiveText] = useState<string | null>(null);
@@ -83,13 +87,18 @@ const Timer = () => {
     return (
         <div
             role="timer"
-            className="hidden max-w-fit flex-col items-end font-serif lg:flex"
+            className={twMerge(
+                'hidden max-w-fit flex-col items-end font-serif lg:flex',
+                className,
+            )}
             aria-label="Countdown until TAMUhack 2025 starts"
         >
-            <span className="text-2xl italic lg:text-6xl">
+            <span className={`pr-4 text-2xl lg:text-7xl ${swily.className}`}>
                 {days}:{hours}:{minutes}:{seconds}
             </span>
-            <p className="text-lg lg:text-2xl">until hacking begins.</p>
+            <p className={`-mt-3 font-poppins text-lg lg:text-2xl`}>
+                until hacking begins.
+            </p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
                 {ariaLiveText}
             </p>
