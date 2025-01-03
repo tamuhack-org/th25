@@ -87,6 +87,10 @@ export default function Home() {
                 <div className="mt-40 bg-gradient-to-b from-[#ffff] to-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Info />
+                    </div>
+                </div>
+                <div className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]">
+                    <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Prizes />
                     </div>
                 </div>
