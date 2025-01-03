@@ -39,17 +39,22 @@ const Schedule: React.FC = () => {
         );
     };
 
-    const isEventCurrent = (item: ScheduleItem) => {
+    function isEventCurrent(item: ScheduleItem): boolean {
+        // No schedule items (just in case)
+        if (!scheduleItems) return false;
+
+        const eventIndex = scheduleItems.findIndex((i) => i.id === item.id);
+        if (eventIndex === -1) return false;
+
         const eventDate = new Date(item.date);
-        const eventIndex = scheduleItems?.findIndex((i) => i.id === item.id);
-        const nextEvent = scheduleItems?.[eventIndex + 1];
-        const nextEventDate = nextEvent ? new Date(nextEvent.date) : null;
+        if (currentTime < eventDate) return false;
 
-        const isStarted = currentTime >= eventDate;
-        const isBeforeNext = nextEventDate ? currentTime < nextEventDate : true;
+        const nextEvent = scheduleItems[eventIndex + 1];
+        if (!nextEvent) return true;
+        const nextEventDate = new Date(nextEvent.date);
 
-        return isStarted && isBeforeNext;
-    };
+        return currentTime < nextEventDate;
+    }
 
     return (
         <div id="schedule" className="z-10 flex w-full flex-col">
