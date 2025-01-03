@@ -107,7 +107,12 @@ const Info = () => {
                         <p>Bethancourt Ballroom (MSC 2300)</p>
                         <p>730 Olsen Blvd, College Station, TX 77845</p>
                         <div className="mt-6">
-                            <Link href="/buildingMap.png" target='_blank' rel='noreferrer noopener' className="underline">
+                            <Link
+                                href="/buildingMap.png"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="underline"
+                            >
                                 View Building Map
                             </Link>
                         </div>

@@ -90,7 +90,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Blue section */}
-                <div className="bg-[#BFE4FF] hidden">
+                <div className="bg-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
                         <FAQ />
                         <Sponsors />
@@ -98,9 +98,9 @@ export default function Home() {
                     </div>
                 </div>
             </main>
-            <div className="bg-[#BFE4FF] mx-auto max-w-[2000px] px-8 lg:px-16 pt-16">
+            <div className="mx-auto max-w-[2000px] bg-[#BFE4FF] px-8 pt-16 lg:px-16">
                 <TamuhackFooter />
             </div>
         </>
     );
-};
+}
