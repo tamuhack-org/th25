@@ -19,7 +19,7 @@ const FAQ: React.FC = () => {
     const sections = content as Section[];
 
     return (
-        <div className="w-full lg:container">
+        <section id="faq" className="w-full lg:container" aria-label="faq">
             <div className="flex">
                 <div className="w-full lg:w-3/4">
                     <h1
@@ -67,7 +67,7 @@ const FAQ: React.FC = () => {
                     opacity: 0.7;
                 }
             `}</style>
-        </div>
+        </section>
     );
 };
 

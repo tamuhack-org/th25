@@ -11,6 +11,7 @@ import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 import Sponsors from '@/components/Sponsors';
 import Schedule from '@/components/Schedule';
+import Navbar from '@/components/navbar/Navbar';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
@@ -101,6 +102,7 @@ export default function Home() {
             <div className="mx-auto max-w-[2000px] bg-[#BFE4FF] px-8 pt-16 lg:px-16">
                 <TamuhackFooter />
             </div>
+            <Navbar />
         </>
     );
 }
