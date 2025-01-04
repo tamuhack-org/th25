@@ -152,14 +152,14 @@ const Navbar: React.FC = () => {
                         >
                             <div className="flex items-center">
                                 <div
-                                    className="flex p-[6px] gap-[6px] ml-[6px] bg-[#2b2b2b] rounded-lg motion-safe:scroll-smooth"
+                                    className="flex p-[6px] gap-[6px] bg-[#2b2b2b] rounded-lg motion-safe:scroll-smooth"
                                 >
                                     <NavButton text="Schedule" link="#schedule" />
                                     <NavButton text="Prizes" link="#prizes-section" />
                                     <NavButton text="FAQ" link="#faq" />
                                     <button
                                         className="flex flex-row justify-center items-center 
-                                        px-5 rounded-xl bg-[#fab7dc] text-white 
+                                        px-5 rounded-xl bg-[#fab7dc] text-black
                                         font-semibold text-sm gap-2"
                                         onClick={() => setOpen(!open)}
                                     >

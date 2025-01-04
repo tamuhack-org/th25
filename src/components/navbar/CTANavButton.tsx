@@ -12,7 +12,7 @@ const CTANavButton: React.FC<CTANavButtonProps> = ({ text = 'Link', link = '#' }
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col justify-center h-[48px] px-4 rounded-lg border bg-[#CCE9FF]
-            text-black border-[#4e4e4e] hover:border-white font-normal text-sm cursor-pointer
+            text-black border-[#4e4e4e] hover:border-white font-semibold text-sm cursor-pointer
             transition-all"
         >
             {text}
