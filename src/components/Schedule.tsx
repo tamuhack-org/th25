@@ -17,7 +17,7 @@ const Schedule: React.FC = () => {
     useEffect(() => {
         const fetchSchedule = async () => {
             const fetchResult = await fetch(
-                'https://team.tamuhack.org/api/hh24-new',
+                'https://team.tamuhack.org/api/th25',
             ).then((res) => res.json());
             setScheduleItems(fetchResult);
         };
@@ -102,7 +102,20 @@ const Schedule: React.FC = () => {
                         <div className="relative bg-white p-6">
                             <div className="-z-2 absolute bottom-0 left-24 top-0 hidden w-3 bg-black lg:block" />
                             <div className="flex flex-col gap-4">
-                                {scheduleItems
+                            {!scheduleItems || !scheduleItems.filter((item) => {
+                                    const date = new Date(item.date);
+                                    const isDayMatch = date.getDay() === 6;
+                                    const tagMatch =
+                                        activeFilters.length === 0 ||
+                                        item.tags.some((tag) =>
+                                            activeFilters.includes(tag),
+                                        );
+                                    return isDayMatch && tagMatch;
+                                }).length ? (
+                                    <div className="flex items-center justify-center h-40">
+                                        <p className="text-gray-500 text-lg">Coming Soon!</p>
+                                    </div>
+                                ) : ( scheduleItems
                                     ?.filter((item) => {
                                         const date = new Date(item.date);
                                         const isDayMatch = date.getDay() === 6;
@@ -185,7 +198,8 @@ const Schedule: React.FC = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    ))
+                                  )}
                             </div>
                         </div>
                     </div>
@@ -222,7 +236,20 @@ const Schedule: React.FC = () => {
                             <div className="-z-2 absolute bottom-0 left-24 top-0 hidden w-3 bg-black lg:block" />
 
                             <div className="flex flex-col gap-6">
-                                {scheduleItems
+                            {!scheduleItems || !scheduleItems.filter((item) => {
+                                    const date = new Date(item.date);
+                                    const isDayMatch = date.getDay() === 6;
+                                    const tagMatch =
+                                        activeFilters.length === 0 ||
+                                        item.tags.some((tag) =>
+                                            activeFilters.includes(tag),
+                                        );
+                                    return isDayMatch && tagMatch;
+                                }).length ? (
+                                    <div className="flex items-center justify-center h-40">
+                                        <p className="text-gray-500 text-lg">Coming Soon!</p>
+                                    </div>
+                                ) : ( scheduleItems
                                     ?.filter((item) => {
                                         const date = new Date(item.date);
                                         const isDayMatch = date.getDay() === 0;
@@ -307,7 +334,8 @@ const Schedule: React.FC = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    ))
+                                  )}
                             </div>
                         </div>
                     </div>
