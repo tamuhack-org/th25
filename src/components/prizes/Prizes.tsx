@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import rainman from "../../../public/rainman.png";
 import bigChallenges from "../../../public/prizes_text_1.svg";
 import biggerPrizes from "../../../public/prizes_text_2.svg";
+import prizesLine from "../../../public/prizes_line.svg";
 import PrizeGrid from "./PrizeGrid";
 
 export type Prize = {
@@ -136,11 +137,9 @@ const hardwarePrizes: Prize[] = [
 
 const Prizes = () => {
   return (
-    <div className="flex flex-col w-full gap-48 pb-48">
+    <div className="flex flex-col w-full gap-64 pb-48">
       <div className="flex flex-col w-full items-center justify-center relative">
-        <svg width="960" height="1359" viewBox="0 0 960 1359" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.5" d="M949.5 -0.5C822.5 614.5 369.5 502.995 369.5 502.995C-26.5003 377.408 501.478 207.482 501.479 369.183C501.48 468.683 -219.5 894 86.4998 1349" stroke="white" stroke-opacity="0.55" stroke-width="20" stroke-linecap="round" />
-        </svg>
+        <Image src={prizesLine} alt="Prizes" className="w-full" />
         <div className="flex flex-col absolute gap-16 w-full">
           <div className="flex flex-start w-full">
             <Image src={bigChallenges} alt="Big Challenges" className="w-4/5" />
@@ -150,7 +149,7 @@ const Prizes = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-end -mt-72">
+      <div className="flex w-full justify-end -mt-96">
         <PrizeGrid direction="right" prizes={softwarePrizesWithoutSponsors} />
       </div>
       <div className="flex w-full justify-start">
