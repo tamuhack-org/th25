@@ -12,6 +12,7 @@ export type Prize = {
   image: StaticImageData;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const softwarePrizesWithSponsors: Prize[] = [
   {
     title: '1st Place Software',
