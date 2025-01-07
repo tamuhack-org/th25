@@ -58,29 +58,33 @@ const Schedule: React.FC = () => {
 
     return (
         <div id="schedule" className="z-10 flex w-full flex-col font-poppins">
-            <div className="mb-8 flex flex-col w-fit">
-                <div className="mb-2 flex items-end">
-                    <h2 className="font-poppins text-3xl lg:text-8xl">
-                        Schedule
-                    </h2>
-                    <span className="rotate-270 mb-2 ml-2 text-8xl">↘</span>
-                </div>
-                <div className="mt-3 w-full grid p-2 place-items-center rounded-full bg-black text-base font-semibold">
-                    <p className="uppercase text-white">
-                        Find the hardware schedule <a href='#' className='underline'>Here</a>
-                    </p>
-                </div>
-
-                <div className="hidden lg:flex absolute right-0 top-0 items-start gap-4">
-                    <img 
-                        src="/schedule_guy.png" 
-                        alt="Schedule mascot" 
-                        className="w-32 h-32"
-                    />
-                    <div className="bg-white p-4 rounded-xl border-2 border-black max-w-xs">
-                        <p className="text-sm">
-                            Times are subject to change. Check back here for live updates!
-                        </p>
+            <div className="mb-8 flex flex-col w-full">
+            <div className="flex justify-between items-start">
+                    <div className="flex flex-col">
+                        <div className="mb-2 flex items-end">
+                            <h2 className="font-poppins text-3xl lg:text-8xl">
+                                Schedule
+                            </h2>
+                            <span className="rotate-270 mb-2 ml-2 text-8xl">↘</span>
+                        </div>
+                        <div className="mt-3 w-fit grid p-2 place-items-center rounded-full bg-black text-base font-semibold">
+                            <p className="uppercase text-white">
+                                Find the hardware schedule <a href='#' className='underline'>HERE</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-4">
+                        <img 
+                            src="/schedule_guy.png" 
+                            alt="Schedule mascot" 
+                            className="w-44 h-36"
+                        />
+                        <div className="bg-white p-4 rounded-xl border-2 border-black max-w-xs">
+                            <p className="text-sm">
+                                Times are subject to change. Check back here for live updates!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
