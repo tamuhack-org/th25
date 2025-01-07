@@ -5,9 +5,22 @@ interface ScheduleItem {
     description: string;
     eventName: string;
     location: string;
-    tags: string[];
+    tags: Tag[];
     id: string;
 }
+
+interface Tag {
+    value: string;
+    label: string;
+}
+
+const filterToTagMapping = {
+    'Required': 'Required',
+    'Sponsor': 'Company Events',
+    'Meal': 'Food',
+    'Workshop': 'Workshops',
+    'Social': 'For Fun'
+};
 
 const Schedule: React.FC = () => {
     const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
@@ -31,12 +44,15 @@ const Schedule: React.FC = () => {
         return () => clearInterval(timer);
     }, []);
 
-    const toggleFilter = (filter: string) => {
-        setActiveFilters((prev) =>
-            prev.includes(filter)
-                ? prev.filter((f) => f !== filter)
-                : [...prev, filter],
-        );
+    const toggleFilter = (displayName: string) => {
+        const tagValue = Object.entries(filterToTagMapping).find(([_, display]) => display === displayName)?.[0];
+        if (tagValue) {
+            setActiveFilters((prev) =>
+                prev.includes(tagValue)
+                    ? prev.filter((f) => f !== tagValue)
+                    : [...prev, tagValue]
+            );
+        }
     };
 
     function isEventCurrent(item: ScheduleItem): boolean {
@@ -125,7 +141,7 @@ const Schedule: React.FC = () => {
                                     const tagMatch =
                                         activeFilters.length === 0 ||
                                         item.tags.some((tag) =>
-                                            activeFilters.includes(tag),
+                                            activeFilters.includes(tag.label),
                                         );
                                     return isDayMatch && tagMatch;
                                 }).length ? (
@@ -139,7 +155,7 @@ const Schedule: React.FC = () => {
                                         const tagMatch =
                                             activeFilters.length === 0 ||
                                             item.tags.some((tag) =>
-                                                activeFilters.includes(tag),
+                                                activeFilters.includes(tag.label),
                                             );
                                         return isDayMatch && tagMatch;
                                     })
@@ -234,7 +250,7 @@ const Schedule: React.FC = () => {
                             key={filter}
                             onClick={() => toggleFilter(filter)}
                             className={`rounded-lg px-2 py-1 text-center text-sm transition-colors ${
-                                activeFilters.includes(filter)
+                                activeFilters.includes(Object.entries(filterToTagMapping).find(([_, display]) => display === filter)?.[0] || '')
                                     ? 'bg-black text-white'
                                     : 'bg-gray-100 text-black hover:bg-gray-200'
                             }`}
@@ -259,7 +275,7 @@ const Schedule: React.FC = () => {
                                     const tagMatch =
                                         activeFilters.length === 0 ||
                                         item.tags.some((tag) =>
-                                            activeFilters.includes(tag),
+                                            activeFilters.includes(tag.label),
                                         );
                                     return isDayMatch && tagMatch;
                                 }).length ? (
@@ -274,7 +290,7 @@ const Schedule: React.FC = () => {
                                         const tagMatch =
                                             activeFilters.length === 0 ||
                                             item.tags.some((tag) =>
-                                                activeFilters.includes(tag),
+                                                activeFilters.includes(tag.label),
                                             );
 
                                         return isDayMatch && tagMatch;
