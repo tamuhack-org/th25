@@ -10,7 +10,7 @@ import MediumBubble from '../../public/med_bubble.png';
 import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 import Sponsors from '@/components/Sponsors';
-import Prizes from '@/components/Prizes';
+import Prizes from '@/components/prizes/Prizes';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
