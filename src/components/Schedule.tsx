@@ -70,6 +70,19 @@ const Schedule: React.FC = () => {
                         Find the hardware schedule <a href='#' className='underline'>Here</a>
                     </p>
                 </div>
+
+                <div className="hidden lg:flex absolute right-0 top-0 items-start gap-4">
+                    <img 
+                        src="/schedule_guy.png" 
+                        alt="Schedule mascot" 
+                        className="w-32 h-32"
+                    />
+                    <div className="bg-white p-4 rounded-xl border-2 border-black max-w-xs">
+                        <p className="text-sm">
+                            Times are subject to change. Check back here for live updates!
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div className="mb-6 rounded-lg border border-black p-4 lg:hidden lg:border-0 lg:p-0">
