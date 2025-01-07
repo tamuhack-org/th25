@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface ScheduleItem {
     date: Date;
@@ -45,7 +46,7 @@ const Schedule: React.FC = () => {
     }, []);
 
     const toggleFilter = (displayName: string) => {
-        const tagValue = Object.entries(filterToTagMapping).find(([_, display]) => display === displayName)?.[0];
+        const tagValue = Object.entries(filterToTagMapping).find(entry => entry[1] === displayName)?.[0];
         if (tagValue) {
             setActiveFilters((prev) =>
                 prev.includes(tagValue)
@@ -91,11 +92,13 @@ const Schedule: React.FC = () => {
                     </div>
                     
                     <div className="flex items-start gap-4">
-                        <img 
-                            src="/schedule_guy.png" 
-                            alt="Schedule mascot" 
-                            className="w-44 h-36"
-                        />
+                    <Image 
+                        src="/schedule_guy.png" 
+                        alt="Schedule mascot" 
+                        width={176}
+                        height={144}
+                        className="w-44 h-36"
+                    />
                         <div className="bg-white p-4 rounded-xl border-2 border-black max-w-xs">
                             <p className="text-sm">
                                 Times are subject to change. Check back here for live updates!
@@ -250,7 +253,7 @@ const Schedule: React.FC = () => {
                             key={filter}
                             onClick={() => toggleFilter(filter)}
                             className={`rounded-lg px-2 py-1 text-center text-sm transition-colors ${
-                                activeFilters.includes(Object.entries(filterToTagMapping).find(([_, display]) => display === filter)?.[0] || '')
+                                activeFilters.includes(Object.entries(filterToTagMapping).find(entry => entry[1] === filter)?.[0] || '')
                                     ? 'bg-black text-white'
                                     : 'bg-gray-100 text-black hover:bg-gray-200'
                             }`}
