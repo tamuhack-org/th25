@@ -7,11 +7,11 @@ import HomeGraphic from '@/components/HomeGraphic';
 import Image from 'next/image';
 import SmallBubble from '../../public/small_bubble.png';
 import MediumBubble from '../../public/med_bubble.png';
-import FAQ from '@/components/faq/Faq';
+// import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
-import Sponsors from '@/components/Sponsors';
+// import Sponsors from '@/components/Sponsors';
 import Schedule from '@/components/Schedule';
-import Prizes from '@/components/prizes/Prizes';
+// import Prizes from '@/components/prizes/Prizes';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
