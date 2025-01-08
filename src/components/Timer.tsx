@@ -5,7 +5,6 @@ import localFont from 'next/font/local';
 import { twMerge } from 'tailwind-merge';
 
 const swily = localFont({ src: '../pages/fonts/SwilyBright.otf' });
-const kis = localFont({ src: '../pages/fonts/adobe-kis-vf-default-roman.ttf' });
 
 const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
@@ -94,10 +93,10 @@ const Timer = ({ className }: { className?: string }) => {
             )}
             aria-label="Countdown until TAMUhack 2025 starts"
         >
-            <span className={`pr-4 text-2xl lg:text-6xl ${swily.className}`}>
+            <span className={`pr-4 text-2xl lg:text-7xl ${swily.className}`}>
                 {days}:{hours}:{minutes}:{seconds}
             </span>
-            <p className={`-mt-3 text-lg lg:text-2xl ${kis.className}`}>
+            <p className={`-mt-3 font-poppins text-lg lg:text-2xl`}>
                 until hacking begins.
             </p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
