@@ -90,21 +90,29 @@ export default function Home() {
                         <Info />
                     </div>
                 </div>
-                <div className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]">
+                <hr className="h-1 w-full bg-black"></hr>
+                <div className="mx-auto max-w-[2000px] px-8 py-32 lg:px-16">
+                    <Schedule />
+                </div>
+                <hr className="h-1 w-full bg-black"></hr>
+                {/* <div className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Prizes />
                     </div>
-                </div>
+                </div> */}
                 {/* Blue section */}
-                <div className="bg-[#BFE4FF]">
+                {/* <div className="bg-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
                         <FAQ />
                         <Sponsors />
                         <Schedule />
                     </div>
-                </div>
+                </div> */}
+               {/* <div className='bg-[#192349]'>
+                        <Sponsors />
+                </div> */}
             </main>
-            <div className="mx-auto max-w-[2000px] bg-[#BFE4FF] px-8 pt-16 lg:px-16">
+            <div className="mx-auto max-w-[2000px] px-8 pt-16 lg:px-16">
                 <TamuhackFooter />
             </div>
         </>
