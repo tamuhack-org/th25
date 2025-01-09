@@ -25,24 +25,24 @@ import {
 
 
 const Navbar: React.FC = () => {
-    const [loaded, setLoaded] = useState(false);
     const [open, setOpen] = useState(false);
     const [animationDone, setAnimationDone] = useState(false);
-    const [sectionInView, setSectionInView] = useState('');
+    const [activeSection, setActiveSection] = useState<string>('');
 
     useEffect(() => {
-        setLoaded(true);
         setAnimationDone(true);
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setSectionInView(entry.target.id);
+                        setActiveSection(entry.target.id);
+                    } else if (activeSection === entry.target.id) {
+                        setActiveSection('')
                     }
                 });
             },
-            { threshold: 0.5 }
+            { threshold: [0, 1] }
         );
 
         const sections = document.querySelectorAll('section');
@@ -154,9 +154,9 @@ const Navbar: React.FC = () => {
                                 <div
                                     className="flex p-[6px] gap-[6px] bg-[#2b2b2b] rounded-lg motion-safe:scroll-smooth"
                                 >
-                                    <NavButton text="Schedule" link="#schedule" />
-                                    <NavButton text="Prizes" link="#prizes-section" />
-                                    <NavButton text="FAQ" link="#faq" />
+                                    <NavButton text="Schedule" link="#schedule" isActive={activeSection === 'schedule'} />
+                                    <NavButton text="Prizes" link="#prizes-section" isActive={activeSection === 'prizes-section'} />
+                                    <NavButton text="FAQ" link="#faq" isActive={activeSection === 'faq'} />
                                     <button
                                         className="flex flex-row justify-center items-center 
                                         px-5 rounded-xl bg-[#fab7dc] text-black
