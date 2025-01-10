@@ -9,7 +9,11 @@ interface MobileButtonProps {
     isActive: boolean;
 }
 
-const MobileButton: React.FC<MobileButtonProps> = ({ Icon, link, isActive }) => {
+const MobileButton: React.FC<MobileButtonProps> = ({
+    Icon,
+    link,
+    isActive,
+}) => {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         const element = document.getElementById(link.substring(1));
@@ -22,12 +26,11 @@ const MobileButton: React.FC<MobileButtonProps> = ({ Icon, link, isActive }) => 
         <a
             href={link}
             onClick={handleClick}
-            className={`p-1 border rounded-md transition-all ${isActive
-                ? 'border-gray-400'
-                : 'border-transparent'
-                }`}
+            className={`rounded-md border p-1 transition-all ${
+                isActive ? 'border-gray-400' : 'border-transparent'
+            }`}
         >
-            <Icon className="w-5 h-5" />
+            <Icon className="h-5 w-5" />
         </a>
     );
 };

@@ -6,7 +6,11 @@ interface NavButtonProps {
     isActive: boolean;
 }
 
-const NavButton: React.FC<NavButtonProps> = ({ text = 'Link', link = '#', isActive }) => {
+const NavButton: React.FC<NavButtonProps> = ({
+    text = 'Link',
+    link = '#',
+    isActive,
+}) => {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         const element = document.getElementById(link.substring(1));
@@ -19,10 +23,9 @@ const NavButton: React.FC<NavButtonProps> = ({ text = 'Link', link = '#', isActi
         <a
             href={link}
             onClick={handleClick}
-            className={`flex flex-col justify-center h-[48px] px-4 rounded-lg border
-            hover:border-gray-300 text-[#e1e1e1] font-normal text-sm cursor-pointer
-            transition-all ${isActive ? 'border-gray-300' : 'border-[#4e4e4e]'
-                }`}
+            className={`flex h-[48px] cursor-pointer flex-col justify-center rounded-lg border px-4 text-sm font-normal text-[#e1e1e1] transition-all hover:border-gray-300 ${
+                isActive ? 'border-gray-300' : 'border-[#4e4e4e]'
+            }`}
         >
             {text}
         </a>

@@ -5,15 +5,16 @@ interface CTANavButtonProps {
     link: string;
 }
 
-const CTANavButton: React.FC<CTANavButtonProps> = ({ text = 'Link', link = '#' }) => {
+const CTANavButton: React.FC<CTANavButtonProps> = ({
+    text = 'Link',
+    link = '#',
+}) => {
     return (
         <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col justify-center h-[48px] px-4 rounded-lg border bg-[#CCE9FF]
-            text-black border-[#4e4e4e] hover:border-white font-semibold text-sm cursor-pointer
-            transition-all"
+            className="flex h-[48px] cursor-pointer flex-col justify-center rounded-lg border border-[#4e4e4e] bg-[#CCE9FF] px-4 text-sm font-semibold text-black transition-all hover:border-white"
         >
             {text}
         </a>

@@ -21,9 +21,8 @@ import {
     IconWorld,
     IconCpu,
     IconExclamationCircle,
-    IconUsers
-} from '@tabler/icons-react'
-
+    IconUsers,
+} from '@tabler/icons-react';
 
 const Navbar: React.FC = () => {
     const [open, setOpen] = useState(false);
@@ -39,11 +38,11 @@ const Navbar: React.FC = () => {
                     if (entry.isIntersecting) {
                         setActiveSection(entry.target.id);
                     } else if (activeSection === entry.target.id) {
-                        setActiveSection('')
+                        setActiveSection('');
                     }
                 });
             },
-            { threshold: [0, 1] }
+            { threshold: [0, 1] },
         );
 
         const sections = document.querySelectorAll('section');
@@ -63,26 +62,17 @@ const Navbar: React.FC = () => {
                     initial={{ y: 200, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="flex w-full justify-center fixed bottom-8 font-poppins select-none
-                    z-50 pointer-events-none"
+                    className="pointer-events-none fixed bottom-8 z-50 flex w-full select-none justify-center font-poppins"
                 >
-                    <div
-                        className="flex flex-col sm:hidden justify-center z-50 pointer-events-auto
-                        border border-opacity-25 rounded-xl overflow-hidden"
-                    >
+                    <div className="pointer-events-auto z-50 flex flex-col justify-center overflow-hidden rounded-xl border border-opacity-25 sm:hidden">
                         <div
-                            className={`flex flex-col items-center justify-center gap-[6px] bg-black
-                            bg-opacity-70 backdrop-blur-sm rounded-t-xl expand-container px-[6px] ${active}`}
+                            className={`expand-container flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                         >
-                            <div
-                                className="flex flex-col justify-center items-start mt-[6px] bg-[#2b2b2b]
-                                bg-opacity-70 px-6 backdrop-blur-sm rounded-lg w-full h-full text-white text-sm
-                                text-left gap-8"
-                            >
+                            <div className="mt-[6px] flex h-full w-full flex-col items-start justify-center gap-8 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 text-left text-sm text-white backdrop-blur-sm">
                                 <motion.div
                                     animate={{ opacity: open ? 1 : 0 }}
                                     transition={{ duration: 0.15 }}
-                                    className="flex flex-col gap-4 justify-between"
+                                    className="flex flex-col justify-between gap-4"
                                 >
                                     <ResourceButton
                                         text="Hacker Guide"
@@ -138,45 +128,50 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div
-                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70
-                            backdrop-blur-sm p-4 text-white ${!open
+                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${
+                                !open
                                     ? 'rounded-t-xl transition-all delay-[200ms]'
-                                    : ''}`}
+                                    : ''
+                            }`}
                         >
-                            <MobileButton Icon={IconCalendar} link="#schedule" isActive={activeSection === 'schedule'} />
-                            <MobileButton Icon={IconTrophy} link="#prizes-section" isActive={activeSection === 'prizes-section'} />
-                            <MobileButton Icon={IconUserQuestion} link="#faq" isActive={activeSection === 'faq'} />
+                            <MobileButton
+                                Icon={IconCalendar}
+                                link="#schedule"
+                                isActive={activeSection === 'schedule'}
+                            />
+                            <MobileButton
+                                Icon={IconTrophy}
+                                link="#prizes-section"
+                                isActive={activeSection === 'prizes-section'}
+                            />
+                            <MobileButton
+                                Icon={IconUserQuestion}
+                                link="#faq"
+                                isActive={activeSection === 'faq'}
+                            />
                             <button
-                                className="p-1 bg-black rounded-md text-white border border-black"
+                                className="rounded-md border border-black bg-black p-1 text-white"
                                 onClick={() => setOpen(!open)}
                             >
-                                <IconCategory className="w-5 h-5" />
+                                <IconCategory className="h-5 w-5" />
                             </button>
                             <a
-                                href='https://register.tamuhack.com/'
-                                className='p-1 rounded-md transition-all bg-white text-black border border-white'
+                                href="https://register.tamuhack.com/"
+                                className="rounded-md border border-white bg-white p-1 text-black transition-all"
                             >
-                                <IconEdit className="w-5 h-5" />
+                                <IconEdit className="h-5 w-5" />
                             </a>
                         </div>
                     </div>
-                    <div
-                        className="hidden sm:flex flex-col justify-center w-max pointer-events-auto
-                        border border-white border-opacity-25 rounded-xl overflow-hidden"
-                    >
+                    <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
                         <div
-                            className={`flex flex-col items-center justify-center gap-[6px] bg-black
-                bg-opacity-70 backdrop-blur-sm rounded-t-xl expand-container px-[6px] ${active}`}
+                            className={`expand-container flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                         >
-                            <div
-                                className="flex flex-row items-center bg-[#2b2b2b] mt-[6px] bg-opacity-70 px-6
-                    py-6 backdrop-blur-sm rounded-lg w-full h-full text-white text-sm text-left
-                    gap-16"
-                            >
+                            <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
                                 <motion.div
                                     animate={{ opacity: open ? 1 : 0 }}
                                     transition={{ duration: 0.15 }}
-                                    className="flex flex-col gap-3 justify-start h-full"
+                                    className="flex h-full flex-col justify-start gap-3"
                                 >
                                     <ResourceButton
                                         text="Hacker Guide"
@@ -207,7 +202,7 @@ const Navbar: React.FC = () => {
                                 <motion.div
                                     animate={{ opacity: open ? 1 : 0 }}
                                     transition={{ duration: 0.15 }}
-                                    className="flex flex-col gap-3 justify-start h-full"
+                                    className="flex h-full flex-col justify-start gap-3"
                                 >
                                     <ResourceButton
                                         text="Devpost"
@@ -239,30 +234,46 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div
-                            className={`flex flex-col bg-black bg-opacity-70 backdrop-blur-sm p-[6px]
-                                    gap-[6px] rounded-b-xl ${!open
+                            className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${
+                                !open
                                     ? 'rounded-t-xl transition-all delay-[200ms]'
-                                    : ''}`}
+                                    : ''
+                            }`}
                         >
                             <div className="flex items-center">
-                                <div
-                                    className="flex p-[6px] gap-[6px] bg-[#2b2b2b] rounded-lg motion-safe:scroll-smooth"
-                                >
-                                    <NavButton text="Schedule" link="#schedule" isActive={activeSection === 'schedule'} />
-                                    <NavButton text="Prizes" link="#prizes-section" isActive={activeSection === 'prizes-section'} />
-                                    <NavButton text="FAQ" link="#faq" isActive={activeSection === 'faq'} />
+                                <div className="flex gap-[6px] rounded-lg bg-[#2b2b2b] p-[6px] motion-safe:scroll-smooth">
+                                    <NavButton
+                                        text="Schedule"
+                                        link="#schedule"
+                                        isActive={activeSection === 'schedule'}
+                                    />
+                                    <NavButton
+                                        text="Prizes"
+                                        link="#prizes-section"
+                                        isActive={
+                                            activeSection === 'prizes-section'
+                                        }
+                                    />
+                                    <NavButton
+                                        text="FAQ"
+                                        link="#faq"
+                                        isActive={activeSection === 'faq'}
+                                    />
                                     <button
-                                        className="flex flex-row justify-center items-center 
-                                        px-5 rounded-lg bg-[#fab7dc] text-black
-                                        font-semibold text-sm gap-2"
+                                        className="flex flex-row items-center justify-center gap-2 rounded-lg bg-[#fab7dc] px-5 text-sm font-semibold text-black"
                                         onClick={() => setOpen(!open)}
                                     >
                                         <p>Resources</p>
-                                        <span className={`flip ${open ? 'arrow-open' : 'arrow-close'}`}>
-                                            <IconChevronDown className="w-5 h-5" />
+                                        <span
+                                            className={`flip ${open ? 'arrow-open' : 'arrow-close'}`}
+                                        >
+                                            <IconChevronDown className="h-5 w-5" />
                                         </span>
                                     </button>
-                                    <CTANavButton text="Apply" link="https://register.tamuhack.com/" />
+                                    <CTANavButton
+                                        text="Apply"
+                                        link="https://register.tamuhack.com/"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -314,10 +325,10 @@ const Navbar: React.FC = () => {
                     100% {
                         transform: rotateX(0deg);
                     }
-                }    
+                }
             `}</style>
         </>
     );
 };
 
-export default Navbar
+export default Navbar;
