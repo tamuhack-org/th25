@@ -159,7 +159,7 @@ const Navbar: React.FC = () => {
                                     <NavButton text="FAQ" link="#faq" isActive={activeSection === 'faq'} />
                                     <button
                                         className="flex flex-row justify-center items-center 
-                                        px-5 rounded-xl bg-[#fab7dc] text-black
+                                        px-5 rounded-lg bg-[#fab7dc] text-black
                                         font-semibold text-sm gap-2"
                                         onClick={() => setOpen(!open)}
                                     >
