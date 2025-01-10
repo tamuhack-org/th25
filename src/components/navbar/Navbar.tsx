@@ -29,6 +29,8 @@ const Navbar: React.FC = () => {
     const [animationDone, setAnimationDone] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('');
 
+
+
     useEffect(() => {
         setAnimationDone(true);
 
@@ -56,7 +58,7 @@ const Navbar: React.FC = () => {
                     }
                 });
             },
-            { threshold: [0, 0.5, 1] },
+            { threshold: [0] },
         );
 
         const sections = document.querySelectorAll('section');
@@ -142,11 +144,10 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div
-                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${
-                                !open
-                                    ? 'rounded-t-xl transition-all delay-[200ms]'
-                                    : ''
-                            }`}
+                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${!open
+                                ? 'rounded-t-xl transition-all delay-[200ms]'
+                                : ''
+                                }`}
                         >
                             <MobileButton
                                 Icon={IconCalendar}
@@ -248,11 +249,10 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div
-                            className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${
-                                !open
-                                    ? 'rounded-t-xl transition-all delay-[200ms]'
-                                    : ''
-                            }`}
+                            className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${!open
+                                ? 'rounded-t-xl transition-all delay-[200ms]'
+                                : ''
+                                }`}
                         >
                             <div className="flex items-center">
                                 <div className="flex gap-[6px] rounded-lg bg-[#2b2b2b] p-[6px] motion-safe:scroll-smooth">
