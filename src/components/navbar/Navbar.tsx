@@ -147,14 +147,14 @@ const Navbar: React.FC = () => {
                             <MobileButton Icon={IconTrophy} link="#prizes-section" isActive={activeSection === 'prizes-section'} />
                             <MobileButton Icon={IconUserQuestion} link="#faq" isActive={activeSection === 'faq'} />
                             <button
-                                className="p-1 bg-[#fab7dc] rounded-sm text-black"
+                                className="p-1 bg-black rounded-md text-white border border-black"
                                 onClick={() => setOpen(!open)}
                             >
                                 <IconCategory className="w-5 h-5" />
                             </button>
                             <a
                                 href='https://register.tamuhack.com/'
-                                className='p-1 rounded-sm transition-all bg-[#CCE9FF] text-black'
+                                className='p-1 rounded-md transition-all bg-white text-black border border-white'
                             >
                                 <IconEdit className="w-5 h-5" />
                             </a>

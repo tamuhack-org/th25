@@ -22,9 +22,9 @@ const MobileButton: React.FC<MobileButtonProps> = ({ Icon, link, isActive }) => 
         <a
             href={link}
             onClick={handleClick}
-            className={`p-1 border rounded-sm transition-all ${isActive
+            className={`p-1 border rounded-md transition-all ${isActive
                 ? 'border-gray-400'
-                : 'border-[#4e4e4e]'
+                : 'border-transparent'
                 }`}
         >
             <Icon className="w-5 h-5" />
