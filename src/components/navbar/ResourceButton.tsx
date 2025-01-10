@@ -3,13 +3,13 @@ import { IconBrandDiscord } from '@tabler/icons-react';
 
 type TablerIconComponent = typeof IconBrandDiscord;
 
-interface DesktopResourceButtonProps {
+interface ResourceButtonProps {
     text: string;
     link: string;
     Icon: TablerIconComponent;
 }
 
-const DesktopResourceButton: React.FC<DesktopResourceButtonProps> = ({ text = 'Link', link = '#', Icon }) => {
+const ResourceButton: React.FC<ResourceButtonProps> = ({ text = 'Link', link = '#', Icon }) => {
     return (
         <a
             href={link}
@@ -23,4 +23,4 @@ const DesktopResourceButton: React.FC<DesktopResourceButtonProps> = ({ text = 'L
     );
 };
 
-export default DesktopResourceButton;
+export default ResourceButton;

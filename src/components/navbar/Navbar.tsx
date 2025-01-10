@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import CTANavButton from './CTANavButton';
 import NavButton from './NavButton';
-import DesktopResourceButton from './DesktopResourceButton';
+import ResourceButton from './ResourceButton';
+import MobileButton from './MobileButton';
 import {
     IconBrandDiscord,
     IconBrandSpotify,
@@ -66,6 +67,100 @@ const Navbar: React.FC = () => {
                     z-50 pointer-events-none"
                 >
                     <div
+                        className="flex flex-col sm:hidden justify-center z-50 pointer-events-auto
+                        border border-opacity-25 rounded-xl overflow-hidden"
+                    >
+                        <div
+                            className={`flex flex-col items-center justify-center gap-[6px] bg-black
+                            bg-opacity-70 backdrop-blur-sm rounded-t-xl expand-container px-[6px] ${active}`}
+                        >
+                            <div
+                                className="flex flex-col justify-center items-start mt-[6px] bg-[#2b2b2b]
+                                bg-opacity-70 px-6 backdrop-blur-sm rounded-lg w-full h-full text-white text-sm
+                                text-left gap-8"
+                            >
+                                <motion.div
+                                    animate={{ opacity: open ? 1 : 0 }}
+                                    transition={{ duration: 0.15 }}
+                                    className="flex flex-col gap-4 justify-between"
+                                >
+                                    <ResourceButton
+                                        text="Hacker Guide"
+                                        link="https://drive.google.com/file/d/1LH0qNhCGSjjXyUuk_xUZzM5xzK8Zxsba/view?usp=sharing"
+                                        Icon={IconNotebook}
+                                    />
+                                    <ResourceButton
+                                        text="Discord"
+                                        link="https://discord.gg/RyyVcm4gFJ"
+                                        Icon={IconBrandDiscord}
+                                    />
+                                    <ResourceButton
+                                        text="Devpost"
+                                        link="https://thx.devpost.com"
+                                        Icon={IconScale}
+                                    />
+                                    <ResourceButton
+                                        text="HelpR"
+                                        link="https://helpr.tamuhack.org"
+                                        Icon={IconHelp}
+                                    />
+                                    <ResourceButton
+                                        text="Code of Conduct"
+                                        link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?_gl=1*19bpx84*_ga*NDgxNjY1Mzk0LjE3MDIxODA5Njk.*_ga_E5KT6TC4TK*MTcwMjcwNzc3NC40LjAuMTcwMjcwNzc3NC4wLjAuMA.."
+                                        Icon={IconLicense}
+                                    />
+                                    <ResourceButton
+                                        text="Intro to Git"
+                                        link="https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing"
+                                        Icon={IconBrandGit}
+                                    />
+                                    <ResourceButton
+                                        text="Intro to Web Dev"
+                                        link="https://docs.google.com/presentation/d/16moIOAhsbH5qlyeWv0xfH73XT_hk0TJ-b6xct3njT5U/edit?usp=sharing"
+                                        Icon={IconWorld}
+                                    />
+                                    <ResourceButton
+                                        text="Intro to Hardware"
+                                        link="https://docs.google.com/presentation/d/1PGyzuwHUsFabeBiMDdyGySel6rtKnuKERMko81i1Lb0/edit?usp=sharing"
+                                        Icon={IconCpu}
+                                    />
+                                    <ResourceButton
+                                        text="Misconduct Reporting"
+                                        link="http://tamuhack.org/misconduct"
+                                        Icon={IconExclamationCircle}
+                                    />
+                                    <ResourceButton
+                                        text="Team Formation"
+                                        link="https://tamuhack.org/team-formation"
+                                        Icon={IconUsers}
+                                    />
+                                </motion.div>
+                            </div>
+                        </div>
+                        <div
+                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70
+                            backdrop-blur-sm p-4 text-white ${!open
+                                    ? 'rounded-t-xl transition-all delay-[200ms]'
+                                    : ''}`}
+                        >
+                            <MobileButton Icon={IconCalendar} link="#schedule" isActive={activeSection === 'schedule'} />
+                            <MobileButton Icon={IconTrophy} link="#prizes-section" isActive={activeSection === 'prizes-section'} />
+                            <MobileButton Icon={IconUserQuestion} link="#faq" isActive={activeSection === 'faq'} />
+                            <button
+                                className="p-1 bg-[#fab7dc] rounded-sm text-black"
+                                onClick={() => setOpen(!open)}
+                            >
+                                <IconCategory className="w-5 h-5" />
+                            </button>
+                            <a
+                                href='https://register.tamuhack.com/'
+                                className='p-1 rounded-sm transition-all bg-[#CCE9FF] text-black'
+                            >
+                                <IconEdit className="w-5 h-5" />
+                            </a>
+                        </div>
+                    </div>
+                    <div
                         className="hidden sm:flex flex-col justify-center w-max pointer-events-auto
                         border border-white border-opacity-25 rounded-xl overflow-hidden"
                     >
@@ -83,27 +178,27 @@ const Navbar: React.FC = () => {
                                     transition={{ duration: 0.15 }}
                                     className="flex flex-col gap-3 justify-start h-full"
                                 >
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Hacker Guide"
                                         link="https://drive.google.com/file/d/1LH0qNhCGSjjXyUuk_xUZzM5xzK8Zxsba/view?usp=sharing"
                                         Icon={IconNotebook}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Discord"
                                         link="https://discord.gg/RyyVcm4gFJ"
                                         Icon={IconBrandDiscord}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Intro to Git"
                                         link="https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing"
                                         Icon={IconBrandGit}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Intro to Hardware"
                                         link="https://docs.google.com/presentation/d/1PGyzuwHUsFabeBiMDdyGySel6rtKnuKERMko81i1Lb0/edit?usp=sharing"
                                         Icon={IconCpu}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Team Formation"
                                         link="https://tamuhack.org/team-formation"
                                         Icon={IconUsers}
@@ -114,33 +209,32 @@ const Navbar: React.FC = () => {
                                     transition={{ duration: 0.15 }}
                                     className="flex flex-col gap-3 justify-start h-full"
                                 >
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Devpost"
                                         link="https://thx.devpost.com"
                                         Icon={IconScale}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="HelpR"
                                         link="https://helpr.tamuhack.org"
                                         Icon={IconHelp}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Code of Conduct"
                                         link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?_gl=1*19bpx84*_ga*NDgxNjY1Mzk0LjE3MDIxODA5Njk.*_ga_E5KT6TC4TK*MTcwMjcwNzc3NC40LjAuMTcwMjcwNzc3NC4wLjAuMA.."
                                         Icon={IconLicense}
                                     />
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Intro to Web Dev"
                                         link="https://docs.google.com/presentation/d/16moIOAhsbH5qlyeWv0xfH73XT_hk0TJ-b6xct3njT5U/edit?usp=sharing"
                                         Icon={IconWorld}
                                     />
 
-                                    <DesktopResourceButton
+                                    <ResourceButton
                                         text="Misconduct Reporting"
                                         link="http://tamuhack.org/misconduct"
                                         Icon={IconExclamationCircle}
                                     />
-
                                 </motion.div>
                             </div>
                         </div>
