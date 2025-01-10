@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { ArrowDownRight } from 'lucide-react'
 
 interface ScheduleItem {
     date: Date;
@@ -82,7 +83,8 @@ const Schedule: React.FC = () => {
                             <h2 className="font-poppins text-3xl lg:text-8xl">
                                 Schedule
                             </h2>
-                            <span className="rotate-270 mb-2 ml-2 text-8xl">↘</span>
+                            <ArrowDownRight className="w-16 h-16 lg:w-32 lg:h-32 translate-y-2" />
+                            {/*<span className="rotate-270 mb-2 ml-2 text-8xl">↘</span> */}
                         </div>
                         <div className="mt-3 w-fit grid p-2 place-items-center rounded-full bg-black text-base font-semibold">
                             <p className="uppercase text-white">
@@ -91,7 +93,7 @@ const Schedule: React.FC = () => {
                         </div>
                     </div>
                     
-                    <div className="flex items-start gap-4">
+                    <div className="hidden lg:flex items-start gap-4">
                     <Image 
                         src="/schedule_guy.png" 
                         alt="Schedule mascot" 
