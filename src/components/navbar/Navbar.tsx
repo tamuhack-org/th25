@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import CTANavButton from './CTANavButton';
 import NavButton from './NavButton';
@@ -29,37 +29,36 @@ const Navbar: React.FC = () => {
     const [animationDone, setAnimationDone] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('');
 
-
+    const handleIntersection = useCallback(
+        (entries: IntersectionObserverEntry[]) => {
+            entries.forEach((entry) => {
+                console.log('Threshold crossed:', entry.intersectionRatio);
+                console.log('Entry:', entry.target.id);
+                console.log('Is intersecting:', entry.isIntersecting);
+                console.log('Intersection ratio:', entry.intersectionRatio);
+                console.log('Bounding client rect:', entry.boundingClientRect);
+                console.log('Intersection rect:', entry.intersectionRect);
+                console.log('Before Active Section:', activeSection);
+                if (entry.isIntersecting) {
+                    entry.target.style.border = '5px solid green';
+                    setActiveSection(entry.target.id);
+                    console.log('After Active Section:', activeSection);
+                } else if (activeSection === entry.target.id) {
+                    entry.target.style.border = '5px solid red';
+                    setActiveSection('');
+                    console.log('After Active Section:', activeSection);
+                }
+            });
+        },
+        [],
+    );
 
     useEffect(() => {
         setAnimationDone(true);
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    console.log('Threshold crossed:', entry.intersectionRatio);
-                    console.log('Entry:', entry.target.id);
-                    console.log('Is intersecting:', entry.isIntersecting);
-                    console.log('Intersection ratio:', entry.intersectionRatio);
-                    console.log(
-                        'Bounding client rect:',
-                        entry.boundingClientRect,
-                    );
-                    console.log('Intersection rect:', entry.intersectionRect);
-                    console.log('Before Active Section:', activeSection);
-                    if (entry.isIntersecting) {
-                        entry.target.style.border = '5px solid green';
-                        setActiveSection(entry.target.id);
-                        console.log('After Active Section:', activeSection);
-                    } else if (activeSection === entry.target.id) {
-                        entry.target.style.border = '5px solid red';
-                        setActiveSection('');
-                        console.log('After Active Section:', activeSection);
-                    }
-                });
-            },
-            { threshold: [0] },
-        );
+        const observer = new IntersectionObserver(handleIntersection, {
+            threshold: [0],
+        });
 
         const sections = document.querySelectorAll('section');
         sections.forEach((section) => observer.observe(section));
@@ -67,7 +66,7 @@ const Navbar: React.FC = () => {
         return () => {
             sections.forEach((section) => observer.unobserve(section));
         };
-    }, []);
+    }, [handleIntersection]);
 
     const active = open ? 'active' : '';
 
