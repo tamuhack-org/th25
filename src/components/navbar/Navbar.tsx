@@ -35,14 +35,28 @@ const Navbar: React.FC = () => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
+                    console.log('Threshold crossed:', entry.intersectionRatio);
+                    console.log('Entry:', entry.target.id);
+                    console.log('Is intersecting:', entry.isIntersecting);
+                    console.log('Intersection ratio:', entry.intersectionRatio);
+                    console.log(
+                        'Bounding client rect:',
+                        entry.boundingClientRect,
+                    );
+                    console.log('Intersection rect:', entry.intersectionRect);
+                    console.log('Before Active Section:', activeSection);
                     if (entry.isIntersecting) {
+                        entry.target.style.border = '5px solid green';
                         setActiveSection(entry.target.id);
+                        console.log('After Active Section:', activeSection);
                     } else if (activeSection === entry.target.id) {
+                        entry.target.style.border = '5px solid red';
                         setActiveSection('');
+                        console.log('After Active Section:', activeSection);
                     }
                 });
             },
-            { threshold: [0, 1] },
+            { threshold: [0, 0.5, 1] },
         );
 
         const sections = document.querySelectorAll('section');
