@@ -276,7 +276,7 @@ const Schedule: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="hidden lg:flex lg:w-[10%] lg:flex-col lg:justify-start lg:gap-2 lg:px-2 lg:pt-20">
+                <div className="hidden px-0 lg:flex lg:w-[10%] lg:flex-col lg:justify-start lg:gap-3 lg:pt-20 xl:px-2">
                     {[
                         'Required',
                         'Company Events',
@@ -287,7 +287,7 @@ const Schedule: React.FC = () => {
                         <button
                             key={filter}
                             onClick={() => toggleFilter(filter)}
-                            className={`rounded-lg px-2 py-1 text-center text-sm transition-colors ${
+                            className={`rounded-lg px-2 py-3 text-center text-sm transition-colors ${
                                 activeFilters.includes(
                                     Object.entries(filterToTagMapping).find(
                                         (entry) => entry[1] === filter,
