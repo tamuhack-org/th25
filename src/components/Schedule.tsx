@@ -81,7 +81,7 @@ const Schedule: React.FC = () => {
                 <div className="flex items-start justify-between">
                     <div className="flex flex-col items-stretch">
                         {/* Want to put units here so that the svg scales  */}
-                        <div className="mb-2 flex items-end text-5xl lg:text-8xl">
+                        <div className="mb-2 flex items-end text-7xl lg:text-8xl">
                             <h2 className="font-poppins font-semibold">
                                 Schedule
                             </h2>
@@ -154,7 +154,7 @@ const Schedule: React.FC = () => {
             <div className="flex w-full flex-col gap-3 sm:gap-4 lg:flex-row lg:gap-8">
                 <div className="flex w-full flex-col lg:w-[45%]">
                     <div className="overflow-hidden rounded-2xl border-4 border-black">
-                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:text-4xl">
+                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
                             Saturday
                         </h3>
                         <div className="relative bg-white p-6">
@@ -304,7 +304,7 @@ const Schedule: React.FC = () => {
 
                 <div className="flex w-full flex-col lg:w-[45%]">
                     <div className="overflow-hidden rounded-2xl border-4 border-black">
-                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:text-4xl">
+                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
                             Sunday
                         </h3>
                         <div className="relative bg-white p-6">
