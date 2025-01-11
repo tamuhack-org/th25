@@ -10,7 +10,7 @@ import MediumBubble from '../../public/med_bubble.png';
 // import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 // import Sponsors from '@/components/Sponsors';
-// import Schedule from '@/components/Schedule';
+import Schedule from '@/components/Schedule';
 // import Prizes from '@/components/prizes/Prizes';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
@@ -92,9 +92,9 @@ export default function Home() {
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
                 <div className="mx-auto max-w-[2000px] px-8 py-32 lg:px-16">
-                    {/* <Schedule /> */}
+                    <Schedule />
                 </div>
-                {/* <hr className="h-1 w-full bg-black"></hr> */}
+                <hr className="h-1 w-full bg-black"></hr>
                 {/* <div className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Prizes />
