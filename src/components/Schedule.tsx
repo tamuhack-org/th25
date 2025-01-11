@@ -211,7 +211,7 @@ const Schedule: React.FC = () => {
                                                         )}
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="text-sm text-gray-600">
@@ -253,7 +253,7 @@ const Schedule: React.FC = () => {
                                                     </div>
 
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="mt-1 text-sm text-gray-600">
@@ -364,7 +364,7 @@ const Schedule: React.FC = () => {
                                                         )}
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="text-sm text-gray-600">
@@ -406,7 +406,7 @@ const Schedule: React.FC = () => {
                                                     </div>
 
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="mt-1 text-sm text-gray-600">
