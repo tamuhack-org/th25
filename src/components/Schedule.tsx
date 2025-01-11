@@ -77,11 +77,11 @@ const Schedule: React.FC = () => {
 
     return (
         <div id="schedule" className="z-10 flex w-full flex-col font-poppins">
-            <div className="mb-8 flex w-full flex-col">
+            <div className="mb-6 flex w-full flex-col lg:max-2xl:mb-4">
                 <div className="flex items-start justify-between">
-                    <div className="flex flex-col items-stretch">
+                    <div className="flex flex-col items-stretch lg:pr-40">
                         {/* Want to put units here so that the svg scales  */}
-                        <div className="mb-2 flex items-end text-7xl lg:text-8xl">
+                        <div className="xl:text-7.5xl 2xl:text-8.5xl md:text-6.5xl text-4.5xl xs:text-6xl xxs:text-5.5xl mb-2 flex items-end">
                             <h2 className="font-poppins font-semibold">
                                 Schedule
                             </h2>
@@ -102,7 +102,7 @@ const Schedule: React.FC = () => {
                                 />
                             </svg>
                         </div>
-                        <div className="mt-3 grid w-fit place-items-center rounded-full bg-black px-6 py-2 text-sm font-semibold lg:text-base">
+                        <div className="text-xxs xxs:text-xs xxs:px-8 xs:text-sm mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 font-medium tracking-wider md:px-12 lg:px-8 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
                                 <a href="#" className="underline">
@@ -118,7 +118,7 @@ const Schedule: React.FC = () => {
                             alt="Schedule mascot"
                             width={176}
                             height={144}
-                            className="h-36 w-44"
+                            className="h-32 w-40 xl:h-36 xl:w-44"
                         />
                         <div className="max-w-xs rounded-xl border-2 border-black bg-white p-4">
                             <p className="text-sm">

@@ -91,7 +91,7 @@ export default function Home() {
                     </div>
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
-                <div className="mx-auto max-w-[2000px] px-8 py-32 lg:px-16">
+                <div className="mx-auto max-w-[2000px] px-8 pb-32 pt-24 lg:px-16">
                     <Schedule />
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
