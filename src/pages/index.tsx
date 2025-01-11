@@ -108,7 +108,7 @@ export default function Home() {
                         <Schedule />
                     </div>
                 </div> */}
-               {/* <div className='bg-[#192349]'>
+                {/* <div className='bg-[#192349]'>
                         <Sponsors />
                 </div> */}
             </main>
