@@ -16,11 +16,11 @@ interface Tag {
 }
 
 const filterToTagMapping = {
-    'Required': 'Required',
-    'Sponsor': 'Company Events',
-    'Meal': 'Food',
-    'Workshop': 'Workshops',
-    'Social': 'For Fun'
+    Required: 'Required',
+    Sponsor: 'Company Events',
+    Meal: 'Food',
+    Workshop: 'Workshops',
+    Social: 'For Fun',
 };
 
 const Schedule: React.FC = () => {
@@ -46,12 +46,14 @@ const Schedule: React.FC = () => {
     }, []);
 
     const toggleFilter = (displayName: string) => {
-        const tagValue = Object.entries(filterToTagMapping).find(entry => entry[1] === displayName)?.[0];
+        const tagValue = Object.entries(filterToTagMapping).find(
+            (entry) => entry[1] === displayName,
+        )?.[0];
         if (tagValue) {
             setActiveFilters((prev) =>
                 prev.includes(tagValue)
                     ? prev.filter((f) => f !== tagValue)
-                    : [...prev, tagValue]
+                    : [...prev, tagValue],
             );
         }
     };
@@ -75,33 +77,53 @@ const Schedule: React.FC = () => {
 
     return (
         <div id="schedule" className="z-10 flex w-full flex-col font-poppins">
-            <div className="mb-8 flex flex-col w-full">
-            <div className="flex justify-between items-start">
-                    <div className="flex flex-col">
-                        <div className="mb-2 flex items-end">
-                            <h2 className="font-poppins text-3xl lg:text-8xl">
+            <div className="mb-8 flex w-full flex-col">
+                <div className="flex items-start justify-between">
+                    <div className="flex flex-col items-stretch">
+                        {/* Want to put units here so that the svg scales  */}
+                        <div className="mb-2 flex items-end text-5xl lg:text-8xl">
+                            <h2 className="font-poppins">
                                 Schedule
                             </h2>
-                            <span className="rotate-270 mb-2 ml-2 text-8xl">↘</span>
+                            <svg
+                                width="1em"
+                                height="1em"
+                                viewBox="0 0 128 128"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M24.8194 87.301L24.8193 87.1405L77.2246 87.0693L77.2766 36.9228L77.4444 36.9227L90.5704 49.4764L90.5332 99.7929L37.9503 99.85L24.8194 87.301Z"
+                                    fill="black"
+                                />
+                                <path
+                                    d="M35.688 38.9553L81.751 83.01L72.9822 91.4044L26.9192 47.3498L35.688 38.9553Z"
+                                    fill="black"
+                                />
+                            </svg>
                         </div>
-                        <div className="mt-3 w-fit grid p-2 place-items-center rounded-full bg-black text-base font-semibold">
+                        <div className="mt-3 grid w-fit place-items-center rounded-full bg-black px-6 py-2 text-sm lg:text-base font-semibold">
                             <p className="uppercase text-white">
-                                Find the hardware schedule <a href='#' className='underline'>HERE</a>
+                                Find the hardware schedule{' '}
+                                <a href="#" className="underline">
+                                    HERE
+                                </a>
                             </p>
                         </div>
                     </div>
-                    
-                    <div className="flex items-start gap-4">
-                    <Image 
-                        src="/schedule_guy.png" 
-                        alt="Schedule mascot" 
-                        width={176}
-                        height={144}
-                        className="w-44 h-36"
-                    />
-                        <div className="bg-white p-4 rounded-xl border-2 border-black max-w-xs">
+
+                    <div className="hidden items-start gap-4 lg:flex">
+                        <Image
+                            src="/schedule_guy.png"
+                            alt="Schedule mascot"
+                            width={176}
+                            height={144}
+                            className="h-36 w-44"
+                        />
+                        <div className="max-w-xs rounded-xl border-2 border-black bg-white p-4">
                             <p className="text-sm">
-                                Times are subject to change. Check back here for live updates!
+                                Times are subject to change. Check back here for
+                                live updates!
                             </p>
                         </div>
                     </div>
@@ -138,7 +160,8 @@ const Schedule: React.FC = () => {
                         <div className="relative bg-white p-6">
                             <div className="-z-2 absolute bottom-0 left-24 top-0 hidden w-3 bg-black lg:block" />
                             <div className="flex flex-col gap-4">
-                            {!scheduleItems || !scheduleItems.filter((item) => {
+                                {!scheduleItems ||
+                                !scheduleItems.filter((item) => {
                                     const date = new Date(item.date);
                                     const isDayMatch = date.getDay() === 6;
                                     const tagMatch =
@@ -148,94 +171,106 @@ const Schedule: React.FC = () => {
                                         );
                                     return isDayMatch && tagMatch;
                                 }).length ? (
-                                    <div className="flex items-center justify-center h-40">
-                                        <p className="text-gray-500 text-lg">Coming Soon!</p>
+                                    <div className="flex h-40 items-center justify-center">
+                                        <p className="text-lg text-gray-500">
+                                            Coming Soon!
+                                        </p>
                                     </div>
-                                ) : ( scheduleItems
-                                    ?.filter((item) => {
-                                        const date = new Date(item.date);
-                                        const isDayMatch = date.getDay() === 6;
-                                        const tagMatch =
-                                            activeFilters.length === 0 ||
-                                            item.tags.some((tag) =>
-                                                activeFilters.includes(tag.label),
-                                            );
-                                        return isDayMatch && tagMatch;
-                                    })
-                                    .sort(
-                                        (a, b) =>
-                                            new Date(a.date).getTime() -
-                                            new Date(b.date).getTime(),
-                                    )
-                                    .map((item) => (
-                                        <div key={item.id}>
-                                            <div className="flex items-start lg:hidden">
-                                                <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
-                                                    {new Date(
-                                                        item.date,
-                                                    ).toLocaleTimeString(
-                                                        'en-US',
-                                                        {
-                                                            hour: '2-digit',
-                                                            minute: '2-digit',
-                                                        },
-                                                    )}
-                                                </div>
-                                                <div className="flex flex-col">
-                                                    <div className="font-medium text-black">
-                                                        {item.eventName}
+                                ) : (
+                                    scheduleItems
+                                        ?.filter((item) => {
+                                            const date = new Date(item.date);
+                                            const isDayMatch =
+                                                date.getDay() === 6;
+                                            const tagMatch =
+                                                activeFilters.length === 0 ||
+                                                item.tags.some((tag) =>
+                                                    activeFilters.includes(
+                                                        tag.label,
+                                                    ),
+                                                );
+                                            return isDayMatch && tagMatch;
+                                        })
+                                        .sort(
+                                            (a, b) =>
+                                                new Date(a.date).getTime() -
+                                                new Date(b.date).getTime(),
+                                        )
+                                        .map((item) => (
+                                            <div key={item.id}>
+                                                <div className="flex items-start lg:hidden">
+                                                    <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
+                                                        {new Date(
+                                                            item.date,
+                                                        ).toLocaleTimeString(
+                                                            'en-US',
+                                                            {
+                                                                hour: '2-digit',
+                                                                minute: '2-digit',
+                                                            },
+                                                        )}
                                                     </div>
-                                                    <div className="text-sm text-gray-600">
-                                                        {item.location}
-                                                    </div>
-                                                    {item.description && (
-                                                        <div className="mt-1 text-sm text-gray-600">
-                                                            {item.description}
+                                                    <div className="flex flex-col">
+                                                        <div className="font-medium text-black">
+                                                            {item.eventName}
                                                         </div>
-                                                    )}
+                                                        <div className="text-sm text-gray-600">
+                                                            {item.location}
+                                                        </div>
+                                                        {item.description && (
+                                                            <div className="mt-1 text-sm text-gray-600">
+                                                                {
+                                                                    item.description
+                                                                }
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+
+                                                <div className="hidden lg:flex">
+                                                    <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
+                                                        {new Date(
+                                                            item.date,
+                                                        ).toLocaleTimeString(
+                                                            'en-US',
+                                                            {
+                                                                hour: '2-digit',
+                                                                minute: '2-digit',
+                                                            },
+                                                        )}
+                                                    </div>
+
+                                                    <div className="flex">
+                                                        <div
+                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${
+                                                                isEventCurrent(
+                                                                    item,
+                                                                )
+                                                                    ? '-ml-[29px] h-6 w-6 bg-pink-400'
+                                                                    : '-ml-7 h-5 w-5 bg-blue-100'
+                                                            }`}
+                                                        />
+                                                    </div>
+
+                                                    <div className="flex flex-col">
+                                                        <div className="font-medium text-black">
+                                                            {item.eventName}
+                                                        </div>
+                                                        <div className="mt-1 text-sm text-gray-600">
+                                                            {item.location}
+                                                        </div>
+                                                        {item.description && (
+                                                            <div className="mt-1 text-sm text-gray-600">
+                                                                {
+                                                                    item.description
+                                                                }
+                                                            </div>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <div className="hidden lg:flex">
-                                                <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
-                                                    {new Date(
-                                                        item.date,
-                                                    ).toLocaleTimeString(
-                                                        'en-US',
-                                                        {
-                                                            hour: '2-digit',
-                                                            minute: '2-digit',
-                                                        },
-                                                    )}
-                                                </div>
-
-                                                <div className="flex">
-                                                    <div
-                                                        className={`z-10 shrink-0 rounded-full border-4 border-black ${
-                                                            isEventCurrent(item)
-                                                                ? '-ml-[29px] h-6 w-6 bg-pink-400'
-                                                                : '-ml-7 h-5 w-5 bg-blue-100'
-                                                        }`}
-                                                    />
-                                                </div>
-
-                                                <div className="flex flex-col">
-                                                    <div className="font-medium text-black">
-                                                        {item.eventName}
-                                                    </div>
-                                                    <div className="mt-1 text-sm text-gray-600">
-                                                        {item.location}
-                                                    </div>
-                                                    {item.description && (
-                                                        <div className="mt-1 text-sm text-gray-600">
-                                                            {item.description}
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))
-                                  )}
+                                        ))
+                                )}
                             </div>
                         </div>
                     </div>
@@ -253,7 +288,11 @@ const Schedule: React.FC = () => {
                             key={filter}
                             onClick={() => toggleFilter(filter)}
                             className={`rounded-lg px-2 py-1 text-center text-sm transition-colors ${
-                                activeFilters.includes(Object.entries(filterToTagMapping).find(entry => entry[1] === filter)?.[0] || '')
+                                activeFilters.includes(
+                                    Object.entries(filterToTagMapping).find(
+                                        (entry) => entry[1] === filter,
+                                    )?.[0] || '',
+                                )
                                     ? 'bg-black text-white'
                                     : 'bg-gray-100 text-black hover:bg-gray-200'
                             }`}
@@ -272,7 +311,8 @@ const Schedule: React.FC = () => {
                             <div className="-z-2 absolute bottom-0 left-24 top-0 hidden w-3 bg-black lg:block" />
 
                             <div className="flex flex-col gap-6">
-                            {!scheduleItems || !scheduleItems.filter((item) => {
+                                {!scheduleItems ||
+                                !scheduleItems.filter((item) => {
                                     const date = new Date(item.date);
                                     const isDayMatch = date.getDay() === 6;
                                     const tagMatch =
@@ -282,96 +322,108 @@ const Schedule: React.FC = () => {
                                         );
                                     return isDayMatch && tagMatch;
                                 }).length ? (
-                                    <div className="flex items-center justify-center h-40">
-                                        <p className="text-gray-500 text-lg">Coming Soon!</p>
+                                    <div className="flex h-40 items-center justify-center">
+                                        <p className="text-lg text-gray-500">
+                                            Coming Soon!
+                                        </p>
                                     </div>
-                                ) : ( scheduleItems
-                                    ?.filter((item) => {
-                                        const date = new Date(item.date);
-                                        const isDayMatch = date.getDay() === 0;
+                                ) : (
+                                    scheduleItems
+                                        ?.filter((item) => {
+                                            const date = new Date(item.date);
+                                            const isDayMatch =
+                                                date.getDay() === 0;
 
-                                        const tagMatch =
-                                            activeFilters.length === 0 ||
-                                            item.tags.some((tag) =>
-                                                activeFilters.includes(tag.label),
-                                            );
+                                            const tagMatch =
+                                                activeFilters.length === 0 ||
+                                                item.tags.some((tag) =>
+                                                    activeFilters.includes(
+                                                        tag.label,
+                                                    ),
+                                                );
 
-                                        return isDayMatch && tagMatch;
-                                    })
-                                    .sort(
-                                        (a, b) =>
-                                            new Date(a.date).getTime() -
-                                            new Date(b.date).getTime(),
-                                    )
-                                    .map((item) => (
-                                        <div key={item.id}>
-                                            <div className="flex items-start lg:hidden">
-                                                <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
-                                                    {new Date(
-                                                        item.date,
-                                                    ).toLocaleTimeString(
-                                                        'en-US',
-                                                        {
-                                                            hour: '2-digit',
-                                                            minute: '2-digit',
-                                                        },
-                                                    )}
-                                                </div>
-                                                <div className="flex flex-col">
-                                                    <div className="font-medium text-black">
-                                                        {item.eventName}
+                                            return isDayMatch && tagMatch;
+                                        })
+                                        .sort(
+                                            (a, b) =>
+                                                new Date(a.date).getTime() -
+                                                new Date(b.date).getTime(),
+                                        )
+                                        .map((item) => (
+                                            <div key={item.id}>
+                                                <div className="flex items-start lg:hidden">
+                                                    <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
+                                                        {new Date(
+                                                            item.date,
+                                                        ).toLocaleTimeString(
+                                                            'en-US',
+                                                            {
+                                                                hour: '2-digit',
+                                                                minute: '2-digit',
+                                                            },
+                                                        )}
                                                     </div>
-                                                    <div className="text-sm text-gray-600">
-                                                        {item.location}
-                                                    </div>
-                                                    {item.description && (
-                                                        <div className="mt-1 text-sm text-gray-600">
-                                                            {item.description}
+                                                    <div className="flex flex-col">
+                                                        <div className="font-medium text-black">
+                                                            {item.eventName}
                                                         </div>
-                                                    )}
+                                                        <div className="text-sm text-gray-600">
+                                                            {item.location}
+                                                        </div>
+                                                        {item.description && (
+                                                            <div className="mt-1 text-sm text-gray-600">
+                                                                {
+                                                                    item.description
+                                                                }
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                </div>
+
+                                                <div className="hidden lg:flex">
+                                                    <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
+                                                        {new Date(
+                                                            item.date,
+                                                        ).toLocaleTimeString(
+                                                            'en-US',
+                                                            {
+                                                                hour: '2-digit',
+                                                                minute: '2-digit',
+                                                            },
+                                                        )}
+                                                    </div>
+
+                                                    <div className="flex">
+                                                        <div
+                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${
+                                                                isEventCurrent(
+                                                                    item,
+                                                                )
+                                                                    ? '-ml-[29px] h-6 w-6 bg-pink-400'
+                                                                    : '-ml-7 h-5 w-5 bg-blue-100'
+                                                            }`}
+                                                        />
+                                                    </div>
+
+                                                    <div className="flex flex-col">
+                                                        <div className="font-medium text-black">
+                                                            {item.eventName}
+                                                        </div>
+                                                        <div className="mt-1 text-sm text-gray-600">
+                                                            {item.location}
+                                                        </div>
+                                                        {item.description && (
+                                                            <div className="mt-1 text-sm text-gray-600">
+                                                                {
+                                                                    item.description
+                                                                }
+                                                            </div>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <div className="hidden lg:flex">
-                                                <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
-                                                    {new Date(
-                                                        item.date,
-                                                    ).toLocaleTimeString(
-                                                        'en-US',
-                                                        {
-                                                            hour: '2-digit',
-                                                            minute: '2-digit',
-                                                        },
-                                                    )}
-                                                </div>
-
-                                                <div className="flex">
-                                                    <div
-                                                        className={`z-10 shrink-0 rounded-full border-4 border-black ${
-                                                            isEventCurrent(item)
-                                                                ? '-ml-[29px] h-6 w-6 bg-pink-400'
-                                                                : '-ml-7 h-5 w-5 bg-blue-100'
-                                                        }`}
-                                                    />
-                                                </div>
-
-                                                <div className="flex flex-col">
-                                                    <div className="font-medium text-black">
-                                                        {item.eventName}
-                                                    </div>
-                                                    <div className="mt-1 text-sm text-gray-600">
-                                                        {item.location}
-                                                    </div>
-                                                    {item.description && (
-                                                        <div className="mt-1 text-sm text-gray-600">
-                                                            {item.description}
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))
-                                  )}
+                                        ))
+                                )}
                             </div>
                         </div>
                     </div>
