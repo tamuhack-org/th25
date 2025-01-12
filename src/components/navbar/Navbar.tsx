@@ -29,44 +29,9 @@ const Navbar: React.FC = () => {
     const [animationDone, setAnimationDone] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('');
 
-    const handleIntersection = useCallback(
-        (entries: IntersectionObserverEntry[]) => {
-            entries.forEach((entry) => {
-                console.log('Threshold crossed:', entry.intersectionRatio);
-                console.log('Entry:', entry.target.id);
-                console.log('Is intersecting:', entry.isIntersecting);
-                console.log('Intersection ratio:', entry.intersectionRatio);
-                console.log('Bounding client rect:', entry.boundingClientRect);
-                console.log('Intersection rect:', entry.intersectionRect);
-                console.log('Before Active Section:', activeSection);
-                if (entry.isIntersecting) {
-                    entry.target.style.border = '5px solid green';
-                    setActiveSection(entry.target.id);
-                    console.log('After Active Section:', activeSection);
-                } else if (activeSection === entry.target.id) {
-                    entry.target.style.border = '5px solid red';
-                    setActiveSection('');
-                    console.log('After Active Section:', activeSection);
-                }
-            });
-        },
-        [],
-    );
-
     useEffect(() => {
         setAnimationDone(true);
-
-        const observer = new IntersectionObserver(handleIntersection, {
-            threshold: [0],
-        });
-
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section) => observer.observe(section));
-
-        return () => {
-            sections.forEach((section) => observer.unobserve(section));
-        };
-    }, [handleIntersection]);
+    }, []);
 
     const active = open ? 'active' : '';
 
@@ -143,10 +108,11 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div
-                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${!open
-                                ? 'rounded-t-xl transition-all delay-[200ms]'
-                                : ''
-                                }`}
+                            className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${
+                                !open
+                                    ? 'rounded-t-xl transition-all delay-[200ms]'
+                                    : ''
+                            }`}
                         >
                             <MobileButton
                                 Icon={IconCalendar}
@@ -171,6 +137,8 @@ const Navbar: React.FC = () => {
                             </button>
                             <a
                                 href="https://register.tamuhack.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="rounded-md border border-white bg-white p-1 text-black transition-all"
                             >
                                 <IconEdit className="h-5 w-5" />
@@ -248,10 +216,11 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <div
-                            className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${!open
-                                ? 'rounded-t-xl transition-all delay-[200ms]'
-                                : ''
-                                }`}
+                            className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${
+                                !open
+                                    ? 'rounded-t-xl transition-all delay-[200ms]'
+                                    : ''
+                            }`}
                         >
                             <div className="flex items-center">
                                 <div className="flex gap-[6px] rounded-lg bg-[#2b2b2b] p-[6px] motion-safe:scroll-smooth">
