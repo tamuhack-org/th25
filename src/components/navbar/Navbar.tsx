@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import CTANavButton from './CTANavButton';
 import NavButton from './NavButton';
@@ -24,6 +26,8 @@ import {
     IconExclamationCircle,
     IconUsers,
 } from '@tabler/icons-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar: React.FC = () => {
     const [open, setOpen] = useState(false);
@@ -93,6 +97,27 @@ const Navbar: React.FC = () => {
     };
 
     const active = open ? 'active' : '';
+
+    useEffect(() => {
+        const sections = ['schedule', 'faq'];
+
+        sections.forEach((section) => {
+            ScrollTrigger.create({
+                trigger: `#${section}`,
+                start: 'top bottom',
+                end: 'bottom top',
+                onEnter: () => setActiveSection(section),
+                onEnterBack: () => setActiveSection(section),
+                onLeave: () => setActiveSection(''),
+                onLeaveBack: () => setActiveSection(''),
+                markers: true,
+            });
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
 
     return (
         <>
