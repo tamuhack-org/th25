@@ -117,8 +117,19 @@ const Info = () => {
                             </Link>
                         </div>
                         <p className="mt-6">
-                            Information on parking will be updated here at a
-                            later date!
+                            Parking will be available at{' '}
+                            <Link href="https://maps.app.goo.gl/ceQELiAUQKdrBqqc6"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="underline">
+                                Lot 100t
+                            </Link> and{' '}
+                            <Link href="https://maps.app.goo.gl/9LnkaYUdw7PFyR5o6"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="underline">
+                                Lot 74
+                            </Link>. These lots are available for free parking during the event, no permit required. Please note that you cannot park in numbered spots, timed parking spaces, or university business or service spaces.
                         </p>
                     </div>
                 </div>
