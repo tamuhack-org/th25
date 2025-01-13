@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import CTANavButton from './CTANavButton';
 import NavButton from './NavButton';
@@ -98,14 +98,14 @@ const Navbar: React.FC = () => {
 
     const active = open ? 'active' : '';
 
-    useEffect(() => {
+    useGSAP(() => {
         const sections = ['schedule', 'faq'];
 
         sections.forEach((section) => {
             ScrollTrigger.create({
                 trigger: `#${section}`,
                 start: 'top bottom',
-                end: 'bottom top',
+                end: 'bottom bottom',
                 onEnter: () => setActiveSection(section),
                 onEnterBack: () => setActiveSection(section),
                 onLeave: () => setActiveSection(''),
@@ -186,11 +186,10 @@ const Navbar: React.FC = () => {
                         </div>
                     </div>
                     <div
-                        className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${
-                            !open
-                                ? 'rounded-t-xl transition-all delay-[200ms]'
-                                : ''
-                        }`}
+                        className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${!open
+                            ? 'rounded-t-xl transition-all delay-[200ms]'
+                            : ''
+                            }`}
                     >
                         <MobileButton
                             Icon={IconCalendar}
@@ -287,11 +286,10 @@ const Navbar: React.FC = () => {
                         </div>
                     </div>
                     <div
-                        className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${
-                            !open
-                                ? 'rounded-t-xl transition-all delay-[200ms]'
-                                : ''
-                        }`}
+                        className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${!open
+                            ? 'rounded-t-xl transition-all delay-[200ms]'
+                            : ''
+                            }`}
                     >
                         <div className="flex items-center">
                             <div className="flex gap-[6px] rounded-lg bg-[#2b2b2b] p-[6px] motion-safe:scroll-smooth">
