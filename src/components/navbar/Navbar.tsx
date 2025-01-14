@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
             ease: 'power2.out',
         });
 
-        const sections = ['schedule', 'faq', 'prizes'];
+        const sections = ['schedule', 'prizes'];
 
         sections.forEach((section) => {
             ScrollTrigger.create({
