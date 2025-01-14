@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 interface ScheduleItem {
     date: Date;
@@ -36,7 +37,12 @@ const Schedule: React.FC = () => {
             setScheduleItems(fetchResult);
         };
         fetchSchedule();
+
     }, []);
+
+    useEffect(() => {
+        ScrollTrigger.refresh()
+    }, [scheduleItems])
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -428,7 +434,7 @@ const Schedule: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
