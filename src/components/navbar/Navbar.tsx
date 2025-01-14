@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -9,7 +9,6 @@ import ResourceButton from './ResourceButton';
 import MobileButton from './MobileButton';
 import {
     IconBrandDiscord,
-    IconBrandSpotify,
     IconChevronUp,
     IconHelp,
     IconLicense,

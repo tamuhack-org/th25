@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { IconBrandDiscord } from '@tabler/icons-react';
 
 type TablerIconComponent = typeof IconBrandDiscord;
