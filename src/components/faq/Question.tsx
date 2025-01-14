@@ -185,11 +185,13 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         alt="Prizes"
                         className="hidden md:flex"
                     />
-                    <Image
-                        src={ticket_2}
-                        alt="Prizes"
-                        className="hidden md:ml-auto md:flex"
-                    />
+                    <div className="self-stretch hidden md:ml-auto md:flex py-4">
+                        <Image
+                            src={ticket_2}
+                            alt="Prizes"
+                            className="hidden md:ml-auto md:flex self-stretch"
+                        />
+                    </div>
                 </div>
             </details>
             {/*Animate up/down arrows*/}
