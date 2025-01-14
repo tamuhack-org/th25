@@ -77,7 +77,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         height: [startHeight, endHeight],
                     },
                     {
-                        duration: 200,
+                        duration: 250,
                         easing: 'ease-out',
                     },
                 );
@@ -117,7 +117,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         height: [startHeight, endHeight],
                     },
                     {
-                        duration: 200,
+                        duration: 250,
                         easing: 'ease-out',
                     },
                 );
@@ -151,10 +151,10 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className={`faq-question relative mb-10 flex flex-col font-poppins text-[#292254] ${open ? 'rounded-3xl' : 'rounded-full'}`}
+                className={`faq-question relative mb-10 flex flex-col font-poppins text-[#292254] ${open ? 'rounded-3xl' : 'rounded-3xl'}`}
             >
                 <summary
-                    className={`flex cursor-pointer items-center bg-[#F5BFE4] text-xl font-medium ${open ? 'rounded-t-3xl' : 'rounded-full'}`}
+                    className={`flex cursor-pointer items-center rounded-t-3xl bg-[#F5BFE4] text-xl font-medium ${open ? '' : 'rounded-b-3xl transition-all delay-[170ms]'}`}
                     onClick={() => setOpen(!open)}
                 >
                     <Image
@@ -172,7 +172,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                     </span>
                 </summary>
                 <div
-                    className={`content flex bg-white ${open ? 'rounded-b-3xl' : ''}`}
+                    className={`content flex bg-white ${open ? 'rounded-b-3xl' : 'rounded-b-3xl'}`}
                 >
                     {/*Add each answer*/}
                     <p className="my-2 ml-10 w-7/12 pb-2 pt-4 text-lg">
