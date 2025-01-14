@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionItem from './Section'; // Assuming Section is also converted to a React component
 import content from './content.json' assert { type: 'json' };
+import Image from 'next/image';
 
 // Redefine Question shape as the same as in Question.tsx
 interface Question {
@@ -20,24 +21,22 @@ const FAQ: React.FC = () => {
 
     return (
         <section id="faq" className="w-full lg:container" aria-label="faq">
-            <div className="flex">
-                <div className="w-full lg:w-3/4">
+            <div className="flex w-full flex-row justify-between">
+                <div className="w-6/12">
                     <h1
                         id="faq-title"
-                        className="font-serif text-7xl text-transparent"
+                        className="font-poppins text-8xl font-medium text-white"
                     >
                         FAQ
                     </h1>
                     <div
                         id="faq-description"
-                        className="mt-10 font-serif text-xl text-[#000000] md:text-2xl"
+                        className="mt-5 font-poppins text-xl leading-loose tracking-wide text-white"
                     >
                         <p>
                             Everything you need to know about participating in
-                            TAMUhack.
-                        </p>
-                        <p className="mt-4 md:mt-0">
-                            Can&apos;t find what you&apos;re looking for?{' '}
+                            TAMUhack. Can&apos;t find what you&apos;re looking
+                            for?{' '}
                             <a
                                 className="underline"
                                 href="mailto:hello@tamuhack.com"
@@ -46,6 +45,15 @@ const FAQ: React.FC = () => {
                             </a>
                         </p>
                     </div>
+                </div>
+                <div className="mr-20 flex w-3/12">
+                    <Image
+                        src="/faq_guy.png"
+                        alt="Schedule mascot"
+                        width={249}
+                        height={187}
+                        className="h-auto max-h-full w-auto max-w-full object-contain"
+                    />
                 </div>
             </div>
             <div className="mt-10">
@@ -59,14 +67,6 @@ const FAQ: React.FC = () => {
                     </div>
                 ))}
             </div>
-            {/*Style the FAQ title to have cool outline*/}
-            <style jsx>{`
-                #faq-title {
-                    -webkit-text-stroke-width: 2px;
-                    -webkit-text-stroke-color: #000000;
-                    opacity: 0.7;
-                }
-            `}</style>
         </section>
     );
 };

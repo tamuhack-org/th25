@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { IconChevronDown } from '@tabler/icons-react';
+import train_faq from '../../../public/train_faq.svg';
+import ticket_1 from '../../../public/ticket_line_1.svg';
+import ticket_2 from '../../../public/ticket_line_2.svg';
 
 interface QuestionProps {
     // Expects one question item that contains a question and a list of answers
@@ -147,31 +151,41 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className="faq-question relative font-serif text-[#000000]"
+                className={`faq-question relative mb-10 flex flex-col font-poppins text-[#292254] ${open ? 'rounded-3xl' : 'rounded-full'}`}
             >
                 <summary
-                    className="flex cursor-pointer items-center justify-between text-lg font-medium md:text-xl"
+                    className={`flex cursor-pointer items-center bg-[#F5BFE4] text-xl font-medium ${open ? 'rounded-t-3xl' : 'rounded-full'}`}
                     onClick={() => setOpen(!open)}
                 >
+                    <Image
+                        src={train_faq}
+                        alt="Prizes"
+                        className="my-3 ml-10 mr-10 h-9 w-auto"
+                    />
                     {/*Add question*/}
                     {item.question}
                     {/*Add arrow*/}
                     <span
-                        className={`flip ${open ? 'arrow-open' : 'arrow-close'}`}
+                        className={`flip ml-auto ${open ? 'arrow-open' : 'arrow-close'}`}
                     >
-                        <IconChevronDown className="h-5 w-5" />
+                        <IconChevronDown className="mr-6 h-10 w-10" />
                     </span>
                 </summary>
-                <p className="content pb-2 pt-4 text-base md:text-lg">
+                <div
+                    className={`content flex bg-white ${open ? 'rounded-b-3xl' : ''}`}
+                >
                     {/*Add each answer*/}
-                    {item.answers.map((answer, index) => (
-                        <span key={index} className="">
-                            {answer}
-                        </span>
-                    ))}
-                </p>
+                    <p className="my-2 ml-10 w-7/12 pb-2 pt-4 text-lg">
+                        {item.answers.map((answer, index) => (
+                            <span key={index} className="">
+                                {answer}
+                            </span>
+                        ))}
+                    </p>
+                    <Image src={ticket_1} alt="Prizes" className="ml-10" />
+                    <Image src={ticket_2} alt="Prizes" className="ml-auto" />
+                </div>
             </details>
-            <div className="faq-question-bottom mb-6 mt-2 h-[2px] w-full rounded-full bg-[#000000] opacity-25 md:mt-4" />
             {/*Animate up/down arrows*/}
             <style jsx>{`
                 .arrow-open {

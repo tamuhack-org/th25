@@ -14,7 +14,7 @@ const SectionItem: React.FC<SectionProps> = ({ title, questions = [] }) => {
             <div className="mb-10 w-full lg:mb-0 lg:w-1/4">
                 <h2
                     id="new-section-title"
-                    className="sticky top-8 font-serif text-4xl text-[#000000]"
+                    className="sticky top-8 font-poppins text-6.5xl font-medium text-white"
                 >
                     {/*Add the title to the left 1/4 of screen and make it sticky*/}
                     {title}
