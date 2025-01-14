@@ -160,7 +160,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                     <Image
                         src={train_faq}
                         alt="Prizes"
-                        className="mx-4 my-3 h-4 w-auto md:mx-10 md:h-9"
+                        className="my-3 ml-8 mr-4 h-4 w-auto md:mx-10 md:h-9"
                     />
                     {/*Add question*/}
                     {item.question}
@@ -173,7 +173,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 </summary>
                 <div className={`content flex rounded-b-[30px] bg-white`}>
                     {/*Add each answer*/}
-                    <div className="mb-2 ml-4 w-full pb-2 pt-4 text-sm md:my-2 md:ml-10 md:w-7/12 md:text-lg">
+                    <div className="mx-8 mb-2 w-full pb-2 pt-4 text-sm md:mx-10 md:my-2 md:w-7/12 md:text-lg">
                         {item.answers.map((answer, index) => (
                             <p key={index} className="">
                                 {answer}
@@ -183,7 +183,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                     <Image
                         src={ticket_1}
                         alt="Prizes"
-                        className="hidden md:ml-10 md:flex"
+                        className="hidden md:flex"
                     />
                     <Image
                         src={ticket_2}
