@@ -154,23 +154,23 @@ const Schedule: React.FC = () => {
             <div className="flex w-full flex-col gap-3 sm:gap-4 lg:flex-row lg:gap-8">
                 <div className="flex w-full flex-col lg:w-[45%]">
                     <div className="overflow-hidden rounded-2xl border-4 border-black">
-                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
+                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl border-b-4 border-black">
                             Saturday
                         </h3>
                         <div className="relative bg-white p-6">
                             <div className="-z-2 absolute bottom-0 left-24 top-0 hidden w-3 bg-black lg:block" />
                             <div className="flex flex-col gap-4">
                                 {!scheduleItems ||
-                                !scheduleItems.filter((item) => {
-                                    const date = new Date(item.date);
-                                    const isDayMatch = date.getDay() === 6;
-                                    const tagMatch =
-                                        activeFilters.length === 0 ||
-                                        item.tags.some((tag) =>
-                                            activeFilters.includes(tag.label),
-                                        );
-                                    return isDayMatch && tagMatch;
-                                }).length ? (
+                                    !scheduleItems.filter((item) => {
+                                        const date = new Date(item.date);
+                                        const isDayMatch = date.getDay() === 6;
+                                        const tagMatch =
+                                            activeFilters.length === 0 ||
+                                            item.tags.some((tag) =>
+                                                activeFilters.includes(tag.label),
+                                            );
+                                        return isDayMatch && tagMatch;
+                                    }).length ? (
                                     <div className="flex h-40 items-center justify-center">
                                         <p className="text-lg text-gray-500">
                                             Coming Soon!
@@ -242,13 +242,12 @@ const Schedule: React.FC = () => {
 
                                                     <div className="flex">
                                                         <div
-                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${
-                                                                isEventCurrent(
-                                                                    item,
-                                                                )
-                                                                    ? '-ml-[29px] h-6 w-6 bg-pink-400'
-                                                                    : '-ml-7 h-5 w-5 bg-blue-100'
-                                                            }`}
+                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${isEventCurrent(
+                                                                item,
+                                                            )
+                                                                ? '-ml-[29px] h-6 w-6 bg-pink-400'
+                                                                : '-ml-7 h-5 w-5 bg-blue-100'
+                                                                }`}
                                                         />
                                                     </div>
 
@@ -296,6 +295,7 @@ const Schedule: React.FC = () => {
                                     ? 'bg-black text-white'
                                     : 'bg-gray-100 text-black hover:bg-gray-200'
                             }`}
+
                         >
                             {filter}
                         </button>
@@ -304,7 +304,7 @@ const Schedule: React.FC = () => {
 
                 <div className="flex w-full flex-col lg:w-[45%]">
                     <div className="overflow-hidden rounded-2xl border-4 border-black">
-                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
+                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl border-b-4 border-black">
                             Sunday
                         </h3>
                         <div className="relative bg-white p-6">
@@ -312,16 +312,16 @@ const Schedule: React.FC = () => {
 
                             <div className="flex flex-col gap-6">
                                 {!scheduleItems ||
-                                !scheduleItems.filter((item) => {
-                                    const date = new Date(item.date);
-                                    const isDayMatch = date.getDay() === 6;
-                                    const tagMatch =
-                                        activeFilters.length === 0 ||
-                                        item.tags.some((tag) =>
-                                            activeFilters.includes(tag.label),
-                                        );
-                                    return isDayMatch && tagMatch;
-                                }).length ? (
+                                    !scheduleItems.filter((item) => {
+                                        const date = new Date(item.date);
+                                        const isDayMatch = date.getDay() === 6;
+                                        const tagMatch =
+                                            activeFilters.length === 0 ||
+                                            item.tags.some((tag) =>
+                                                activeFilters.includes(tag.label),
+                                            );
+                                        return isDayMatch && tagMatch;
+                                    }).length ? (
                                     <div className="flex h-40 items-center justify-center">
                                         <p className="text-lg text-gray-500">
                                             Coming Soon!
@@ -395,13 +395,12 @@ const Schedule: React.FC = () => {
 
                                                     <div className="flex">
                                                         <div
-                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${
-                                                                isEventCurrent(
-                                                                    item,
-                                                                )
-                                                                    ? '-ml-[29px] h-6 w-6 bg-pink-400'
-                                                                    : '-ml-7 h-5 w-5 bg-blue-100'
-                                                            }`}
+                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${isEventCurrent(
+                                                                item,
+                                                            )
+                                                                ? '-ml-[29px] h-6 w-6 bg-pink-400'
+                                                                : '-ml-7 h-5 w-5 bg-blue-100'
+                                                                }`}
                                                         />
                                                     </div>
 
