@@ -85,6 +85,7 @@ export default function Home() {
                         <HomeGraphic />
                     </div>
                 </div>
+                <Navbar />
                 {/* Gradient section */}
                 <div className="mt-40 bg-gradient-to-b from-[#ffff] to-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
@@ -120,7 +121,6 @@ export default function Home() {
             <div className="mx-auto max-w-[2000px] px-8 pt-16 lg:px-16">
                 <TamuhackFooter />
             </div>
-            <Navbar />
         </>
     );
 }
