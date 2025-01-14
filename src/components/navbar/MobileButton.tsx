@@ -14,7 +14,6 @@ const MobileButton: React.FC<MobileButtonProps> = ({
     link,
     isActive,
 }) => {
-
     return (
         <a
             href={link}

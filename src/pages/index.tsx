@@ -96,7 +96,10 @@ export default function Home() {
                     <Schedule />
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
-                <section id='prizes' className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]">
+                <section
+                    id="prizes"
+                    className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]"
+                >
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Prizes />
                     </div>

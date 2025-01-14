@@ -11,7 +11,6 @@ const NavButton: React.FC<NavButtonProps> = ({
     link = '#',
     isActive,
 }) => {
-
     return (
         <a
             href={link}
