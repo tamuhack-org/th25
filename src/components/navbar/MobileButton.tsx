@@ -14,18 +14,10 @@ const MobileButton: React.FC<MobileButtonProps> = ({
     link,
     isActive,
 }) => {
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        const element = document.getElementById(link.substring(1));
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
 
     return (
         <a
             href={link}
-            onClick={handleClick}
             className={`rounded-md border p-1 transition-all ${
                 isActive ? 'border-gray-400' : 'border-transparent'
             }`}

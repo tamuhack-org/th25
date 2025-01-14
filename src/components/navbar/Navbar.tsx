@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
     const active = open ? 'active' : '';
 
     useGSAP(() => {
-        const sections = ['schedule', 'faq'];
+        const sections = ['schedule', 'faq', 'prizes'];
 
         sections.forEach((section) => {
             ScrollTrigger.create({
@@ -197,8 +197,8 @@ const Navbar: React.FC = () => {
                         />
                         <MobileButton
                             Icon={IconTrophy}
-                            link="#prizes-section"
-                            isActive={activeSection === 'prizes-section'}
+                            link="#prizes"
+                            isActive={activeSection === 'prizes'}
                         />
                         <MobileButton
                             Icon={IconUserQuestion}
@@ -300,9 +300,9 @@ const Navbar: React.FC = () => {
                                 />
                                 <NavButton
                                     text="Prizes"
-                                    link="#prizes-section"
+                                    link="#prizes"
                                     isActive={
-                                        activeSection === 'prizes-section'
+                                        activeSection === 'prizes'
                                     }
                                 />
                                 <NavButton
