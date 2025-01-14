@@ -151,7 +151,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className={`faq-question relative mb-10 flex flex-col font-poppins text-[#292254] ${open ? 'rounded-3xl' : 'rounded-3xl'}`}
+                className={`faq-question relative mb-10 flex flex-col rounded-3xl font-poppins text-[#292254]`}
             >
                 <summary
                     className={`flex cursor-pointer items-center rounded-t-3xl bg-[#F5BFE4] text-xl font-medium ${open ? '' : 'rounded-b-3xl transition-all delay-[170ms]'}`}
