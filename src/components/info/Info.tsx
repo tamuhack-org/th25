@@ -140,9 +140,9 @@ const Info = () => {
                     </div>
                     <div className="mt-4 max-w-lg rounded-xl bg-transparent bg-opacity-60 lg:bg-white lg:p-6">
                         <p>
-                            At TAMUhack 2025,{' '}
-                            <span className="underline">hardware</span> will be
-                            a <span className="font-bold">week-long</span>{' '}
+                            At TAMUhack 2025, <span className="">hardware</span>{' '}
+                            will be a{' '}
+                            <span className="font-bold">week-long</span>{' '}
                             hackathon. Teams may begin working on January 19th
                             and have until January 26th, when teams will
                             showcase their project at the venue in specific
@@ -150,7 +150,14 @@ const Info = () => {
                         </p>
                         <p className="mt-6">
                             TAMUhack will be providing{' '}
-                            <span className="underline">hardware supplies</span>{' '}
+                            <a
+                                href="https://docs.google.com/document/d/1NAnblNfmhRuGRvaJSTiiwVoV1eC3fDpZaJBeHEqp-rk/edit?usp=sharing"
+                                className="underline"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                            >
+                                hardware supplies
+                            </a>{' '}
                             to{' '}
                             <span className="font-bold">
                                 accepted participants

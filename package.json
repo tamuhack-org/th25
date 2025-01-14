@@ -20,6 +20,7 @@
         "gsap": "^3.12.5",
         "jquery": "^3.7.1",
         "jquery.ripples": "^0.6.3",
+        "lucide-react": "^0.469.0",
         "luxon": "^3.5.0",
         "next": "14.2.18",
         "react": "^18",
