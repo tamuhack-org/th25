@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -35,21 +35,39 @@ const Navbar: React.FC = () => {
     const expandContainerRefMobile = useRef(null);
     const expandContainerRefDesktop = useRef(null);
     const arrowRef = useRef(null);
+    const active = open ? 'active' : '';
 
-    useEffect(() => {
-        gsap.fromTo(
-            navbarRef.current,
-            { autoAlpha: 0, y: 50, delay: 0.1 },
-            { autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' },
-        );
-    }, []);
-
-    useEffect(() => {
+    const { contextSafe } = useGSAP(() => {
         gsap.set(arrowRef.current, { rotationX: 0 });
         gsap.set('.resources', { autoAlpha: 0 });
+
+        gsap.to(navbarRef.current, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+        });
+
+        const sections = ['schedule', 'faq', 'prizes'];
+
+        sections.forEach((section) => {
+            ScrollTrigger.create({
+                trigger: `#${section}`,
+                start: 'top bottom',
+                end: 'bottom bottom',
+                onEnter: () => setActiveSection(section),
+                onEnterBack: () => setActiveSection(section),
+                onLeave: () => setActiveSection(''),
+                onLeaveBack: () => setActiveSection(''),
+            });
+        });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
     }, []);
 
-    const expandContainer = () => {
+    const expandContainer = contextSafe(() => {
         const height = window.innerWidth <= 640 ? 400 : 200;
 
         gsap.to(expandContainerRefMobile.current, {
@@ -74,9 +92,9 @@ const Navbar: React.FC = () => {
             duration: 0.15,
             ease: 'power2.out',
         });
-    };
+    });
 
-    const collapseContainer = () => {
+    const collapseContainer = contextSafe(() => {
         gsap.to(expandContainerRefMobile.current, {
             height: 0,
             duration: 0.25,
@@ -98,7 +116,7 @@ const Navbar: React.FC = () => {
             duration: 0.15,
             ease: 'power2.out',
         });
-    };
+    });
 
     const toggleExpand = () => {
         if (open) {
@@ -109,33 +127,11 @@ const Navbar: React.FC = () => {
         setOpen(!open);
     };
 
-    const active = open ? 'active' : '';
-
-    useGSAP(() => {
-        const sections = ['schedule', 'prizes'];
-
-        sections.forEach((section) => {
-            ScrollTrigger.create({
-                trigger: `#${section}`,
-                start: 'top bottom',
-                end: 'bottom bottom',
-                onEnter: () => setActiveSection(section),
-                onEnterBack: () => setActiveSection(section),
-                onLeave: () => setActiveSection(''),
-                onLeaveBack: () => setActiveSection(''),
-            });
-        });
-
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    }, []);
-
     return (
         <>
             <div
                 ref={navbarRef}
-                className="pointer-events-none fixed bottom-8 z-50 flex w-full select-none justify-center font-poppins"
+                className="pointer-events-none fixed bottom-8 z-50 flex w-full translate-y-12 select-none justify-center font-poppins opacity-0"
             >
                 <div className="pointer-events-auto z-50 flex flex-col justify-center overflow-hidden rounded-xl border border-opacity-25 sm:hidden">
                     <div
