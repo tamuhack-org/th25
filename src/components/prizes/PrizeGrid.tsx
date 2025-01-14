@@ -16,11 +16,13 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
             style={{ backdropFilter: 'blur(10px)' }}
         >
             <div className="col-span-4 flex flex-col items-center gap-4 bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8">
-                <Image
-                    src={prizes[0].image}
-                    alt={prizes[0].prize}
-                    className="max-w-48"
-                />
+                {prizes[0].image && (
+                    <Image
+                        src={prizes[0].image}
+                        alt={prizes[0].prize}
+                        className="max-w-48"
+                    />
+                )}
                 <div className="flex w-full flex-col justify-center gap-2">
                     <h2
                         className={`${swily.className} text-4xl font-semibold sm:text-5xl lg:text-6xl xl:text-8xl`}
@@ -36,11 +38,13 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                 </div>
             </div>
             <div className="col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2">
-                <Image
-                    src={prizes[1].image}
-                    alt={prizes[1].prize}
-                    className="max-w-32"
-                />
+                {prizes[1].image && (
+                    <Image
+                        src={prizes[1].image}
+                        alt={prizes[1].prize}
+                        className="max-w-32"
+                    />
+                )}
                 <div className="flex w-full flex-col justify-center gap-2">
                     <h2
                         className={`${swily.className} text-3xl font-semibold sm:text-4xl lg:text-5xl`}
@@ -52,11 +56,13 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                 </div>
             </div>
             <div className="col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2">
-                <Image
-                    src={prizes[2].image}
-                    alt={prizes[2].prize}
-                    className="max-w-32"
-                />
+                {prizes[2].image && (
+                    <Image
+                        src={prizes[2].image}
+                        alt={prizes[2].prize}
+                        className="max-w-32"
+                    />
+                )}
                 <div className="flex w-full flex-col justify-center gap-2">
                     <h2
                         className={`${swily.className} text-3xl font-semibold sm:text-4xl lg:text-5xl`}
@@ -74,11 +80,13 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                             className="col-span-3 flex flex-col items-center gap-4 bg-white p-4 font-poppins sm:flex-row md:col-span-1 md:flex-col"
                             key={i}
                         >
-                            <Image
-                                src={prize.image}
-                                alt={prize.prize}
-                                className="max-w-32"
-                            />
+                            {prize.image && (
+                                <Image
+                                    src={prize.image}
+                                    alt={prize.prize}
+                                    className="max-w-32"
+                                />
+                            )}
                             <div className="flex h-full w-full flex-col justify-between gap-6">
                                 <div className="flex flex-col justify-start gap-2">
                                     <h2
