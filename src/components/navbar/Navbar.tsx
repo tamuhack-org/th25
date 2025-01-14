@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -9,7 +9,6 @@ import ResourceButton from './ResourceButton';
 import MobileButton from './MobileButton';
 import {
     IconBrandDiscord,
-    IconBrandSpotify,
     IconChevronUp,
     IconHelp,
     IconLicense,
@@ -33,73 +32,23 @@ const Navbar: React.FC = () => {
     const [open, setOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('');
     const navbarRef = useRef<HTMLDivElement>(null);
-    const expandContainerRef = useRef(null);
+    const expandContainerRefMobile = useRef(null);
+    const expandContainerRefDesktop = useRef(null);
     const arrowRef = useRef(null);
-
-    useEffect(() => {
-        gsap.fromTo(
-            navbarRef.current,
-            { autoAlpha: 0, y: 50, delay: 0.1 },
-            { autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' },
-        );
-    }, []);
-
-    useEffect(() => {
-        gsap.set(expandContainerRef.current, { height: 0 });
-        gsap.set(arrowRef.current, { rotationX: 0 });
-        gsap.set('.resources', { autoAlpha: 0 });
-    }, []);
-
-    const expandContainer = () => {
-        const height = window.innerWidth <= 640 ? 400 : 200;
-        gsap.to(expandContainerRef.current, {
-            height: height,
-            duration: 0.25,
-            ease: 'power2.out',
-        });
-        gsap.to(arrowRef.current, {
-            rotationX: 180,
-            duration: 0.25,
-            ease: 'power2.inOut',
-        });
-        gsap.to('.resources', {
-            autoAlpha: 1,
-            duration: 0.15,
-            ease: 'power2.out',
-        });
-    };
-
-    const collapseContainer = () => {
-        gsap.to(expandContainerRef.current, {
-            height: 0,
-            duration: 0.25,
-            ease: 'power2.out',
-        });
-        gsap.to(arrowRef.current, {
-            rotationX: 0,
-            duration: 0.25,
-            ease: 'power2.inOut',
-        });
-        gsap.to('.resources', {
-            autoAlpha: 0,
-            duration: 0.15,
-            ease: 'power2.out',
-        });
-    };
-
-    const toggleExpand = () => {
-        if (open) {
-            collapseContainer();
-        } else {
-            expandContainer();
-        }
-        setOpen(!open);
-    };
-
     const active = open ? 'active' : '';
 
-    useGSAP(() => {
-        const sections = ['schedule', 'faq'];
+    const { contextSafe } = useGSAP(() => {
+        gsap.set(arrowRef.current, { rotationX: 0 });
+        gsap.set('.resources', { autoAlpha: 0 });
+
+        gsap.to(navbarRef.current, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out',
+        });
+
+        const sections = ['schedule', 'prizes'];
 
         sections.forEach((section) => {
             ScrollTrigger.create({
@@ -118,16 +67,76 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
+    const expandContainer = contextSafe(() => {
+        const height = window.innerWidth <= 640 ? 400 : 200;
+
+        gsap.to(expandContainerRefMobile.current, {
+            height,
+            duration: 0.25,
+            ease: 'power2.out',
+        });
+
+        gsap.to(expandContainerRefDesktop.current, {
+            height,
+            duration: 0.25,
+            ease: 'power2.out',
+        });
+
+        gsap.to(arrowRef.current, {
+            rotationX: 180,
+            duration: 0.25,
+            ease: 'power2.inOut',
+        });
+        gsap.to('.resources', {
+            autoAlpha: 1,
+            duration: 0.15,
+            ease: 'power2.out',
+        });
+    });
+
+    const collapseContainer = contextSafe(() => {
+        gsap.to(expandContainerRefMobile.current, {
+            height: 0,
+            duration: 0.25,
+            ease: 'power2.out',
+        });
+        gsap.to(expandContainerRefDesktop.current, {
+            height: 0,
+            duration: 0.25,
+            ease: 'power2.out',
+        });
+
+        gsap.to(arrowRef.current, {
+            rotationX: 0,
+            duration: 0.25,
+            ease: 'power2.inOut',
+        });
+        gsap.to('.resources', {
+            autoAlpha: 0,
+            duration: 0.15,
+            ease: 'power2.out',
+        });
+    });
+
+    const toggleExpand = () => {
+        if (open) {
+            collapseContainer();
+        } else {
+            expandContainer();
+        }
+        setOpen(!open);
+    };
+
     return (
         <>
             <div
                 ref={navbarRef}
-                className="pointer-events-none fixed bottom-8 z-50 flex w-full select-none justify-center font-poppins"
+                className="pointer-events-none fixed bottom-8 z-50 flex w-full translate-y-12 select-none justify-center font-poppins opacity-0"
             >
                 <div className="pointer-events-auto z-50 flex flex-col justify-center overflow-hidden rounded-xl border border-opacity-25 sm:hidden">
                     <div
-                        ref={expandContainerRef}
-                        className={`expand-container flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
+                        ref={expandContainerRefMobile}
+                        className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-col items-start justify-center gap-8 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex flex-col justify-between gap-4">
@@ -198,8 +207,8 @@ const Navbar: React.FC = () => {
                         />
                         <MobileButton
                             Icon={IconTrophy}
-                            link="#prizes-section"
-                            isActive={activeSection === 'prizes-section'}
+                            link="#prizes"
+                            isActive={activeSection === 'prizes'}
                         />
                         <MobileButton
                             Icon={IconUserQuestion}
@@ -208,7 +217,7 @@ const Navbar: React.FC = () => {
                         />
                         <button
                             className="rounded-md border border-black bg-black p-1 text-white"
-                            onClick={() => setOpen(!open)}
+                            onClick={toggleExpand}
                         >
                             <IconCategory className="h-5 w-5" />
                         </button>
@@ -224,8 +233,8 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
                     <div
-                        ref={expandContainerRef}
-                        className={`expand-container flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
+                        ref={expandContainerRefDesktop}
+                        className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex h-full flex-col justify-start gap-3">
@@ -301,10 +310,8 @@ const Navbar: React.FC = () => {
                                 />
                                 <NavButton
                                     text="Prizes"
-                                    link="#prizes-section"
-                                    isActive={
-                                        activeSection === 'prizes-section'
-                                    }
+                                    link="#prizes"
+                                    isActive={activeSection === 'prizes'}
                                 />
                                 <NavButton
                                     text="FAQ"

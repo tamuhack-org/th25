@@ -117,8 +117,28 @@ const Info = () => {
                             </Link>
                         </div>
                         <p className="mt-6">
-                            Information on parking will be updated here at a
-                            later date!
+                            Parking will be available at{' '}
+                            <Link
+                                href="https://maps.app.goo.gl/ceQELiAUQKdrBqqc6"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="underline"
+                            >
+                                Lot 100t
+                            </Link>{' '}
+                            and{' '}
+                            <Link
+                                href="https://maps.app.goo.gl/9LnkaYUdw7PFyR5o6"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                className="underline"
+                            >
+                                Lot 74
+                            </Link>
+                            . These lots are available for free parking during
+                            the event, no permit required. Please note that you
+                            cannot park in numbered spots, timed parking spaces,
+                            or university business or service spaces.
                         </p>
                     </div>
                 </div>
@@ -133,7 +153,7 @@ const Info = () => {
                     >
                         Hardware
                     </h2>
-                    <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base font-semibold">
+                    <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base font-semibold tracking-wider">
                         <p className="uppercase text-white">
                             Hardware will begin Jan 19th
                         </p>

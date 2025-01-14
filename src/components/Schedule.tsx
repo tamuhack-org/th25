@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 interface ScheduleItem {
     date: Date;
@@ -36,12 +37,11 @@ const Schedule: React.FC = () => {
             setScheduleItems(fetchResult);
         };
         fetchSchedule();
-
     }, []);
 
     useEffect(() => {
-        ScrollTrigger.refresh()
-    }, [scheduleItems])
+        ScrollTrigger.refresh();
+    }, [scheduleItems]);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -81,12 +81,15 @@ const Schedule: React.FC = () => {
     }
 
     return (
-        <div id="schedule" className="z-10 flex w-full flex-col font-poppins">
-            <div className="mb-8 flex w-full flex-col">
+        <section
+            id="schedule"
+            className="z-10 flex w-full flex-col font-poppins"
+        >
+            <div className="mb-6 flex w-full flex-col lg:max-2xl:mb-4">
                 <div className="flex items-start justify-between">
-                    <div className="flex flex-col items-stretch">
+                    <div className="flex flex-col items-stretch lg:pr-40">
                         {/* Want to put units here so that the svg scales  */}
-                        <div className="mb-2 flex items-end text-7xl lg:text-8xl">
+                        <div className="text-4.5xl xxs:text-5.5xl xs:text-6xl md:text-6.5xl xl:text-7.5xl 2xl:text-8.5xl mb-2 flex items-end">
                             <h2 className="font-poppins font-semibold">
                                 Schedule
                             </h2>
@@ -107,7 +110,7 @@ const Schedule: React.FC = () => {
                                 />
                             </svg>
                         </div>
-                        <div className="mt-3 grid w-fit place-items-center rounded-full bg-black px-6 py-2 text-sm font-semibold lg:text-base">
+                        <div className="text-xxs xxs:px-8 xxs:text-xs xs:text-sm mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 font-semibold tracking-wider md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
                                 <a href="#" className="underline">
@@ -123,7 +126,7 @@ const Schedule: React.FC = () => {
                             alt="Schedule mascot"
                             width={176}
                             height={144}
-                            className="h-36 w-44"
+                            className="h-32 w-40 xl:h-36 xl:w-44"
                         />
                         <div className="max-w-xs rounded-xl border-2 border-black bg-white p-4">
                             <p className="text-sm">
@@ -159,7 +162,7 @@ const Schedule: React.FC = () => {
             <div className="flex w-full flex-col gap-3 sm:gap-4 lg:flex-row lg:gap-8">
                 <div className="flex w-full flex-col lg:w-[45%]">
                     <div className="overflow-hidden rounded-2xl border-4 border-black">
-                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
+                        <h3 className="w-full border-b-4 border-black bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
                             Saturday
                         </h3>
                         <div className="relative bg-white p-6">
@@ -216,7 +219,7 @@ const Schedule: React.FC = () => {
                                                         )}
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="text-sm text-gray-600">
@@ -258,7 +261,7 @@ const Schedule: React.FC = () => {
                                                     </div>
 
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="mt-1 text-sm text-gray-600">
@@ -281,7 +284,7 @@ const Schedule: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="hidden lg:flex lg:w-[10%] lg:flex-col lg:justify-start lg:gap-2 lg:px-2 lg:pt-20">
+                <div className="hidden px-0 lg:flex lg:w-[10%] lg:flex-col lg:justify-start lg:gap-3 lg:pt-20 xl:px-2">
                     {[
                         'Required',
                         'Company Events',
@@ -292,7 +295,7 @@ const Schedule: React.FC = () => {
                         <button
                             key={filter}
                             onClick={() => toggleFilter(filter)}
-                            className={`rounded-lg px-2 py-1 text-center text-sm transition-colors ${
+                            className={`rounded-lg px-2 py-3 text-center text-sm transition-colors ${
                                 activeFilters.includes(
                                     Object.entries(filterToTagMapping).find(
                                         (entry) => entry[1] === filter,
@@ -309,7 +312,7 @@ const Schedule: React.FC = () => {
 
                 <div className="flex w-full flex-col lg:w-[45%]">
                     <div className="overflow-hidden rounded-2xl border-4 border-black">
-                        <h3 className="w-full bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
+                        <h3 className="w-full border-b-4 border-black bg-pink-300 px-4 py-2 text-lg font-semibold text-white sm:text-2xl lg:py-3 lg:text-4xl">
                             Sunday
                         </h3>
                         <div className="relative bg-white p-6">
@@ -369,7 +372,7 @@ const Schedule: React.FC = () => {
                                                         )}
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="text-sm text-gray-600">
@@ -411,7 +414,7 @@ const Schedule: React.FC = () => {
                                                     </div>
 
                                                     <div className="flex flex-col">
-                                                        <div className="font-medium text-black">
+                                                        <div className="font-semibold text-black">
                                                             {item.eventName}
                                                         </div>
                                                         <div className="mt-1 text-sm text-gray-600">

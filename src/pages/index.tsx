@@ -11,7 +11,8 @@ import MediumBubble from '../../public/med_bubble.png';
 import Info from '@/components/info/Info';
 // import Sponsors from '@/components/Sponsors';
 import Schedule from '@/components/Schedule';
-// import Prizes from '@/components/prizes/Prizes';
+import Prizes from '@/components/prizes/Prizes';
+import Navbar from '@/components/navbar/Navbar';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
@@ -84,6 +85,7 @@ export default function Home() {
                         <HomeGraphic />
                     </div>
                 </div>
+                <Navbar />
                 {/* Gradient section */}
                 <div className="mt-40 bg-gradient-to-b from-[#ffff] to-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
@@ -91,15 +93,18 @@ export default function Home() {
                     </div>
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
-                <div className="mx-auto max-w-[2000px] px-8 py-32 lg:px-16">
+                <div className="mx-auto max-w-[2000px] px-8 pb-32 pt-24 lg:px-16">
                     <Schedule />
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
-                {/* <div className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]">
+                <section
+                    id="prizes"
+                    className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]"
+                >
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                         <Prizes />
                     </div>
-                </div> */}
+                </section>
                 {/* Blue section */}
                 {/* <div className="bg-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
@@ -111,11 +116,11 @@ export default function Home() {
                 {/* <div className='bg-[#192349]'>
                         <Sponsors />
                 </div> */}
+                <div className="h-64 bg-[linear-gradient(180deg,_#192349_4.1%,_#2C355A_20.6%,_#535A88_36.03%,_#7980B7_54.46%,_#B3A8D3_68.1%,_#ECD1F0_82.6%,_#FFFFFF_100%)]"></div>
             </main>
             <div className="mx-auto max-w-[2000px] px-8 pt-16 lg:px-16">
                 <TamuhackFooter />
             </div>
-            <Navbar />
         </>
     );
 }
