@@ -45,9 +45,6 @@ const Navbar: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        gsap.set(expandContainerRefMobile.current, { height: 0 });
-
-        gsap.set(expandContainerRefDesktop.current, { height: 0 });
         gsap.set(arrowRef.current, { rotationX: 0 });
         gsap.set('.resources', { autoAlpha: 0 });
     }, []);
@@ -143,7 +140,7 @@ const Navbar: React.FC = () => {
                 <div className="pointer-events-auto z-50 flex flex-col justify-center overflow-hidden rounded-xl border border-opacity-25 sm:hidden">
                     <div
                         ref={expandContainerRefMobile}
-                        className={`expand-container flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
+                        className={`expand-container h-0 flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-col items-start justify-center gap-8 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex flex-col justify-between gap-4">
@@ -241,7 +238,7 @@ const Navbar: React.FC = () => {
                 <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
                     <div
                         ref={expandContainerRefDesktop}
-                        className={`expand-container flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
+                        className={`expand-container h-0 flex flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex h-full flex-col justify-start gap-3">
