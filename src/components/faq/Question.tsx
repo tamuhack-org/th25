@@ -151,10 +151,10 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className={`faq-question relative mb-10 flex flex-col rounded-3xl font-poppins text-[#292254]`}
+                className={`faq-question relative mb-10 flex flex-col rounded-[30px] font-poppins text-[#292254]`}
             >
                 <summary
-                    className={`flex cursor-pointer items-center rounded-t-3xl bg-[#F5BFE4] text-xl font-medium ${open ? '' : 'rounded-b-3xl transition-all delay-[170ms]'}`}
+                    className={`flex cursor-pointer items-center rounded-t-[30px] bg-[#F5BFE4] text-xl font-medium ${open ? '' : 'rounded-b-[30px] transition-all delay-[170ms]'}`}
                     onClick={() => setOpen(!open)}
                 >
                     <Image
@@ -171,17 +171,15 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         <IconChevronDown className="mr-6 h-10 w-10" />
                     </span>
                 </summary>
-                <div
-                    className={`content flex bg-white ${open ? 'rounded-b-3xl' : 'rounded-b-3xl'}`}
-                >
+                <div className={`content flex rounded-b-[30px] bg-white`}>
                     {/*Add each answer*/}
-                    <p className="my-2 ml-10 w-7/12 pb-2 pt-4 text-lg">
+                    <div className="my-2 ml-10 w-7/12 pb-2 pt-4 text-lg">
                         {item.answers.map((answer, index) => (
-                            <span key={index} className="">
+                            <p key={index} className="">
                                 {answer}
-                            </span>
+                            </p>
                         ))}
-                    </p>
+                    </div>
                     <Image src={ticket_1} alt="Prizes" className="ml-10" />
                     <Image src={ticket_2} alt="Prizes" className="ml-auto" />
                 </div>
