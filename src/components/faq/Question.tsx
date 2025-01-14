@@ -151,16 +151,16 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className={`faq-question relative mb-10 flex flex-col rounded-[30px] font-poppins text-[#292254]`}
+                className={`faq-question relative mb-10 flex flex-col rounded-[30px] font-poppins text-[#292254] lg:ml-20`}
             >
                 <summary
-                    className={`flex cursor-pointer items-center rounded-t-[30px] bg-[#F5BFE4] text-xl font-medium ${open ? '' : 'rounded-b-[30px] transition-all delay-[170ms]'}`}
+                    className={`text-md flex cursor-pointer items-center rounded-t-[30px] bg-[#F5BFE4] font-medium md:text-xl ${open ? '' : 'rounded-b-[30px] transition-all delay-[170ms]'}`}
                     onClick={() => setOpen(!open)}
                 >
                     <Image
                         src={train_faq}
                         alt="Prizes"
-                        className="my-3 ml-10 mr-10 h-9 w-auto"
+                        className="mx-4 my-3 h-4 w-auto md:mx-10 md:h-9"
                     />
                     {/*Add question*/}
                     {item.question}
@@ -168,20 +168,28 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                     <span
                         className={`flip ml-auto ${open ? 'arrow-open' : 'arrow-close'}`}
                     >
-                        <IconChevronDown className="mr-6 h-10 w-10" />
+                        <IconChevronDown className="mr-6 h-5 w-5 md:h-10 md:w-10" />
                     </span>
                 </summary>
                 <div className={`content flex rounded-b-[30px] bg-white`}>
                     {/*Add each answer*/}
-                    <div className="my-2 ml-10 w-7/12 pb-2 pt-4 text-lg">
+                    <div className="mb-2 ml-4 w-full pb-2 pt-4 text-sm md:my-2 md:ml-10 md:w-7/12 md:text-lg">
                         {item.answers.map((answer, index) => (
                             <p key={index} className="">
                                 {answer}
                             </p>
                         ))}
                     </div>
-                    <Image src={ticket_1} alt="Prizes" className="ml-10" />
-                    <Image src={ticket_2} alt="Prizes" className="ml-auto" />
+                    <Image
+                        src={ticket_1}
+                        alt="Prizes"
+                        className="hidden md:ml-10 md:flex"
+                    />
+                    <Image
+                        src={ticket_2}
+                        alt="Prizes"
+                        className="hidden md:ml-auto md:flex"
+                    />
                 </div>
             </details>
             {/*Animate up/down arrows*/}

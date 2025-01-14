@@ -22,16 +22,16 @@ const FAQ: React.FC = () => {
     return (
         <section id="faq" className="w-full lg:container" aria-label="faq">
             <div className="flex w-full flex-row justify-between">
-                <div className="w-6/12">
+                <div className="w-full md:w-1/2">
                     <h1
                         id="faq-title"
-                        className="font-poppins text-8xl font-medium text-white"
+                        className="font-poppins text-4.5xl font-semibold text-white xxs:text-5.5xl xs:text-6xl md:text-6.5xl xl:text-7.5xl 2xl:text-8.5xl"
                     >
                         FAQ
                     </h1>
                     <div
                         id="faq-description"
-                        className="mt-5 font-poppins text-xl leading-loose tracking-wide text-white"
+                        className="xs:text-md mt-5 font-poppins text-sm leading-loose tracking-wide text-white sm:text-lg md:text-xl"
                     >
                         <p>
                             Everything you need to know about participating in
@@ -46,13 +46,13 @@ const FAQ: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <div className="mr-20 flex w-3/12">
+                <div className="mr-20 hidden md:flex md:w-3/12">
                     <Image
                         src="/faq_guy.png"
                         alt="Schedule mascot"
                         width={249}
                         height={187}
-                        className="h-auto max-h-full w-auto max-w-full object-contain"
+                        className="hidden h-auto max-h-full w-auto max-w-full object-contain md:flex"
                     />
                 </div>
             </div>
