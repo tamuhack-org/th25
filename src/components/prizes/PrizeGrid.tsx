@@ -12,7 +12,7 @@ interface PrizeGridProps {
 const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
     return (
         <div
-            className={`grid w-full grid-cols-4 gap-4 border border-white bg-[rgb(255,255,255,0.15)] p-4 ${direction === 'right' ? 'xl:-mr-16 xl:-rotate-3 xl:-skew-x-3 xl:-skew-y-3' : 'xl:-ml-16 xl:rotate-3 xl:skew-x-3 xl:skew-y-3'}`}
+            className={`grid w-full grid-cols-4 gap-4 border border-white bg-[rgb(255,255,255,0.15)] p-4 ${direction === 'right' ? 'xl:-mr-16 xl:-rotate-2 xl:-skew-x-2 xl:-skew-y-2' : 'xl:-ml-16 xl:rotate-2 xl:skew-x-2 xl:skew-y-2'}`}
             style={{ backdropFilter: 'blur(10px)' }}
         >
             <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8 hover:-translate-y-1 ${direction === 'right' ? 'hover:-translate-x-1' : 'hover:translate-x-1'} hover:shadow-md transition-all`}>
