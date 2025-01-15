@@ -261,6 +261,8 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 details summary::-webkit-details-marker {
                     display:none;
                 }
+
+                ::-webkit-details-marker { display: none; }
             `}</style>
         </>
     );
