@@ -40,7 +40,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 // Stores if element is expanding
                 this.isExpanding = false;
                 // Detects when user clicks on <summary> element
-                this.summary.addEventListener('click', (e) => this.onClick(e));
+                this.summary.onclick = (e: Event) => this.onClick(e);
             }
 
             onClick(e: Event) {
@@ -185,11 +185,11 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         alt="Prizes"
                         className="hidden md:flex"
                     />
-                    <div className="self-stretch hidden md:ml-auto md:flex py-4">
+                    <div className="hidden self-stretch py-4 md:ml-auto md:flex">
                         <Image
                             src={ticket_2}
                             alt="Prizes"
-                            className="hidden md:ml-auto md:flex self-stretch"
+                            className="hidden self-stretch md:ml-auto md:flex"
                         />
                     </div>
                 </div>
