@@ -2,6 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import localFont from 'next/font/local';
+
+const swily = localFont({ src: '../pages/fonts/SwilyBright.otf' });
 
 interface SponsorImage {
     src: string;
@@ -144,7 +147,7 @@ const Sponsors: React.FC = () => {
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
                     id="thank-you"
-                    className="text-dark font-serif text-3xl leading-relaxed sm:text-4xl lg:text-6xl"
+                    className={`text-dark ${swily.className} text-3xl leading-relaxed sm:text-7xl`}
                 >
                     Thank you to our sponsors...
                 </h1>
@@ -199,17 +202,17 @@ const Sponsors: React.FC = () => {
                     </Link>
                 ))}
             </div>
-            <div className="grid w-full grid-cols-4 gap-16 md:grid-cols-16">
+            <div className="grid w-full max-w-full grid-cols-4 gap-16 md:grid-cols-16">
                 {imagesSm.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className={`${getSpanSize(index)} flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0`}
+                        className={`${getSpanSize(index)} flex items-center min-w-0 justify-center grayscale transition-all duration-300 hover:grayscale-0`}
                     >
                         <Image
-                            className={getWidth(image.name)}
+                            className={`${getWidth(image.name)}`}
                             src={`/sponsors/${image.src}`}
                             alt={`${image.name} homepage`}
                             width={500}
@@ -221,7 +224,7 @@ const Sponsors: React.FC = () => {
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
                     id="thank-you"
-                    className="text-dark font-serif text-3xl leading-relaxed sm:text-4xl lg:text-6xl"
+                    className="text-dark font-poppins text-3xl leading-relaxed sm:text-4xl lg:text-6xl"
                 >
                     and partners...
                 </h1>
