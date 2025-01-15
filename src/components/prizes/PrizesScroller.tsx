@@ -12,14 +12,14 @@ import useMedia from '@/hooks/useMedia';
 gsap.registerPlugin(ScrollTrigger); // Removed useGSAP from registration
 
 //Need it for framer motion typing
-type Offsets = ['start center', 'end end'] | ['start end', 'end center'];
+type Offsets = ['start center', 'end end'] | ['center end', 'end center'];
 
 const PrizesScroller = () => {
     const isDesktop = useMedia('(min-width: 800px)', true);
     const container = useRef(null);
     const svg = useRef(null);
     
-    const svgOffset: Offsets = isDesktop ? ['start center', 'end end'] : ['start end', 'end center'];
+    const svgOffset: Offsets = isDesktop ? ['start center', 'end end'] : ['center end', 'end center'];
     const {scrollYProgress: containerScrollYProgress} = useScroll({
         target: container,
         offset: ['start center', 'center end'],
@@ -135,7 +135,7 @@ const PrizesScroller = () => {
                     </div>
                 </div>
             </div>
-            <div className="mx-auto max-w-[2000px] px-8 lg:px-16 -mt-48" id='prizes'>
+            <div className="mx-auto max-w-[2000px] px-8 lg:px-16 -mt-12 lg:-mt-48" id='prizes'>
                 <Prizes />
             </div>
         </motion.div>
