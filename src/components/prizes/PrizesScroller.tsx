@@ -135,7 +135,7 @@ const PrizesScroller = () => {
                     </div>
                 </div>
             </div>
-            <div className="mx-auto max-w-[2000px] px-8 lg:px-16 -mt-48">
+            <div className="mx-auto max-w-[2000px] px-8 lg:px-16 -mt-48" id='prizes'>
                 <Prizes />
             </div>
         </motion.div>
