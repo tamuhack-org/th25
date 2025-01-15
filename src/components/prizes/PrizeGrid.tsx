@@ -70,7 +70,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                         {prizes[2].title}
                     </h2>
                     <p className="md:text-lg">{prizes[2].description}</p>
-                    <p className="font-medium">{prizes[1].prize}</p>
+                    <p className="font-medium">{prizes[2].prize}</p>
                 </div>
             </div>
             <div className="col-span-4">
