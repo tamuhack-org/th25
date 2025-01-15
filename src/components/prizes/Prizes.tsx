@@ -1,16 +1,11 @@
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 import software1 from '../../../public/prizes/software1.png';
 import software2 from '../../../public/prizes/software2.png';
 import software3 from '../../../public/prizes/software3.png';
 import hardware1 from '../../../public/prizes/hardware1.png';
 import hardware2 from '../../../public/prizes/hardware2.png';
 import hardware3 from '../../../public/prizes/hardware3.png';
-import bigChallenges from '../../../public/prizes_text_1.svg';
-import biggerPrizes from '../../../public/prizes_text_2.svg';
-import prizesLine from '../../../public/prizes_line.svg';
 import PrizeGrid from './PrizeGrid';
-import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
 
 export type Prize = {
     title: string;
@@ -142,41 +137,10 @@ const hardwarePrizes: Prize[] = [
 ];
 
 const Prizes = () => {
-    const ref1 = useRef(null);
-    const ref2 = useRef(null);
-    const isInView1 = useInView(ref1, { once: true });
-    const isInView2 = useInView(ref2, { once: true });
 
     return (
         <div className="flex w-full flex-col gap-64 pb-48">
-            <div className="relative flex w-full flex-col items-center justify-center">
-                <Image src={prizesLine} alt="Prizes" className="w-full" />
-                <div className="absolute flex w-full flex-col gap-16">
-                    <motion.div ref={ref1} initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: isInView1 ? 1 : 0,
-                        }}
-                        transition={{ duration: 1 }} className="flex-start flex w-full">
-                        <Image
-                            src={bigChallenges}
-                            alt="Big Challenges"
-                            className="w-4/5"
-                        />
-                    </motion.div>
-                    <motion.div ref={ref2} initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: isInView2 ? 1 : 0,
-                        }}
-                        transition={{ duration: 1 }} className="flex w-full justify-end">
-                        <Image
-                            src={biggerPrizes}
-                            alt="Bigger Prizes"
-                            className="w-2/3"
-                        />
-                    </motion.div>
-                </div>
-            </div>
-            <div className="-mt-[320px] flex w-full justify-end sm:-mt-96">
+            <div className="flex w-full justify-end">
                 <PrizeGrid
                     direction="right"
                     prizes={softwarePrizesWithoutSponsors}

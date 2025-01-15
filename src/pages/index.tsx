@@ -11,8 +11,8 @@ import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 // import Sponsors from '@/components/Sponsors';
 import Schedule from '@/components/Schedule';
-import Prizes from '@/components/prizes/Prizes';
 import Navbar from '@/components/navbar/Navbar';
+import PrizesScroller from '@/components/prizes/PrizesScroller';
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
@@ -97,14 +97,18 @@ export default function Home() {
                     <Schedule />
                 </div>
                 <hr className="h-1 w-full bg-black"></hr>
-                <section
+                <section id="prizes px-8 lg:px-16">
+                    <PrizesScroller />
+                </section>
+                {/* <section
                     id="prizes"
                     className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]"
                 >
                     <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
+                        <PrizesScroller />
                         <Prizes />
                     </div>
-                </section>
+                </section> */}
                 <div className="bg-[#192349]">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
                         <FAQ />
