@@ -15,7 +15,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
             className={`grid w-full grid-cols-4 gap-4 border border-white bg-[rgb(255,255,255,0.15)] p-4 ${direction === 'right' ? 'xl:-mr-16 xl:-rotate-1 xl:-skew-x-1 xl:-skew-y-1' : 'xl:-ml-16 xl:rotate-1 xl:skew-x-1 xl:skew-y-1'}`}
             style={{ backdropFilter: 'blur(10px)' }}
         >
-            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8 hover:-translate-y-1 ${direction === 'right' ? 'hover:-translate-x-1' : 'hover:translate-x-1'} hover:shadow-md transition-all`}>
+            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8 xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}>
                 {prizes[0].image && (
                     <Image
                         src={prizes[0].image}
@@ -37,7 +37,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                     </p>
                 </div>
             </div>
-            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2 hover:-translate-y-1 ${direction === 'right' ? 'hover:-translate-x-1' : 'hover:translate-x-1'} hover:shadow-md transition-all`}>
+            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2 xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}>
                 {prizes[1].image && (
                     <Image
                         src={prizes[1].image}
@@ -55,7 +55,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                     <p className="font-medium">{prizes[1].prize}</p>
                 </div>
             </div>
-            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2 hover:-translate-y-1 ${direction === 'right' ? 'hover:-translate-x-1' : 'hover:translate-x-1'} hover:shadow-md transition-all`}>
+            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2 xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}>
                 {prizes[2].image && (
                     <Image
                         src={prizes[2].image}
@@ -77,7 +77,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                 <div className="col-span-3 grid w-full grid-cols-3 gap-4 font-poppins">
                     {prizes.slice(3).map((prize, i) => (
                         <div
-                            className={`col-span-3 flex flex-col items-center gap-4 bg-white p-4 font-poppins sm:flex-row md:col-span-1 md:flex-col hover:-translate-y-1 ${direction === 'right' ? 'hover:-translate-x-1' : 'hover:translate-x-1'} hover:shadow-md transition-all`}
+                            className={`col-span-3 flex flex-col items-center gap-4 bg-white p-4 font-poppins sm:flex-row md:col-span-1 md:flex-col xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}
                             key={i}
                         >
                             {prize.image && (
