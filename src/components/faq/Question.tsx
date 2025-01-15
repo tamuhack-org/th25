@@ -16,7 +16,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
     // Ref to <details> element
     const detailsRef = useRef<HTMLDetailsElement>(null);
 
-    const renderTextWithLinks = (text) => {
+    const renderTextWithLinks = (text: string) => {
         const parts = text.split(/(\[.*?\]\(.*?\))/g);
         return parts.map((part, index) => {
             const match = part.match(/\[(.*?)\]\((.*?)\)/);
