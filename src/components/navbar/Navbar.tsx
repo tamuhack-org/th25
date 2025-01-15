@@ -25,7 +25,6 @@ import {
     IconExclamationCircle,
     IconUsers,
 } from '@tabler/icons-react';
-import { context } from '@react-three/fiber';
 
 gsap.registerPlugin(ScrollTrigger);
 
