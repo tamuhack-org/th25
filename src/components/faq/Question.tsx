@@ -16,6 +16,27 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
     // Ref to <details> element
     const detailsRef = useRef<HTMLDetailsElement>(null);
 
+    const renderTextWithLinks = (text) => {
+        const parts = text.split(/(\[.*?\]\(.*?\))/g);
+        return parts.map((part, index) => {
+            const match = part.match(/\[(.*?)\]\((.*?)\)/);
+            if (match) {
+                return (
+                    <a
+                        key={index}
+                        href={match[2]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-inherit underline"
+                    >
+                        {match[1]}
+                    </a>
+                );
+            }
+            return part;
+        });
+    };
+
     useEffect(() => {
         class AccordionAnimation {
             el: HTMLDetailsElement;
@@ -176,7 +197,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                     <div className="mx-8 mb-2 w-full pb-2 pt-4 text-sm md:mx-10 md:my-2 md:w-7/12 md:text-lg">
                         {item.answers.map((answer, index) => (
                             <p key={index} className="">
-                                {answer}
+                                {renderTextWithLinks(answer)}
                             </p>
                         ))}
                     </div>
