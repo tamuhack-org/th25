@@ -89,7 +89,7 @@ const Schedule: React.FC = () => {
                 <div className="flex items-start justify-between">
                     <div className="flex flex-col items-stretch lg:pr-40">
                         {/* Want to put units here so that the svg scales  */}
-                        <div className="mb-2 flex items-end text-4.5xl xxs:text-5.5xl xs:text-6xl md:text-6.5xl xl:text-7.5xl 2xl:text-8.5xl">
+                        <div className="text-4.5xl xxs:text-5.5xl xs:text-6xl md:text-6.5xl xl:text-7.5xl 2xl:text-8.5xl mb-2 flex items-end">
                             <h2 className="font-poppins font-semibold">
                                 Schedule
                             </h2>
@@ -110,7 +110,7 @@ const Schedule: React.FC = () => {
                                 />
                             </svg>
                         </div>
-                        <div className="mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 text-xxs font-semibold tracking-wider xxs:px-8 xxs:text-xs xs:text-sm md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
+                        <div className="text-xxs xxs:px-8 xxs:text-xs xs:text-sm mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 font-semibold tracking-wider md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
                                 <a href="#" className="underline">

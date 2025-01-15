@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { IconChevronDown } from '@tabler/icons-react';
+import train_faq from '../../../public/train_faq.svg';
+import ticket_1 from '../../../public/ticket_line_1.svg';
+import ticket_2 from '../../../public/ticket_line_2.svg';
 
 interface QuestionProps {
     // Expects one question item that contains a question and a list of answers
@@ -11,6 +15,27 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
     const [open, setOpen] = useState(false);
     // Ref to <details> element
     const detailsRef = useRef<HTMLDetailsElement>(null);
+
+    const renderTextWithLinks = (text: string) => {
+        const parts = text.split(/(\[.*?\]\(.*?\))/g);
+        return parts.map((part, index) => {
+            const match = part.match(/\[(.*?)\]\((.*?)\)/);
+            if (match) {
+                return (
+                    <a
+                        key={index}
+                        href={match[2]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-inherit underline"
+                    >
+                        {match[1]}
+                    </a>
+                );
+            }
+            return part;
+        });
+    };
 
     useEffect(() => {
         class AccordionAnimation {
@@ -36,7 +61,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 // Stores if element is expanding
                 this.isExpanding = false;
                 // Detects when user clicks on <summary> element
-                this.summary.addEventListener('click', (e) => this.onClick(e));
+                this.summary.onclick = (e: Event) => this.onClick(e);
             }
 
             onClick(e: Event) {
@@ -73,7 +98,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         height: [startHeight, endHeight],
                     },
                     {
-                        duration: 200,
+                        duration: 250,
                         easing: 'ease-out',
                     },
                 );
@@ -113,7 +138,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         height: [startHeight, endHeight],
                     },
                     {
-                        duration: 200,
+                        duration: 250,
                         easing: 'ease-out',
                     },
                 );
@@ -147,31 +172,49 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className="faq-question relative font-serif text-[#000000]"
+                className={`faq-question relative mb-10 flex flex-col rounded-[30px] font-poppins text-[#292254] lg:ml-20`}
             >
                 <summary
-                    className="flex cursor-pointer items-center justify-between text-lg font-medium md:text-xl"
+                    className={`text-md flex cursor-pointer items-center rounded-t-[30px] bg-[#F5BFE4] font-medium md:text-xl ${open ? '' : 'rounded-b-[30px] transition-all delay-[170ms]'}`}
                     onClick={() => setOpen(!open)}
                 >
+                    <Image
+                        src={train_faq}
+                        alt="Prizes"
+                        className="my-3 ml-8 mr-4 h-4 w-auto md:mx-10 md:h-9"
+                    />
                     {/*Add question*/}
                     {item.question}
                     {/*Add arrow*/}
                     <span
-                        className={`flip ${open ? 'arrow-open' : 'arrow-close'}`}
+                        className={`flip ml-auto ${open ? 'arrow-open' : 'arrow-close'}`}
                     >
-                        <IconChevronDown className="h-5 w-5" />
+                        <IconChevronDown className="mr-6 h-5 w-5 md:h-10 md:w-10" />
                     </span>
                 </summary>
-                <p className="content pb-2 pt-4 text-base md:text-lg">
+                <div className={`content flex rounded-b-[30px] bg-white`}>
                     {/*Add each answer*/}
-                    {item.answers.map((answer, index) => (
-                        <span key={index} className="">
-                            {answer}
-                        </span>
-                    ))}
-                </p>
+                    <div className="mx-8 mb-2 w-full pb-2 pt-4 text-sm md:mx-10 md:my-2 md:w-7/12 md:text-lg">
+                        {item.answers.map((answer, index) => (
+                            <p key={index} className="">
+                                {renderTextWithLinks(answer)}
+                            </p>
+                        ))}
+                    </div>
+                    <Image
+                        src={ticket_1}
+                        alt="Prizes"
+                        className="hidden md:flex"
+                    />
+                    <div className="hidden self-stretch py-4 md:ml-auto md:flex">
+                        <Image
+                            src={ticket_2}
+                            alt="Prizes"
+                            className="hidden self-stretch md:ml-auto md:flex"
+                        />
+                    </div>
+                </div>
             </details>
-            <div className="faq-question-bottom mb-6 mt-2 h-[2px] w-full rounded-full bg-[#000000] opacity-25 md:mt-4" />
             {/*Animate up/down arrows*/}
             <style jsx>{`
                 .arrow-open {

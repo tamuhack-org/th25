@@ -7,7 +7,7 @@ import HomeGraphic from '@/components/HomeGraphic';
 import Image from 'next/image';
 import SmallBubble from '../../public/small_bubble.png';
 import MediumBubble from '../../public/med_bubble.png';
-// import FAQ from '@/components/faq/Faq';
+import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
 // import Sponsors from '@/components/Sponsors';
 import Schedule from '@/components/Schedule';
@@ -105,6 +105,12 @@ export default function Home() {
                         <Prizes />
                     </div>
                 </section>
+                <div className="bg-[#192349]">
+                    <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
+                        <FAQ />
+                    </div>
+                </div>
+
                 {/* Blue section */}
                 {/* <div className="bg-[#BFE4FF]">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">

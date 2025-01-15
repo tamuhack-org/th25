@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
             ease: 'power2.out',
         });
 
-        const sections = ['schedule', 'prizes'];
+        const sections = ['schedule', 'prizes', 'faq'];
 
         sections.forEach((section) => {
             ScrollTrigger.create({
@@ -161,11 +161,6 @@ const Navbar: React.FC = () => {
                                     Icon={IconHelp}
                                 />
                                 <ResourceButton
-                                    text="Code of Conduct"
-                                    link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?_gl=1*19bpx84*_ga*NDgxNjY1Mzk0LjE3MDIxODA5Njk.*_ga_E5KT6TC4TK*MTcwMjcwNzc3NC40LjAuMTcwMjcwNzc3NC4wLjAuMA.."
-                                    Icon={IconLicense}
-                                />
-                                <ResourceButton
                                     text="Intro to Git"
                                     link="https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing"
                                     Icon={IconBrandGit}
@@ -181,14 +176,19 @@ const Navbar: React.FC = () => {
                                     Icon={IconCpu}
                                 />
                                 <ResourceButton
+                                    text="Team Formation"
+                                    link="https://tamuhack.org/team-formation"
+                                    Icon={IconUsers}
+                                />
+                                <ResourceButton
                                     text="Misconduct Reporting"
                                     link="http://tamuhack.org/misconduct"
                                     Icon={IconExclamationCircle}
                                 />
                                 <ResourceButton
-                                    text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
-                                    Icon={IconUsers}
+                                    text="Code of Conduct"
+                                    link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?_gl=1*19bpx84*_ga*NDgxNjY1Mzk0LjE3MDIxODA5Njk.*_ga_E5KT6TC4TK*MTcwMjcwNzc3NC40LjAuMTcwMjcwNzc3NC4wLjAuMA.."
+                                    Icon={IconLicense}
                                 />
                             </div>
                         </div>
@@ -276,20 +276,19 @@ const Navbar: React.FC = () => {
                                     Icon={IconHelp}
                                 />
                                 <ResourceButton
-                                    text="Code of Conduct"
-                                    link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?_gl=1*19bpx84*_ga*NDgxNjY1Mzk0LjE3MDIxODA5Njk.*_ga_E5KT6TC4TK*MTcwMjcwNzc3NC40LjAuMTcwMjcwNzc3NC4wLjAuMA.."
-                                    Icon={IconLicense}
-                                />
-                                <ResourceButton
                                     text="Intro to Web Dev"
                                     link="https://docs.google.com/presentation/d/16moIOAhsbH5qlyeWv0xfH73XT_hk0TJ-b6xct3njT5U/edit?usp=sharing"
                                     Icon={IconWorld}
                                 />
-
                                 <ResourceButton
                                     text="Misconduct Reporting"
                                     link="http://tamuhack.org/misconduct"
                                     Icon={IconExclamationCircle}
+                                />
+                                <ResourceButton
+                                    text="Code of Conduct"
+                                    link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf?_gl=1*19bpx84*_ga*NDgxNjY1Mzk0LjE3MDIxODA5Njk.*_ga_E5KT6TC4TK*MTcwMjcwNzc3NC40LjAuMTcwMjcwNzc3NC4wLjAuMA.."
+                                    Icon={IconLicense}
                                 />
                             </div>
                         </div>
