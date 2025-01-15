@@ -25,6 +25,7 @@ import {
     IconExclamationCircle,
     IconUsers,
 } from '@tabler/icons-react';
+import { context } from '@react-three/fiber';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,8 +33,6 @@ const Navbar: React.FC = () => {
     const [open, setOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('');
     const navbarRef = useRef<HTMLDivElement>(null);
-    const expandContainerRefMobile = useRef(null);
-    const expandContainerRefDesktop = useRef(null);
     const arrowRef = useRef(null);
     const active = open ? 'active' : '';
 
@@ -67,65 +66,20 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
-    const expandContainer = contextSafe(() => {
-        const height = window.innerWidth <= 640 ? 400 : 200;
-
-        gsap.to(expandContainerRefMobile.current, {
-            height,
-            duration: 0.25,
-            ease: 'power2.out',
-        });
-
-        gsap.to(expandContainerRefDesktop.current, {
-            height,
-            duration: 0.25,
-            ease: 'power2.out',
-        });
-
-        gsap.to(arrowRef.current, {
-            rotationX: 180,
-            duration: 0.25,
-            ease: 'power2.inOut',
-        });
-        gsap.to('.resources', {
-            autoAlpha: 1,
-            duration: 0.15,
-            ease: 'power2.out',
-        });
-    });
-
-    const collapseContainer = contextSafe(() => {
-        gsap.to(expandContainerRefMobile.current, {
-            height: 0,
-            duration: 0.25,
-            ease: 'power2.out',
-        });
-        gsap.to(expandContainerRefDesktop.current, {
-            height: 0,
-            duration: 0.25,
-            ease: 'power2.out',
-        });
-
-        gsap.to(arrowRef.current, {
-            rotationX: 0,
-            duration: 0.25,
-            ease: 'power2.inOut',
-        });
-        gsap.to('.resources', {
-            autoAlpha: 0,
-            duration: 0.15,
-            ease: 'power2.out',
-        });
-    });
-
-    const toggleExpand = () => {
-        if (open) {
-            collapseContainer();
-        } else {
-            expandContainer();
-        }
+    const toggleExpand = contextSafe(() => {
         setOpen(!open);
-    };
+        gsap.to(arrowRef.current, {
+            rotationX: open ? 0 : 180,
+            duration: 0.25,
+            ease: 'power2.inOut',
+        });
+        gsap.to('.resources', {
+            autoAlpha: open ? 0 : 1,
+            duration: 0.15,
+            ease: 'power2.out',
+        });
+        
+    });
 
     return (
         <>
@@ -135,7 +89,6 @@ const Navbar: React.FC = () => {
             >
                 <div className="pointer-events-auto z-50 flex flex-col justify-center overflow-hidden rounded-xl border border-opacity-25 sm:hidden">
                     <div
-                        ref={expandContainerRefMobile}
                         className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-col items-start justify-center gap-8 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 text-left text-sm text-white backdrop-blur-sm">
@@ -233,7 +186,6 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
                     <div
-                        ref={expandContainerRefDesktop}
                         className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
@@ -341,6 +293,19 @@ const Navbar: React.FC = () => {
                     position: relative;
                     overflow: hidden;
                     text-align: center;
+                    transition: height 0.25s ease-out;
+                }
+
+                @media (max-width: 640px) {
+                    .expand-container.active {
+                        height: 400px;
+                    }
+                }
+
+                @media (min-width: 641px) {
+                    .expand-container.active {
+                        height: 200px;
+                    }
                 }
             `}</style>
         </>
