@@ -8,6 +8,9 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
 
+import pink_info from '../../../public/pink_info.png';
+import blue_info from '../../../public/blue_info.png';
+
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollTrigger);
@@ -142,6 +145,9 @@ const Info = () => {
                         </p>
                     </div>
                 </div>
+                <div className="col-start-1 row-start-1 col-span-1 row-span-1 lg:mb-24 lg:ml-40 w-[55%]">
+                    <Image src={blue_info} alt="pink info" />
+                </div>
                 <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
                     <h2
                         className={`text-5xl ${belgiano.className} hidden lg:block`}
@@ -191,16 +197,24 @@ const Info = () => {
                         </p>
                     </div>
                 </div>
-                <div className="col-start-2 row-start-2 self-end">
-                    <p className="max-w-prose bg-[url('/acceptance_info.svg')] bg-contain bg-center bg-no-repeat text-sm">
-                        <span className="font-bold">Note:</span> Acceptances
-                        will be sent out on a rolling basis. If you are
-                        accepted, you must check in before 11 AM or your
-                        acceptance will be forfeited. We will have a waitlist
-                        line for students who are not accepted. After 11AM, we
-                        will admit people from the waitlist line until the MSC
-                        capacity has been reached.
-                    </p>
+                <div className="w-4/5">
+                    <div className="flex flex-col place-items-center gap-6">
+                        <div className="w-[65%]">
+                            <Image src={pink_info} alt="pink info" />
+                        </div>
+                        <div className="">
+                            <p className="max-w-prose bg-[url('/acceptance_info.svg')] bg-contain bg-center bg-no-repeat text-sm">
+                                <span className="font-bold">Note:</span>{' '}
+                                Acceptances will be sent out on a rolling basis.
+                                If you are accepted, you must check in before 11
+                                AM or your acceptance will be forfeited. We will
+                                have a waitlist line for students who are not
+                                accepted. After 11AM, we will admit people from
+                                the waitlist line until the MSC capacity has
+                                been reached.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             {/* Need to add extra margin to break out of box */}
