@@ -140,17 +140,21 @@ const hardwarePrizes: Prize[] = [
 ];
 
 const Prizes = () => {
-
     return (
         <div className="flex w-full flex-col gap-60 pb-48">
             <div className="flex w-full">
-                <PrizeGrid
-                    prizes={softwarePrizesWithoutSponsors}
-                />
+                <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
             </div>
             <div className="flex w-full flex-col items-center gap-8">
-                <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className} text-center`}>Hardware Prizes</h2>
-                <p className="text-white font-poppins text-lg sm:text-xl text-center">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
+                <h2
+                    className={`text-5xl text-white sm:text-6xl ${belgiano.className} text-center`}
+                >
+                    Hardware Prizes
+                </h2>
+                <p className="text-center font-poppins text-lg text-white sm:text-xl">
+                    Participants can choose to compete in the hardware track to
+                    be eligible for these prizes.
+                </p>
                 <PrizeGrid prizes={hardwarePrizes} />
             </div>
         </div>

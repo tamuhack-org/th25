@@ -38,12 +38,12 @@ const FAQ: React.FC = () => {
         });
 
         tl.to(crossWalk1.current, { fillOpacity: 0.1, duration: 1 })
-            .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5') 
+            .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
             .to(
                 crossWalk3.current,
                 { fillOpacity: 0.45, duration: 1 },
                 '+=0.5',
-            ); 
+            );
     });
 
     // Specifically type assert the content as a Section shape so I don't get errors w/ map function later
@@ -78,7 +78,7 @@ const FAQ: React.FC = () => {
             </svg>
             <section
                 id="faq"
-                className="mt-12 lg:mt-48 w-full lg:container"
+                className="mt-12 w-full lg:container lg:mt-48"
                 aria-label="faq"
             >
                 <div className="flex w-full flex-row justify-between">
