@@ -8,6 +8,9 @@ import Prizes from './Prizes';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import useMedia from '@/hooks/useMedia';
+import biggerBubble from '../../../public/bigger_bubble.png';
+import bigBubble from '../../../public/big_bubble.png';
+import medBubble2 from '../../../public/med_bubble_2.png';
 
 gsap.registerPlugin(ScrollTrigger); // Removed useGSAP from registration
 
@@ -42,6 +45,39 @@ const PrizesScroller = () => {
 
         //Desktop
         mm.add('(min-width: 800px)', () => {
+            gsap.from('#bubble-1', {
+                scrollTrigger: {
+                    trigger: '#bubble-1',
+                    scrub: true,
+                    start: '-80% 50%',
+                    end: 'center center',
+                },
+                opacity: 0,
+                ease: 'none',
+            });
+
+            gsap.from('#bubble-2', {
+                scrollTrigger: {
+                    trigger: '#bubble-2',
+                    scrub: true,
+                    start: '-80% 50%',
+                    end: 'center center',
+                },
+                opacity: 0,
+                ease: 'none',
+            });
+
+            gsap.from('#bubble-3', {
+                scrollTrigger: {
+                    trigger: '#bubble-3',
+                    scrub: true,
+                    start: '-80% 50%',
+                    end: 'center center',
+                },
+                opacity: 0,
+                ease: 'none',
+            });
+
             gsap.from('#big-challenges', {
                 scrollTrigger: {
                     trigger: '#big-challenges',
@@ -99,7 +135,7 @@ const PrizesScroller = () => {
         >
             <div className="relative flex max-w-[2000px] flex-col items-center justify-center px-8">
                 {/* <Image src={prizesLine} alt="Prizes" className="w-full" /> */}
-
+                <Image src={biggerBubble} alt="Bigger Bubble" className="w-36 absolute top-[25%] left-[15%]" id="bubble-1" />
                 <svg
                     viewBox="0 0 960 1359"
                     fill="none"
@@ -120,6 +156,7 @@ const PrizesScroller = () => {
                         pathLength={100}
                     />
                 </svg>
+                <Image src={medBubble2} alt="Medium Bubble" className="w-24 absolute bottom-[50%] right-[15%]" id="bubble-3" />
                 <div className="absolute flex w-full flex-col gap-16">
                     <div className="flex-start flex w-full" id="big-challenges">
                         <Image
@@ -136,6 +173,8 @@ const PrizesScroller = () => {
                         />
                     </div>
                 </div>
+                <Image src={bigBubble} alt="Big Bubble" className="w-24 absolute bottom-[25%] left-[15%]" id="bubble-2" />
+
             </div>
             <div
                 className="mx-auto -mt-12 max-w-[2000px] px-8 lg:-mt-48 lg:px-16"
