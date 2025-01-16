@@ -27,7 +27,7 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                     )}
                     <div className="flex w-full flex-col justify-center gap-2">
                         <h2
-                            className={`${swily.className} text-4xl font-semibold sm:text-5xl lg:text-6xl xl:text-8xl`}
+                            className={`${swily.className} text-4xl sm:text-5xl lg:text-6xl xl:text-8xl`}
                         >
                             {prizes[0].title}
                         </h2>
@@ -50,7 +50,7 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                 )}
                 <div className="flex w-full flex-col justify-center gap-2">
                     <h2
-                        className={`${swily.className} text-3xl font-semibold sm:text-4xl lg:text-5xl`}
+                        className={`${swily.className} text-3xl sm:text-4xl lg:text-5xl`}
                     >
                         {prizes[1].title}
                     </h2>
@@ -68,7 +68,7 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                 )}
                 <div className="flex w-full flex-col justify-center gap-2">
                     <h2
-                        className={`${swily.className} text-3xl font-semibold sm:text-4xl lg:text-5xl`}
+                        className={`${swily.className} text-3xl sm:text-4xl lg:text-5xl`}
                     >
                         {prizes[2].title}
                     </h2>
@@ -93,7 +93,7 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                             <div className="flex h-full w-full flex-col justify-between gap-6">
                                 <div className="flex flex-col justify-start gap-2">
                                     <h2
-                                        className={`${swily.className} text-2xl font-semibold sm:text-3xl lg:text-4xl`}
+                                        className={`${swily.className} text-2xl sm:text-3xl lg:text-4xl`}
                                     >
                                         {prize.title}
                                     </h2>
