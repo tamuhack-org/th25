@@ -47,8 +47,8 @@ const imagesSm: SponsorImage[] = [
     },
     {
         src: 'capitalone.svg',
-        name: 'AWS',
-        href: 'https://aws.amazon.com/',
+        name: 'Capital One',
+        href: 'https://www.capitalone.com/',
     },
     {
         src: 'cbre.svg',
