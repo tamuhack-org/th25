@@ -207,7 +207,7 @@ const Schedule: React.FC = () => {
                                             return (
                                                 <div
                                                     key={item.id}
-                                                    className={opacity}
+                                                    className={`${opacity} transition-opacity duration-150`}
                                                 >
                                                     <div className="flex items-start lg:hidden">
                                                         <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600 opacity-30">
@@ -258,7 +258,7 @@ const Schedule: React.FC = () => {
                                                                 )
                                                                     ? '-ml-[29px] h-6 w-6 bg-pink-400'
                                                                     : '-ml-7 h-5 w-5 bg-blue-100'
-                                                                    } ${!tagMatch ? 'hidden' : ''}`}
+                                                                    } ${!tagMatch ? 'opacity-0' : ''}`}
                                                             />
                                                         </div>
 
@@ -361,7 +361,7 @@ const Schedule: React.FC = () => {
                                             return (
                                                 <div
                                                     key={item.id}
-                                                    className={opacity}
+                                                    className={`${opacity} transition-opacity duration-150`}
                                                 >
                                                     <div className="flex items-start lg:hidden">
                                                         <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
@@ -412,7 +412,7 @@ const Schedule: React.FC = () => {
                                                                 )
                                                                     ? '-ml-[29px] h-6 w-6 bg-pink-400'
                                                                     : '-ml-7 h-5 w-5 bg-blue-100'
-                                                                    } ${!tagMatch ? 'hidden' : ''}`}
+                                                                    } ${!tagMatch ? 'opacity-0' : ''}`}
                                                             />
                                                         </div>
 
