@@ -145,9 +145,9 @@ const Sponsors: React.FC = () => {
 
     const getWidth = (name: string) => {
         if (name === 'USAA') return 'w-1/2 sm:w-1/3';
-        if (name === 'AWS') return 'w-4/5 sm:w-1/2';
-        if (name === 'Chevron') return 'w-4/5 sm:w-5/12';
-        else return 'w-4/5 sm:w-3/4';
+        if (name === 'AWS') return 'w-4/5 sm:w-1/3';
+        if (name === 'Chevron') return 'w-4/5 sm:w-1/3';
+        else return 'w-4/5 sm:w-1/2';
     };
 
     return (
