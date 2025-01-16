@@ -144,10 +144,10 @@ const Sponsors: React.FC = () => {
     };
 
     const getWidth = (name: string) => {
-        if (name === 'USAA') return 'w-1/2 sm:w-1/3';
-        if (name === 'AWS') return 'w-4/5 sm:w-1/3';
-        if (name === 'Chevron') return 'w-4/5 sm:w-1/3';
-        else return 'w-4/5 sm:w-1/2';
+        if (name === 'USAA') return 'w-1/3';
+        if (name === 'AWS') return 'w-1/3';
+        if (name === 'Chevron') return 'w-1/3';
+        else return 'w-1/2';
     };
 
     return (
@@ -160,17 +160,17 @@ const Sponsors: React.FC = () => {
                     Thank you to our sponsors...
                 </h1>
             </div>
-            <div className="grid w-full grid-cols-2 gap-16 pb-16 md:grid-cols-4">
+            <div className="grid w-full grid-cols-1 gap-y-16 md:gap-16 pb-16 md:grid-cols-4">
                 {imagesLg.map((image, index) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
+                        className={`md:col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
                             imagesLg.length % 2 !== 0 &&
                             index === imagesLg.length - 1
-                                ? 'col-start-2'
+                                ? 'md:col-start-2'
                                 : ''
                         }`}
                     >
@@ -189,10 +189,10 @@ const Sponsors: React.FC = () => {
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className={`col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
+                        className={`md:col-span-2 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${
                             imagesMd.length % 2 !== 0 &&
                             index === imagesMd.length - 1
-                                ? 'col-start-2'
+                                ? 'md:col-start-2'
                                 : ''
                         }`}
                     >
@@ -249,8 +249,8 @@ const Sponsors: React.FC = () => {
                         <Image
                             className={
                             image.name === 'IEEE TAMU'
-                                    ? 'w-'
-                                    : 'w-1/2 md:w-3/5'
+                                    ? 'w-3/5 md:w-full'
+                                    : 'w-1/3 md:w-3/5'
                             }
                             src={`/sponsors/${image.src}`}
                             alt={`${image.name} homepage`}
