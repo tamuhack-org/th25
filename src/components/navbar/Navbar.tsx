@@ -93,27 +93,27 @@ const Navbar: React.FC = () => {
                             <div className="resources flex flex-col justify-between gap-4">
                                 <ResourceButton
                                     text="Hacker Guide"
-                                    link="https://drive.google.com/file/d/1LH0qNhCGSjjXyUuk_xUZzM5xzK8Zxsba/view?usp=sharing"
+                                    link="https://tamuhack.org/guide"
                                     Icon={IconNotebook}
                                 />
                                 <ResourceButton
                                     text="Discord"
-                                    link="https://discord.gg/RyyVcm4gFJ"
+                                    link="https://tamuhack.org/discord"
                                     Icon={IconBrandDiscord}
                                 />
                                 <ResourceButton
                                     text="Devpost"
-                                    link="https://thx.devpost.com"
+                                    link="https://tamuhack.org/devpost"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
                                     text="HelpR"
-                                    link="https://helpr.tamuhack.org"
+                                    link="https://tamuhack.org/help"
                                     Icon={IconHelp}
                                 />
                                 <ResourceButton
                                     text="Intro to Git"
-                                    link="https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing"
+                                    link="https://tamuhack.org/git"
                                     Icon={IconBrandGit}
                                 />
                                 <ResourceButton
@@ -190,17 +190,17 @@ const Navbar: React.FC = () => {
                             <div className="resources flex h-full flex-col justify-start gap-3">
                                 <ResourceButton
                                     text="Hacker Guide"
-                                    link="https://drive.google.com/file/d/1LH0qNhCGSjjXyUuk_xUZzM5xzK8Zxsba/view?usp=sharing"
+                                    link="https://tamuhack.org/guide"
                                     Icon={IconNotebook}
                                 />
                                 <ResourceButton
                                     text="Discord"
-                                    link="https://discord.gg/RyyVcm4gFJ"
+                                    link="https://tamuhack.org/discord"
                                     Icon={IconBrandDiscord}
                                 />
                                 <ResourceButton
                                     text="Intro to Git"
-                                    link="https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing"
+                                    link="https://tamuhack.org/git"
                                     Icon={IconBrandGit}
                                 />
                                 <ResourceButton
@@ -217,12 +217,12 @@ const Navbar: React.FC = () => {
                             <div className="resources flex h-full flex-col justify-start gap-3">
                                 <ResourceButton
                                     text="Devpost"
-                                    link="https://thx.devpost.com"
+                                    link="https://tamuhack.org/devpost"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
                                     text="HelpR"
-                                    link="https://helpr.tamuhack.org"
+                                    link="https://tamuhack.org/help"
                                     Icon={IconHelp}
                                 />
                                 <ResourceButton

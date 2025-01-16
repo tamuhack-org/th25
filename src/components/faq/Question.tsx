@@ -180,7 +180,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 >
                     <Image
                         src={train_faq}
-                        alt="Prizes"
+                        alt="Train Bullet Points"
                         className="my-3 ml-8 mr-4 h-4 w-auto md:mx-10 md:h-9"
                     />
                     {/*Add question*/}
@@ -203,13 +203,13 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                     </div>
                     <Image
                         src={ticket_1}
-                        alt="Prizes"
+                        alt="Ticket Line 1"
                         className="hidden md:flex"
                     />
                     <div className="hidden self-stretch py-4 md:ml-auto md:flex">
                         <Image
                             src={ticket_2}
-                            alt="Prizes"
+                            alt="Ticket Line 2"
                             className="hidden self-stretch md:ml-auto md:flex"
                         />
                     </div>
