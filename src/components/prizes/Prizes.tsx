@@ -148,9 +148,9 @@ const Prizes = () => {
                     prizes={softwarePrizesWithoutSponsors}
                 />
             </div>
-            <div className="flex w-full flex-col items-center gap-8 text-center">
-                <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className}`}>Hardware Prizes</h2>
-                <p className="text-white font-poppins text-lg sm:text-xl">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
+            <div className="flex w-full flex-col items-center gap-8">
+                <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className} text-center`}>Hardware Prizes</h2>
+                <p className="text-white font-poppins text-lg sm:text-xl text-center">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
                 <PrizeGrid prizes={hardwarePrizes} />
             </div>
         </div>
