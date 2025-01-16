@@ -155,7 +155,7 @@ const Info = () => {
                     </h2>
                     <div className="mt-3 grid w-full place-items-center rounded-full bg-black p-2 text-base font-semibold tracking-wider">
                         <p className="uppercase text-white">
-                            Hardware will begin Jan 19th
+                            Hardware will begin Jan 21st
                         </p>
                     </div>
                     <div className="mt-4 max-w-lg rounded-xl bg-transparent bg-opacity-60 lg:bg-white lg:p-6">
@@ -163,7 +163,7 @@ const Info = () => {
                             At TAMUhack 2025, <span className="">hardware</span>{' '}
                             will be a{' '}
                             <span className="font-bold">week-long</span>{' '}
-                            hackathon. Teams may begin working on January 19th
+                            hackathon. Teams may begin working on January 21st
                             and have until January 26th, when teams will
                             showcase their project at the venue in specific
                             challenges or the general track.
