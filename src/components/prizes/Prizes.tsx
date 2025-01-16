@@ -6,6 +6,9 @@ import hardware1 from '../../../public/prizes/hardware1.png';
 import hardware2 from '../../../public/prizes/hardware2.png';
 import hardware3 from '../../../public/prizes/hardware3.png';
 import PrizeGrid from './PrizeGrid';
+import localFont from 'next/font/local';
+
+const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
 
 export type Prize = {
     title: string;
@@ -139,15 +142,16 @@ const hardwarePrizes: Prize[] = [
 const Prizes = () => {
 
     return (
-        <div className="flex w-full flex-col gap-64 pb-48">
-            <div className="flex w-full justify-end">
+        <div className="flex w-full flex-col gap-60 pb-48">
+            <div className="flex w-full">
                 <PrizeGrid
-                    direction="right"
                     prizes={softwarePrizesWithoutSponsors}
                 />
             </div>
-            <div className="flex w-full justify-start">
-                <PrizeGrid direction="left" prizes={hardwarePrizes} />
+            <div className="flex w-full flex-col items-center gap-8 text-center">
+                <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className}`}>Hardware Prizes</h2>
+                <p className="text-white font-poppins text-lg sm:text-xl">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
+                <PrizeGrid prizes={hardwarePrizes} />
             </div>
         </div>
     );
