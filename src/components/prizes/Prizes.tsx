@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import software1 from '../../../public/prizes/software1.png';
 import software2 from '../../../public/prizes/software2.png';
 import software3 from '../../../public/prizes/software3.png';
@@ -7,6 +7,8 @@ import hardware2 from '../../../public/prizes/hardware2.png';
 import hardware3 from '../../../public/prizes/hardware3.png';
 import PrizeGrid from './PrizeGrid';
 import localFont from 'next/font/local';
+import bigBubble from '../../../public/big_bubble.png';
+import medBubble from '../../../public/med_bubble.png';
 
 const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
 
@@ -142,16 +144,22 @@ const hardwarePrizes: Prize[] = [
 const Prizes = () => {
 
     return (
-        <div className="flex w-full flex-col gap-60 pb-48">
+        <div className="flex w-full flex-col gap-60 pb-12 sm:pb-48">
             <div className="flex w-full">
-                <PrizeGrid
-                    prizes={softwarePrizesWithoutSponsors}
-                />
+                <div className="relative w-full">
+                    <Image src={medBubble} alt="Medium bubble" className="absolute z-10 top-6 left-6 w-8 sm:w-12 opacity-85 rotate-12" />
+                    <Image src={bigBubble} alt="Big bubble" className="absolute z-20 bottom-6 right-6 rotate-45 w-16 sm:w-24 opacity-85" />
+                    <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
+                </div>
             </div>
             <div className="flex w-full flex-col items-center gap-8">
                 <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className} text-center`}>Hardware Prizes</h2>
                 <p className="text-white font-poppins text-lg sm:text-xl text-center">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
-                <PrizeGrid prizes={hardwarePrizes} />
+                <div className="relative w-full">
+                    <Image src={medBubble} alt="Medium bubble" className="absolute z-10 top-6 left-6 w-8 sm:w-12 opacity-85 -rotate-12" />
+                    <Image src={bigBubble} alt="Big bubble" className="absolute z-20 bottom-6 right-6 -rotate-45 w-16 sm:w-24 opacity-85" />
+                    <PrizeGrid prizes={hardwarePrizes} />
+                </div>
             </div>
         </div>
     );
