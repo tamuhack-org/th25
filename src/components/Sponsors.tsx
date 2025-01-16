@@ -18,19 +18,10 @@ const imagesLg: SponsorImage[] = [
         name: 'American Airlines',
         href: 'https://www.aa.com/homePage.do',
     },
-    {
-        src: 'sandia.png',
-        name: 'Sandia National Laboratories',
-        href: 'https://www.sandia.gov/',
-    },
 ];
 
 const imagesMd: SponsorImage[] = [
-    {
-        src: 'ieee.png',
-        name: 'IEEE TAMU',
-        href: 'https://ieee-tamu.org/',
-    },
+
     {
         src: 'phillips-66.png',
         name: 'Phillips 66',
@@ -40,14 +31,34 @@ const imagesMd: SponsorImage[] = [
 
 const imagesSm: SponsorImage[] = [
     {
-        src: 'baker-hughes.png',
-        name: 'Baker Hughes',
-        href: 'https://www.bakerhughes.com/',
+        src: 'arize.svg',
+        name: 'Arize AI',
+        href: 'https://arize.com/',
     },
     {
-        src: 'frogslayer.png',
-        name: 'FrogSlayer',
-        href: 'https://frogslayer.com/',
+        src: 'arm.svg',
+        name: 'ARM',
+        href: 'https://www.arm.com/',
+    },
+    {
+        src: 'aws.svg',
+        name: 'AWS',
+        href: 'https://aws.amazon.com/',
+    },
+    {
+        src: 'capitalone.svg',
+        name: 'AWS',
+        href: 'https://aws.amazon.com/',
+    },
+    {
+        src: 'cbre.svg',
+        name: 'CBRE',
+        href: 'https://www.cbre.com/',
+    },
+    {
+        src: 'chevron.svg',
+        name: 'Chevron',
+        href: 'https://www.chevron.com/',
     },
     {
         src: 'gm.png',
@@ -55,24 +66,14 @@ const imagesSm: SponsorImage[] = [
         href: 'https://www.gm.com/',
     },
     {
-        src: 'jpmorgan.png',
-        name: 'JPMorgan Chase & Co.',
-        href: 'https://www.jpmorganchase.com/',
-    },
-    {
-        src: 'l3harris.png',
-        name: 'L3Harris',
-        href: 'https://www.l3harris.com/',
-    },
-    {
         src: 'pimco.png',
         name: 'PIMCO',
         href: 'https://www.pimco.com/',
     },
     {
-        src: 'texas-instruments.png',
-        name: 'Texas Instruments',
-        href: 'https://www.ti.com/',
+        src: 'toyota.png',
+        name: 'Toyota',
+        href: 'https://www.toyota.com/',
     },
     {
         src: 'usaa.png',
@@ -83,14 +84,19 @@ const imagesSm: SponsorImage[] = [
 
 const partners: SponsorImage[] = [
     {
-        src: 'sec.png',
-        name: "Texas A&M Student Engineers' Council",
-        href: 'https://sec.tamu.edu/',
-    },
-    {
         src: 'tamu.png',
         name: 'Texas A&M University',
         href: 'https://www.tamu.edu/',
+    },
+    {
+        src: 'ieee.png',
+        name: 'IEEE TAMU',
+        href: 'https://ieee-tamu.org/',
+    },
+    {
+        src: 'sec.png',
+        name: "Texas A&M Student Engineers' Council",
+        href: 'https://sec.tamu.edu/',
     },
 ];
 
@@ -139,6 +145,8 @@ const Sponsors: React.FC = () => {
 
     const getWidth = (name: string) => {
         if (name === 'USAA') return 'w-1/2 sm:w-1/3';
+        if (name === 'AWS') return 'w-4/5 sm:w-1/2';
+        if (name === 'Chevron') return 'w-4/5 sm:w-5/12';
         else return 'w-4/5 sm:w-3/4';
     };
 
@@ -147,7 +155,7 @@ const Sponsors: React.FC = () => {
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
                     id="thank-you"
-                    className={`text-dark ${swily.className} text-3xl leading-relaxed sm:text-7xl`}
+                    className={`text-dark ${swily.className} leading-relaxed text-4xl xxs:text-5xl xs:text-6xl sm:text-7xl`}
                 >
                     Thank you to our sponsors...
                 </h1>
@@ -202,7 +210,7 @@ const Sponsors: React.FC = () => {
                     </Link>
                 ))}
             </div>
-            <div className="grid w-full max-w-full grid-cols-4 gap-16 md:grid-cols-16">
+            <div className="grid w-full max-w-full grid-cols-4 gap-y-16 md:grid-cols-16">
                 {imagesSm.map((image, index) => (
                     <Link
                         key={image.name}
@@ -224,22 +232,26 @@ const Sponsors: React.FC = () => {
             <div className="flex w-full flex-col items-center justify-center py-16 text-center md:py-32">
                 <h1
                     id="thank-you"
-                    className="text-dark font-poppins text-3xl leading-relaxed sm:text-4xl lg:text-6xl"
+                    className={`text-dark ${swily.className} text-3xl leading-relaxed sm:text-4xl lg:text-6xl`}
                 >
                     and partners...
                 </h1>
             </div>
-            <div className="mb-24 grid w-full grid-cols-1 gap-16 md:grid-cols-2">
+            <div className="mb-24 grid w-full grid-cols-1 gap-16 md:grid-cols-3">
                 {partners.map((image) => (
                     <Link
                         key={image.name}
                         href={image.href}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="col-span-1 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
+                        className= "col-span-1 flex items-center justify-center grayscale transition-all duration-300 hover:grayscale-0"
                     >
                         <Image
-                            className="w-1/2 md:w-1/3"
+                            className={
+                            image.name === 'IEEE TAMU'
+                                    ? 'w-'
+                                    : 'w-1/2 md:w-3/5'
+                            }
                             src={`/sponsors/${image.src}`}
                             alt={`${image.name} homepage`}
                             width={500}
