@@ -8,16 +8,14 @@ export default function HomeGraphic() {
             <Image
                 src={HomeImage}
                 alt="Reflection of College Station in a puddle"
-                width={800}
-                height={600}
                 placeholder="empty"
                 className="mx-auto lg:mx-0"
+                quality={50}
+                priority
             />
             <Image
                 src={Guy}
                 alt="Just a guy walking"
-                width={64}
-                height={64}
                 placeholder="empty"
                 className="absolute bottom-0 right-[25%] max-w-12 lg:max-w-16"
             />
