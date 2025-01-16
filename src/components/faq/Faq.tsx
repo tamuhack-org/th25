@@ -109,7 +109,7 @@ const FAQ: React.FC = () => {
                     <div className="mr-20 hidden md:flex md:w-3/12">
                         <Image
                             src="/faq_guy.png"
-                            alt="Schedule mascot"
+                            alt="FAQ mascot"
                             width={249}
                             height={187}
                             className="hidden h-auto max-h-full w-auto max-w-full object-contain md:flex"
