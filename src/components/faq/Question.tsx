@@ -172,10 +172,10 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
         <>
             <details
                 ref={detailsRef}
-                className={`faq-question relative mb-10 flex flex-col rounded-[30px] font-poppins text-[#292254] lg:ml-20`}
+                className={`faq-question relative mb-10 flex flex-col rounded-[38px] font-poppins text-[#292254] lg:ml-20`}
             >
                 <summary
-                    className={`text-md flex cursor-pointer items-center rounded-t-[30px] bg-[#F5BFE4] font-medium md:text-xl ${open ? '' : 'rounded-b-[30px] transition-all delay-[170ms]'}`}
+                    className={`text-md flex cursor-pointer items-center rounded-t-[38px] py-2 bg-[#F5BFE4] font-medium md:text-xl ${open ? '' : 'rounded-b-[38px] transition-all delay-[170ms]'}`}
                     onClick={() => setOpen(!open)}
                 >
                     <Image
@@ -192,7 +192,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         <IconChevronDown className="mr-6 h-5 w-5 md:h-10 md:w-10" />
                     </span>
                 </summary>
-                <div className={`content flex rounded-b-[30px] bg-white`}>
+                <div className={`content flex rounded-b-[38px] bg-white`}>
                     {/*Add each answer*/}
                     <div className="mx-8 mb-2 w-full pb-2 pt-4 text-sm md:mx-10 md:my-2 md:w-7/12 md:text-lg">
                         {item.answers.map((answer, index) => (
@@ -244,25 +244,27 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         transform: rotateX(0deg);
                     }
                 }
-                
+
                 details::-webkit-details-marker {
                     display: none;
                 }
 
                 details > summary {
-                    list-style:none;
+                    list-style: none;
                 }
 
                 details > summmary::-webkit-details-marker {
-                    display:none;
+                    display: none;
                 }
 
                 details > summary::marker,
                 details summary::-webkit-details-marker {
-                    display:none;
+                    display: none;
                 }
 
-                ::-webkit-details-marker { display: none; }
+                ::-webkit-details-marker {
+                    display: none;
+                }
             `}</style>
         </>
     );

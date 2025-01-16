@@ -77,7 +77,6 @@ const Navbar: React.FC = () => {
             duration: 0.15,
             ease: 'power2.out',
         });
-        
     });
 
     return (
@@ -168,7 +167,7 @@ const Navbar: React.FC = () => {
                             isActive={activeSection === 'faq'}
                         />
                         <button
-                            className="rounded-md border border-black bg-black p-1 text-white"
+                            className="rounded-md border border-[#fab7dc] bg-[#fab7dc] p-1 text-black"
                             onClick={toggleExpand}
                         >
                             <IconCategory className="h-5 w-5" />
@@ -177,7 +176,7 @@ const Navbar: React.FC = () => {
                             href="https://register.tamuhack.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md border border-white bg-white p-1 text-black transition-all"
+                            className="rounded-md border border-[#CCE9FF] bg-[#CCE9FF] p-1 text-black transition-all"
                         >
                             <IconEdit className="h-5 w-5" />
                         </a>

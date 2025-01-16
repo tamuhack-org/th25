@@ -5,12 +5,12 @@ import software3 from '../../../public/prizes/software3.png';
 import hardware1 from '../../../public/prizes/hardware1.png';
 import hardware2 from '../../../public/prizes/hardware2.png';
 import hardware3 from '../../../public/prizes/hardware3.png';
-import bigChallenges from '../../../public/prizes_text_1.svg';
-import biggerPrizes from '../../../public/prizes_text_2.svg';
-import prizesLine from '../../../public/prizes_line.svg';
 import PrizeGrid from './PrizeGrid';
-import { motion, useInView } from 'motion/react';
-import { useRef } from 'react';
+import localFont from 'next/font/local';
+import bigBubble from '../../../public/big_bubble.png';
+import medBubble from '../../../public/med_bubble.png';
+
+const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
 
 export type Prize = {
     title: string;
@@ -142,48 +142,23 @@ const hardwarePrizes: Prize[] = [
 ];
 
 const Prizes = () => {
-    const ref1 = useRef(null);
-    const ref2 = useRef(null);
-    const isInView1 = useInView(ref1, { once: true });
-    const isInView2 = useInView(ref2, { once: true });
-
     return (
-        <div className="flex w-full flex-col gap-64 pb-48">
-            <div className="relative flex w-full flex-col items-center justify-center">
-                <Image src={prizesLine} alt="Prizes" className="w-full" />
-                <div className="absolute flex w-full flex-col gap-16">
-                    <motion.div ref={ref1} initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: isInView1 ? 1 : 0,
-                        }}
-                        transition={{ duration: 1 }} className="flex-start flex w-full">
-                        <Image
-                            src={bigChallenges}
-                            alt="Big Challenges"
-                            className="w-4/5"
-                        />
-                    </motion.div>
-                    <motion.div ref={ref2} initial={{ opacity: 0, y: 50 }}
-                        animate={{
-                            opacity: isInView2 ? 1 : 0,
-                        }}
-                        transition={{ duration: 1 }} className="flex w-full justify-end">
-                        <Image
-                            src={biggerPrizes}
-                            alt="Bigger Prizes"
-                            className="w-2/3"
-                        />
-                    </motion.div>
+        <div className="flex w-full flex-col gap-60 pb-12 sm:pb-48">
+            <div className="flex w-full">
+                <div className="relative w-full">
+                    <Image src={medBubble} alt="Medium bubble" className="absolute z-10 top-6 left-6 w-8 sm:w-12 opacity-85 rotate-12" />
+                    <Image src={bigBubble} alt="Big bubble" className="absolute z-20 bottom-6 right-6 rotate-45 w-16 sm:w-24 opacity-85" />
+                    <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
                 </div>
             </div>
-            <div className="-mt-[320px] flex w-full justify-end sm:-mt-96">
-                <PrizeGrid
-                    direction="right"
-                    prizes={softwarePrizesWithoutSponsors}
-                />
-            </div>
-            <div className="flex w-full justify-start">
-                <PrizeGrid direction="left" prizes={hardwarePrizes} />
+            <div className="flex w-full flex-col items-center gap-8">
+                <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className} text-center`}>Hardware Prizes</h2>
+                <p className="text-white font-poppins text-lg sm:text-xl text-center">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
+                <div className="relative w-full">
+                    <Image src={medBubble} alt="Medium bubble" className="absolute z-10 top-6 left-6 w-8 sm:w-12 opacity-85 -rotate-12" />
+                    <Image src={bigBubble} alt="Big bubble" className="absolute z-20 bottom-6 right-6 -rotate-45 w-16 sm:w-24 opacity-85" />
+                    <PrizeGrid prizes={hardwarePrizes} />
+                </div>
             </div>
         </div>
     );

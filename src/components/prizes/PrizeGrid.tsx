@@ -5,39 +5,42 @@ import { Prize } from './Prizes';
 const swily = localFont({ src: '../../pages/fonts/SwilyBright.otf' });
 
 interface PrizeGridProps {
-    direction: 'left' | 'right';
     prizes: Prize[];
 }
 
-const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
+const PrizeGrid = ({ prizes }: PrizeGridProps) => {
     return (
         <div
-            className={`grid w-full grid-cols-4 gap-4 border border-white bg-[rgb(255,255,255,0.15)] p-4 ${direction === 'right' ? 'xl:-mr-16 xl:-rotate-1 xl:-skew-x-1 xl:-skew-y-1' : 'xl:-ml-16 xl:rotate-1 xl:skew-x-1 xl:skew-y-1'}`}
+            className="grid w-full grid-cols-4 gap-4 rounded-lg border border-white bg-[rgb(255,255,255,0.05)] p-4"
             style={{ backdropFilter: 'blur(10px)' }}
         >
-            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8 xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}>
-                {prizes[0].image && (
-                    <Image
-                        src={prizes[0].image}
-                        alt={prizes[0].prize}
-                        className="max-w-48"
-                    />
-                )}
-                <div className="flex w-full flex-col justify-center gap-2">
-                    <h2
-                        className={`${swily.className} text-4xl font-semibold sm:text-5xl lg:text-6xl xl:text-8xl`}
-                    >
-                        {prizes[0].title}
-                    </h2>
-                    <p className="sm:text-lg md:text-2xl">
-                        {prizes[0].description}
-                    </p>
-                    <p className="font-semibold md:text-lg">
-                        {prizes[0].prize}
-                    </p>
+            <div className="col-span-4 flex flex-col items-center gap-4 rounded-md border-8 border-white bg-white p-1 font-poppins transition-all sm:flex-row xl:hover:-translate-y-1 xl:hover:translate-x-1 xl:hover:shadow-md">
+                <div
+                    className={`border-16 flex w-full flex-col items-center gap-4 rounded-md bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8`}
+                >
+                    {prizes[0].image && (
+                        <Image
+                            src={prizes[0].image}
+                            alt={prizes[0].prize}
+                            className="max-w-48"
+                        />
+                    )}
+                    <div className="flex w-full flex-col justify-center gap-2">
+                        <h2
+                            className={`${swily.className} text-4xl font-semibold sm:text-5xl lg:text-6xl xl:text-8xl`}
+                        >
+                            {prizes[0].title}
+                        </h2>
+                        <p className="sm:text-lg md:text-2xl">
+                            {prizes[0].description}
+                        </p>
+                        <p className="font-semibold md:text-lg">
+                            {prizes[0].prize}
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2 xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}>
+            <div className="col-span-4 flex flex-col items-center gap-4 rounded-md bg-[#CCE9FF] p-4 font-poppins transition-all sm:flex-row md:col-span-2 xl:hover:-translate-y-1 xl:hover:translate-x-1 xl:hover:shadow-md">
                 {prizes[1].image && (
                     <Image
                         src={prizes[1].image}
@@ -55,7 +58,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                     <p className="font-medium">{prizes[1].prize}</p>
                 </div>
             </div>
-            <div className={`col-span-4 flex flex-col items-center gap-4 bg-[#CCE9FF] p-4 font-poppins sm:flex-row md:col-span-2 xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}>
+            <div className="col-span-4 flex flex-col items-center gap-4 rounded-md bg-[#CCE9FF] p-4 font-poppins transition-all sm:flex-row md:col-span-2 xl:hover:-translate-y-1 xl:hover:translate-x-1 xl:hover:shadow-md">
                 {prizes[2].image && (
                     <Image
                         src={prizes[2].image}
@@ -77,7 +80,7 @@ const PrizeGrid = ({ direction, prizes }: PrizeGridProps) => {
                 <div className="col-span-3 grid w-full grid-cols-3 gap-4 font-poppins">
                     {prizes.slice(3).map((prize, i) => (
                         <div
-                            className={`col-span-3 flex flex-col items-center gap-4 bg-white p-4 font-poppins sm:flex-row md:col-span-1 md:flex-col xl:hover:-translate-y-1 ${direction === 'right' ? 'xl:hover:-translate-x-1' : 'xl:hover:translate-x-1'} xl:hover:shadow-md transition-all`}
+                            className="col-span-3 flex flex-col items-center gap-4 rounded-md bg-white p-4 font-poppins transition-all sm:flex-row md:col-span-1 md:flex-col xl:hover:-translate-y-1 xl:hover:translate-x-1 xl:hover:shadow-md"
                             key={i}
                         >
                             {prize.image && (

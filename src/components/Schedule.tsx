@@ -89,7 +89,7 @@ const Schedule: React.FC = () => {
                 <div className="flex items-start justify-between">
                     <div className="flex flex-col items-stretch lg:pr-40">
                         {/* Want to put units here so that the svg scales  */}
-                        <div className="text-4.5xl xxs:text-5.5xl xs:text-6xl md:text-6.5xl xl:text-7.5xl 2xl:text-8.5xl mb-2 flex items-end">
+                        <div className="mb-2 flex items-end text-4.5xl xxs:text-5.5xl xs:text-6xl md:text-6.5xl xl:text-7.5xl 2xl:text-8.5xl">
                             <h2 className="font-poppins font-semibold">
                                 Schedule
                             </h2>
@@ -110,7 +110,7 @@ const Schedule: React.FC = () => {
                                 />
                             </svg>
                         </div>
-                        <div className="text-xxs xxs:px-8 xxs:text-xs xs:text-sm mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 font-semibold tracking-wider md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
+                        <div className="mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 text-xxs font-semibold tracking-wider xxs:px-8 xxs:text-xs xs:text-sm md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
                                 <a href="#" className="underline">
@@ -169,16 +169,11 @@ const Schedule: React.FC = () => {
                             <div className="-z-2 absolute bottom-0 left-24 top-0 hidden w-3 bg-black lg:block" />
                             <div className="flex flex-col gap-4">
                                 {!scheduleItems ||
-                                !scheduleItems.filter((item) => {
-                                    const date = new Date(item.date);
-                                    const isDayMatch = date.getDay() === 6;
-                                    const tagMatch =
-                                        activeFilters.length === 0 ||
-                                        item.tags.some((tag) =>
-                                            activeFilters.includes(tag.label),
-                                        );
-                                    return isDayMatch && tagMatch;
-                                }).length ? (
+                                    !scheduleItems.filter((item) => {
+                                        const date = new Date(item.date);
+                                        const isDayMatch = date.getDay() === 6;
+                                        return isDayMatch;
+                                    }).length ? (
                                     <div className="flex h-40 items-center justify-center">
                                         <p className="text-lg text-gray-500">
                                             Coming Soon!
@@ -190,6 +185,14 @@ const Schedule: React.FC = () => {
                                             const date = new Date(item.date);
                                             const isDayMatch =
                                                 date.getDay() === 6;
+                                            return isDayMatch;
+                                        })
+                                        .sort(
+                                            (a, b) =>
+                                                new Date(a.date).getTime() -
+                                                new Date(b.date).getTime(),
+                                        )
+                                        .map((item) => {
                                             const tagMatch =
                                                 activeFilters.length === 0 ||
                                                 item.tags.some((tag) =>
@@ -197,87 +200,87 @@ const Schedule: React.FC = () => {
                                                         tag.label,
                                                     ),
                                                 );
-                                            return isDayMatch && tagMatch;
-                                        })
-                                        .sort(
-                                            (a, b) =>
-                                                new Date(a.date).getTime() -
-                                                new Date(b.date).getTime(),
-                                        )
-                                        .map((item) => (
-                                            <div key={item.id}>
-                                                <div className="flex items-start lg:hidden">
-                                                    <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
-                                                        {new Date(
-                                                            item.date,
-                                                        ).toLocaleTimeString(
-                                                            'en-US',
-                                                            {
-                                                                hour: '2-digit',
-                                                                minute: '2-digit',
-                                                            },
-                                                        )}
-                                                    </div>
-                                                    <div className="flex flex-col">
-                                                        <div className="font-semibold text-black">
-                                                            {item.eventName}
-                                                        </div>
-                                                        <div className="text-sm text-gray-600">
-                                                            {item.location}
-                                                        </div>
-                                                        {item.description && (
-                                                            <div className="mt-1 text-sm text-gray-600">
+
+                                            const opacity = tagMatch
+                                                ? ''
+                                                : 'opacity-40';
+                                            return (
+                                                <div
+                                                    key={item.id}
+                                                    className={`${opacity} transition-opacity duration-150`}
+                                                >
+                                                    <div className="flex items-start lg:hidden">
+                                                        <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600 opacity-30">
+                                                            {new Date(
+                                                                item.date,
+                                                            ).toLocaleTimeString(
+                                                                'en-US',
                                                                 {
-                                                                    item.description
-                                                                }
+                                                                    hour: '2-digit',
+                                                                    minute: '2-digit',
+                                                                },
+                                                            )}
+                                                        </div>
+                                                        <div className="flex flex-col">
+                                                            <div className="font-semibold text-black">
+                                                                {item.eventName}
                                                             </div>
-                                                        )}
-                                                    </div>
-                                                </div>
-
-                                                <div className="hidden lg:flex">
-                                                    <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
-                                                        {new Date(
-                                                            item.date,
-                                                        ).toLocaleTimeString(
-                                                            'en-US',
-                                                            {
-                                                                hour: '2-digit',
-                                                                minute: '2-digit',
-                                                            },
-                                                        )}
+                                                            <div className="text-sm text-gray-600">
+                                                                {item.location}
+                                                            </div>
+                                                            {item.description && (
+                                                                <div className="mt-1 text-sm text-gray-600">
+                                                                    {
+                                                                        item.description
+                                                                    }
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
 
-                                                    <div className="flex">
-                                                        <div
-                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${
-                                                                isEventCurrent(
+                                                    <div className="hidden lg:flex">
+                                                        <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
+                                                            {new Date(
+                                                                item.date,
+                                                            ).toLocaleTimeString(
+                                                                'en-US',
+                                                                {
+                                                                    hour: '2-digit',
+                                                                    minute: '2-digit',
+                                                                },
+                                                            )}
+                                                        </div>
+
+                                                        <div className="flex">
+                                                            <div
+                                                                className={`z-10 shrink-0 rounded-full border-4 border-black ${isEventCurrent(
                                                                     item,
                                                                 )
                                                                     ? '-ml-[29px] h-6 w-6 bg-pink-400'
                                                                     : '-ml-7 h-5 w-5 bg-blue-100'
-                                                            }`}
-                                                        />
-                                                    </div>
+                                                                    } ${!tagMatch ? 'opacity-0' : ''}`}
+                                                            />
+                                                        </div>
 
-                                                    <div className="flex flex-col">
-                                                        <div className="font-semibold text-black">
-                                                            {item.eventName}
-                                                        </div>
-                                                        <div className="mt-1 text-sm text-gray-600">
-                                                            {item.location}
-                                                        </div>
-                                                        {item.description && (
-                                                            <div className="mt-1 text-sm text-gray-600">
-                                                                {
-                                                                    item.description
-                                                                }
+                                                        <div className="flex flex-col">
+                                                            <div className="font-semibold text-black">
+                                                                {item.eventName}
                                                             </div>
-                                                        )}
+                                                            <div className="mt-1 text-sm text-gray-600">
+                                                                {item.location}
+                                                            </div>
+                                                            {item.description && (
+                                                                <div className="mt-1 text-sm text-gray-600">
+                                                                    {
+                                                                        item.description
+                                                                    }
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))
+                                            );
+                                        })
                                 )}
                             </div>
                         </div>
@@ -295,15 +298,14 @@ const Schedule: React.FC = () => {
                         <button
                             key={filter}
                             onClick={() => toggleFilter(filter)}
-                            className={`rounded-lg px-2 py-3 text-center text-sm transition-colors ${
-                                activeFilters.includes(
-                                    Object.entries(filterToTagMapping).find(
-                                        (entry) => entry[1] === filter,
-                                    )?.[0] || '',
-                                )
-                                    ? 'bg-black text-white'
-                                    : 'bg-gray-100 text-black hover:bg-gray-200'
-                            }`}
+                            className={`rounded-lg px-2 py-3 text-center text-sm transition-colors ${activeFilters.includes(
+                                Object.entries(filterToTagMapping).find(
+                                    (entry) => entry[1] === filter,
+                                )?.[0] || '',
+                            )
+                                ? 'bg-black text-white'
+                                : 'bg-gray-100 text-black hover:bg-gray-200'
+                                }`}
                         >
                             {filter}
                         </button>
@@ -320,16 +322,11 @@ const Schedule: React.FC = () => {
 
                             <div className="flex flex-col gap-6">
                                 {!scheduleItems ||
-                                !scheduleItems.filter((item) => {
-                                    const date = new Date(item.date);
-                                    const isDayMatch = date.getDay() === 6;
-                                    const tagMatch =
-                                        activeFilters.length === 0 ||
-                                        item.tags.some((tag) =>
-                                            activeFilters.includes(tag.label),
-                                        );
-                                    return isDayMatch && tagMatch;
-                                }).length ? (
+                                    !scheduleItems.filter((item) => {
+                                        const date = new Date(item.date);
+                                        const isDayMatch = date.getDay() === 6;
+                                        return isDayMatch;
+                                    }).length ? (
                                     <div className="flex h-40 items-center justify-center">
                                         <p className="text-lg text-gray-500">
                                             Coming Soon!
@@ -342,6 +339,14 @@ const Schedule: React.FC = () => {
                                             const isDayMatch =
                                                 date.getDay() === 0;
 
+                                            return isDayMatch;
+                                        })
+                                        .sort(
+                                            (a, b) =>
+                                                new Date(a.date).getTime() -
+                                                new Date(b.date).getTime(),
+                                        )
+                                        .map((item) => {
                                             const tagMatch =
                                                 activeFilters.length === 0 ||
                                                 item.tags.some((tag) =>
@@ -350,87 +355,86 @@ const Schedule: React.FC = () => {
                                                     ),
                                                 );
 
-                                            return isDayMatch && tagMatch;
-                                        })
-                                        .sort(
-                                            (a, b) =>
-                                                new Date(a.date).getTime() -
-                                                new Date(b.date).getTime(),
-                                        )
-                                        .map((item) => (
-                                            <div key={item.id}>
-                                                <div className="flex items-start lg:hidden">
-                                                    <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
-                                                        {new Date(
-                                                            item.date,
-                                                        ).toLocaleTimeString(
-                                                            'en-US',
-                                                            {
-                                                                hour: '2-digit',
-                                                                minute: '2-digit',
-                                                            },
-                                                        )}
-                                                    </div>
-                                                    <div className="flex flex-col">
-                                                        <div className="font-semibold text-black">
-                                                            {item.eventName}
-                                                        </div>
-                                                        <div className="text-sm text-gray-600">
-                                                            {item.location}
-                                                        </div>
-                                                        {item.description && (
-                                                            <div className="mt-1 text-sm text-gray-600">
+                                            const opacity = tagMatch
+                                                ? ''
+                                                : 'opacity-40';
+                                            return (
+                                                <div
+                                                    key={item.id}
+                                                    className={`${opacity} transition-opacity duration-150`}
+                                                >
+                                                    <div className="flex items-start lg:hidden">
+                                                        <div className="mr-4 mt-1 w-[85px] shrink-0 text-sm text-gray-600">
+                                                            {new Date(
+                                                                item.date,
+                                                            ).toLocaleTimeString(
+                                                                'en-US',
                                                                 {
-                                                                    item.description
-                                                                }
+                                                                    hour: '2-digit',
+                                                                    minute: '2-digit',
+                                                                },
+                                                            )}
+                                                        </div>
+                                                        <div className="flex flex-col">
+                                                            <div className="font-semibold text-black">
+                                                                {item.eventName}
                                                             </div>
-                                                        )}
-                                                    </div>
-                                                </div>
-
-                                                <div className="hidden lg:flex">
-                                                    <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
-                                                        {new Date(
-                                                            item.date,
-                                                        ).toLocaleTimeString(
-                                                            'en-US',
-                                                            {
-                                                                hour: '2-digit',
-                                                                minute: '2-digit',
-                                                            },
-                                                        )}
+                                                            <div className="text-sm text-gray-600">
+                                                                {item.location}
+                                                            </div>
+                                                            {item.description && (
+                                                                <div className="mt-1 text-sm text-gray-600">
+                                                                    {
+                                                                        item.description
+                                                                    }
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
 
-                                                    <div className="flex">
-                                                        <div
-                                                            className={`z-10 shrink-0 rounded-full border-4 border-black ${
-                                                                isEventCurrent(
+                                                    <div className="hidden lg:flex">
+                                                        <div className="w-24 shrink-0 origin-right -rotate-12 transform text-sm text-gray-600">
+                                                            {new Date(
+                                                                item.date,
+                                                            ).toLocaleTimeString(
+                                                                'en-US',
+                                                                {
+                                                                    hour: '2-digit',
+                                                                    minute: '2-digit',
+                                                                },
+                                                            )}
+                                                        </div>
+
+                                                        <div className="flex">
+                                                            <div
+                                                                className={`z-10 shrink-0 rounded-full border-4 border-black ${isEventCurrent(
                                                                     item,
                                                                 )
                                                                     ? '-ml-[29px] h-6 w-6 bg-pink-400'
                                                                     : '-ml-7 h-5 w-5 bg-blue-100'
-                                                            }`}
-                                                        />
-                                                    </div>
+                                                                    } ${!tagMatch ? 'opacity-0' : ''}`}
+                                                            />
+                                                        </div>
 
-                                                    <div className="flex flex-col">
-                                                        <div className="font-semibold text-black">
-                                                            {item.eventName}
-                                                        </div>
-                                                        <div className="mt-1 text-sm text-gray-600">
-                                                            {item.location}
-                                                        </div>
-                                                        {item.description && (
-                                                            <div className="mt-1 text-sm text-gray-600">
-                                                                {
-                                                                    item.description
-                                                                }
+                                                        <div className="flex flex-col">
+                                                            <div className="font-semibold text-black">
+                                                                {item.eventName}
                                                             </div>
-                                                        )}
+                                                            <div className="mt-1 text-sm text-gray-600">
+                                                                {item.location}
+                                                            </div>
+                                                            {item.description && (
+                                                                <div className="mt-1 text-sm text-gray-600">
+                                                                    {
+                                                                        item.description
+                                                                    }
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))
+                                            );
+                                        })
                                 )}
                             </div>
                         </div>
