@@ -175,7 +175,7 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                 className={`faq-question relative mb-10 flex flex-col rounded-[38px] font-poppins text-[#292254] lg:ml-20`}
             >
                 <summary
-                    className={`text-md flex cursor-pointer items-center rounded-t-[38px] py-2 bg-[#F5BFE4] font-medium md:text-xl ${open ? '' : 'rounded-b-[38px] transition-all delay-[170ms]'}`}
+                    className={`text-md flex cursor-pointer items-center rounded-t-[38px] bg-[#F5BFE4] py-2 font-medium md:text-xl ${open ? '' : 'rounded-b-[38px] transition-all delay-[170ms]'}`}
                     onClick={() => setOpen(!open)}
                 >
                     <Image

@@ -146,17 +146,40 @@ const Prizes = () => {
         <div className="flex w-full flex-col gap-60 pb-12 sm:pb-48">
             <div className="flex w-full">
                 <div className="relative w-full">
-                    <Image src={medBubble} alt="Medium bubble" className="absolute z-10 top-6 left-6 w-8 sm:w-12 opacity-85 rotate-12" />
-                    <Image src={bigBubble} alt="Big bubble" className="absolute z-20 bottom-6 right-6 rotate-45 w-16 sm:w-24 opacity-85" />
+                    <Image
+                        src={medBubble}
+                        alt="Medium bubble"
+                        className="absolute left-6 top-6 z-10 w-8 rotate-12 opacity-85 sm:w-12"
+                    />
+                    <Image
+                        src={bigBubble}
+                        alt="Big bubble"
+                        className="absolute bottom-6 right-6 z-20 w-16 rotate-45 opacity-85 sm:w-24"
+                    />
                     <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
                 </div>
             </div>
             <div className="flex w-full flex-col items-center gap-8">
-                <h2 className={`text-5xl sm:text-6xl text-white ${belgiano.className} text-center`}>Hardware Prizes</h2>
-                <p className="text-white font-poppins text-lg sm:text-xl text-center">Participants can choose to compete in the hardware track to be eligible for these prizes.</p>
+                <h2
+                    className={`text-5xl text-white sm:text-6xl ${belgiano.className} text-center`}
+                >
+                    Hardware Prizes
+                </h2>
+                <p className="text-center font-poppins text-lg text-white sm:text-xl">
+                    Participants can choose to compete in the hardware track to
+                    be eligible for these prizes.
+                </p>
                 <div className="relative w-full">
-                    <Image src={medBubble} alt="Medium bubble" className="absolute z-10 top-6 left-6 w-8 sm:w-12 opacity-85 -rotate-12" />
-                    <Image src={bigBubble} alt="Big bubble" className="absolute z-20 bottom-6 right-6 -rotate-45 w-16 sm:w-24 opacity-85" />
+                    <Image
+                        src={medBubble}
+                        alt="Medium bubble"
+                        className="absolute left-6 top-6 z-10 w-8 -rotate-12 opacity-85 sm:w-12"
+                    />
+                    <Image
+                        src={bigBubble}
+                        alt="Big bubble"
+                        className="absolute bottom-6 right-6 z-20 w-16 -rotate-45 opacity-85 sm:w-24"
+                    />
                     <PrizeGrid prizes={hardwarePrizes} />
                 </div>
             </div>

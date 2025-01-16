@@ -145,7 +145,7 @@ const Info = () => {
                         </p>
                     </div>
                 </div>
-                <div className="col-start-1 row-start-1 col-span-1 row-span-1 lg:mb-24 lg:ml-40 w-[55%]">
+                <div className="col-span-1 col-start-1 row-span-1 row-start-1 w-[55%] lg:mb-24 lg:ml-40">
                     <Image src={blue_info} alt="pink info" />
                 </div>
                 <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
