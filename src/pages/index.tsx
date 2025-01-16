@@ -9,7 +9,6 @@ import SmallBubble from '../../public/small_bubble.png';
 import MediumBubble from '../../public/med_bubble.png';
 import FAQ from '@/components/faq/Faq';
 import Info from '@/components/info/Info';
-// import Sponsors from '@/components/Sponsors';
 import Schedule from '@/components/Schedule';
 import Navbar from '@/components/navbar/Navbar';
 import PrizesScroller from '@/components/prizes/PrizesScroller';
@@ -100,32 +99,11 @@ export default function Home() {
                 <section id="prizes px-8 lg:px-16">
                     <PrizesScroller />
                 </section>
-                {/* <section
-                    id="prizes"
-                    className="bg-gradient-to-b from-[#BFE4FF] via-[#72A0E5] to-[#192349]"
-                >
-                    <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
-                        <PrizesScroller />
-                        <Prizes />
-                    </div>
-                </section> */}
                 <div className="bg-[#192349]">
                     <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
                         <FAQ />
                     </div>
                 </div>
-
-                {/* Blue section */}
-                {/* <div className="bg-[#BFE4FF]">
-                    <div className="mx-auto max-w-[2000px] px-8 pb-8 lg:px-16">
-                        <FAQ />
-                        <Sponsors />
-                        <Schedule />
-                    </div>
-                </div> */}
-                {/* <div className='bg-[#192349]'>
-                        <Sponsors />
-                </div> */}
                 <div className="h-64 bg-[linear-gradient(180deg,_#192349_4.1%,_#2C355A_20.6%,_#535A88_36.03%,_#7980B7_54.46%,_#B3A8D3_68.1%,_#ECD1F0_82.6%,_#FFFFFF_100%)]"></div>
             </main>
             <div className="mx-auto max-w-[2000px] px-8 pt-16 lg:px-16">
