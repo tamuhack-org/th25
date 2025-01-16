@@ -142,7 +142,6 @@ const hardwarePrizes: Prize[] = [
 ];
 
 const Prizes = () => {
-
     return (
         <div className="flex w-full flex-col gap-60 pb-12 sm:pb-48">
             <div className="flex w-full">

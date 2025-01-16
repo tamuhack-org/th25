@@ -18,9 +18,11 @@ const PrizesScroller = () => {
     const isDesktop = useMedia('(min-width: 800px)', true);
     const container = useRef(null);
     const svg = useRef(null);
-    
-    const svgOffset: Offsets = isDesktop ? ['start center', 'end end'] : ['center end', 'end center'];
-    const {scrollYProgress: containerScrollYProgress} = useScroll({
+
+    const svgOffset: Offsets = isDesktop
+        ? ['start center', 'end end']
+        : ['center end', 'end center'];
+    const { scrollYProgress: containerScrollYProgress } = useScroll({
         target: container,
         offset: ['start center', 'center end'],
     });
@@ -45,7 +47,7 @@ const PrizesScroller = () => {
                     trigger: '#big-challenges',
                     scrub: true,
                     start: '-70% 20%',
-                    end: 'top center',
+                    end: 'bottom center',
                 },
                 opacity: 0,
                 ease: 'none',
@@ -56,7 +58,7 @@ const PrizesScroller = () => {
                     trigger: '#bigger-prizes',
                     scrub: true,
                     start: '-70% 20%',
-                    end: 'top center',
+                    end: 'bottom center',
                 },
                 opacity: 0,
                 ease: 'none',
@@ -70,7 +72,7 @@ const PrizesScroller = () => {
                     trigger: '#big-challenges',
                     scrub: true,
                     start: '-70% center',
-                    end: 'top center',
+                    end: 'bottom center',
                 },
                 opacity: 0,
                 ease: 'none',
@@ -81,7 +83,7 @@ const PrizesScroller = () => {
                     trigger: '#bigger-prizes',
                     scrub: true,
                     start: '-70% center',
-                    end: 'top center',
+                    end: 'bottom center',
                 },
                 opacity: 0,
                 ease: 'none',
@@ -135,7 +137,10 @@ const PrizesScroller = () => {
                     </div>
                 </div>
             </div>
-            <div className="mx-auto max-w-[2000px] px-8 lg:px-16 -mt-12 lg:-mt-48" id='prizes'>
+            <div
+                className="mx-auto -mt-12 max-w-[2000px] px-8 lg:-mt-48 lg:px-16"
+                id="prizes"
+            >
                 <Prizes />
             </div>
         </motion.div>

@@ -244,25 +244,27 @@ const QuestionItem: React.FC<QuestionProps> = ({ item }) => {
                         transform: rotateX(0deg);
                     }
                 }
-                
+
                 details::-webkit-details-marker {
                     display: none;
                 }
 
                 details > summary {
-                    list-style:none;
+                    list-style: none;
                 }
 
                 details > summmary::-webkit-details-marker {
-                    display:none;
+                    display: none;
                 }
 
                 details > summary::marker,
                 details summary::-webkit-details-marker {
-                    display:none;
+                    display: none;
                 }
 
-                ::-webkit-details-marker { display: none; }
+                ::-webkit-details-marker {
+                    display: none;
+                }
             `}</style>
         </>
     );

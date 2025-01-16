@@ -77,7 +77,6 @@ const Navbar: React.FC = () => {
             duration: 0.15,
             ease: 'power2.out',
         });
-        
     });
 
     return (
