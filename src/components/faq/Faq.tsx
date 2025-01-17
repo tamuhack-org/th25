@@ -79,14 +79,27 @@ const FAQ: React.FC = () => {
                     />
                 </svg>
 
-                <div className="mr-20 flex md:w-3/12">
-                    <Image
-                        src="/bus_vignette.png"
-                        alt="Bus vignette"
-                        width={249}
-                        height={187}
-                        className="h-auto max-h-full w-auto max-w-full object-contain flex"
-                    />
+                <div className="w-full h-full grid grid-rows-2 grid-cols-2">
+                    <div className="">
+                        <Image
+                            src="/bus_vignette.png"
+                            alt="Bus vignette"
+                            width={400}
+                            height={300}
+                            className="h-auto max-h-full w-auto max-w-full ml-auto"
+                        />
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div className="">
+                        <Image
+                            src="/bus_vignette.png"
+                            alt="Bus vignette"
+                            width={400}
+                            height={300}
+                            className="h-auto max-h-full w-auto max-w-full -mt-4 md:-mt-12 z-50"
+                        />
+                    </div>
                 </div>
             </div>
             <section
