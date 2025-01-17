@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import * as motion from "motion/react-client";
 
 interface ScheduleItem {
     date: Date;
@@ -442,6 +443,20 @@ const Schedule: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <motion.div
+                        initial={{ opacity: 0, x: 300 }}
+                        whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+                        viewport={{ once: true }}
+                        className="hidden h-auto max-h-full w-72 max-w-full object-contain lg:flex mt-auto mx-auto"
+                        >
+                        <Image
+                            src="/food_truck.png"
+                            alt="Food Truck"
+                            width={300}
+                            height={187}
+                            className=""
+                        />
+                    </motion.div>
                 </div>
             </div>
         </section>
