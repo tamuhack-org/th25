@@ -145,7 +145,7 @@ const Info = () => {
                         </p>
                     </div>
                 </div>
-                <div className="col-span-1 col-start-1 row-span-1 row-start-1 w-[55%] lg:mb-24 lg:ml-40">
+                <div className="col-span-1 col-start-1 row-span-1 row-start-1 w-[65%] xs:w-[55%] lg:mb-24 z-10">
                     <Image src={blue_info} alt="pink info" />
                 </div>
                 <div className="z-10 col-span-1 col-start-1 row-span-1 row-start-2">
@@ -175,15 +175,15 @@ const Info = () => {
                             challenges or the general track.
                         </p>
                         <p className="mt-6">
-                            TAMUhack will be providing{' '}
+                            TAMUhack will be providing hardware supplies (see {' '}
                             <a
                                 href="https://docs.google.com/document/d/1NAnblNfmhRuGRvaJSTiiwVoV1eC3fDpZaJBeHEqp-rk/edit?usp=sharing"
                                 className="underline"
                                 target="_blank"
                                 rel="noreferrer noopener"
                             >
-                                hardware supplies
-                            </a>{' '}
+                                here
+                            </a>{') '}
                             to{' '}
                             <span className="font-bold">
                                 accepted participants
@@ -197,13 +197,13 @@ const Info = () => {
                         </p>
                     </div>
                 </div>
-                <div className="w-4/5">
+                <div className="w-full lg:w-4/5">
                     <div className="flex flex-col place-items-center gap-6">
-                        <div className="w-[65%]">
+                        <div className="w-[65%] xs:w-[55%] lg:w-[65%s] z-10">
                             <Image src={pink_info} alt="pink info" />
                         </div>
-                        <div className="">
-                            <p className="max-w-prose bg-[url('/acceptance_info.svg')] bg-contain bg-center bg-no-repeat text-sm">
+                        <div>
+                            <p className="max-w-prose bg-white py-4 px-8 rounded-3xl bg-opacity-55 lg:py-0 lg:px-0 lg:rounded-none lg:bg-opacity-0 lg:bg-[url('/acceptance_info.svg')] lg:bg-contain lg:bg-center lg:bg-no-repeat text-xxxs sm:text-sm text-center">
                                 <span className="font-bold">Note:</span>{' '}
                                 Acceptances will be sent out on a rolling basis.
                                 If you are accepted, you must check in before 11

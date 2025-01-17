@@ -13,6 +13,7 @@ const config: Config = {
                 foreground: 'var(--foreground)',
             },
             fontSize: {
+                xxxs: ['0.7rem', {lineHeight: '1rem'}],
                 xxs: ['0.625rem', { lineHeight: '1rem' }],
                 '4.5xl': ['2.625rem', { lineHeight: '1' }],
                 '5.5xl': ['3.25rem', { lineHeight: '1' }],
