@@ -24,6 +24,8 @@ import {
     IconCpu,
     IconExclamationCircle,
     IconUsers,
+    IconDeviceIpadCog,
+    IconDeviceDesktop,
 } from '@tabler/icons-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -92,9 +94,14 @@ const Navbar: React.FC = () => {
                         <div className="mt-[6px] flex h-full w-full flex-col items-start justify-center gap-8 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex flex-col justify-between gap-4">
                                 <ResourceButton
-                                    text="Hacker Guide"
+                                    text="Software Hacker Guide"
                                     link="https://tamuhack.org/guide"
                                     Icon={IconNotebook}
+                                />
+                                <ResourceButton
+                                    text="Hardware Hacker Guide"
+                                    link="https://drive.google.com/file/d/1dbUNP6fdD9rV7lx8Smzf0GGQQsWfuzmV/view?usp=sharing"
+                                    Icon={IconDeviceIpadCog}
                                 />
                                 <ResourceButton
                                     text="Discord"
@@ -112,6 +119,16 @@ const Navbar: React.FC = () => {
                                     Icon={IconHelp}
                                 />
                                 <ResourceButton
+                                    text="Team Formation"
+                                    link="https://tamuhack.org/team-formation"
+                                    Icon={IconUsers}
+                                />
+                                <ResourceButton
+                                    text="Intro to Hackathons"
+                                    link="https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing"
+                                    Icon={IconDeviceDesktop}
+                                />
+                                <ResourceButton
                                     text="Intro to Git"
                                     link="https://tamuhack.org/git"
                                     Icon={IconBrandGit}
@@ -125,11 +142,6 @@ const Navbar: React.FC = () => {
                                     text="Intro to Hardware"
                                     link="https://docs.google.com/presentation/d/1PGyzuwHUsFabeBiMDdyGySel6rtKnuKERMko81i1Lb0/edit?usp=sharing"
                                     Icon={IconCpu}
-                                />
-                                <ResourceButton
-                                    text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
-                                    Icon={IconUsers}
                                 />
                                 <ResourceButton
                                     text="Misconduct Reporting"
@@ -199,31 +211,41 @@ const Navbar: React.FC = () => {
                                     Icon={IconBrandDiscord}
                                 />
                                 <ResourceButton
+                                    text="HelpR"
+                                    link="https://tamuhack.org/help"
+                                    Icon={IconHelp}
+                                />
+                                <ResourceButton
+                                    text="Intro to Hackathons"
+                                    link="https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing"
+                                    Icon={IconDeviceDesktop}
+                                />
+                                <ResourceButton
                                     text="Intro to Git"
                                     link="https://tamuhack.org/git"
                                     Icon={IconBrandGit}
                                 />
                                 <ResourceButton
-                                    text="Intro to Hardware"
-                                    link="https://docs.google.com/presentation/d/1PGyzuwHUsFabeBiMDdyGySel6rtKnuKERMko81i1Lb0/edit?usp=sharing"
-                                    Icon={IconCpu}
-                                />
-                                <ResourceButton
-                                    text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
-                                    Icon={IconUsers}
+                                    text="Misconduct Reporting"
+                                    link="http://tamuhack.org/misconduct"
+                                    Icon={IconExclamationCircle}
                                 />
                             </div>
                             <div className="resources flex h-full flex-col justify-start gap-3">
+                                <ResourceButton
+                                    text="Hardware Hacker Guide"
+                                    link="https://drive.google.com/file/d/1dbUNP6fdD9rV7lx8Smzf0GGQQsWfuzmV/view?usp=sharing"
+                                    Icon={IconDeviceIpadCog}
+                                />
                                 <ResourceButton
                                     text="Devpost"
                                     link="https://tamuhack.org/devpost"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
-                                    text="HelpR"
-                                    link="https://tamuhack.org/help"
-                                    Icon={IconHelp}
+                                    text="Team Formation"
+                                    link="https://tamuhack.org/team-formation"
+                                    Icon={IconUsers}
                                 />
                                 <ResourceButton
                                     text="Intro to Web Dev"
@@ -231,9 +253,9 @@ const Navbar: React.FC = () => {
                                     Icon={IconWorld}
                                 />
                                 <ResourceButton
-                                    text="Misconduct Reporting"
-                                    link="http://tamuhack.org/misconduct"
-                                    Icon={IconExclamationCircle}
+                                    text="Intro to Hardware"
+                                    link="https://docs.google.com/presentation/d/1PGyzuwHUsFabeBiMDdyGySel6rtKnuKERMko81i1Lb0/edit?usp=sharing"
+                                    Icon={IconCpu}
                                 />
                                 <ResourceButton
                                     text="Code of Conduct"
@@ -296,13 +318,13 @@ const Navbar: React.FC = () => {
 
                 @media (max-width: 640px) {
                     .expand-container.active {
-                        height: 400px;
+                        height: 460px;
                     }
                 }
 
                 @media (min-width: 641px) {
                     .expand-container.active {
-                        height: 200px;
+                        height: 230px;
                     }
                 }
             `}</style>
