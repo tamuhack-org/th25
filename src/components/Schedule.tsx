@@ -122,7 +122,7 @@ const Schedule: React.FC = () => {
 
                     <div className="hidden items-start gap-4 lg:flex">
                         <Image
-                            src="/schedule_guy.png"
+                            src="/schedule_guy.svg"
                             alt="Schedule mascot"
                             width={176}
                             height={144}
