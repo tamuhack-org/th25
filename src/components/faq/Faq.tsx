@@ -51,31 +51,44 @@ const FAQ: React.FC = () => {
 
     return (
         <>
-            <svg
-                viewBox="0 0 1373 438"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                ref={svgContainer}
-            >
-                <path
-                    d="M272.045 0H1097.7L1132.1 73H240.1L272.045 0Z"
-                    fill="white"
-                    fillOpacity="0"
-                    ref={crossWalk1}
-                />
-                <path
-                    d="M203.1 134H1151.6L1235.6 232H119.1L203.1 134Z"
-                    fill="white"
-                    fillOpacity="0"
-                    ref={crossWalk2}
-                />
-                <path
-                    d="M91.1001 293H1276.1L1372.1 438H0.100098L91.1001 293Z"
-                    fill="white"
-                    fillOpacity="0"
-                    ref={crossWalk3}
-                />
-            </svg>
+            <div className="relative w-full h-[170px] md:h-[400px] lg:h-[480px]">
+                <svg
+                    viewBox="0 0 1373 438"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ref={svgContainer}
+                    className="absolute inset-0"
+                >
+                    <path
+                        d="M272.045 0H1097.7L1132.1 73H240.1L272.045 0Z"
+                        fill="white"
+                        fillOpacity="0"
+                        ref={crossWalk1}
+                    />
+                    <path
+                        d="M203.1 134H1151.6L1235.6 232H119.1L203.1 134Z"
+                        fill="white"
+                        fillOpacity="0"
+                        ref={crossWalk2}
+                    />
+                    <path
+                        d="M91.1001 293H1276.1L1372.1 438H0.100098L91.1001 293Z"
+                        fill="white"
+                        fillOpacity="0"
+                        ref={crossWalk3}
+                    />
+                </svg>
+
+                <div className="mr-20 flex md:w-3/12">
+                    <Image
+                        src="/bus_vignette.png"
+                        alt="Bus vignette"
+                        width={249}
+                        height={187}
+                        className="h-auto max-h-full w-auto max-w-full object-contain flex"
+                    />
+                </div>
+            </div>
             <section
                 id="faq"
                 className="mt-12 w-full lg:container lg:mt-48"
