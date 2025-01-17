@@ -182,8 +182,7 @@ const TamuhackFooter = () => {
                         TAMUhack 2025
                     </p>
                     <p className="font-base mb-8 font-poppins text-xl">
-                        This site is under construction. Please check back
-                        later!
+                        Website brought to you by the TAMUhack Creative + Technology Teams
                     </p>
                 </div>
                 <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">
