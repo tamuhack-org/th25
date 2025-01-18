@@ -48,7 +48,7 @@ const softwarePrizesWithSponsors: Prize[] = [
     {
         title: 'Best Beginner Software Hack',
         description:
-            'Best software hack created by first-time hackers at TAMUhack. (Must have at least 2 first-timers to qualify)',
+            'Best software hack created by first-time hackers at TAMUhack. (Must have at least 2 first-timers at a hackathon to qualify)',
         prize: 'Prize: JBL Clip 5 Bluetooth Speaker',
     },
     {
@@ -92,7 +92,7 @@ const softwarePrizesWithoutSponsors: Prize[] = [
     {
         title: 'Best Beginner Software Hack',
         description:
-            'Best software hack created by first-time hackers at TAMUhack. (Must have at least 2 first-timers to qualify)',
+            'Best software hack created by first-time hackers at TAMUhack. (Must have at least 2 first-timers at a hackathon to qualify)',
         prize: 'Prize: JBL Clip 5 Bluetooth Speaker',
     },
     {
@@ -124,7 +124,7 @@ const hardwarePrizes: Prize[] = [
     {
         title: 'Best Beginner Hardware Hack',
         description:
-            'Best hardware hack created by first-time hackers at TAMUhack. (Must have at least 2 first-timers to qualify)',
+            'Best hardware hack created by first-time hackers at TAMUhack. (Must have at least 2 first-timers at a hackathon to qualify)',
         prize: 'Prize: Anker Power Bank',
     },
     {
