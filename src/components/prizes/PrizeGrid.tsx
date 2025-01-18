@@ -1,6 +1,8 @@
 import localFont from 'next/font/local';
 import Image from 'next/image';
 import { Prize } from './Prizes';
+import SpriteAnimator from '../SpriteAnimator';
+import { useState } from 'react';
 
 const swily = localFont({ src: '../../pages/fonts/SwilyBright.otf' });
 
@@ -9,6 +11,7 @@ interface PrizeGridProps {
 }
 
 const PrizeGrid = ({ prizes }: PrizeGridProps) => {
+    const [playing, setPlaying] = useState(false);
     return (
         <div
             className="grid w-full grid-cols-4 gap-4 rounded-lg border border-white bg-[rgb(255,255,255,0.05)] p-4"
@@ -17,12 +20,20 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
             <div className="col-span-4 flex flex-col items-center gap-4 rounded-md border-8 border-white bg-white p-1 font-poppins transition-all sm:flex-row xl:hover:-translate-y-1 xl:hover:translate-x-1 xl:hover:shadow-md">
                 <div
                     className={`border-16 flex w-full flex-col items-center gap-4 rounded-md bg-[#F5BFE4] p-4 font-poppins sm:flex-row sm:p-8`}
+                    onMouseEnter={() => setPlaying(true)}
+                    onMouseLeave={() => setPlaying(false)}
                 >
                     {prizes[0].image && (
-                        <Image
-                            src={prizes[0].image}
-                            alt={prizes[0].prize}
+                        // <Image
+                        //     src={prizes[0].image}
+                        //     alt={prizes[0].prize}
+                        //     className="max-w-48"
+                        // />
+                        <SpriteAnimator
+                            src={'/sprite.png'}
+                            alt={'sprite'}
                             className="max-w-48"
+                            playing={playing}
                         />
                     )}
                     <div className="flex w-full flex-col justify-center gap-2">
