@@ -443,7 +443,7 @@ const Schedule: React.FC = () => {
                         </div>
                     </div>
                     <a
-                        id="mlh-trust-badge"
+                        id="food-truck"
                         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -459,6 +459,23 @@ const Schedule: React.FC = () => {
                     </a>
                 </div>
             </div>
+            <style jsx>{`
+                @keyframes wiggle {
+                    0% { transform: rotate(0deg); }
+                    25% { transform: rotate(-5deg); }
+                    50% { transform: rotate(0deg); }
+                    75% { transform: rotate(5deg); }
+                    100% { transform: rotate(0deg); }
+                }
+
+                #food-truck {
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                #food-truck:hover {
+                    animation: wiggle 0.5s ease-in-out infinite;
+                }
+            `}</style>
         </section>
     );
 };
