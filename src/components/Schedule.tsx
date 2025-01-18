@@ -442,6 +442,21 @@ const Schedule: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <a
+                        id="mlh-trust-badge"
+                        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="self-center"
+                    >
+                        <Image
+                            src="/foodtruck.svg"
+                            alt="Schedule mascot"
+                            width={176}
+                            height={144}
+                            className="mt-20 w-[450px]"
+                        />
+                    </a>
                 </div>
             </div>
         </section>
