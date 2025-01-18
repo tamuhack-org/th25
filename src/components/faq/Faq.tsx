@@ -26,6 +26,8 @@ const FAQ: React.FC = () => {
     const crossWalk1 = useRef(null);
     const crossWalk2 = useRef(null);
     const crossWalk3 = useRef(null);
+    const busVignette1 = useRef(null);
+    const busVignette2 = useRef(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({
@@ -38,12 +40,14 @@ const FAQ: React.FC = () => {
         });
 
         tl.to(crossWalk1.current, { fillOpacity: 0.1, duration: 1 })
-            .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
-            .to(
-                crossWalk3.current,
-                { fillOpacity: 0.45, duration: 1 },
-                '+=0.5',
-            );
+        .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
+        .to(busVignette1.current, { opacity: 1, y: -20, duration: 2 }, '+=0.1') 
+        .to(
+            crossWalk3.current,
+            { fillOpacity: 0.45, duration: 1 },
+            '+=0.5',
+        )
+        .to(busVignette2.current, { opacity: 1, y: -20, duration: 2 }, '+=0.1');
     });
 
     // Specifically type assert the content as a Section shape so I don't get errors w/ map function later
@@ -86,7 +90,8 @@ const FAQ: React.FC = () => {
                             alt="Bus vignette"
                             width={400}
                             height={300}
-                            className="h-auto max-h-full w-auto max-w-full ml-auto"
+                            className="h-auto max-h-full w-auto max-w-full ml-auto lg:mt-0 md:-mt-8 mt-0 z-50 relative opacity-0"
+                            ref={busVignette1}
                         />
                     </div>
                     <div></div>
@@ -97,7 +102,8 @@ const FAQ: React.FC = () => {
                             alt="Bus vignette"
                             width={400}
                             height={300}
-                            className="h-auto max-h-full w-auto max-w-full -mt-4 md:-mt-12 z-50"
+                            className="h-auto max-h-full w-auto max-w-full -mt-4 md:-mt-24 2xl:mt-5 z-50 relative opacity-0"
+                            ref={busVignette2}
                         />
                     </div>
                 </div>
@@ -138,7 +144,7 @@ const FAQ: React.FC = () => {
                             alt="FAQ mascot"
                             width={249}
                             height={187}
-                            className="hidden h-auto max-h-full w-auto max-w-full object-contain md:flex"
+                            className="hidden h-auto max-h-full w-auto max-w-full object-contain md:flex opacity-0"
                         />
                     </div>
                 </div>
