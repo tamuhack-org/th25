@@ -447,7 +447,7 @@ const Schedule: React.FC = () => {
                         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="self-center"
+                        className="flex self-center"
                     >
                         <Image
                             src="/foodtruck.svg"
@@ -456,15 +456,35 @@ const Schedule: React.FC = () => {
                             height={144}
                             className="mt-20 w-[450px]"
                         />
+                        <div className="vector self-center pb-40 flex flex-col">
+                            <Image
+                                src="/vector1.svg"
+                                alt="Schedule mascot"
+                                width={176}
+                                height={144}
+                                className="w-[23px] rotate-[10deg]"
+                                
+                            />
+                            <Image
+                                src="/vector1.svg"
+                                alt="Schedule mascot"
+                                width={176}
+                                height={144}
+                                className="w-[25px] rotate-[35deg] pl-1"
+                            />
+                        </div>
+                        
                     </a>
                 </div>
             </div>
             <style jsx>{`
                 @keyframes wiggle {
                     0% { transform: rotate(0deg); }
-                    25% { transform: rotate(-5deg); }
-                    50% { transform: rotate(0deg); }
-                    75% { transform: rotate(5deg); }
+                    17% { transform: rotate(-3deg); }
+                    33% { transform: rotate(0deg); }
+                    50% { transform: rotate(3deg); }
+                    67% { transform: rotate(0deg); }
+                    83% { transform: rotate(-3deg); }
                     100% { transform: rotate(0deg); }
                 }
 
@@ -473,7 +493,16 @@ const Schedule: React.FC = () => {
                 }
 
                 #food-truck:hover {
-                    animation: wiggle 0.5s ease-in-out infinite;
+                    animation: wiggle 0.5s ease-in-out;
+                }
+
+                .vector {
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
+
+                #food-truck:hover > .vector {
+                    opacity: 1;
                 }
             `}</style>
         </section>
