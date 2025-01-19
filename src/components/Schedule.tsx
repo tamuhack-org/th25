@@ -444,14 +444,14 @@ const Schedule: React.FC = () => {
                     </div>
                     <a
                         id="food-truck"
-                        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
+                        href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex self-center"
                     >
                         <Image
                             src="/foodtruck.svg"
-                            alt="Schedule mascot"
+                            alt="Food Truck Image"
                             width={176}
                             height={144}
                             className="mt-20 w-[400px]"
@@ -459,7 +459,7 @@ const Schedule: React.FC = () => {
                         <div className="vector self-center pb-40 flex flex-col">
                             <Image
                                 src="/vector1.svg"
-                                alt="Schedule mascot"
+                                alt="Vector 1"
                                 width={176}
                                 height={144}
                                 className="w-[23px] rotate-[10deg]"
@@ -467,7 +467,7 @@ const Schedule: React.FC = () => {
                             />
                             <Image
                                 src="/vector1.svg"
-                                alt="Schedule mascot"
+                                alt="Vector 2"
                                 width={176}
                                 height={144}
                                 className="w-[25px] rotate-[35deg] pl-1"
