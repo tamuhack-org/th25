@@ -26,6 +26,8 @@ const FAQ: React.FC = () => {
     const crossWalk1 = useRef(null);
     const crossWalk2 = useRef(null);
     const crossWalk3 = useRef(null);
+    const busVignette1 = useRef(null);
+    const busVignette2 = useRef(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({
@@ -38,12 +40,14 @@ const FAQ: React.FC = () => {
         });
 
         tl.to(crossWalk1.current, { fillOpacity: 0.1, duration: 1 })
-            .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
-            .to(
-                crossWalk3.current,
-                { fillOpacity: 0.45, duration: 1 },
-                '+=0.5',
-            );
+        .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
+        .to(busVignette1.current, { opacity: 1, y: -20, duration: 2 }, '+=0.1') 
+        .to(
+            crossWalk3.current,
+            { fillOpacity: 0.45, duration: 1 },
+            '+=0.5',
+        )
+        .to(busVignette2.current, { opacity: 1, y: -20, duration: 2 }, '+=0.1');
     });
 
     // Specifically type assert the content as a Section shape so I don't get errors w/ map function later
@@ -51,31 +55,59 @@ const FAQ: React.FC = () => {
 
     return (
         <>
-            <svg
-                viewBox="0 0 1373 438"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                ref={svgContainer}
-            >
-                <path
-                    d="M272.045 0H1097.7L1132.1 73H240.1L272.045 0Z"
-                    fill="white"
-                    fillOpacity="0"
-                    ref={crossWalk1}
-                />
-                <path
-                    d="M203.1 134H1151.6L1235.6 232H119.1L203.1 134Z"
-                    fill="white"
-                    fillOpacity="0"
-                    ref={crossWalk2}
-                />
-                <path
-                    d="M91.1001 293H1276.1L1372.1 438H0.100098L91.1001 293Z"
-                    fill="white"
-                    fillOpacity="0"
-                    ref={crossWalk3}
-                />
-            </svg>
+            <div className="relative w-full h-[170px] md:h-[400px] lg:h-[480px]">
+                <svg
+                    viewBox="0 0 1373 438"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ref={svgContainer}
+                    className="absolute inset-0"
+                >
+                    <path
+                        d="M272.045 0H1097.7L1132.1 73H240.1L272.045 0Z"
+                        fill="white"
+                        fillOpacity="0"
+                        ref={crossWalk1}
+                    />
+                    <path
+                        d="M203.1 134H1151.6L1235.6 232H119.1L203.1 134Z"
+                        fill="white"
+                        fillOpacity="0"
+                        ref={crossWalk2}
+                    />
+                    <path
+                        d="M91.1001 293H1276.1L1372.1 438H0.100098L91.1001 293Z"
+                        fill="white"
+                        fillOpacity="0"
+                        ref={crossWalk3}
+                    />
+                </svg>
+
+                <div className="w-full h-full grid grid-rows-2 grid-cols-2">
+                    <div className="">
+                        <Image
+                            src="/bus_vignette.png"
+                            alt="Bus vignette"
+                            width={400}
+                            height={300}
+                            className="h-auto max-h-full w-auto max-w-full ml-auto lg:mt-0 md:-mt-8 mt-0 z-50 relative opacity-0"
+                            ref={busVignette1}
+                        />
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div className="">
+                        <Image
+                            src="/bus_vignette.png"
+                            alt="Bus vignette"
+                            width={400}
+                            height={300}
+                            className="h-auto max-h-full w-auto max-w-full -mt-4 md:-mt-24 2xl:mt-5 z-50 relative opacity-0"
+                            ref={busVignette2}
+                        />
+                    </div>
+                </div>
+            </div>
             <section
                 id="faq"
                 className="mt-12 w-full lg:container lg:mt-48"
