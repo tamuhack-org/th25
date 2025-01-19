@@ -113,7 +113,12 @@ const Schedule: React.FC = () => {
                         <div className="mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 text-xxs font-semibold tracking-wider xxs:px-8 xxs:text-xs xs:text-sm md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
-                                <a href="https://docs.google.com/spreadsheets/d/1_pm9dddCqubnQTgItV5MRICYoB2Xs4E2-vPXc5AHa4Y/edit?usp=sharing" className="underline">
+                                <a
+                                    href="https://docs.google.com/spreadsheets/d/1_pm9dddCqubnQTgItV5MRICYoB2Xs4E2-vPXc5AHa4Y/edit?usp=sharing"
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     HERE
                                 </a>
                             </p>
