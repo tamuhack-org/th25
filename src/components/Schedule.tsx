@@ -454,7 +454,7 @@ const Schedule: React.FC = () => {
                             alt="Schedule mascot"
                             width={176}
                             height={144}
-                            className="mt-20 w-[450px]"
+                            className="mt-20 w-[400px]"
                         />
                         <div className="vector self-center pb-40 flex flex-col">
                             <Image
@@ -480,11 +480,11 @@ const Schedule: React.FC = () => {
             <style jsx>{`
                 @keyframes wiggle {
                     0% { transform: rotate(0deg); }
-                    17% { transform: rotate(-3deg); }
+                    17% { transform: rotate(-1.5deg); }
                     33% { transform: rotate(0deg); }
-                    50% { transform: rotate(3deg); }
+                    50% { transform: rotate(1.5deg); }
                     67% { transform: rotate(0deg); }
-                    83% { transform: rotate(-3deg); }
+                    83% { transform: rotate(-1.5deg); }
                     100% { transform: rotate(0deg); }
                 }
 
