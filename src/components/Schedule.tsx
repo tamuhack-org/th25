@@ -447,8 +447,69 @@ const Schedule: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <a
+                        id="food-truck"
+                        href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex self-center"
+                    >
+                        <Image
+                            src="/foodtruck.svg"
+                            alt="Food Truck Image"
+                            width={176}
+                            height={144}
+                            className="mt-20 w-[400px]"
+                        />
+                        <div className="vector self-center pb-40 flex flex-col">
+                            <Image
+                                src="/vector1.svg"
+                                alt="Vector 1"
+                                width={176}
+                                height={144}
+                                className="w-[23px] rotate-[10deg]"
+                                
+                            />
+                            <Image
+                                src="/vector1.svg"
+                                alt="Vector 2"
+                                width={176}
+                                height={144}
+                                className="w-[25px] rotate-[35deg] pl-1"
+                            />
+                        </div>
+                        
+                    </a>
                 </div>
             </div>
+            <style jsx>{`
+                @keyframes wiggle {
+                    0% { transform: rotate(0deg); }
+                    17% { transform: rotate(-1.5deg); }
+                    33% { transform: rotate(0deg); }
+                    50% { transform: rotate(1.5deg); }
+                    67% { transform: rotate(0deg); }
+                    83% { transform: rotate(-1.5deg); }
+                    100% { transform: rotate(0deg); }
+                }
+
+                #food-truck {
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                #food-truck:hover {
+                    animation: wiggle 0.5s ease-in-out;
+                }
+
+                .vector {
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
+
+                #food-truck:hover > .vector {
+                    opacity: 1;
+                }
+            `}</style>
         </section>
     );
 };
