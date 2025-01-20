@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import * as motion from "motion/react-client";
 
 interface ScheduleItem {
     date: Date;
@@ -447,24 +448,23 @@ const Schedule: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <a
-                        id="food-truck"
-                        href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <motion.div
+                        initial={{ opacity: 0, x: 300 }}
+                        whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+                        viewport={{ once: true }}
                         className="flex self-center"
-                    >
-                        <Image
-                            src="/foodtruck.svg"
-                            alt="Food Truck Image"
-                            width={176}
-                            height={144}
-                            className="mt-20 w-[400px]"
-                        />
-                        <div className="vector flex flex-col self-center pb-40">
+                    >   
+                        <a
+                            id="food-truck"
+                            href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex"
+                            
+                        >
                             <Image
-                                src="/vector1.svg"
-                                alt="Vector 1"
+                                src="/foodtruck.svg"
+                                alt="Food Truck Image"
                                 width={176}
                                 height={144}
                                 className="w-[23px] rotate-[10deg]"
