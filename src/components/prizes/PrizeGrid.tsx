@@ -97,7 +97,7 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                                     >
                                         {prize.title}
                                     </h2>
-                                    <p className="text-sm sm:text-base">
+                                    <p className="whitespace-pre-wrap text-sm sm:text-base">
                                         {prize.description}
                                     </p>
                                 </div>

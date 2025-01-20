@@ -114,7 +114,12 @@ const Schedule: React.FC = () => {
                         <div className="mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 text-xxs font-semibold tracking-wider xxs:px-8 xxs:text-xs xs:text-sm md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
-                                <a href="#" className="underline">
+                                <a
+                                    href="https://docs.google.com/spreadsheets/d/1_pm9dddCqubnQTgItV5MRICYoB2Xs4E2-vPXc5AHa4Y/edit?usp=sharing"
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     HERE
                                 </a>
                             </p>
@@ -447,14 +452,14 @@ const Schedule: React.FC = () => {
                         initial={{ opacity: 0, x: 300 }}
                         whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
                         viewport={{ once: true }}
-                        className="flex self-center"
+                        className="flex self-center overflow-x-hidden"
                     >   
                         <a
                             id="food-truck"
                             href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex"
+                            className="flex overflow-x-hidden"
                             
                         >
                             <Image
@@ -462,7 +467,7 @@ const Schedule: React.FC = () => {
                                 alt="Food Truck Image"
                                 width={176}
                                 height={144}
-                                className="mt-20 w-[400px]"
+                                className="mt-20 w-[400px] overflow-x-hidden"
                             />
                             <div className="vector self-center pb-40 flex flex-col">
                                 <Image
