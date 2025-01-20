@@ -95,12 +95,12 @@ const Navbar: React.FC = () => {
                             <div className="resources flex flex-col justify-between gap-4">
                                 <ResourceButton
                                     text="Software Hacker Guide"
-                                    link="https://tamuhack.org/guide"
+                                    link="/starter_guide.png"
                                     Icon={IconNotebook}
                                 />
                                 <ResourceButton
                                     text="Hardware Hacker Guide"
-                                    link="https://drive.google.com/file/d/1dbUNP6fdD9rV7lx8Smzf0GGQQsWfuzmV/view?usp=sharing"
+                                    link="/hardware_starter_guide.png"
                                     Icon={IconDeviceIpadCog}
                                 />
                                 <ResourceButton

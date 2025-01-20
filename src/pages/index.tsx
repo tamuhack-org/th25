@@ -19,8 +19,8 @@ const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 export default function Home() {
     return (
         <>
-            <Link className="text-center bg-pink-300 h-12 text-sm md:text-base px-8 lg:px-16 flex items-center justify-center text-white font-poppins font-bold py-2" href="https://docs.google.com/spreadsheets/d/1_pm9dddCqubnQTgItV5MRICYoB2Xs4E2-vPXc5AHa4Y/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <p className="uppercase">Hardware week is ongoing! View the schedule here.</p>
+            <Link className="text-center bg-pink-300 h-12 text-sm md:text-base px-8 lg:px-16 flex items-center justify-center text-white font-poppins font-bold py-2" href="/hardware_starter_guide.png" target="_blank" rel="noopener noreferrer">
+                <p className="uppercase">Hardware week is ongoing! View the starter guide here.</p>
             </Link>
             <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                 <Header />
