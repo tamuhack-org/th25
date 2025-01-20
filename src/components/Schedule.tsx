@@ -452,14 +452,14 @@ const Schedule: React.FC = () => {
                         initial={{ opacity: 0, x: 300 }}
                         whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
                         viewport={{ once: true }}
-                        className="flex self-center overflow-x-hidden"
+                        className="flex self-center"
                     >   
                         <a
                             id="food-truck"
                             href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex overflow-x-hidden"
+                            className="flex"
                             
                         >
                             <Image
@@ -467,7 +467,7 @@ const Schedule: React.FC = () => {
                                 alt="Food Truck Image"
                                 width={176}
                                 height={144}
-                                className="mt-20 w-[400px] overflow-x-hidden"
+                                className="mt-20 w-[400px]"
                             />
                             <div className="vector self-center pb-40 flex flex-col">
                                 <Image
