@@ -53,7 +53,8 @@ const softwarePrizesWithSponsors: Prize[] = [
     },
     {
         title: 'American Airlines Challenge',
-        description: 'Create a solution for the airline industry, be it passenger experience, employee experience, or operational efficiencies',
+        description:
+            'Create a solution for the airline industry, be it passenger experience, employee experience, or operational efficiencies',
         prize: '1st Place: AAdvantage 75k miles\n2nd Place: AAdvantage 50k miles\n3rd Place: AAdvantage 25k miles',
     },
     {
@@ -63,17 +64,20 @@ const softwarePrizesWithSponsors: Prize[] = [
     },
     {
         title: 'ARM Challenge',
-        description: 'Develop a solution to improve disaster preparedness, response, or post-event analysis, leveraging the power of the Arm GitHub Copilot Extension. Examples include water usage monitoring, drought prediction dashboards, communication apps for response teams, or damage assessments. Submissions using Arm technology, such as a Raspberry Pi or Arm-based server, will be given preference.\n\nNote: This challenge can include both software and hardware components.',
+        description:
+            'Develop a solution to improve disaster preparedness, response, or post-event analysis, leveraging the power of the Arm GitHub Copilot Extension. Examples include water usage monitoring, drought prediction dashboards, communication apps for response teams, or damage assessments. Submissions using Arm technology, such as a Raspberry Pi or Arm-based server, will be given preference.\n\nNote: This challenge can include both software and hardware components.',
         prize: '1st Place: Sony Noise-cancelling Wireless Headphones\n2nd Place: Arm Developer Program Swag Bundle',
     },
     {
         title: 'AWS Challenge',
-        description: 'Create an innovative solution that leverages AI/ML to address a real-world challenge in one of the following industries:\n\nHealthcare: Use AI to develop a solution to improve patient care, streamline administrative processes, or advance medical research\n\nSustainability: Use AI to develop a solution to enhance energy efficiency, reduce waste, or optimize resource management.\n\nEducation: Use AI to develop a solution to personalize learning experiences, improve accessibility, or enhance skill development.\n\nBonus points for utilizing AWS services such as Amazon Bedrock, Amazon Rekognition, Amazon Polly, or AWS IoT for a broader impact.',
+        description:
+            'Create an innovative solution that leverages AI/ML to address a real-world challenge in one of the following industries:\n\nHealthcare: Use AI to develop a solution to improve patient care, streamline administrative processes, or advance medical research\n\nSustainability: Use AI to develop a solution to enhance energy efficiency, reduce waste, or optimize resource management.\n\nEducation: Use AI to develop a solution to personalize learning experiences, improve accessibility, or enhance skill development.\n\nBonus points for utilizing AWS services such as Amazon Bedrock, Amazon Rekognition, Amazon Polly, or AWS IoT for a broader impact.',
         prize: '1st Place: $75 Amazon Gift Card\n2nd Place: $50 Amazon Gift Card\n3rd Place: $25 Amazon Gift Card',
     },
     {
         title: 'Capital One Challenge',
-        description: "Best Financial Hack - Capital One's track challenges hackers to develop the Best Financial Hack. Participants will harness their creativity and technical skills to design and innovate tools that will help with anything related to finance.",
+        description:
+            "Best Financial Hack - Capital One's track challenges hackers to develop the Best Financial Hack. Participants will harness their creativity and technical skills to design and innovate tools that will help with anything related to finance.",
         prize: 'Prize: $250 Amazon Gift Card (per team member)',
     },
     {
@@ -198,7 +202,7 @@ const Prizes = () => {
                     <Image
                         src={bigBubble}
                         alt="Big bubble"
-                        className="absolute bottom-6 right-6 z-20 w-16 -rotate-45 opacity-85 sm:w-24"
+                        className="absolute bottom-6 right-6 z-20 w-12 -rotate-45 opacity-85 sm:w-16"
                     />
                     <PrizeGrid prizes={hardwarePrizes} />
                 </div>

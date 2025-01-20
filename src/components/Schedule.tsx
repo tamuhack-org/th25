@@ -461,14 +461,13 @@ const Schedule: React.FC = () => {
                             height={144}
                             className="mt-20 w-[400px]"
                         />
-                        <div className="vector self-center pb-40 flex flex-col">
+                        <div className="vector flex flex-col self-center pb-40">
                             <Image
                                 src="/vector1.svg"
                                 alt="Vector 1"
                                 width={176}
                                 height={144}
                                 className="w-[23px] rotate-[10deg]"
-                                
                             />
                             <Image
                                 src="/vector1.svg"
@@ -478,19 +477,32 @@ const Schedule: React.FC = () => {
                                 className="w-[25px] rotate-[35deg] pl-1"
                             />
                         </div>
-                        
                     </a>
                 </div>
             </div>
             <style jsx>{`
                 @keyframes wiggle {
-                    0% { transform: rotate(0deg); }
-                    17% { transform: rotate(-1.5deg); }
-                    33% { transform: rotate(0deg); }
-                    50% { transform: rotate(1.5deg); }
-                    67% { transform: rotate(0deg); }
-                    83% { transform: rotate(-1.5deg); }
-                    100% { transform: rotate(0deg); }
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    17% {
+                        transform: rotate(-1.5deg);
+                    }
+                    33% {
+                        transform: rotate(0deg);
+                    }
+                    50% {
+                        transform: rotate(1.5deg);
+                    }
+                    67% {
+                        transform: rotate(0deg);
+                    }
+                    83% {
+                        transform: rotate(-1.5deg);
+                    }
+                    100% {
+                        transform: rotate(0deg);
+                    }
                 }
 
                 #food-truck {
