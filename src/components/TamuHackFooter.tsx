@@ -6,7 +6,7 @@ const TamuhackFooter = () => {
     const resources = [
         {
             name: 'Hacker Guide',
-            link: 'https://drive.google.com/file/d/1LH0qNhCGSjjXyUuk_xUZzM5xzK8Zxsba/view?usp=sharing',
+            link: 'https://tamuhack.org/guide',
         },
         {
             name: 'HelpR',
