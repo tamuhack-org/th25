@@ -182,7 +182,8 @@ const TamuhackFooter = () => {
                         TAMUhack 2025
                     </p>
                     <p className="font-base mb-8 font-poppins text-xl">
-                        All the resources you&apos;ll need for your hackathon journey.
+                        All the resources you&apos;ll need for your hackathon
+                        journey.
                     </p>
                 </div>
                 <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">

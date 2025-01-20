@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import * as motion from "motion/react-client";
+import * as motion from 'motion/react-client';
 
 interface ScheduleItem {
     date: Date;
@@ -450,34 +450,46 @@ const Schedule: React.FC = () => {
                     </div>
                     <motion.div
                         initial={{ opacity: 0, x: 300 }}
-                        whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            transition: { duration: 0.8 },
+                        }}
                         viewport={{ once: true }}
                         className="flex self-center"
-                    >   
+                    >
                         <a
                             id="food-truck"
                             href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex"
-                            
                         >
                             <Image
                                 src="/foodtruck.svg"
                                 alt="Food Truck Image"
                                 width={176}
                                 height={144}
-                                className="w-[23px] rotate-[10deg]"
+                                className="mt-20 w-[400px]"
                             />
-                            <Image
-                                src="/vector1.svg"
-                                alt="Vector 2"
-                                width={176}
-                                height={144}
-                                className="w-[25px] rotate-[35deg] pl-1"
-                            />
-                        </div>
-                    </a>
+                            <div className="vector flex flex-col self-center pb-40">
+                                <Image
+                                    src="/vector1.svg"
+                                    alt="Vector 1"
+                                    width={176}
+                                    height={144}
+                                    className="w-[23px] rotate-[10deg]"
+                                />
+                                <Image
+                                    src="/vector1.svg"
+                                    alt="Vector 2"
+                                    width={176}
+                                    height={144}
+                                    className="w-[25px] rotate-[35deg] pl-1"
+                                />
+                            </div>
+                        </a>
+                    </motion.div>
                 </div>
             </div>
             <style jsx>{`
