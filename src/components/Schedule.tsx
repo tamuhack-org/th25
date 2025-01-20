@@ -114,7 +114,12 @@ const Schedule: React.FC = () => {
                         <div className="mt-0 grid w-fit place-items-center rounded-full bg-black px-6 py-1 text-xxs font-semibold tracking-wider xxs:px-8 xxs:text-xs xs:text-sm md:px-12 lg:px-7 lg:text-base xl:px-20 2xl:px-36">
                             <p className="uppercase text-white">
                                 Find the hardware schedule{' '}
-                                <a href="#" className="underline">
+                                <a
+                                    href="https://docs.google.com/spreadsheets/d/1_pm9dddCqubnQTgItV5MRICYoB2Xs4E2-vPXc5AHa4Y/edit?usp=sharing"
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     HERE
                                 </a>
                             </p>
@@ -443,22 +448,69 @@ const Schedule: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 300 }}
-                        whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
-                        viewport={{ once: true }}
-                        className="hidden h-auto max-h-full w-72 max-w-full object-contain lg:flex mt-auto mx-auto"
-                        >
+                    <a
+                        id="food-truck"
+                        href="https://drive.google.com/file/d/12IXO5jSsRFYeL9n8dONmlg8ysukYrFbU/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex self-center"
+                    >
                         <Image
-                            src="/food_truck.png"
-                            alt="Food Truck"
-                            width={300}
-                            height={187}
-                            className=""
+                            src="/foodtruck.svg"
+                            alt="Food Truck Image"
+                            width={176}
+                            height={144}
+                            className="mt-20 w-[400px]"
                         />
-                    </motion.div>
+                        <div className="vector self-center pb-40 flex flex-col">
+                            <Image
+                                src="/vector1.svg"
+                                alt="Vector 1"
+                                width={176}
+                                height={144}
+                                className="w-[23px] rotate-[10deg]"
+                                
+                            />
+                            <Image
+                                src="/vector1.svg"
+                                alt="Vector 2"
+                                width={176}
+                                height={144}
+                                className="w-[25px] rotate-[35deg] pl-1"
+                            />
+                        </div>
+                        
+                    </a>
                 </div>
             </div>
+            <style jsx>{`
+                @keyframes wiggle {
+                    0% { transform: rotate(0deg); }
+                    17% { transform: rotate(-1.5deg); }
+                    33% { transform: rotate(0deg); }
+                    50% { transform: rotate(1.5deg); }
+                    67% { transform: rotate(0deg); }
+                    83% { transform: rotate(-1.5deg); }
+                    100% { transform: rotate(0deg); }
+                }
+
+                #food-truck {
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                #food-truck:hover {
+                    animation: wiggle 0.5s ease-in-out;
+                }
+
+                .vector {
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
+
+                #food-truck:hover > .vector {
+                    opacity: 1;
+                }
+            `}</style>
         </section>
     );
 };

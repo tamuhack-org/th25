@@ -201,7 +201,7 @@ const Navbar: React.FC = () => {
                         <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex h-full flex-col justify-start gap-3">
                                 <ResourceButton
-                                    text="Hacker Guide"
+                                    text="Software Hacker Guide"
                                     link="https://tamuhack.org/guide"
                                     Icon={IconNotebook}
                                 />

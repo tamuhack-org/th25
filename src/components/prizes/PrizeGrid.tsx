@@ -11,7 +11,7 @@ interface PrizeGridProps {
 const PrizeGrid = ({ prizes }: PrizeGridProps) => {
     return (
         <div
-            className="grid w-full grid-cols-4 gap-4 rounded-lg border border-white bg-[rgb(255,255,255,0.05)] p-4"
+            className="grid w-full grid-cols-4 gap-4 rounded-lg border-white bg-[rgb(255,255,255,0.05)] p-4"
             style={{ backdropFilter: 'blur(10px)' }}
         >
             <div className="col-span-4 flex flex-col items-center gap-4 rounded-md border-8 border-white bg-white p-1 font-poppins transition-all sm:flex-row xl:hover:-translate-y-1 xl:hover:translate-x-1 xl:hover:shadow-md">

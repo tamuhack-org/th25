@@ -92,11 +92,9 @@ export default function Home() {
                         <Info />
                     </div>
                 </div>
-                <hr className="h-1 w-full bg-black"></hr>
                 <div className="mx-auto max-w-[2000px] px-8 pb-32 pt-24 lg:px-16">
                     <Schedule />
                 </div>
-                <hr className="h-1 w-full bg-black"></hr>
                 <section id="prizes px-8 lg:px-16">
                     <PrizesScroller />
                 </section>
