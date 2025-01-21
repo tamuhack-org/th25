@@ -26,7 +26,7 @@ const TamuhackFooter = () => {
         },
         {
             name: 'Devpost',
-            link: 'https://thx.devpost.com',
+            link: 'https://tamuhack.org/devpost',
         },
     ];
 
