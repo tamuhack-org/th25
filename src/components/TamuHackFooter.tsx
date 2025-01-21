@@ -26,7 +26,7 @@ const TamuhackFooter = () => {
         },
         {
             name: 'Devpost',
-            link: 'https://thx.devpost.com',
+            link: 'https://tamuhack.org/devpost',
         },
     ];
 
@@ -78,12 +78,16 @@ const TamuhackFooter = () => {
 
     const workshops = [
         {
-            name: 'Intro to Git',
-            link: 'https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing',
+            name: 'Intro to Hackathons',
+            link: 'https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing',
         },
         {
             name: 'Intro to Web Dev',
             link: 'https://docs.google.com/presentation/d/16moIOAhsbH5qlyeWv0xfH73XT_hk0TJ-b6xct3njT5U/edit?usp=sharing',
+        },
+        {
+            name: 'Intro to Git',
+            link: 'https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing',
         },
         {
             name: 'Intro to Hardware',
