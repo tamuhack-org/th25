@@ -17,6 +17,10 @@ export type Prize = {
     description: string;
     prize: string;
     image?: StaticImageData;
+    references?: {
+        title: string;
+        url: string;
+    }[];
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -59,8 +63,14 @@ const softwarePrizesWithSponsors: Prize[] = [
     },
     {
         title: 'Arize AI Challenge',
-        description: 'More details coming soon!',
-        prize: 'Prize: $100 Amazon Gift Card',
+        description: 'Build your own GenAI application and evaluate it in Arize Phoenix. It can be anything application you find fun, quirky or even useful.',
+        prize: 'Prize: $100 Amazon Gift Card (per team member)',
+        references: [
+            {
+                title: 'Challenge Details and Resources',
+                url: 'https://dented-spinach-319.notion.site/tamuhack-arize-ai-181e2cab7d238029b2bcd26428a04c1b',
+            }
+        ],
     },
     {
         title: 'ARM Challenge',
@@ -180,7 +190,7 @@ const Prizes = () => {
                         alt="Big bubble"
                         className="absolute bottom-6 right-6 z-20 w-16 rotate-45 opacity-85 sm:w-24"
                     />
-                    <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
+                    <PrizeGrid prizes={softwarePrizesWithSponsors} />
                 </div>
             </div>
             <div className="flex w-full flex-col items-center gap-8">
