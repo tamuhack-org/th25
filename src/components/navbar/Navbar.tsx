@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
                     <div
-                        className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
+                        className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex h-full flex-col justify-start gap-3">
