@@ -190,7 +190,7 @@ const Prizes = () => {
                         alt="Big bubble"
                         className="absolute bottom-6 right-6 z-20 w-16 rotate-45 opacity-85 sm:w-24"
                     />
-                    <PrizeGrid prizes={softwarePrizesWithSponsors} />
+                    <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
                 </div>
             </div>
             <div className="flex w-full flex-col items-center gap-8">
