@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Intro to Hackathons"
-                                    link="https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing"
+                                    link="https://docs.google.com/presentation/d/1jGczOQs93-hnPsUrOHGk4EGeIDmRsy8CqwQuMk0x_5k/edit?usp=sharing"
                                     Icon={IconDeviceDesktop}
                                 />
                                 <ResourceButton
@@ -217,7 +217,7 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Intro to Hackathons"
-                                    link="https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing"
+                                    link="https://docs.google.com/presentation/d/1jGczOQs93-hnPsUrOHGk4EGeIDmRsy8CqwQuMk0x_5k/edit?usp=sharing"
                                     Icon={IconDeviceDesktop}
                                 />
                                 <ResourceButton
