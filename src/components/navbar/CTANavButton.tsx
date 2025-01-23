@@ -7,7 +7,9 @@ interface CTANavButtonProps {
 
 const CTANavButton: React.FC<CTANavButtonProps> = ({
     text = 'Link',
+    /*
     link = '#',
+    */
 }) => {
     return (
         /*
