@@ -67,12 +67,19 @@ export default function Home() {
                                     January 25-26, 2025 @ MSC 2300
                                 </h2>
                                 <div className="mx-auto mt-4 flex items-start justify-center gap-4 font-poppins lg:hidden">
+                                    {/*
                                     <Link
                                         href="https://register.tamuhack.com/"
                                         className="rounded-lg border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
                                     >
                                         Apply
                                     </Link>
+                                    */}
+                                    <div
+                                        className="rounded-lg border border-black px-6 py-2 text-black opacity-50"
+                                    >
+                                        Apply
+                                    </div>
                                     <Link
                                         href="https://tamuhack.org/mentor"
                                         target="_blank"

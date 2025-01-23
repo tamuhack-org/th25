@@ -184,6 +184,7 @@ const Navbar: React.FC = () => {
                         >
                             <IconCategory className="h-5 w-5" />
                         </button>
+                        {/*
                         <a
                             href="https://register.tamuhack.com/"
                             target="_blank"
@@ -192,6 +193,12 @@ const Navbar: React.FC = () => {
                         >
                             <IconEdit className="h-5 w-5" />
                         </a>
+                        */}
+                        <div
+                        className= "rounded-md border border-[#CCE9FF] bg-[#CCE9FF] p-1 text-black transition-all opacity-50"
+                        >
+                            <IconEdit className="h-5 w-5" />
+                        </div>
                     </div>
                 </div>
                 <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
