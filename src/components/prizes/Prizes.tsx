@@ -173,6 +173,12 @@ const hardwarePrizes: Prize[] = [
             'The Best IoT Device Hack challenges participants to innovate within the Internet of Things (IoT) space. Whether designing a new connected device or modifying an existing one, the goal is to enhance everyday experiences or solve pressing challenges through smarter interconnected systems. Projects can span industries from home automation to industrial monitoring, allowing great creativity and flexibility!',
         prize: 'Prize: Portable Monitor',
     },
+    // {
+    //     title: 'ARM Challenge',
+    //     description:
+    //         'Develop a solution to improve disaster preparedness, response, or post-event analysis, leveraging the power of the Arm GitHub Copilot Extension. Examples include water usage monitoring, drought prediction dashboards, communication apps for response teams, or damage assessments. Submissions using Arm technology, such as a Raspberry Pi or Arm-based server, will be given preference.\n\nNote: This challenge can include both software and hardware components.',
+    //     prize: '1st Place: Sony Noise-cancelling Wireless Headphones\n2nd Place: Arm Developer Program Swag Bundle',
+    // },
 ];
 
 const Prizes = () => {
