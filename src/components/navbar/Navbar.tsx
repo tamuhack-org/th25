@@ -158,10 +158,11 @@ const Navbar: React.FC = () => {
                         </div>
                     </div>
                     <div
-                        className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${!open
-                            ? 'rounded-t-xl transition-all delay-[200ms]'
-                            : ''
-                            }`}
+                        className={`flex items-center gap-4 rounded-b-xl bg-black bg-opacity-70 p-4 text-white backdrop-blur-sm ${
+                            !open
+                                ? 'rounded-t-xl transition-all delay-[200ms]'
+                                : ''
+                        }`}
                     >
                         <MobileButton
                             Icon={IconCalendar}
@@ -194,9 +195,7 @@ const Navbar: React.FC = () => {
                             <IconEdit className="h-5 w-5" />
                         </a>
                         */}
-                        <div
-                        className= "rounded-md border border-[#CCE9FF] bg-[#CCE9FF] p-1 text-black transition-all opacity-50"
-                        >
+                        <div className="rounded-md border border-[#CCE9FF] bg-[#CCE9FF] p-1 text-black opacity-50 transition-all">
                             <IconEdit className="h-5 w-5" />
                         </div>
                     </div>
@@ -274,10 +273,11 @@ const Navbar: React.FC = () => {
                         </div>
                     </div>
                     <div
-                        className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${!open
-                            ? 'rounded-t-xl transition-all delay-[200ms]'
-                            : ''
-                            }`}
+                        className={`flex flex-col gap-[6px] rounded-b-xl bg-black bg-opacity-70 p-[6px] backdrop-blur-sm ${
+                            !open
+                                ? 'rounded-t-xl transition-all delay-[200ms]'
+                                : ''
+                        }`}
                     >
                         <div className="flex justify-center">
                             <div className="flex gap-[6px] rounded-lg bg-[#2b2b2b] p-[6px] motion-safe:scroll-smooth">

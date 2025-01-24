@@ -23,9 +23,7 @@ const Header = () => {
                     Apply
                 </Link>
                 */}
-                <div
-                    className="hidden rounded-lg border border-black px-6 py-2 text-black lg:inline-block opacity-50"
-                >
+                <div className="hidden rounded-lg border border-black px-6 py-2 text-black opacity-50 lg:inline-block">
                     Apply
                 </div>
                 <Link

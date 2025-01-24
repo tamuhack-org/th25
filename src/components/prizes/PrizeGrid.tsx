@@ -114,11 +114,11 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                                                         key={j}
                                                         href={reference.url}
                                                         target="_blank"
-                                                        className="underline text-sm sm:text-base"
+                                                        className="text-sm underline sm:text-base"
                                                     >
                                                         {reference.title}
                                                     </Link>
-                                                )
+                                                ),
                                             )}
                                         </div>
                                     )}

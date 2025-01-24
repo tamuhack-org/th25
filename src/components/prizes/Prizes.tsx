@@ -63,13 +63,14 @@ const softwarePrizesWithSponsors: Prize[] = [
     },
     {
         title: 'Arize AI Challenge',
-        description: 'Build your own GenAI application and evaluate it in Arize Phoenix. It can be anything application you find fun, quirky or even useful.',
+        description:
+            'Build your own GenAI application and evaluate it in Arize Phoenix. It can be anything application you find fun, quirky or even useful.',
         prize: 'Prize: $100 Amazon Gift Card (per team member)',
         references: [
             {
                 title: 'Challenge Details and Resources',
                 url: 'https://dented-spinach-319.notion.site/tamuhack-arize-ai-181e2cab7d238029b2bcd26428a04c1b',
-            }
+            },
         ],
     },
     {
@@ -98,6 +99,7 @@ const softwarePrizesWithSponsors: Prize[] = [
     },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const softwarePrizesWithoutSponsors: Prize[] = [
     {
         title: '1st Place Software',
@@ -136,6 +138,7 @@ const softwarePrizesWithoutSponsors: Prize[] = [
     },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const hardwarePrizes: Prize[] = [
     {
         title: '1st Place Hardware',
@@ -173,12 +176,12 @@ const hardwarePrizes: Prize[] = [
             'The Best IoT Device Hack challenges participants to innovate within the Internet of Things (IoT) space. Whether designing a new connected device or modifying an existing one, the goal is to enhance everyday experiences or solve pressing challenges through smarter interconnected systems. Projects can span industries from home automation to industrial monitoring, allowing great creativity and flexibility!',
         prize: 'Prize: Portable Monitor',
     },
-    // {
-    //     title: 'ARM Challenge',
-    //     description:
-    //         'Develop a solution to improve disaster preparedness, response, or post-event analysis, leveraging the power of the Arm GitHub Copilot Extension. Examples include water usage monitoring, drought prediction dashboards, communication apps for response teams, or damage assessments. Submissions using Arm technology, such as a Raspberry Pi or Arm-based server, will be given preference.\n\nNote: This challenge can include both software and hardware components.',
-    //     prize: '1st Place: Sony Noise-cancelling Wireless Headphones\n2nd Place: Arm Developer Program Swag Bundle',
-    // },
+    {
+        title: 'ARM Challenge',
+        description:
+            'Develop a solution to improve disaster preparedness, response, or post-event analysis, leveraging the power of the Arm GitHub Copilot Extension. Examples include water usage monitoring, drought prediction dashboards, communication apps for response teams, or damage assessments. Submissions using Arm technology, such as a Raspberry Pi or Arm-based server, will be given preference.\n\nNote: This challenge can include both software and hardware components.',
+        prize: '1st Place: Sony Noise-cancelling Wireless Headphones\n2nd Place: Arm Developer Program Swag Bundle',
+    },
 ];
 
 const Prizes = () => {
@@ -196,7 +199,7 @@ const Prizes = () => {
                         alt="Big bubble"
                         className="absolute bottom-6 right-6 z-20 w-16 rotate-45 opacity-85 sm:w-24"
                     />
-                    <PrizeGrid prizes={softwarePrizesWithoutSponsors} />
+                    <PrizeGrid prizes={softwarePrizesWithSponsors} />
                 </div>
             </div>
             <div className="flex w-full flex-col items-center gap-8">

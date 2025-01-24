@@ -21,9 +21,7 @@ const CTANavButton: React.FC<CTANavButtonProps> = ({
         >
         </a>
         */
-        <div
-            className="flex h-[48px] pointer-events-none flex-col justify-center rounded-lg border border-[#4e4e4e] bg-[#CCE9FF] px-4 text-sm font-semibold text-black transition-all opacity-50"
-        >
+        <div className="pointer-events-none flex h-[48px] flex-col justify-center rounded-lg border border-[#4e4e4e] bg-[#CCE9FF] px-4 text-sm font-semibold text-black opacity-50 transition-all">
             {text}
         </div>
     );

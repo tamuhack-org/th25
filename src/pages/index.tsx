@@ -75,9 +75,7 @@ export default function Home() {
                                         Apply
                                     </Link>
                                     */}
-                                    <div
-                                        className="rounded-lg border border-black px-6 py-2 text-black opacity-50"
-                                    >
+                                    <div className="rounded-lg border border-black px-6 py-2 text-black opacity-50">
                                         Apply
                                     </div>
                                     <Link
