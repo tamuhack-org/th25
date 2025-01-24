@@ -65,7 +65,7 @@ const softwarePrizesWithSponsors: Prize[] = [
         title: 'Arize AI Challenge',
         description:
             'Build your own GenAI application and evaluate it in Arize Phoenix. It can be anything application you find fun, quirky or even useful.',
-        prize: 'Prize: $100 Amazon Gift Card (per team member)',
+        prize: 'Prize: $100 Amazon Gift Card',
         references: [
             {
                 title: 'Challenge Details and Resources',
@@ -89,13 +89,19 @@ const softwarePrizesWithSponsors: Prize[] = [
         title: 'Capital One Challenge',
         description:
             "Best Financial Hack - Capital One's track challenges hackers to develop the Best Financial Hack. Participants will harness their creativity and technical skills to design and innovate tools that will help with anything related to finance.",
-        prize: 'Prize: $250 Amazon Gift Card (per team member)',
+        prize: 'Prize: $250 Amazon Gift Card',
     },
     {
         title: 'Toyota Challenge',
         description:
             "Toyota is the leader in making some of the best-selling, fuel efficient and top-quality automobiles in the world. As part of the hackathon, develop a web or mobile solution that helps people to easily shop for Toyota's vehicles by searching, comparing, and finding their dream cars based on several personal preferences including costs to finance and/or lease a vehicle.",
         prize: '1st Place: $500 Amazon Gift Card\n2nd Place: $350 Amazon Gift Card\n3rd Place: $150 Amazon Gift Card',
+    },
+    {
+        title: 'USAA Challenge',
+        description:
+            'As it pertains to financial services, utilize a Generative AI (or any other model of your choosing) and transform the output you receive in a novel and interesting way prior to returning it to the end user Bonus points for incorporating AI agents, anomaly detection, natural language understanding, or predictive analytics.',
+        prize: 'Prize: JBL Clip 5 Bluetooth Speaker',
     },
 ];
 
