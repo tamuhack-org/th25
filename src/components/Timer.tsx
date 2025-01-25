@@ -10,7 +10,7 @@ const Timer = ({ className }: { className?: string }) => {
     const [now, setNow] = useState<DateTime | null>(null);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
     const [ariaLiveText, setAriaLiveText] = useState<string | null>(null);
-    const eventDate = DateTime.fromISO('2025-01-25T08:00', {
+    const eventDate = DateTime.fromISO('2025-01-25T12:00', {
         zone: 'America/Chicago',
     });
 
