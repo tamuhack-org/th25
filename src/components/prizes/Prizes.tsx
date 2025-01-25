@@ -92,6 +92,11 @@ const softwarePrizesWithSponsors: Prize[] = [
         prize: 'Prize: $250 Amazon Gift Card',
     },
     {
+        title: 'PIMCO Challenge',
+        description: "Develop a hack that promotes good financial behavior, participants should focus on specific financial goals tailored to students or young professionals. Incorporating gamification elements, like rewards systems and peer challenges, can make the process engaging and motivating. Whether you choose to focus on saving, investing, building credit, financial literacy, or anything else you dream up, from our perspective, when you combine finance with technology, the sky's the limit.",
+        prize: '1st Place: $80 Amazon Gift Card\n2nd Place: $40 Amazon Gift Card',
+    },
+    {
         title: 'Toyota Challenge',
         description:
             "Toyota is the leader in making some of the best-selling, fuel efficient and top-quality automobiles in the world. As part of the hackathon, develop a web or mobile solution that helps people to easily shop for Toyota's vehicles by searching, comparing, and finding their dream cars based on several personal preferences including costs to finance and/or lease a vehicle.",
