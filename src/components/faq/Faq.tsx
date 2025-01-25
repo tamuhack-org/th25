@@ -5,7 +5,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import bus from '@/../public/bus_vignette.png';
+import crosswalk_guy1 from '@/../public/crosswalk_guy1.png';
+import crosswalk_guy2 from '@/../public/crosswalk_guy2.png';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -88,20 +89,30 @@ const FAQ: React.FC = () => {
                 </svg>
 
                 {/**SVG Ratio is 73: 98: 145 */}
-                <div className="absolute bottom-[45%] left-[10%] w-1/3">
+                <div className="absolute bottom-[45%] left-[20%] w-[14%] xs:w-[12%] sm:w-[10%]">
                     <Image
-                        src={bus}
+                        src={crosswalk_guy1}
                         alt="People waiting for bus"
-                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
+                        className="crosswalk-image relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
                         ref={busVignette1}
+                        style={{
+                            objectFit: 'contain',
+                            width: '100%',
+                            height: 'auto'
+                        }}
                     />
                 </div>
-                <div className="absolute bottom-0 right-[10%] w-1/3">
+                <div className="absolute bottom-0 right-[15%] w-[25%] xs:w-[22%] sm:w-[18%]">
                     <Image
-                        src={bus}
+                        src={crosswalk_guy2}
                         alt="People waiting for bus"
                         className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
                         ref={busVignette2}
+                        style={{
+                            objectFit: 'contain',
+                            width: '100%',
+                            height: 'auto'
+                        }}
                     />
                 </div>
             </div>
