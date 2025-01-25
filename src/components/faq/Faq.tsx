@@ -92,7 +92,7 @@ const FAQ: React.FC = () => {
                     <Image
                         src={bus}
                         alt="People waiting for bus"
-                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0"
+                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
                         ref={busVignette1}
                     />
                 </div>
@@ -100,7 +100,7 @@ const FAQ: React.FC = () => {
                     <Image
                         src={bus}
                         alt="People waiting for bus"
-                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0"
+                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
                         ref={busVignette2}
                     />
                 </div>
