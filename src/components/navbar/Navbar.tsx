@@ -122,7 +122,6 @@ const Navbar: React.FC = () => {
                                     text="Team Formation"
                                     link="https://tamuhack.org/team-formation"
                                     Icon={IconUsers}
-                                    disabled
                                 />
                                 <ResourceButton
                                     text="Intro to Hackathons"
@@ -252,7 +251,6 @@ const Navbar: React.FC = () => {
                                     text="Team Formation"
                                     link="https://tamuhack.org/team-formation"
                                     Icon={IconUsers}
-                                    disabled
                                 />
                                 <ResourceButton
                                     text="Intro to Web Dev"
