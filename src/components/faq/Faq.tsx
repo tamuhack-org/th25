@@ -5,8 +5,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import crosswalk_guy1 from '../../../public/crosswalk_guy1.png';
-import crosswalk_guy2 from '../../../public/crosswalk_guy2.png';
+import crosswalk_guy1 from '@/../public/crosswalk_guy1.png';
+import crosswalk_guy2 from '@/../public/crosswalk_guy2.png';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
