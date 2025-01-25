@@ -28,8 +28,8 @@ const FAQ: React.FC = () => {
     const crossWalk1 = useRef(null);
     const crossWalk2 = useRef(null);
     const crossWalk3 = useRef(null);
-    const busVignette1 = useRef(null);
-    const busVignette2 = useRef(null);
+    const guy1_cross = useRef(null);
+    const guy2_cross = useRef(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({
@@ -44,13 +44,13 @@ const FAQ: React.FC = () => {
         tl.to(crossWalk1.current, { fillOpacity: 0.1, duration: 1 })
             .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
             .to(
-                busVignette1.current,
+                guy1_cross.current,
                 { opacity: 1, y: '-10%', duration: 2 },
                 '+=0.1',
             )
             .to(crossWalk3.current, { fillOpacity: 0.45, duration: 1 }, '+=0.5')
             .to(
-                busVignette2.current,
+                guy2_cross.current,
                 { opacity: 1, y: '-10%', duration: 2 },
                 '+=0.1',
             );
@@ -92,9 +92,9 @@ const FAQ: React.FC = () => {
                 <div className="absolute bottom-[45%] left-[20%] w-[14%] xs:w-[12%] sm:w-[10%]">
                     <Image
                         src={crosswalk_guy1}
-                        alt="People waiting for bus"
-                        className="crosswalk-image relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
-                        ref={busVignette1}
+                        alt="Guy checking time"
+                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
+                        ref={guy1_cross}
                         style={{
                             objectFit: 'contain',
                             width: '100%',
@@ -105,9 +105,9 @@ const FAQ: React.FC = () => {
                 <div className="absolute bottom-0 right-[15%] w-[25%] xs:w-[22%] sm:w-[18%]">
                     <Image
                         src={crosswalk_guy2}
-                        alt="People waiting for bus"
+                        alt="Guy with umbrella"
                         className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
-                        ref={busVignette2}
+                        ref={guy2_cross}
                         style={{
                             objectFit: 'contain',
                             width: '100%',
