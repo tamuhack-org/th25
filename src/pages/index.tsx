@@ -80,6 +80,7 @@ export default function Home() {
                                     <div className="rounded-lg border border-black px-6 py-2 text-black opacity-50">
                                         Apply
                                     </div>
+                                    {/*
                                     <Link
                                         href="https://tamuhack.org/mentor"
                                         target="_blank"
@@ -87,6 +88,10 @@ export default function Home() {
                                     >
                                         Mentor
                                     </Link>
+                                    */}
+                                    <div className="rounded-lg border border-black px-6 py-2 text-black opacity-50">
+                                        Mentor
+                                    </div>
                                 </div>
                                 <div className="mt-3 hidden font-poppins text-sm lg:block">
                                     <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">
