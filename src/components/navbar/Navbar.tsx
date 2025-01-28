@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Devpost"
-                                    link="https://tamuhack.org/devpost"
+                                    link="https://tamuhack-2025.devpost.com/"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
+                                    link="https://forms.gle/SxbxfxgUQR9MdUJv6"
                                     Icon={IconUsers}
                                 />
                                 <ResourceButton
@@ -244,12 +244,12 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Devpost"
-                                    link="https://tamuhack.org/devpost"
+                                    link="https://tamuhack-2025.devpost.com/"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
                                     text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
+                                    link="https://forms.gle/SxbxfxgUQR9MdUJv6"
                                     Icon={IconUsers}
                                 />
                                 <ResourceButton
