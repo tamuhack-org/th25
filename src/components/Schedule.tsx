@@ -259,12 +259,7 @@ const Schedule: React.FC = () => {
 
                                                         <div className="flex">
                                                             <div
-                                                                className={`z-10 shrink-0 rounded-full border-4 border-black ${isEventCurrent(
-                                                                    item,
-                                                                )
-                                                                    ? '-ml-[30px] h-6 w-6 bg-pink-400'
-                                                                    : '-ml-7 h-5 w-5 bg-blue-100'
-                                                                    } ${!tagMatch ? 'opacity-0' : ''}`}
+                                                                className='z-10 shrink-0 rounded-full border-4 border-black -ml-7 h-5 w-5 bg-blue-100'
                                                             />
                                                         </div>
 
@@ -413,12 +408,7 @@ const Schedule: React.FC = () => {
 
                                                         <div className="flex">
                                                             <div
-                                                                className={`z-10 shrink-0 rounded-full border-4 border-black ${isEventCurrent(
-                                                                    item,
-                                                                )
-                                                                    ? '-ml-[29px] h-6 w-6 bg-pink-400'
-                                                                    : '-ml-7 h-5 w-5 bg-blue-100'
-                                                                    } ${!tagMatch ? 'opacity-0' : ''}`}
+                                                                className='z-10 shrink-0 rounded-full border-4 border-black -ml-7 h-5 w-5 bg-blue-100'
                                                             />
                                                         </div>
 
