@@ -1,7 +1,7 @@
 import TamuhackFooter from '@/components/TamuHackFooter';
 import Header from '@/components/Header';
 import Timer from '@/components/Timer';
-import Link from 'next/link';
+/* import Link from 'next/link'; */
 import localFont from 'next/font/local';
 import HomeGraphic from '@/components/HomeGraphic';
 import Image from 'next/image';
