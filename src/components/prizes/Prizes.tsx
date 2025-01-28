@@ -7,7 +7,6 @@ import hardware2 from '../../../public/prizes/hardware2.png';
 import hardware3 from '../../../public/prizes/hardware3.png';
 import PrizeGrid from './PrizeGrid';
 import localFont from 'next/font/local';
-import bigBubble from '../../../public/big_bubble.png';
 import medBubble from '../../../public/med_bubble.png';
 
 const belgiano = localFont({ src: '../../pages/fonts/Belgiano.woff' });
@@ -205,11 +204,6 @@ const Prizes = () => {
                         alt="Medium bubble"
                         className="absolute left-6 top-6 z-10 w-8 rotate-12 opacity-85 sm:w-12"
                     />
-                    <Image
-                        src={bigBubble}
-                        alt="Big bubble"
-                        className="absolute bottom-6 right-6 z-20 w-16 rotate-45 opacity-85 sm:w-24"
-                    />
                     <PrizeGrid prizes={softwarePrizesWithSponsors} />
                 </div>
             </div>
@@ -228,11 +222,6 @@ const Prizes = () => {
                         src={medBubble}
                         alt="Medium bubble"
                         className="absolute left-6 top-6 z-10 w-8 -rotate-12 opacity-85 sm:w-12"
-                    />
-                    <Image
-                        src={bigBubble}
-                        alt="Big bubble"
-                        className="absolute bottom-6 right-6 z-20 w-12 -rotate-45 opacity-85 sm:w-16"
                     />
                     <PrizeGrid prizes={hardwarePrizes} />
                 </div>

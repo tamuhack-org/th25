@@ -9,7 +9,6 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import useMedia from '@/hooks/useMedia';
 import biggerBubble from '../../../public/bigger_bubble.png';
-import bigBubble from '../../../public/big_bubble.png';
 import medBubble2 from '../../../public/med_bubble_2.png';
 
 gsap.registerPlugin(ScrollTrigger); // Removed useGSAP from registration
@@ -59,17 +58,6 @@ const PrizesScroller = () => {
             gsap.from('#bubble-2', {
                 scrollTrigger: {
                     trigger: '#bubble-2',
-                    scrub: true,
-                    start: '-80% 50%',
-                    end: 'center center',
-                },
-                opacity: 0,
-                ease: 'none',
-            });
-
-            gsap.from('#bubble-3', {
-                scrollTrigger: {
-                    trigger: '#bubble-3',
                     scrub: true,
                     start: '-80% 50%',
                     end: 'center center',
@@ -183,12 +171,6 @@ const PrizesScroller = () => {
                         />
                     </div>
                 </div>
-                <Image
-                    src={bigBubble}
-                    alt="Big Bubble"
-                    className="absolute bottom-[25%] left-[15%] hidden sm:block sm:w-24"
-                    id="bubble-2"
-                />
             </div>
             <div
                 className="mx-auto -mt-12 max-w-[2000px] px-8 lg:-mt-48 lg:px-16"
