@@ -27,7 +27,6 @@ const filterToTagMapping = {
 
 const Schedule: React.FC = () => {
     const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>();
-    const [currentTime, setCurrentTime] = useState(new Date());
     const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
     useEffect(() => {
@@ -44,13 +43,6 @@ const Schedule: React.FC = () => {
         ScrollTrigger.refresh();
     }, [scheduleItems]);
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 60000);
-        return () => clearInterval(timer);
-    }, []);
-
     const toggleFilter = (displayName: string) => {
         const tagValue = Object.entries(filterToTagMapping).find(
             (entry) => entry[1] === displayName,
@@ -63,23 +55,6 @@ const Schedule: React.FC = () => {
             );
         }
     };
-
-    function isEventCurrent(item: ScheduleItem): boolean {
-        // No schedule items (just in case)
-        if (!scheduleItems) return false;
-
-        const eventIndex = scheduleItems.findIndex((i) => i.id === item.id);
-        if (eventIndex === -1) return false;
-
-        const eventDate = new Date(item.date);
-        if (currentTime < eventDate) return false;
-
-        const nextEvent = scheduleItems[eventIndex + 1];
-        if (!nextEvent) return true;
-        const nextEventDate = new Date(nextEvent.date);
-
-        return currentTime < nextEventDate;
-    }
 
     return (
         <section
