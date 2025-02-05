@@ -114,11 +114,11 @@ export default function Home() {
                         transition: { duration: 1, delay: 1 },
                     }}
                     viewport={{ once: true }}
-                    className="fading_text flex flex-row mt-5 font-poppins text-xl justify-center">
+                    className="fading_text flex flex-row font-poppins text-xl justify-center">
                         <p>
                             Thanks for joining us!
                         </p>
-                        <div className="vector flex flex-col ml-2 mt-[-8px]">
+                        <div className="vector flex flex-col ml-1 mt-[-8px]">
                             <Image
                                 src="/vector1.svg"
                                 alt="Vector 1"
