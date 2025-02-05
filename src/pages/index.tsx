@@ -13,6 +13,7 @@ import Schedule from '@/components/Schedule';
 import Navbar from '@/components/navbar/Navbar';
 import PrizesScroller from '@/components/prizes/PrizesScroller';
 import Sponsors from '@/components/Sponsors';
+import { motion } from "motion/react";
 
 const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 
@@ -106,6 +107,34 @@ export default function Home() {
                         </div>
                         <HomeGraphic />
                     </div>
+                    <motion.div 
+                    initial={{ opacity: 0}}
+                    whileInView={{
+                        opacity: 1,
+                        transition: { duration: 1, delay: 1 },
+                    }}
+                    viewport={{ once: true }}
+                    className="fading_text flex flex-row mt-5 font-poppins text-xl justify-center">
+                        <p>
+                            Thanks for joining us!
+                        </p>
+                        <div className="vector flex flex-col ml-2 mt-[-8px]">
+                            <Image
+                                src="/vector1.svg"
+                                alt="Vector 1"
+                                width={176}
+                                height={144}
+                                className="w-[10px] rotate-[10deg]"
+                            />
+                            <Image
+                                src="/vector1.svg"
+                                alt="Vector 2"
+                                width={176}
+                                height={144}
+                                className="w-[14px] rotate-[35deg] pl-1"
+                            />
+                        </div>
+                    </motion.div>
                 </div>
                 <Navbar />
                 {/* Gradient section */}
@@ -133,6 +162,10 @@ export default function Home() {
             <div className="mx-auto max-w-[2000px] px-8 pt-16 lg:px-16">
                 <TamuhackFooter />
             </div>
+            <style jsx>{`
+            
+            
+            `}</style>
         </>
     );
 }
