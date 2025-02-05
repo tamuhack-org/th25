@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Devpost"
-                                    link="https://tamuhack.org/devpost"
+                                    link="https://tamuhack-2025.devpost.com/"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
@@ -120,12 +120,12 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
+                                    link="https://forms.gle/SxbxfxgUQR9MdUJv6"
                                     Icon={IconUsers}
                                 />
                                 <ResourceButton
                                     text="Intro to Hackathons"
-                                    link="https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing"
+                                    link="https://docs.google.com/presentation/d/1jGczOQs93-hnPsUrOHGk4EGeIDmRsy8CqwQuMk0x_5k/edit?usp=sharing"
                                     Icon={IconDeviceDesktop}
                                 />
                                 <ResourceButton
@@ -184,6 +184,7 @@ const Navbar: React.FC = () => {
                         >
                             <IconCategory className="h-5 w-5" />
                         </button>
+                        {/*
                         <a
                             href="https://register.tamuhack.com/"
                             target="_blank"
@@ -192,11 +193,15 @@ const Navbar: React.FC = () => {
                         >
                             <IconEdit className="h-5 w-5" />
                         </a>
+                        */}
+                        <div className="rounded-md border border-[#CCE9FF] bg-[#CCE9FF] p-1 text-black opacity-50 transition-all">
+                            <IconEdit className="h-5 w-5" />
+                        </div>
                     </div>
                 </div>
                 <div className="pointer-events-auto hidden w-max flex-col justify-center overflow-hidden rounded-xl border border-white border-opacity-25 sm:flex">
                     <div
-                        className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 px-[6px] backdrop-blur-sm ${active}`}
+                        className={`expand-container flex h-0 flex-col items-center justify-center gap-[6px] rounded-t-xl bg-black bg-opacity-70 backdrop-blur-sm ${active}`}
                     >
                         <div className="mt-[6px] flex h-full w-full flex-row items-center gap-16 rounded-lg bg-[#2b2b2b] bg-opacity-70 px-6 py-6 text-left text-sm text-white backdrop-blur-sm">
                             <div className="resources flex h-full flex-col justify-start gap-3">
@@ -217,7 +222,7 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Intro to Hackathons"
-                                    link="https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing"
+                                    link="https://docs.google.com/presentation/d/1jGczOQs93-hnPsUrOHGk4EGeIDmRsy8CqwQuMk0x_5k/edit?usp=sharing"
                                     Icon={IconDeviceDesktop}
                                 />
                                 <ResourceButton
@@ -239,12 +244,12 @@ const Navbar: React.FC = () => {
                                 />
                                 <ResourceButton
                                     text="Devpost"
-                                    link="https://tamuhack.org/devpost"
+                                    link="https://tamuhack-2025.devpost.com/"
                                     Icon={IconScale}
                                 />
                                 <ResourceButton
                                     text="Team Formation"
-                                    link="https://tamuhack.org/team-formation"
+                                    link="https://forms.gle/SxbxfxgUQR9MdUJv6"
                                     Icon={IconUsers}
                                 />
                                 <ResourceButton
@@ -272,7 +277,7 @@ const Navbar: React.FC = () => {
                                 : ''
                         }`}
                     >
-                        <div className="flex items-center">
+                        <div className="flex justify-center">
                             <div className="flex gap-[6px] rounded-lg bg-[#2b2b2b] p-[6px] motion-safe:scroll-smooth">
                                 <NavButton
                                     text="Schedule"

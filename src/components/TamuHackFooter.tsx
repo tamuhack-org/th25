@@ -6,7 +6,7 @@ const TamuhackFooter = () => {
     const resources = [
         {
             name: 'Hacker Guide',
-            link: 'https://tamuhack.org/guide',
+            link: 'https://drive.google.com/file/d/1gUGimWC_s4eOu4OGOS6Hj2IqaOg9oWPt/view',
         },
         {
             name: 'HelpR',
@@ -22,11 +22,11 @@ const TamuhackFooter = () => {
         },
         {
             name: 'Team Formation',
-            link: 'https://tamuhack.org/team-formation',
+            link: 'https://forms.gle/gnL8McG6ykkNRwhf9',
         },
         {
             name: 'Devpost',
-            link: 'https://thx.devpost.com',
+            link: 'https://tamuhack-2025.devpost.com/',
         },
     ];
 
@@ -78,12 +78,16 @@ const TamuhackFooter = () => {
 
     const workshops = [
         {
-            name: 'Intro to Git',
-            link: 'https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing',
+            name: 'Intro to Hackathons',
+            link: 'https://docs.google.com/presentation/d/1r142lnKlA043jyYcFnjSFebxcm52usJ9MIVpLyUWQI4/edit?usp=sharing',
         },
         {
             name: 'Intro to Web Dev',
             link: 'https://docs.google.com/presentation/d/16moIOAhsbH5qlyeWv0xfH73XT_hk0TJ-b6xct3njT5U/edit?usp=sharing',
+        },
+        {
+            name: 'Intro to Git',
+            link: 'https://docs.google.com/presentation/d/17tD4eOPL54v6YPEZE57gkOrtEo9LA_r4U0bAOBRGRSo/edit?usp=sharing',
         },
         {
             name: 'Intro to Hardware',
@@ -182,7 +186,8 @@ const TamuhackFooter = () => {
                         TAMUhack 2025
                     </p>
                     <p className="font-base mb-8 font-poppins text-xl">
-                        All the resources you&apos;ll need for your hackathon journey.
+                        All the resources you&apos;ll need for your hackathon
+                        journey.
                     </p>
                 </div>
                 <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">

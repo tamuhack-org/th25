@@ -1,7 +1,7 @@
 import TamuhackFooter from '@/components/TamuHackFooter';
 import Header from '@/components/Header';
 import Timer from '@/components/Timer';
-import Link from 'next/link';
+/* import Link from 'next/link'; */
 import localFont from 'next/font/local';
 import HomeGraphic from '@/components/HomeGraphic';
 import Image from 'next/image';
@@ -19,9 +19,18 @@ const belgiano = localFont({ src: '/fonts/Belgiano.woff' });
 export default function Home() {
     return (
         <>
-            <Link className="text-center bg-pink-300 h-12 text-sm md:text-base px-8 lg:px-16 flex items-center justify-center text-white font-poppins font-bold py-2" href="/hardware_starter_guide.png" target="_blank" rel="noopener noreferrer">
-                <p className="uppercase">Hardware week is ongoing! View the starter guide here.</p>
+            {/*
+            <Link
+                className="flex h-12 items-center justify-center bg-pink-300 px-8 py-2 text-center font-poppins text-sm font-bold text-white md:text-base lg:px-16"
+                href="/hardware_starter_guide.png"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <p className="uppercase">
+                    Hardware week is ongoing! View the starter guide here.
+                </p>
             </Link>
+            */}
             <div className="mx-auto max-w-[2000px] px-8 lg:px-16">
                 <Header />
             </div>
@@ -60,12 +69,18 @@ export default function Home() {
                                     January 25-26, 2025 @ MSC 2300
                                 </h2>
                                 <div className="mx-auto mt-4 flex items-start justify-center gap-4 font-poppins lg:hidden">
+                                    {/*
                                     <Link
                                         href="https://register.tamuhack.com/"
                                         className="rounded-lg border border-black px-6 py-2 text-black transition hover:bg-black hover:text-white"
                                     >
                                         Apply
                                     </Link>
+                                    */}
+                                    <div className="rounded-lg border border-black px-6 py-2 text-black opacity-50">
+                                        Apply
+                                    </div>
+                                    {/*
                                     <Link
                                         href="https://tamuhack.org/mentor"
                                         target="_blank"
@@ -73,6 +88,10 @@ export default function Home() {
                                     >
                                         Mentor
                                     </Link>
+                                    */}
+                                    <div className="rounded-lg border border-black px-6 py-2 text-black opacity-50">
+                                        Mentor
+                                    </div>
                                 </div>
                                 <div className="mt-3 hidden font-poppins text-sm lg:block">
                                     <span className="rounded-full border border-black bg-white px-3 py-1 transition-colors hover:bg-[#b1dcfb]">

@@ -14,6 +14,7 @@ const Header = () => {
                 />
             </Link>
             <div className="flex items-start font-poppins">
+                {/*
                 <Link
                     href="https://register.tamuhack.com/"
                     target="_blank"
@@ -21,6 +22,11 @@ const Header = () => {
                 >
                     Apply
                 </Link>
+                */}
+                <div className="hidden rounded-lg border border-black px-6 py-2 text-black opacity-50 lg:inline-block">
+                    Apply
+                </div>
+                {/*
                 <Link
                     href="https://tamuhack.org/mentor"
                     target="_blank"
@@ -28,6 +34,10 @@ const Header = () => {
                 >
                     Mentor
                 </Link>
+                */}
+                <div className="ml-4 mr-8 hidden rounded-lg border border-black px-6 py-2 text-black opacity-50 lg:inline-block">
+                    Mentor
+                </div>
                 <div className="-mt-6 max-w-16 lg:max-w-28">
                     <TrustBadge />
                 </div>

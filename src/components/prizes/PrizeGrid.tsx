@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import Image from 'next/image';
 import { Prize } from './Prizes';
+import Link from 'next/link';
 
 const swily = localFont({ src: '../../pages/fonts/SwilyBright.otf' });
 
@@ -101,9 +102,30 @@ const PrizeGrid = ({ prizes }: PrizeGridProps) => {
                                         {prize.description}
                                     </p>
                                 </div>
-                                <p className="whitespace-pre-wrap font-medium">
-                                    {prize.prize}
-                                </p>
+                                <div className="flex flex-col gap-4 md:gap-8">
+                                    {prize.references && (
+                                        <div className="flex flex-col gap-2">
+                                            <h3 className="font-semibold">
+                                                References
+                                            </h3>
+                                            {prize.references.map(
+                                                (reference, j) => (
+                                                    <Link
+                                                        key={j}
+                                                        href={reference.url}
+                                                        target="_blank"
+                                                        className="text-sm underline sm:text-base"
+                                                    >
+                                                        {reference.title}
+                                                    </Link>
+                                                ),
+                                            )}
+                                        </div>
+                                    )}
+                                    <p className="whitespace-pre-wrap font-medium">
+                                        {prize.prize}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ))}

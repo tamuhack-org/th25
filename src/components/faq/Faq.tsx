@@ -5,6 +5,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import crosswalk_guy1 from '@/../public/crosswalk_guy1.png';
+import crosswalk_guy2 from '@/../public/crosswalk_guy2.png';
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -26,28 +28,32 @@ const FAQ: React.FC = () => {
     const crossWalk1 = useRef(null);
     const crossWalk2 = useRef(null);
     const crossWalk3 = useRef(null);
-    const busVignette1 = useRef(null);
-    const busVignette2 = useRef(null);
+    const guy1_cross = useRef(null);
+    const guy2_cross = useRef(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: svgContainer.current,
-                start: 'top center',
+                start: 'top 70%',
                 end: 'bottom center',
                 scrub: true,
             },
         });
 
         tl.to(crossWalk1.current, { fillOpacity: 0.1, duration: 1 })
-        .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
-        .to(busVignette1.current, { opacity: 1, y: -20, duration: 2 }, '+=0.1') 
-        .to(
-            crossWalk3.current,
-            { fillOpacity: 0.45, duration: 1 },
-            '+=0.5',
-        )
-        .to(busVignette2.current, { opacity: 1, y: -20, duration: 2 }, '+=0.1');
+            .to(crossWalk2.current, { fillOpacity: 0.25, duration: 1 }, '+=0.5')
+            .to(
+                guy1_cross.current,
+                { opacity: 1, y: '-10%', duration: 2 },
+                '+=0.1',
+            )
+            .to(crossWalk3.current, { fillOpacity: 0.45, duration: 1 }, '+=0.5')
+            .to(
+                guy2_cross.current,
+                { opacity: 1, y: '-10%', duration: 2 },
+                '+=0.1',
+            );
     });
 
     // Specifically type assert the content as a Section shape so I don't get errors w/ map function later
@@ -55,13 +61,12 @@ const FAQ: React.FC = () => {
 
     return (
         <>
-            <div className="relative w-full h-[170px] md:h-[400px] lg:h-[480px]">
+            <div className="relative w-full">
                 <svg
                     viewBox="0 0 1373 438"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     ref={svgContainer}
-                    className="absolute inset-0"
                 >
                     <path
                         d="M272.045 0H1097.7L1132.1 73H240.1L272.045 0Z"
@@ -83,29 +88,32 @@ const FAQ: React.FC = () => {
                     />
                 </svg>
 
-                <div className="w-full h-full grid grid-rows-2 grid-cols-2">
-                    <div className="">
-                        <Image
-                            src="/bus_vignette.png"
-                            alt="Bus vignette"
-                            width={400}
-                            height={300}
-                            className="h-auto max-h-full w-auto max-w-full ml-auto lg:mt-0 md:-mt-8 mt-0 z-50 relative opacity-0"
-                            ref={busVignette1}
-                        />
-                    </div>
-                    <div></div>
-                    <div></div>
-                    <div className="">
-                        <Image
-                            src="/bus_vignette.png"
-                            alt="Bus vignette"
-                            width={400}
-                            height={300}
-                            className="h-auto max-h-full w-auto max-w-full -mt-4 md:-mt-24 2xl:mt-5 z-50 relative opacity-0"
-                            ref={busVignette2}
-                        />
-                    </div>
+                {/**SVG Ratio is 73: 98: 145 */}
+                <div className="absolute bottom-[45%] left-[20%] w-[14%] xs:w-[12%] sm:w-[10%]">
+                    <Image
+                        src={crosswalk_guy1}
+                        alt="Guy checking time"
+                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
+                        ref={guy1_cross}
+                        style={{
+                            objectFit: 'contain',
+                            width: '100%',
+                            height: 'auto'
+                        }}
+                    />
+                </div>
+                <div className="absolute bottom-0 right-[15%] w-[25%] xs:w-[22%] sm:w-[18%]">
+                    <Image
+                        src={crosswalk_guy2}
+                        alt="Guy with umbrella"
+                        className="relative z-50 ml-auto h-full w-auto object-cover opacity-0 max-w-screen"
+                        ref={guy2_cross}
+                        style={{
+                            objectFit: 'contain',
+                            width: '100%',
+                            height: 'auto'
+                        }}
+                    />
                 </div>
             </div>
             <section
@@ -144,7 +152,7 @@ const FAQ: React.FC = () => {
                             alt="FAQ mascot"
                             width={249}
                             height={187}
-                            className="hidden h-auto max-h-full w-auto max-w-full object-contain md:flex"
+                            className="hidden h-auto max-h-full w-auto max-w-full object-contain opacity-0 md:flex"
                         />
                     </div>
                 </div>
