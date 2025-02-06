@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import Image from 'next/image';
 
 const belgiano = localFont({ src: '../pages/fonts/Belgiano.woff' });
 
@@ -190,7 +191,16 @@ const TamuhackFooter = () => {
                         journey.
                     </p>
                 </div>
-                <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end">
+                <div>
+                    <Image
+                        className="lg:ml-24 mb-12 lg:mb-0"
+                        alt="footer image"
+                        src="/footer_picture.png"
+                        width={350}
+                        height={250}
+                    />
+                </div>
+                <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end lg:ml-24">
                     <LinkSection title="Hacker Resources" items={resources} />
                     <LinkSection title="Socials" items={socials} />
                     <LinkSection
