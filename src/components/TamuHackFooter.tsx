@@ -200,7 +200,7 @@ const TamuhackFooter = () => {
                         />
                     </div>
                 </div>
-                <div className="lg:hidden xxxxl:block lg:ml-12 mb-12 lg:mb-0">
+                <div className="justify-self-center lg:hidden xxxxl:block lg:ml-12 mb-12 lg:mb-0">
                     <Image
                         className=""
                         alt="footer image"
