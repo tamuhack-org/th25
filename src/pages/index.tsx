@@ -114,7 +114,7 @@ export default function Home() {
                         transition: { duration: 1, delay: 1 },
                     }}
                     viewport={{ once: true }}
-                    className="fading_text flex flex-row font-poppins text-xl justify-center">
+                    className="fading_text flex flex-row font-poppins mt-10 lg:mt-0 text-xl justify-center">
                         <p>
                             Thanks for joining us!
                         </p>
