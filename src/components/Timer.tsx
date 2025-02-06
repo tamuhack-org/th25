@@ -27,6 +27,7 @@ const Timer = ({ className }: { className?: string }) => {
         };
     }, []);
 
+    /*
     const calculateTimeLeft = () => {
         if (!now)
             return {
@@ -81,9 +82,66 @@ const Timer = ({ className }: { className?: string }) => {
             seconds: String(Math.floor(diff.seconds || 0)).padStart(2, '0'),
         };
     };
+    */
 
-    const { days, hours, minutes, seconds } = calculateTimeLeft();
+    const calculateTimeAfter = () => {
+        if (!now)
+            return {
+                days: '00',
+                hours: '00',
+                minutes: '00',
+                seconds: '00',
+            };
+        const diff = now 
+            .diff(eventDate, ['days', 'hours', 'minutes', 'seconds'])
+            .toObject();
+        if (now < eventDate) {
+            clearInterval(intervalRef.current as NodeJS.Timeout);
+            //prevent infinite rerenders
+            if (ariaLiveText !== 'The event has not yet started.')
+                setAriaLiveText('The event has not yet started.');
+            return {
+                days: '00',
+                hours: '00',
+                minutes: '00',
+                seconds: '00',
+            };
+        }
+        if (!diff)
+            return {
+                days: '00',
+                hours: '00',
+                minutes: '00',
+                seconds: '00',
+            };
 
+        // Set aria-live text
+        const announcementDiff = {
+            hours: diff.hours,
+            days: diff.days,
+            minutes: diff.minutes,
+            seconds: diff.seconds,
+        };
+        const shouldAnnounce = shouldAnnounceTime(announcementDiff);
+        const announcement = formatTimeAnnouncement(announcementDiff);
+        if (
+            (shouldAnnounce && announcement !== ariaLiveText) ||
+            ariaLiveText === null
+        ) {
+            setAriaLiveText(announcement);
+        }
+
+        return {
+            days: String(diff.days || 0).padStart(2, '0'),
+            hours: String(diff.hours || 0).padStart(2, '0'),
+            minutes: String(diff.minutes || 0).padStart(2, '0'),
+            seconds: String(Math.floor(diff.seconds || 0)).padStart(2, '0'),
+        };
+    };
+
+    /* const { days, hours, minutes, seconds } = calculateTimeLeft(); */
+    const { days, hours, minutes, seconds } = calculateTimeAfter();
+    
     return (
         <div
             role="timer"
@@ -97,7 +155,7 @@ const Timer = ({ className }: { className?: string }) => {
                 {days}:{hours}:{minutes}:{seconds}
             </span>
             <p className={`-mt-3 font-poppins text-lg lg:text-2xl`}>
-                until hacking ends.
+                since hacking ended.
             </p>
             <p className="sr-only" aria-live="polite" aria-atomic="true">
                 {ariaLiveText}
