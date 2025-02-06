@@ -180,7 +180,7 @@ const TamuhackFooter = () => {
             </footer>
 
             <div className="text-dark my-8 justify-between opacity-90 lg:my-16 lg:flex">
-                <div className="lg:w-1/5">
+                <div className="lg:w-3/5 xxl:w-1/5 xxxl:w-1/3 xxxxl:w-1/5">
                     <p
                         className={`mb-8 text-3xl font-bold ${belgiano.className}`}
                     >
@@ -190,23 +190,41 @@ const TamuhackFooter = () => {
                         All the resources you&apos;ll need for your hackathon
                         journey.
                     </p>
+                    <div className="hidden xxl:block xxxxl:hidden">
+                        <Image
+                            className=""
+                            alt="footer image"
+                            src="/footer_picture.png"
+                            width={500}
+                            height={250}
+                        />
+                    </div>
                 </div>
-                <div>
+                <div className="lg:hidden xxxxl:block lg:ml-12 mb-12 lg:mb-0">
                     <Image
-                        className="lg:ml-24 mb-12 lg:mb-0"
+                        className=""
                         alt="footer image"
                         src="/footer_picture.png"
                         width={350}
-                        height={250}
+                        height={150}
                     />
                 </div>
-                <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end lg:ml-24">
+                <div className="flex flex-grow flex-wrap justify-start gap-12 lg:justify-end lg:ml-12">
                     <LinkSection title="Hacker Resources" items={resources} />
                     <LinkSection title="Socials" items={socials} />
                     <LinkSection
                         title="Other Hackathons"
                         items={otherHackathons}
                     />
+                    <div className="hidden lg:block lg:mt-[-40px] lg:mr-12 xxl:hidden">
+                        <Image
+                            className=""
+                            alt="footer image"
+                            src="/footer_picture.png"
+                            width={270}
+                            height={250}
+                        />
+                    </div>
                     <LinkSection title="Workshops" items={workshops} />
                 </div>
             </div>
