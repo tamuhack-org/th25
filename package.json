@@ -7,11 +7,15 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+        "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+        "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "prettier-check": "prettier --check \"**/*.{ts,tsx,md}\""
     },
     "dependencies": {
         "@gsap/react": "^2.1.1",
+        "@opennextjs/cloudflare": "^1.14.4",
         "@react-three/drei": "^9.117.3",
         "@react-three/fiber": "^8.17.10",
         "@tabler/icons-react": "^3.22.0",
@@ -23,7 +27,7 @@
         "lucide-react": "^0.469.0",
         "luxon": "^3.5.0",
         "motion": "^11.18.2",
-        "next": "14.2.18",
+        "next": "^14.2.33",
         "react": "^18",
         "react-dom": "^18",
         "sharp": "^0.33.5",
@@ -35,11 +39,12 @@
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "eslint": "^8",
-        "eslint-config-next": "14.2.18",
+        "eslint-config-next": "^16.0.8",
         "postcss": "^8",
         "prettier": "^3.3.3",
         "prettier-plugin-tailwindcss": "^0.6.9",
         "tailwindcss": "^3.4.1",
-        "typescript": "^5"
+        "typescript": "^5",
+        "wrangler": "^4.53.0"
     }
 }

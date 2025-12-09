@@ -246,7 +246,7 @@ const Info = () => {
                     width={64}
                     height={64}
                     placeholder="empty"
-                    className="car col-start-1 row-start-1 hidden w-fit lg:block"
+                    className="car col-start-1 row-start-1 hidden w-16 lg:block"
                     loading="eager"
                 />
 
